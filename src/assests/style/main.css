@@ -60,7 +60,6 @@ html {
   scroll-behavior: smooth !important;
   scrollbar-color: #01ae9b #ffffff !important;
   scrollbar-width: thin !important;
-  font-size: 62.5%;
 }
 
 ::-webkit-scrollbar {

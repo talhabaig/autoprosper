@@ -22,6 +22,7 @@ const config: Config = {
         "dark-5": "#B7BCC3",
         "dark-6": "#E5E8ED",
         "dark-7": "#ECEEF1",
+        "dark-muted": "#545D72",
         "status-info": "#219FFF",
         "status-info-light": "#E2F3FF",
         "status-success": "#17BD8D",
@@ -34,6 +35,9 @@ const config: Config = {
         white: "#FFFFFF",
       },
       backgroundImage: {
+        "hero": "url('/images/cover.png')",
+        "rainbow-gradient": "linear-gradient(89.62deg, #FF3363 10%, #FFE664 76.98%, #00FFA2 91.85%), linear-gradient(0deg, #FFFFFF, #FFFFFF)",
+        "custom": "linear-gradient(90deg, #00FFA2 0%, #FFE664 100%)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -63,6 +67,20 @@ const config: Config = {
       "3xl": "1600px",
       // => @media (min-width: 1600)
       "4xl": "1800px",
+    },
+    keyframes: {
+      "accordion-down": {
+        from: { height: "0" },
+        to: { height: "var(--radix-accordion-content-height)" },
+      },
+      "accordion-up": {
+        from: { height: "var(--radix-accordion-content-height)" },
+        to: { height: "0" },
+      },
+    },
+    animation: {
+      "accordion-down": "accordion-down 0.2s ease-out",
+      "accordion-up": "accordion-up 0.2s ease-out",
     },
   },
   plugins: [],
