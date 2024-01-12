@@ -84,11 +84,16 @@ body {
   font-weight: 400;
   box-sizing: border-box;
   line-height: 1.2;
+  color: #545d72;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+p {
+  margin-bottom: 1.5rem;
 }
 
 /* Change the white to any color */
@@ -98,3 +103,5 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-background-clip: text;
 }
+
+

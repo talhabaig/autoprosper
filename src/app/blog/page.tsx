@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 
 function Blog() {
-  const [state , setState] = useState('khawar')
+  const [state , setState] = useState('blog test page')
   return (
     <>
     <div>{state}</div>

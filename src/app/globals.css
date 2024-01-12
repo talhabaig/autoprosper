@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .container {
+    @apply sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] 3xl:max-w-[1420px] 4xl:max-w-[1420px];
+  }
+  .heading2 {
+    @apply text-primary-text text-center mb-[1.5rem] text-[2.4rem] font-bold lg:text-[3.2rem] xl:text-[3.8rem] 3xl:text-[4.8rem];
+  }
+  .paragraph-large{
+    @apply text-[1.4rem] mb-[1.5rem] leading-[2rem] lg:text-[1.6rem] lg:leading-[2.4rem] 2xl:leading-[3rem] 2xl:text-[2rem];
+
+  }
+}
