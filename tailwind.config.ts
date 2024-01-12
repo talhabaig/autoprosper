@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         primary: "#FF3363",
         "primary-light": "#FFEDF1",
-        'primary-text': "#0A1835",
+        "primary-text": "#0A1835",
         green: "#00FFA2",
         "green-light": "#E2FFF5",
         yellow: "#FFE664",
@@ -34,6 +34,9 @@ const config: Config = {
         gray: "#848B9A",
         "border-color": "#CED1D7",
         white: "#FFFFFF",
+        "light-gray": "#F6F9FC",
+        "light-gray-2": "#F0F3FA",
+        "light-gray-3": "#545D72",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -41,8 +44,11 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "gradient--1":
           "linear-gradient(0deg, rgba(122, 160, 255, 0.22) 0%, rgba(128, 232, 255, 0.22) 100%)",
-        "btn-primary-gradient": "linear-gradient(90deg, rgb(0, 255, 162) 0%, rgb(255, 230, 100) 100%)",
-        "btn-primary-gradient-hover": "linear-gradient(90deg, rgb(0, 255, 162) 20%, rgb(255, 230, 100) 90%)",
+        "btn-primary-gradient":
+          "linear-gradient(90deg, rgb(0, 255, 162) 0%, rgb(255, 230, 100) 100%)",
+        "btn-primary-gradient-hover":
+          "linear-gradient(90deg, rgb(0, 255, 162) 40%, rgb(255, 230, 100) 80%)",
+        "bg-none": "none",
       },
     },
     container: {
@@ -50,8 +56,6 @@ const config: Config = {
       padding: "1rem",
     },
     screens: {
-      
-
       sm: "576px",
       // => @media (min-width: 576pc)
 
