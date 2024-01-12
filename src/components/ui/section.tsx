@@ -1,14 +1,14 @@
 import React, { ReactNode } from "react";
 
-interface SectionProps {
+interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
-interface SectionHeaderProps {
+interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   children: string;
 }
 
-interface SectionDescProps {
+interface SectionDescProps extends React.HTMLAttributes<HTMLDivElement> {
   children: string;
 }
 

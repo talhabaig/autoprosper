@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { Section, SectionDesc, SectionHeader } from "@/components/ui/section";
 import { GradientCard, Card } from "@/components/ui/card";
+import { SwitchWithLabel } from "@/components/ui/switch";
 
 const Discover = () => {
   return (
@@ -40,15 +41,15 @@ const Discover = () => {
                 label="Searching for"
                 options={[{ label: "Charger", value: "Charger" }]}
               />
-              <Input type="text" label="Searching for" />
+              <Input type="text" label="Down payment" />
               <Input
                 type="text"
-                label="Searching for"
-                options={[{ label: "Charger", value: "Charger" }]}
+                label="Credit Score"
+                options={[{ label: "670-739", value: "670-739" }]}
               />
-              <Input type="text" label="Searching for" />
+              <Input type="text" label="Monthly payment" />
             </div>
-
+            <SwitchWithLabel label="Include trade-in" className="self-start" />
             <Button variant="gradient" className="w-full py-[18px]">
               SURPRISE ME
             </Button>

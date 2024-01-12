@@ -6,6 +6,7 @@ import FindandMake from "@/components/home/FindandMake/FindandMake";
 import FirstTimeBuyer from "@/components/home/FirstTimeBuyer/FirstTimeBuyer";
 import GuideAndTips from "@/components/home/GuideAndTips/GuideAndTips";
 import Hero from "@/components/home/Hero/Hero";
+import UnveilIdealRide from "@/components/home/UnveilIdealRide/UnveilIdealRide";
 import UpgradeRide from "@/components/home/UpgradeRide/UpgradeRide";
 
 
@@ -14,6 +15,7 @@ export default function Home() {
     <main>
       <Hero />
       <Discover />
+      <UnveilIdealRide />
       <DiscountCreditHistory />
       <FirstTimeBuyer/>
       <FindandMake/>

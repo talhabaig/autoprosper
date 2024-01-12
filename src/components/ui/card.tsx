@@ -2,6 +2,10 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+interface GradientCardProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+}
+
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -17,9 +21,9 @@ const Card = React.forwardRef<
 ))
 Card.displayName = "Card"
 
-const GradientCard:  React.FC<{ children: React.ReactNode }> = (({ children, ...props }) => (
+const GradientCard:  React.FC<GradientCardProps> = (({ children, ...props }) => (
     <div className="rounded-md bg-custom p-[1px] shadow-xl">
-        <Card className="h-full" {...props}>
+        <Card className="h-full border-0" {...props}>
           {children}
         </Card>
     </div>
