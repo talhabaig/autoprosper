@@ -39,7 +39,7 @@ const cardData: AutoProsperAdvantages[] = [
 
 const AutoProsperAdvnatage = () => {
   return (
-    <section className="py-[6rem] 2xl:py-[8rem] 3xl:pt-[11rem] 3xl:pb-[9.6rem] bg-light-gray">
+    <section className="sectionWrapper py-[6rem] 2xl:py-[8rem] 3xl:pt-[11rem] 3xl:pb-[9.6rem] bg-light-gray">
       <div className="container">
         <div className="max-w-[360px] mx-auto text-center md:max-w-[480px] lg:max-w-[560px] 2xl:max-w-[680px]">
           <h2 className="heading2 mb-[1rem] lg:mb-[1.8rem] md:max-w-[70%] md:mx-auto lg:max-w-[84%] 3xl:max-w-full">
