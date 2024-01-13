@@ -16,7 +16,7 @@ interface SectionDescProps extends React.HTMLAttributes<HTMLDivElement> {
 const Section: React.FC<SectionProps> = ({ children, ...props }) => {
   return (
     <section
-      className="mt-[60px] max-w-[330px] md:max-w-full text-center md:py-[120px] flex flex-col md:flex-row md:gap-[30px] justify-between md:justify-center md:px-10 lg:px-[159px] mx-auto"
+      className="mt-[60px] px-[15px] max-w-full text-center md:py-[120px] flex flex-col md:flex-row md:gap-[30px] justify-between md:justify-center md:px-10 lg:px-[159px] mx-auto"
       {...props}
     >
       {children}
