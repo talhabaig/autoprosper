@@ -43,9 +43,9 @@ const ProsperingCustomers: React.FC = () => {
           }}
         >
           <CarouselContent>
-            {customers.map((customer) => (
+            {customers.map((customer, index) => (
               <CarouselItem
-                key={"carousel"}
+                key={"carousel"+index}
                 className="basis-1/4 md:basis-[15%]"
               >
                 <Image
