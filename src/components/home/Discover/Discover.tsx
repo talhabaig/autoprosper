@@ -26,9 +26,7 @@ const Discover = () => {
       <div className="flex max-w-[690px] w-full justify-center">
         <GradientCard>
           <div className="flex flex-col gap-[30px] h-full w-full items-center justify-center bg-white rounded-md p-[40px]">
-            <div className="grid grid-cols-3 w-full gap-5 ">
-              <Card className="bg-gray-300 rounded h-[100px]"></Card>
-              <Card className="bg-gray-300 rounded h-[100px]"></Card>
+            <div className="grid grid-cols-2 w-full gap-5 ">
               <Card className="bg-gray-300 rounded h-[100px]"></Card>
               <Card className="bg-gray-300 rounded h-[100px]"></Card>
               <Card className="bg-gray-300 rounded h-[100px]"></Card>
