@@ -1,8 +1,8 @@
 import LocationIcon from "../../Icons/LocationIcon";
 import { Card } from "@/components/ui/card";
 import Image from 'next/image'
-import { CarouselProps } from "./types";
-import EllipseGradient from "../EllipseGradient";
+import { CarouselProps } from "./type";
+import { EllipseGradient } from "@/components/ui/EllipseGradient";
 
 const CarouselCard: React.FC<CarouselProps> = ({ data }) => {
   return (

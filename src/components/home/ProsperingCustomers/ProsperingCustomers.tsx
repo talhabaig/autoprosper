@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import { Section, SectionDesc, SectionHeader } from "@/components/ui/section";
-import { CarouselData } from "@/components/ui/CarouselCard/types";
+import { CarouselData } from "@/components/ui/CarouselCard/type";
 import CarouselCard from "@/components/ui/CarouselCard";
 
 const customers = [
