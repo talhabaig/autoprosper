@@ -58,7 +58,7 @@
 
 html {
   scroll-behavior: smooth !important;
-  scrollbar-color: #01ae9b #ffffff !important;
+  scrollbar-color: #00FFA2  #ffffff !important;
   scrollbar-width: thin !important;
 }
 
@@ -68,7 +68,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #01ae9b;
+  background: #00FFA2 ;
   border-radius: 100vw;
 }
 

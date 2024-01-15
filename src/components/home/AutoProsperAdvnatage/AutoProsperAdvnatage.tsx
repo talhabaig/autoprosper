@@ -1,7 +1,5 @@
 import React from "react";
-import Image from "next/image";
-import Button from "../../Common/Button/Button";
-import { ArrowRight, TopArrow, Car, Heart } from "../../Icons/Icons";
+import { TopArrow, Car, Heart } from "../../Icons/Icons";
 import { AutoProsperAdvantages } from "../../../assests/interfaces/Home/index";
 
 const cardData: AutoProsperAdvantages[] = [

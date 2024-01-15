@@ -53,7 +53,7 @@ const carouselData: Array<CarouselData> = [
 
 const UnveilIdealRide: React.FC = () => {
   return (
-    <Section className="bg-light-gray py-[60px] md:py-[120px]">
+    <Section className="bg-light-gray-4 py-[60px] md:py-[120px]">
       <div className="w-full md:max-w-[690px] px-[15px] md:px-0 flex flex-col items-center mx-auto text-center">
         <SectionHeader>Unveil Your Ideal Ride</SectionHeader>
         <SectionDesc>
