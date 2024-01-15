@@ -1,0 +1,5 @@
+@media (min-width: 360px) {
+  .headingWrapper {
+    max-width: 300px;
+  }
+}
