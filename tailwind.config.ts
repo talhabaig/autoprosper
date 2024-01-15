@@ -33,6 +33,7 @@ const config: Config = {
         "status-danger": "#FF4E3E",
         "status-danger-light": "#FFEBE9",
         gray: "#848B9A",
+        "light-gray": "#F0F1F3",
         "border-color": "#CED1D7",
         white: "#FFFFFF",
       },
@@ -89,6 +90,6 @@ const config: Config = {
       "accordion-up": "accordion-up 0.2s ease-out",
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
 export default config;
