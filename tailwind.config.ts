@@ -36,9 +36,10 @@ const config: Config = {
         "light-gray": "#F0F1F3",
         "border-color": "#CED1D7",
         white: "#FFFFFF",
-        "light-gray": "#F6F9FC",
         "light-gray-2": "#F0F3FA",
         "light-gray-3": "#545D72",
+        "light-gray-4": "#F6F9FC",
+        "dark-gray": "#97A5C1",
       },
       backgroundImage: {
         "hero": "url('/images/cover.png')",

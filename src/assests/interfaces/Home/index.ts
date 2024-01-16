@@ -37,3 +37,18 @@ export interface DiscountAndCreditDataItem {
     description?: string;
     icon?: React.ReactNode | any;
   }
+
+  export interface ConsultancyAndGrowth {
+    id?: number;
+    imageSrc?: string;
+    heading?: string;
+    description?: string;
+  }
+
+  export interface FirstTimeBuyer {
+    essentialFeatures?: string;
+    carBrand?: string;
+    totalSeats?: string;
+    vehiclePreference?: string;
+    fuelConsuptionType?: string;
+  }

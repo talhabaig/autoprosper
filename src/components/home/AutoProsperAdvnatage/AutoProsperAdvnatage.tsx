@@ -1,7 +1,5 @@
 import React from "react";
-import Image from "next/image";
-import Button from "../../Common/Button/Button";
-import { ArrowRight, TopArrow, Car, Heart } from "../../Icons/Icons";
+import { TopArrow, Car, Heart } from "../../Icons/Icons";
 import { AutoProsperAdvantages } from "../../../assests/interfaces/Home/index";
 
 const cardData: AutoProsperAdvantages[] = [
@@ -69,7 +67,7 @@ const AutoProsperAdvnatage = () => {
                   {item.icon}
                 </div>
 
-                <h3 className="heading3 text-left mb-[0.938rem] lg:mb-[1.5rem] 3xl:mb-[1.875rem] mr-[30%]">
+                <h3 className="heading3 text-left mb-[0.938rem] lg:mb-[1.5rem] 3xl:mb-[1.875rem] lg:mr-[30%] 2xl:mr-[26%]">
                   {item.heading}
                 </h3>
                 <p className="paragraph-large mb-0 text-light-gray-3">
