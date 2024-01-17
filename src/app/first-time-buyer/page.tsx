@@ -1,7 +1,7 @@
 // pages/index.js
 "use client";
 // pages/index.js
-import StepForm from "@/components/FirstTimeBuyer/StepForm";
+import StepForm from "@/components/FirstTimeBuyer/FirstTimeBuyerAllSteps";
 import { FirstTimeBuyer } from "@/assests/interfaces/Home/index";
 
 const Home = () => {

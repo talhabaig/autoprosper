@@ -46,9 +46,9 @@ export interface DiscountAndCreditDataItem {
   }
 
   export interface FirstTimeBuyer {
-    essentialFeatures?: string;
-    carBrand?: string;
-    totalSeats?: string;
-    vehiclePreference?: string;
-    fuelConsuptionType?: string;
+    essentialFeatures?: string[];
+    carBrand?: string[];
+    totalSeats?: string[];
+    vehiclePreference?: string[];
+    fuelConsuptionType?: string[];
   }
