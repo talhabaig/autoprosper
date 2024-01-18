@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Input, Select } from "@/components/ui/input";
 import Image from "next/image";
 import { Section, SectionDesc, SectionHeader } from "@/components/ui/section";
 import { GradientCard, Card } from "@/components/ui/card";
@@ -34,18 +34,18 @@ const Discover = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-5">
-              <Input
+              <Select
                 type="text"
                 label="Searching for"
-                options={[{ label: "Charger", value: "Charger" }]}
+                options={[{ label: "Charger", value: "Charger" }, { label: "Charger 2", value: "Charger" }, ]}
               />
-              <Input type="text" label="Down payment" />
-              <Input
+              <Input currency="$" type="number" defaultValue="0" min="0" label="Down payment" />
+              <Select
                 type="text"
                 label="Credit Score"
                 options={[{ label: "670-739", value: "670-739" }]}
               />
-              <Input type="text" label="Monthly payment" />
+              <Input currency="$" type="number" defaultValue="0" min="0" label="Monthly payment" />
             </div>
             <SwitchWithLabel label="Include trade-in" className="self-start" />
             <Button variant="gradient" className="w-full py-[18px]">
