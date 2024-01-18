@@ -3,8 +3,13 @@ import Image from "next/image";
 import Button from "../../Common/Button/Button";
 import { ArrowRight } from "../../Icons/Icons";
 import { FindOrMakeCard } from "../../../assests/interfaces/Home/index";
+import Link from "next/link";
 
-const cardData: FindOrMakeCard[] = [
+interface FindOrMakeCardWithRoute extends FindOrMakeCard {
+  route: string;
+}
+
+const cardData: FindOrMakeCardWithRoute[] = [
   {
     id: 1,
     imageSrc: "/home/discover-ideal.png",
@@ -16,6 +21,7 @@ const cardData: FindOrMakeCard[] = [
     buttonIcon: (
       <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
     ),
+    route: "find-or-make",
   },
   {
     id: 2,
@@ -28,6 +34,7 @@ const cardData: FindOrMakeCard[] = [
     buttonIcon: (
       <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
     ),
+    route: "find-or-make",
     // buttonVariant: "transparent",
     // buttonIcon:    <ArrowRight  className="fill-gray w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />,
   },
@@ -72,11 +79,13 @@ const FindandMake = () => {
                   <p className="paragraph-large mb-[1.25rem] lg:mb-[1.563rem] 3xl:mb-[2rem]">
                     {item.description}
                   </p>
-                  <Button
-                    variant={item.buttonVariant}
-                    label={item.buttonLabel}
-                    children={item.buttonIcon}
-                  />
+                  <Link href={item.route}>
+                    <Button
+                      variant={item.buttonVariant}
+                      label={item.buttonLabel}
+                      children={item.buttonIcon}
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
