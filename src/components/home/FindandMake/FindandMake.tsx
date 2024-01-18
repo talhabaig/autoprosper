@@ -3,8 +3,13 @@ import Image from "next/image";
 import Button from "../../Common/Button/Button";
 import { ArrowRight } from "../../Icons/Icons";
 import { FindOrMakeCard } from "../../../assests/interfaces/Home/index";
+import Link from "next/link";
 
-const cardData: FindOrMakeCard[] = [
+interface FindOrMakeCardWithRoute extends FindOrMakeCard {
+  route: string;
+}
+
+const cardData: FindOrMakeCardWithRoute[] = [
   {
     id: 1,
     imageSrc: "/home/discover-ideal.png",
@@ -16,6 +21,7 @@ const cardData: FindOrMakeCard[] = [
     buttonIcon: (
       <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
     ),
+    route: "find-or-make",
   },
   {
     id: 2,
@@ -24,18 +30,25 @@ const cardData: FindOrMakeCard[] = [
     description:
       "Design your dream car, and watch as we bring it to life. Your perfect vehicle is just a few steps away!",
     buttonLabel: "Start Order",
-    buttonVariant: "transparent",
-    buttonIcon:    <ArrowRight  className="fill-gray w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />,
+    buttonVariant: "primary",
+    buttonIcon: (
+      <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
+    ),
+    route: "find-or-make",
+    // buttonVariant: "transparent",
+    // buttonIcon:    <ArrowRight  className="fill-gray w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />,
   },
 ];
 
 const FindandMake = () => {
   return (
-    <section className="py-[3.75rem] 2xl:py-[5rem] 3xl:pt-[6.875rem] 3xl:pb-[6rem] bg-light-gray">
+    <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-dark-7">
       <div className="container">
         <div className="max-w-[360px] mx-auto text-center md:max-w-[480px] lg:max-w-[540px] 2xl:max-w-[700px]">
-          <h2 className="heading2 mb-[0.625rem] lg:mb-[1.125rem]">Find or make</h2>
-          <p className="paragraph-large mb-[1.875rem] lg:mb-[2.5rem] 3xl:mb-[3.125rem] text-primary-text ">
+          <h2 className="heading2 mb-[0.625rem] lg:mb-[1.125rem]">
+            Find or make
+          </h2>
+          <p className="paragraph-large mb-[1.5rem] md:mb-[1.875rem] lg:mb-[2.5rem] 2xl:mb-[3rem] ">
             Whether seeking a rare find or customizing your dream car, trust us
             for a personalized, tailored automotive experience.
           </p>
@@ -46,7 +59,8 @@ const FindandMake = () => {
               key={item.id}
               className="flex-grow md:w-[48%] 3xl:w-[49%] rounded-[12px] mb-[1.875rem] 
               shadow-[0px_36px_72px_-18px_rgba(10,24,53,0.25)] p-[1px] bg-btn-primary-gradient
-              last-of-type:shadow-[0px_18px_36px_-18px_rgba(10,24,53,0.25)] last-of-type:bg-bg-none"
+              last-of-type:shadow-[0px_18px_36px_-18px_rgba(10,24,53,0.25)] last-of-type:bg-bg-none
+              lg:last-of-type:shadow-[0px_36px_72px_-18px_rgba(10,24,53,0.25)] lg:last-of-type:bg-btn-primary-gradient"
             >
               <div className="h-full bg-white rounded-[12px]">
                 <div className="rounded-tr-[12px] max-w-[680px]  rounded-tl-[12px] px-[4px] pt-[4px] overflow-hidden bg-white">
@@ -58,18 +72,20 @@ const FindandMake = () => {
                     alt={item.heading || ""}
                   />
                 </div>
-                <div className="py-[1.25rem] lg:py-[1.875rem] 3xl:py-[2.5rem] px-[0.938rem] lg:px-[1.375rem] 3xl:px-[1.875rem] bg-white rounded-br-[12px] rounded-bl-[12px]">
-                  <h3 className="heading3 text-left mb-[0.625rem] lg:mb-[0.938rem] 3xl:mb-[1.25rem]">
+                <div className="py-[1.25rem] lg:py-[1.875rem] 3xl:py-[2rem] px-[0.938rem] lg:px-[1.375rem] 3xl:px-[1.875rem] bg-white rounded-br-[12px] rounded-bl-[12px]">
+                  <h3 className="heading3 text-left mb-[0.625rem] lg:mb-[0.938rem] 3xl:mb-[1.125rem]">
                     {item.heading}
                   </h3>
-                  <p className="paragraph-large mb-[1.25rem] lg:mb-[1.563rem] 3xl:mb-[1.875rem]">
+                  <p className="paragraph-large mb-[1.25rem] lg:mb-[1.563rem] 3xl:mb-[2rem]">
                     {item.description}
                   </p>
-                  <Button
-                    variant={item.buttonVariant}
-                    label={item.buttonLabel}
-                    children={item.buttonIcon}
-                  />
+                  <Link href={item.route}>
+                    <Button
+                      variant={item.buttonVariant}
+                      label={item.buttonLabel}
+                      children={item.buttonIcon}
+                    />
+                  </Link>
                 </div>
               </div>
             </div>

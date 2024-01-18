@@ -105,14 +105,14 @@ input:-webkit-autofill:active {
 }
 
 .mainWrapperFirstTimeBuyer {
-  height: calc(100vh - 72px);
+  min-height: calc(100vh - 72px);
 }
 
 @media (min-width: 992px) {
   .mainWrapperFirstTimeBuyer {
-    height: calc(100vh - 102px);
+   min-height: calc(100vh - 102px);
   }
   .firstTimeBuyerContainerWrapper {
-    min-height: calc(100% - 120px);
+    min-height: calc(100vh - 230px);
   }
 }

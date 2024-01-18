@@ -12,9 +12,7 @@ import NavigationBar from "../ui/Navigations/navigationBar";
 import Button from "../Common/Button/Button";
 import SuggestionForYou from "./SuggestionForYou/SuggestionForYou";
 
-
-
-const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
+const FindOrMakeAllSteps: React.FC<FirstTimeBuyer> = () => {
   const [step, setStep] = useState(1);
   const [essentialFeatures, setessentialFeatures] = useState<string[]>([]);
   const [carBrand, setCarBrand] = useState<string[]>([]);
@@ -46,7 +44,7 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
     if (step < 5) {
       setStep(step + 1);
     } else if (step === 5) {
-      // Log data in the FirstTimeBuyerAllSteps component
+      // Log data in the FindOrMakeAllSteps component
       console.log({
         essentialFeatures,
         carBrand,
@@ -55,27 +53,20 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
         fuelConsuptionType,
       });
 
-      // // Log data in the parent component
-      // onDataLog({
-      //   essentialFeatures,
-      //   carBrand,
-      //   totalSeats,
-      //   vehiclePreference,
-      //   fuelConsuptionType,
-      // });
-
       setStep(step + 1);
-
-      // You can also send the data to a server or perform other actions
     }
   };
 
   return (
     <>
       <NavigationBar />
-      <section className={`mt-auto mainWrapperFirstTimeBuyer ${step === 6 && 'bg-dark-7'}`}>
+      <section
+        className={`mt-auto mainWrapperFirstTimeBuyer ${
+          step === 6 && "bg-dark-7"
+        }`}
+      >
         <div className="container firstTimeBuyerContainerWrapper">
-          {/* <h1>Step {step}</h1> */}
+          {/* <h1>FindOrMakeStep {step}</h1> */}
           {step > 1 && step < 6 && (
             <div className=" py-[10px] mb-[28px]">
               <span className="inline-block" onClick={() => setStep(step - 1)}>
@@ -126,4 +117,4 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
   );
 };
 
-export default FirstTimeBuyerAllSteps;
+export default FindOrMakeAllSteps;

@@ -9,7 +9,7 @@ const cardData: FindOrMakeCard[] = [
   {
     id: 1,
     imageSrc: "/home/pre-qualification.png",
-    heading: "How Pre-Qualification",
+    heading: "2024 Nissan Kicks®",
     description:
       "Knowledgeable  ensuring seamless experience from start to finish.",
     buttonLabel: "Read More",
@@ -58,13 +58,13 @@ const cardData: FindOrMakeCard[] = [
 
 const GuideAndTips = () => {
   return (
-    <section className="py-[3.75rem] 2xl:py-[5rem] 3xl:py-[7.5rem]  bg-light-gray-2">
+    <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-dark-7">
       <div className="container">
         <div className="max-w-[360px] mx-auto text-center md:max-w-[510px] lg:max-w-[560px] 2xl:max-w-[700px]">
           <h2 className="heading2 mb-[0.625rem] lg:mb-[1.25rem]">
             Guide & Tips
           </h2>
-          <p className="paragraph-large mb-[1.875rem] lg:mb-[2.5rem] 3xl:mb-[3.125rem] text-light-gray-3 ">
+          <p className="paragraph-large mb-[1.5rem] md:mb-[1.875rem] lg:mb-[2.5rem] 2xl:mb-[3rem]  ">
             Everything you need to know about buying, selling, & maintaining
             your car.
           </p>
@@ -93,14 +93,14 @@ const GuideAndTips = () => {
                   />
                 </div>
                 <div
-                  className="py-[0.9375rem] xl:py-[1.875rem] px-[0.938rem]   xl:px-[1.875rem]
+                  className="py-[0.9375rem] xl:py-[1.5rem] px-[0.938rem]   xl:px-[1.5rem]
                  3xl:px-[1.875rem] bg-white rounded-br-[12px] rounded-bl-[12px] flex flex-col justify-between"
                 >
                   <div>
                     <h3 className="heading4 truncate">{item.heading}</h3>
                     <p
                       className={`max-h-[80px] min-h-[80px] text-[0.75rem] 
-                       leading-[21px] xl:text-[0.938rem] xl:leading-[25px] text-dark-muted mb-[0.625rem]
+                       leading-[21px] xl:text-[0.938rem] xl:leading-[25px] text-dark-3 mb-[0.625rem]
                        xl:max-h-[130px] xl:min-h-[130px]  ${styles.paragraphWrappeer}`}
                     >
                       {item.description}
@@ -123,7 +123,7 @@ const GuideAndTips = () => {
           <Button
             variant="primary"
             label="Read more article"
-            className="min-w-[244px] xl:min-w-[290px]"
+            className=""
             children={
               <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
             }
