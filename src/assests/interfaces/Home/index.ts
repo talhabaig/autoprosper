@@ -44,3 +44,11 @@ export interface DiscountAndCreditDataItem {
     heading?: string;
     description?: string;
   }
+
+  export interface FirstTimeBuyer {
+    essentialFeatures?: string[];
+    carBrand?: string[];
+    totalSeats?: string[];
+    vehiclePreference?: string[];
+    fuelConsuptionType?: string[];
+  }

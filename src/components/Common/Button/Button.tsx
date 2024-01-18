@@ -26,16 +26,16 @@ const Button: React.FC<propType> = ({
   let classList = ``;
   if (!variant || variant === "primary") {
     classList =
-      "text-[0.875rem] lg:text-[1rem]  px-[14px] lg:px-[18px] tracking-[1.26px] lg:tarcaking-[1.44px]  uppercase min-w-[185px] min-h-[46px] xl:min-w-[220px] xl:min-h-[56px]  bg-btn-primary-gradient font-[800] rounded-[100px] text-primary-text hover:bg-btn-primary-gradient-hover";
+      "text-[0.875rem] xl:text-[1rem]  px-[14px] lg:px-[18px] tracking-[1.26px] xl:tarcaking-[1.44px]  uppercase min-w-[185px] min-h-[46px] xl:min-w-[220px] xl:min-h-[56px]  bg-btn-primary-gradient font-[800] rounded-[100px] text-primary-text hover:bg-btn-primary-gradient-hover";
   } else if (variant === "small") {
     classList =
-      "min-w-[6rem] min-h-[1.563rem]  bg-btn-primary-gradient font-[800] rounded-[100px] text-primary-text hover:bg-btn-primary-gradient-hover";
+      "min-w-[156px] gap-[6px] px-[14px] text-[0.875rem] min-h-[46px] xl:text-[1rem]  bg-btn-primary-gradient font-[800] rounded-[100px] text-primary-text hover:bg-btn-primary-gradient-hover";
   } else if (variant === "secondary") {
     classList =
       "text-primary border border-primary bg-primary hover:bg-white text-white hover:text-primary";
   } else if (variant === "transparent") {
     classList =
-      "text-gray border border-solid border-gray text-[0.875rem] lg:text-[1rem] tracking-[1.26px] lg:tarcaking-[1.44px]  uppercase min-w-[185px] min-h-[46px] xl:min-w-[220px] xl:min-h-[56px]  rounded-[100px] font-[800] hover:bg-dark hover:text-white";
+      "text-gray border border-solid border-gray text-[0.875rem] xl:text-[1rem] tracking-[1.26px] xl:tarcaking-[1.44px]  uppercase min-w-[185px] min-h-[46px] xl:min-w-[220px] xl:min-h-[56px]  rounded-[100px] font-[800] hover:bg-dark hover:text-white";
   }
 
   function handleClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {

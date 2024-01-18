@@ -1,0 +1,13 @@
+/* HobbiesSelector.module.css */
+
+.customRadio input {
+  display: none;
+}
+
+.customRadio input:checked + .radioBtn > span {
+  opacity: 1;
+}
+
+.customRadio input:checked + .radioBtn > .iconTitleWrapper span svg {
+  fill: #001B44;
+}

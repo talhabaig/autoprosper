@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+import { Facebook, Instagram, TwitterX, Youtube } from "../Icons/Icons";
 
 const Learn = [
   {
@@ -54,10 +56,36 @@ const Finance = [
 
 const socialMedia = [
   {
-    title: "Shop",
+    title: "Social",
     items: [
-      { id: 1, label: "Get Pre-Qualified", href: "/get-pre-qualified" },
-      { id: 2, label: "Estimate Your Payment", href: "/estimate-payment" },
+      {
+        id: 1,
+        href: "https://www.facebook.com/",
+        label: (
+          <Facebook className="fill-gray hover:fill-white w-[1.25rem] h-[1.25rem] lg:w-[1.5rem] lg:h-[1.5rem]" />
+        ),
+      },
+      {
+        id: 2,
+        href: "https://www.instagram.com/",
+        label: (
+          <Instagram className="fill-gray hover:fill-white w-[1.25rem] h-[1.25rem] lg:w-[1.5rem] lg:h-[1.5rem]" />
+        ),
+      },
+      {
+        id: 3,
+        href: "https://twitter.com/",
+        label: (
+          <TwitterX className="fill-gray hover:fill-white w-[1.25rem] h-[1.25rem] lg:w-[1.5rem] lg:h-[1.5rem]" />
+        ),
+      },
+      {
+        id: 4,
+        href: "https://www.youtube.com/",
+        label: (
+          <Youtube className="fill-gray hover:fill-white w-[1.25rem] h-[1.25rem] lg:w-[1.5rem] lg:h-[1.5rem]" />
+        ),
+      },
     ],
   },
 ];
@@ -73,7 +101,10 @@ const Footer = () => {
             </h5>
             <ul className="mb-[2.5rem] lg:mb-0">
               {Learn[0].items.map((item) => (
-                <li className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]" key={item.id}>
+                <li
+                  className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]"
+                  key={item.id}
+                >
                   <span
                     className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer"
                     id={item.href}
@@ -90,7 +121,10 @@ const Footer = () => {
             </h5>
             <ul className="mb-[2.5rem] lg:mb-0">
               {Help[0].items.map((item) => (
-                <li className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]" key={item.id}>
+                <li
+                  className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]"
+                  key={item.id}
+                >
                   <span
                     className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer"
                     id={item.href}
@@ -107,7 +141,10 @@ const Footer = () => {
             </h5>
             <ul className="mb-[2.5rem] lg:mb-0">
               {Shop[0].items.map((item) => (
-                <li className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]" key={item.id}>
+                <li
+                  className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]"
+                  key={item.id}
+                >
                   <span
                     className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer"
                     id={item.href}
@@ -124,7 +161,10 @@ const Footer = () => {
             </h5>
             <ul className="mb-[3.75rem]">
               {Finance[0].items.map((item) => (
-                <li className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]" key={item.id}>
+                <li
+                  className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]"
+                  key={item.id}
+                >
                   <span
                     className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer"
                     id={item.href}
@@ -138,15 +178,21 @@ const Footer = () => {
               <h5 className="text-[1rem] xl:text-[1.25rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
                 {socialMedia[0].title}
               </h5>
-              <ul className="mb-[2.5rem] lg:mb-0">
+              <ul className="mb-[2.5rem] lg:mb-0 flex items-center gap-[20px]">
                 {socialMedia[0].items.map((item) => (
-                  <li className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]" key={item.id}>
-                    <span
-                      className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer"
-                      id={item.href}
+                  <li
+                    className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]"
+                    key={item.id}
+                  >
+                    <Link
+                      target="_blank"
+                      href={item.href}
+                      rel="noopener noreferrer"
                     >
-                      {item.label}
-                    </span>
+                      <span className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer">
+                        {item.label}
+                      </span>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -156,24 +202,33 @@ const Footer = () => {
             <h5 className="text-[1rem] xl:text-[1.25rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
               {socialMedia[0].title}
             </h5>
-            <ul className="mb-[2.5rem] lg:mb-0">
+            <ul className="mb-[2.5rem] lg:mb-0 flex items-center gap-[24px]">
               {socialMedia[0].items.map((item) => (
-                <li className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]" key={item.id}>
-                  <span
-                    className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer"
-                    id={item.href}
+                <li
+                  className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]"
+                  key={item.id}
+                >
+                  <Link
+                    target="_blank"
+                    href={item.href}
+                    rel="noopener noreferrer"
                   >
-                    {item.label}
-                  </span>
+                    <span className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer">
+                      {item.label}
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
         </div>
         <div className="border-t-[1px] border-solid border-dark-gray mt-[1.5rem] xl:mt-[2rem] 2xl:mt-[3.75rem]">
-          <div className="pt-[30px] 2xl:pt-[3.75rem] flex items-center justify-center gap-[10px] text-dark-gray text-[12px] 2xl:text-[14px] xl:text-[0.875rem]">
+          <div
+            className="pt-[30px] 2xl:pt-[3.75rem] flex items-center justify-center gap-[10px]
+           text-dark-gray text-[12px] 2xl:text-[14px] xl:text-[0.875rem] lg:gap-[18px] 2xl:gap-[24px]"
+          >
             <span>© 2023 AutoProsper LLC</span>
-            <span>|</span>
+            <span className="w-[1px] h-[24px] xl:h-[36px] inline-block bg-dark-gray"></span>
             <span>Privacy Policy</span>
           </div>
         </div>
