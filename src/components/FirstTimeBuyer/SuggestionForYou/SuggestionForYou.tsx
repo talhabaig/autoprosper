@@ -1,68 +1,55 @@
 import React from "react";
 import Image from "next/image";
-import { ArrowRight } from "../../Icons/Icons";
-import { FindOrMakeCard } from "../../../assests/interfaces/Home/index";
-import styles from "./GuideAndTips.module.css";
+import { ArrowDown, ArrowRight } from "../../Icons/Icons";
+import { SuggestionForCustomer } from "../../../assests/interfaces/Home/index";
 import Button from "../../Common/Button/Button";
 
-const cardData: FindOrMakeCard[] = [
+const cardData: SuggestionForCustomer[] = [
   {
     id: 1,
-    imageSrc: "/home/pre-qualification.png",
-    heading: "How Pre-Qualification",
-    description:
-      "Knowledgeable  ensuring seamless experience from start to finish.",
-    buttonLabel: "Read More",
-    buttonVariant: "primary",
-    buttonIcon: (
-      <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
-    ),
+    imageSrc: "/suggestionForYou/nissan-kicks.png",
+    heading: "2024 Nissan Kicks®",
+    totalamount: "$ 13,420",
+    downpayment: "$2,420",
+    monthlypayment: "$480",
+    variant: "LS",
   },
   {
     id: 2,
-    imageSrc: "/home/best-family-car.png",
-    heading: "The best family cars",
-    description:
-      "Knowledgeable  ensuring seamless experience from start to finish.",
-    buttonLabel: "Read More",
-    buttonVariant: "transparent",
-    buttonIcon: (
-      <ArrowRight className="fill-gray w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
-    ),
+    imageSrc: "/suggestionForYou/chevrole-trax.png",
+    heading: "2018 Chevrolet Trax",
+    totalamount: "$ 13,420",
+    downpayment: "$2,420",
+    monthlypayment: "$480",
+    variant: "LS",
   },
   {
     id: 3,
-    imageSrc: "/home/best-family-cars-2.png",
-    heading: "The best family cars",
-    description:
-      "Undecided on your ideal vehicle? Take a quick quiz to discover the perfect match tailored just for you! Let's begin!",
-    buttonLabel: "Read More",
-    buttonVariant: "primary",
-    buttonIcon: (
-      <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
-    ),
+    imageSrc: "/suggestionForYou/ford-escape.png",
+    heading: "2015 Ford Escape",
+    totalamount: "$ 13,420",
+    downpayment: "$2,420",
+    monthlypayment: "$480",
+    variant: "LS",
   },
   {
     id: 4,
-    imageSrc: "/home/pre-qualification-2.png",
-    heading: "How Pre-Qualification",
-    description:
-      "Knowledgeable  ensuring seamless experience from start to finish.",
-    buttonLabel: "Read More",
-    buttonVariant: "transparent",
-    buttonIcon: (
-      <ArrowRight className="fill-gray w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
-    ),
+    imageSrc: "/suggestionForYou/hyundai-elantra.png",
+    heading: "2015 Hyundai Elantra",
+    totalamount: "$ 13,420",
+    downpayment: "$2,420",
+    monthlypayment: "$480",
+    variant: "LS",
   },
 ];
 
 const SuggestionForYou = () => {
   return (
     <>
-      <div className="max-w-[940px] mx-auto my-[28px] xl:my-[38px] 3xl:my-[48px]">
+      <div className="max-w-[940px] mx-auto py-[28px] xl:py-[38px] 3xl:py-[48px]">
         <h2 className="heading1">Suggestions for you</h2>
         <p
-          className="text-dark-2 text-center mb-[24px] md:mb-[30px] lg:text-[1rem] xl:mb-[40px]
+          className="text-dark-2 text-center  mb-[1.5rem] md:mb-[1.875rem] lg:mb-[2.5rem] 2xl:mb-[3rem]   lg:text-[1rem] 
          xl:text-[1.25rem] xl:leading-[1.5]"
         >
           Explore these curated options we think will suit your preferences and
@@ -70,13 +57,14 @@ const SuggestionForYou = () => {
         </p>
       </div>
       <div
-        className={`flex md:justify-between md:items-stretch gap-[0.625rem]
-          lg:gap-[1.125rem] 3xl:gap-[1.875rem] overflow-x-auto `}
+        className={`flex flex-wrap md:justify-between md:items-stretch gap-[0.625rem]
+          lg:gap-[1.125rem] 3xl:gap-6  `}
       >
         {cardData.map((item, index) => (
           <div
             key={item.id}
-            className="flex-grow max-w-[215px] w-full xl:w-[22%] xl:max-w-full flex-[0_0_auto] rounded-[12px]  
+            className="flex-grow max-w-[380px] mx-auto md:mx-0 w-full md:max-w-[44%] lg:max-w-[30%]  xl:max-w-[23%]  flex-[0_0_auto]
+               rounded-[12px]  
               first-of-type:shadow-[0px_36px_72px_-18px_rgba(10,24,53,0.25)] p-[1px] mb-[1.875rem] 2xl:mb-[3.5rem]
               first-of-type:bg-btn-primary-gradient shadow-[0px_18px_36px_-18px_rgba(10,24,53,0.25)] bg-bg-none
               [&>span]:font-bold 
@@ -93,33 +81,39 @@ const SuggestionForYou = () => {
                 />
               </div>
               <div
-                className="py-[0.9375rem] xl:py-[1.875rem] px-[0.938rem]   xl:px-[1.875rem]
+                className="py-[0.9375rem] xl:py-[1.5rem] px-[0.938rem]   xl:px-[1.5rem]
                  3xl:px-[1.875rem] bg-white rounded-br-[12px] rounded-bl-[12px] flex flex-col justify-between"
               >
-                <div>
-                  <h3 className="heading4 truncate">{item.heading}</h3>
-                  <p
-                    className={`max-h-[80px] min-h-[80px] text-[0.75rem] 
-                       leading-[21px] xl:text-[0.938rem] xl:leading-[25px] text-dark-muted mb-[0.625rem]
-                       xl:max-h-[130px] xl:min-h-[130px]  `}
+                <h3 className="heading4 truncate">{item?.heading}</h3>
+                <div className="flex items-center gap-[8px] mb-4 md:mb-[20px] lg:mb-6 ">
+                  <span
+                    className="inline-flex items-center justify-center p-[5px_10px] uppercase
+                   bg-dark-7 tracking-[1.08px] text-dark-3 rounded-[100px] text-[12px] font-bold "
                   >
-                    {item.description}
-                  </p>
+                    {" "}
+                    {item?.variant}
+                  </span>
+                  <span> {item?.totalamount}</span>
                 </div>
-                <span
-                  className={`${
-                    index === 0 ? " text-primary-text" : ""
-                  } text-[0.625rem] font-extrabold text-gray block tracking-[0.9px] 
-                    xl:text-[0.75rem] xl:tracking-[1.08px] uppercase underline cursor-pointer hover:text-primary-text`}
-                >
-                  {item.buttonLabel}
-                </span>
+                <div className="flex items-center gap-[8px] text-[14px] leading-[150%]">
+                  <div className="flex items-center gap-[8px]">
+                    <span>
+                      <ArrowDown className="w-[24px] h-[24px]" />
+                    </span>
+                    <span className="inline-block text-primary font-semibold">
+                      {item?.downpayment}down
+                    </span>
+                  </div>
+                  <div className="text-dark-3 font-semibold pl-[12px] border-l border-solid border-dark-4">
+                    {item?.monthlypayment}/mo
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center pb-[30px]">
         <Button
           variant="primary"
           label="Shop All Cars"

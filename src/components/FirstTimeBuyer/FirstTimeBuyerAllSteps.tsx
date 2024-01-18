@@ -12,13 +12,9 @@ import NavigationBar from "../ui/Navigations/navigationBar";
 import Button from "../Common/Button/Button";
 import SuggestionForYou from "./SuggestionForYou/SuggestionForYou";
 
-interface FirstTimeBuyerAllStepsProps {
-  onDataLog: (data: FirstTimeBuyer) => void;
-}
 
-const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyerAllStepsProps> = ({
-  onDataLog,
-}) => {
+
+const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
   const [step, setStep] = useState(1);
   const [essentialFeatures, setessentialFeatures] = useState<string[]>([]);
   const [carBrand, setCarBrand] = useState<string[]>([]);
@@ -59,14 +55,14 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyerAllStepsProps> = ({
         fuelConsuptionType,
       });
 
-      // Log data in the parent component
-      onDataLog({
-        essentialFeatures,
-        carBrand,
-        totalSeats,
-        vehiclePreference,
-        fuelConsuptionType,
-      });
+      // // Log data in the parent component
+      // onDataLog({
+      //   essentialFeatures,
+      //   carBrand,
+      //   totalSeats,
+      //   vehiclePreference,
+      //   fuelConsuptionType,
+      // });
 
       setStep(step + 1);
 
@@ -77,7 +73,7 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyerAllStepsProps> = ({
   return (
     <>
       <NavigationBar />
-      <section className="mt-auto mainWrapperFirstTimeBuyer">
+      <section className={`mt-auto mainWrapperFirstTimeBuyer ${step === 6 && 'bg-dark-7'}`}>
         <div className="container firstTimeBuyerContainerWrapper">
           {/* <h1>Step {step}</h1> */}
           {step > 1 && step < 6 && (

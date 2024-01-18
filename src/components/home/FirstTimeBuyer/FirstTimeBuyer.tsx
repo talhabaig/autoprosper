@@ -3,6 +3,7 @@ import Image from "next/image";
 import Button from "../../Common/Button/Button";
 import { ArrowRight } from "../../Icons/Icons";
 import styles from "./FirstTimeBuyer.module.css";
+import Link from "next/link";
 
 const FirstTimeBuyer = () => {
   return (
@@ -27,22 +28,24 @@ const FirstTimeBuyer = () => {
         <div
           className={`max-w-[310px] md:max-w-[328px] lg:max-w-[424px] xl:max-w-[505px] 2xl:max-w-[650px] absolute top-[58%]  mx-[0.938rem] flex flex-col text-center items-center justify-center`}
         >
-          <h2 className="heading2 xl:mb-[1.5rem] 2xl:max-w-[78%] 3xl:max-w-[98%] text-white">
+          <h2 className="heading2 xl:mb-[1.125rem] 2xl:max-w-[78%] 3xl:max-w-[98%] text-white">
             <span className={styles.textGradient}>First time </span>buyer (born
             1998-2005) program offer
           </h2>
-          <p className="paragraph-large text-white mb-[1.25rem] xl:mb-[1.5rem]">
+          <p className="paragraph-large text-white mb-[1.25rem] xl:mb-[1.5rem] 2xl:mb-[2rem]">
             For first-time car buyers born between 1998-2005, unlock exclusive
             offers and tailored programs to ease your vehicle purchase.
           </p>
           <div>
-            <Button
-              variant="primary"
-              label="Start Now"
-              children={
-                <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
-              }
-            />
+            <Link href="/first-time-buyer">
+              <Button
+                variant="primary"
+                label="Start Now"
+                children={
+                  <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
+                }
+              />
+            </Link>
           </div>
         </div>
       </div>
