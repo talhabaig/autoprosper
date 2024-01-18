@@ -37,3 +37,10 @@ export interface DiscountAndCreditDataItem {
     description?: string;
     icon?: React.ReactNode | any;
   }
+
+  export interface ConsultancyAndGrowth {
+    id?: number;
+    imageSrc?: string;
+    heading?: string;
+    description?: string;
+  }

@@ -1,0 +1,18 @@
+.paragraphWrappeer {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.customScrollBar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  scrollbar-width: none;
+}
+
+@media (min-width: 1200px) {
+  .paragraphWrappeer {
+    -webkit-line-clamp: 5;
+  }
+}
