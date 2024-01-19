@@ -20,6 +20,7 @@ import SellTrade from "./NavigationItems/sellTrade";
 import Service from "./NavigationItems/service";
 import Finance from "./NavigationItems/finance";
 import Learn from "./NavigationItems/learn";
+import Help from "./NavigationItems/help";
 
 
 
@@ -47,10 +48,12 @@ const NavigationBar = () => {
     },
     {
       title: "Help",
-      content: <Learn />,
+      content: <Help />,
       mobileOnly: true,
     },
   ];
+
+  const desktopNavigationData = navigationData.filter((o) => !o.mobileOnly)
 
   const [selectedItem, setSelectedItem] =
     useState<NavigationContentType | null>(null);
@@ -97,16 +100,16 @@ const NavigationBar = () => {
         <Image src="/images/logo.png" alt="logo" width="200" height="42" />
         <UserIcon />
       </div>
-      <div className="hidden md:flex mx-auto justify-between items-center max-w-screen-2xl lg:px-40 lg:py-[30px] md:px-10 md:py-[15px]">
+      <div className="hidden relative md:flex mx-auto justify-between items-center md:w-screen lg:px-40 lg:py-[30px] md:px-10 md:py-[15px]">
         <Image src="/images/logo.png" alt="logo" width="200" height="42" />
-        <NavigationMenu className="hidden md:inline">
+        <NavigationMenu className="hidden md:inline"  >
           <NavigationMenuList>
-            {navigationData.map((navigation, index) => (
-              <NavigationMenuItem key={index + "-nav"}>
-                <NavigationMenuTrigger>
+            {desktopNavigationData.map((navigation, index) => (
+              <NavigationMenuItem  key={index + "-nav"}>
+                <NavigationMenuTrigger >
                   {navigation.title}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="bg-white md:w-screen py-[10px] transition-all overflow-y-scroll">
                   {navigation.content}
                 </NavigationMenuContent>
               </NavigationMenuItem>

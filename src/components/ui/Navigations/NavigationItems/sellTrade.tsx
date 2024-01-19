@@ -94,9 +94,9 @@ const SellTrade = () => {
   ];
 
   return (
-    <div className="flex-col">
+    <div className="flex flex-col md:flex-row  lg:pl-40 lg:py-[30px] md:pl-10 md:py-[15px] md:divide-x-[1px] md:divide-gray">
       <SheetSectionItems title="SELL OR TRADE-IN" items={navigationData} />
-      <div className="px-[15px]  mt-[30px] gap-[30px] flex flex-col">
+      <div className="px-[15px]  mt-[30px] gap-[30px] flex flex-col md:flex-row">
         {contents.map((content) => (
           <SheetSectionDetails content={content} />
         ))}
