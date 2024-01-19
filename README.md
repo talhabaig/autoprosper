@@ -14,6 +14,7 @@ pnpm dev
 bun dev
 ```
 Tailwind is used in this project
+by setting font-size: 62.5%;  in the project font-size 1rem is considered 10px
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

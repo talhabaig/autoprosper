@@ -5,7 +5,7 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 type propType = {
   label?: string;
-  variant?: "primary" | "transparent" | "secondary" | "small";
+  variant?: "primary" | "transparent" | "secondary" | "small" | undefined;
   className?: string;
   isLoading?: boolean;
   children?: JSX.Element | string;
@@ -26,16 +26,16 @@ const Button: React.FC<propType> = ({
   let classList = ``;
   if (!variant || variant === "primary") {
     classList =
-      "text-[1.4rem] lg:text-[1.6rem] tracking-[1.26px] lg:tarcaking-[1.44px]  uppercase min-w-[18.5rem] min-h-[4.6rem] xl:min-w-[22.1rem] xl:min-h-[5.6rem] p-[1.4rem_2.8rem] xl:p-[1.8rem_3.6rem] bg-btn-primary-gradient font-[800] rounded-[100px] text-primary-text hover:bg-btn-primary-gradient-hover";
+      "text-[0.875rem] lg:text-[1rem] tracking-[1.26px] lg:tarcaking-[1.44px]  uppercase min-w-[185px] min-h-[46px] xl:min-w-[220px] xl:min-h-[56px]  bg-btn-primary-gradient font-[800] rounded-[100px] text-primary-text hover:bg-btn-primary-gradient-hover";
   } else if (variant === "small") {
     classList =
-      "min-w-[9.6rem] min-h-[3.6rem] p-[1.4rem_2.8rem] bg-btn-primary-gradient font-[800] rounded-[100px] text-primary-text hover:bg-btn-primary-gradient-hover";
+      "min-w-[6rem] min-h-[1.563rem]  bg-btn-primary-gradient font-[800] rounded-[100px] text-primary-text hover:bg-btn-primary-gradient-hover";
   } else if (variant === "secondary") {
     classList =
       "text-primary border border-primary bg-primary hover:bg-white text-white hover:text-primary";
   } else if (variant === "transparent") {
     classList =
-      "text-gray border border-solid border-gray  hover:bg-primary hover:text-white";
+      "text-gray border border-solid border-gray text-[0.875rem] lg:text-[1rem] tracking-[1.26px] lg:tarcaking-[1.44px]  uppercase min-w-[185px] min-h-[46px] xl:min-w-[220px] xl:min-h-[56px]  rounded-[100px] font-[800] hover:bg-dark hover:text-white";
   }
 
   function handleClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {

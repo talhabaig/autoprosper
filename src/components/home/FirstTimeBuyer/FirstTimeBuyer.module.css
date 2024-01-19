@@ -11,3 +11,11 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media(min-width:500px){
+  .dNone{
+    display: none;
+  }
+  .dBlock{
+    display: block;
+  }
+}
