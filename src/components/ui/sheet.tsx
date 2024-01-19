@@ -171,7 +171,7 @@ const SheetItem: React.FC<SheetItemProps> = ({ label, ...props }) => {
       {...props}
     >
       <div className="text-sm font-bold">{label}</div>
-      <ChevronRight />
+      <ChevronRight className="md:hidden"/>
     </div>
   );
 };
@@ -191,7 +191,7 @@ const SheetSectionItems: React.FC<SheetSectionItemsProps> = ({
   ...props
 }) => {
   return (
-    <>
+    <div className="md:relative flex flex-col lg:w-[336px] md:mr-[36px] lg:mr-[72px]">
       <div className="text-xs text-gray px-[15px] font-bold mb-[15px] tracking-[1.2px]">
         {title}
       </div>
@@ -200,7 +200,9 @@ const SheetSectionItems: React.FC<SheetSectionItemsProps> = ({
           <SheetItem key={index} label={item.label} />
         ))}
       </div>
-    </>
+
+      <DoubleEllipseGradient className="hidden md:block absolute -bottom-10 right-7" />
+    </div>
   );
 };
 
@@ -231,7 +233,7 @@ const SheetSectionDetails: React.FC<SheetSectionDetailsProps> = ({
           {content.list.map((list) => list.element)}
         </div>
         <Button
-          className="rounded-full border-gray text-gray"
+          className="rounded-full border-gray text-gray md:w-1/2 md:px-[24px] md:py-[18px]"
           variant="outline"
         >
           {content.button.text} {content.button.icon}
