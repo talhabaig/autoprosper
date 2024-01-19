@@ -58,7 +58,7 @@
 
 html {
   scroll-behavior: smooth !important;
-  scrollbar-color: #01ae9b #ffffff !important;
+  scrollbar-color: #00ffa2 #ffffff !important;
   scrollbar-width: thin !important;
 }
 
@@ -68,7 +68,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #01ae9b;
+  background: #00ffa2;
   border-radius: 100vw;
 }
 
@@ -104,4 +104,15 @@ input:-webkit-autofill:active {
   -webkit-background-clip: text;
 }
 
+.mainWrapperFirstTimeBuyer {
+  min-height: calc(100vh - 72px);
+}
 
+@media (min-width: 992px) {
+  .mainWrapperFirstTimeBuyer {
+   min-height: calc(100vh - 102px);
+  }
+  .firstTimeBuyerContainerWrapper {
+    min-height: calc(100vh - 230px);
+  }
+}

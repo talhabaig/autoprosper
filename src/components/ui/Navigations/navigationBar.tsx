@@ -1,4 +1,3 @@
-
 import { UserIcon } from "lucide-react";
 import BurgerIcon from "../../Icons/BurgerIcon";
 import { Button } from "../button";
@@ -14,15 +13,20 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 import Shop from "./NavigationItems/shop";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "./navigation";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "./navigation";
 import { NavigationsType, NavigationContentType } from "./type";
 import SellTrade from "./NavigationItems/sellTrade";
 import Service from "./NavigationItems/service";
 import Finance from "./NavigationItems/finance";
 import Learn from "./NavigationItems/learn";
 import Help from "./NavigationItems/help";
-
-
+import Link from "next/link";
 
 const NavigationBar = () => {
   const navigationData: NavigationsType = [
@@ -32,7 +36,7 @@ const NavigationBar = () => {
     },
     {
       title: "Sell/Trade",
-      content: <SellTrade />
+      content: <SellTrade />,
     },
     {
       title: "Service",
@@ -64,7 +68,7 @@ const NavigationBar = () => {
 
   const handleBackButton = () => {
     setSelectedItem(null);
-  }
+  };
 
   return (
     <>
@@ -82,7 +86,11 @@ const NavigationBar = () => {
               <BurgerIcon />
             </button>
           </SheetTrigger>
-          <SheetContent className="w-full px-0 py-[60px] transition-all overflow-y-scroll" selectedItem={selectedItem} onBack={handleBackButton}>
+          <SheetContent
+            className="w-full px-0 py-[60px] transition-all overflow-y-scroll"
+            selectedItem={selectedItem}
+            onBack={handleBackButton}
+          >
             {!selectedItem && (
               <div className="divide-y first:border-t-2 z-10 divide-gray-100 border-y-[1px] border-border-color">
                 {navigationData.map((nav, index) => (
@@ -116,9 +124,14 @@ const NavigationBar = () => {
             ))}
           </NavigationMenuList>
         </NavigationMenu>
-        <Button variant="gradient" className="text-dark px-5 py-2.5 font-bold">
-          SIGNUP
-        </Button>
+        <Link href="/login">
+          <Button
+            variant="gradient"
+            className="text-dark px-5 py-2.5 font-bold"
+          >
+            SIGNUP
+          </Button>
+        </Link>
       </div>
     </>
   );

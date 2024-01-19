@@ -27,10 +27,10 @@ const Discover = () => {
         <GradientCard variant="hide-on-mobile">
           <div className="flex flex-col gap-[30px] h-full w-full items-center justify-center bg-white rounded-md p-[32px]">
             <div className="grid grid-cols-2 w-full gap-5 ">
-              <Card className="bg-light-gray rounded border-0 h-[100px]"></Card>
-              <Card className="bg-light-gray rounded border-0 h-[100px]"></Card>
-              <Card className="bg-light-gray rounded border-0 h-[100px]"></Card>
-              <Card className="bg-light-gray rounded border-0 h-[100px]"></Card>
+              <Card className="bg-light-gray-4 rounded border-0 h-[100px]"></Card>
+              <Card className="bg-light-gray-4 rounded border-0 h-[100px]"></Card>
+              <Card className="bg-light-gray-4 rounded border-0 h-[100px]"></Card>
+              <Card className="bg-light-gray-4 rounded border-0 h-[100px]"></Card>
             </div>
 
             <div className="grid grid-cols-2 gap-5">

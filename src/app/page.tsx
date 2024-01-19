@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/Footer";
 import AutoProsperAdvnatage from "@/components/home/AutoProsperAdvnatage/AutoProsperAdvnatage";
 import ConsultancyAndGrouth from "@/components/home/ConsultancyAndGrouth/ConsultancyAndGrouth";
 import DiscountCreditHistory from "@/components/home/DiscountCreditHistory/DiscountCreditHistory";
@@ -10,21 +11,23 @@ import ProsperingCustomers from "@/components/home/ProsperingCustomers/Prosperin
 import UnveilIdealRide from "@/components/home/UnveilIdealRide/UnveilIdealRide";
 import UpgradeRide from "@/components/home/UpgradeRide/UpgradeRide";
 
-
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <Discover />
-      <UnveilIdealRide />
-      <ProsperingCustomers />
-      <DiscountCreditHistory />
-      <FirstTimeBuyer/>
-      <FindandMake/>
-      <UpgradeRide/>
-      <AutoProsperAdvnatage/>
-      <ConsultancyAndGrouth/>
-      <GuideAndTips/>
-    </main>
+    <>
+      <main>
+        <Hero />
+        <Discover />
+        <UnveilIdealRide />
+        <ProsperingCustomers />
+        <DiscountCreditHistory />
+        <FirstTimeBuyer />
+        <FindandMake />
+        <UpgradeRide />
+        <AutoProsperAdvnatage />
+        <ConsultancyAndGrouth />
+        <GuideAndTips />
+      </main>
+      <Footer />
+    </>
   );
 }

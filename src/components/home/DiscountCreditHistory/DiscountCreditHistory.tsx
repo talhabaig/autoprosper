@@ -35,14 +35,14 @@ const discountAndCreditData: DiscountAndCreditDataItem[] = [
 function DiscountAndCredit() {
   return (
     <>
-      <section className="py-[3.75rem]  2xl:py-[5rem] 3xl:py-[6.875rem]">
+      <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]">
         <div className="container [&>*:nth-child(even)]:md:flex-row-reverse ">
           {discountAndCreditData.map((item) => (
             <div
               key={item.id}
-              className="md:flex md:justify-between md:items-center pb-[3.75rem] lg:pb-[5rem] 3xl:pb-[6.875rem] last-of-type:pb-0"
+              className="md:flex md:justify-between md:items-center pb-[3rem] lg:pb-[4rem] 3xl:pb-[6rem] last-of-type:pb-0"
             >
-              <div className="md:flex-[0_0_auto] md:w-[48%] 3xl:w-[49%] mb-[1.875rem] md:mb-0">
+              <div className="md:flex-[0_0_auto] md:w-[48%] 3xl:w-[49%] mb-[1.5rem] md:mb-0">
                 <Image
                   src={item.imageSrc ? item.imageSrc : ""}
                   width={690}
@@ -51,21 +51,20 @@ function DiscountAndCredit() {
                 />
               </div>
               <div className="text-center flex flex-col justify-center items-center md:flex-[0_0_auto] md:w-[48%] 3xl:w-[49%] md:justify-start md:items-start md:text-start">
-                <div className="pb-[1rem] xl:pb-[1.25rem]">
+                <div className="pb-[0.75rem] md:pb-[1.125rem] xl:pb-[1.5rem]">
                   <span
-                    className="inline-block p-[0.5rem_1rem] leading-[1.3] rounded-[100px] tracking-[1px] 
-                     font-bold text-gray uppercase text-[0.625rem] lg:text-[0.75rem] border border-solid
-                     border-border-color"
+                    className="inline-block p-[5px_10px] leading-[1.3] rounded-[100px] tracking-[1px] 
+                     font-bold text-dark-3 uppercase text-[0.625rem] lg:text-[0.75rem]  bg-dark-7"
                   >
                     {item.contentLabel}
                   </span>
                 </div>
                 <h2
-                  className={`${styles.headingWrapper} heading2 md:text-start xl:mb-[1.25rem] md:mr-[2.5rem] 2xl:mr-[8rem] 3xl:mr-[3rem] mx-auto md:!max-w-full md:mx-0 `}
+                  className={`${styles.headingWrapper} heading2 md:text-start xl:mb-[1.125rem]  mx-auto md:!max-w-full md:mx-0 `}
                 >
                   {item.heading}
                 </h2>
-                <p className="paragraph-large mb-[1.25rem] xl:mb-[1.875rem]">
+                <p className="paragraph-large mb-[1.25rem] xl:mb-[1.5rem] 2xl:mb-[2rem]">
                   {item.paragraph}
                 </p>
                 <div>
