@@ -108,9 +108,37 @@ input:-webkit-autofill:active {
   min-height: calc(100vh - 72px);
 }
 
+.rectSelectWrapper * {
+  cursor: pointer;
+}
+.rectSelectWrapper .css-13cymwt-control,
+.rectSelectWrapper .css-t3ipsp-control {
+  padding: 8px 14px;
+  border: 1px solid #8e97a6;
+  width: 100%;
+  line-height: 1.25;
+  color: #8e97a6;
+  appearance: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  min-height: 54px;
+  border-radius: 12px;
+}
+.rectSelectWrapper .css-qbdosj-Input,
+.rectSelectWrapper .css-1dimb5e-singleValue {
+  color: #8e97a6;
+}
+.rectSelectWrapper .css-13cymwt-control:hover,
+.rectSelectWrapper .css-t3ipsp-control:hover,
+.rectSelectWrapper .css-t3ipsp-control:focus {
+  border: 1px solid #001b44;
+}
+.rectSelectWrapper .css-1u9des2-indicatorSeparator {
+  display: none;
+}
+
 @media (min-width: 992px) {
   .mainWrapperFirstTimeBuyer {
-   min-height: calc(100vh - 102px);
+    min-height: calc(100vh - 102px);
   }
   .firstTimeBuyerContainerWrapper {
     min-height: calc(100vh - 230px);
