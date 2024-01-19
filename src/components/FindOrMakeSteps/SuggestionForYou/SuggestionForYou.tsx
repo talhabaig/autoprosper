@@ -46,7 +46,7 @@ const cardData: SuggestionForCustomer[] = [
 const SuggestionForYou = () => {
   return (
     <>
-      <div className="max-w-[940px] mx-auto py-[28px] xl:py-[38px] 3xl:py-[48px]">
+      <div className="max-w-[940px] mx-auto pt-[28px] xl:pt-[38px] 3xl:pt-[48px]">
         <h2 className="heading1">Suggestions for you</h2>
         <p
           className="text-dark-2 text-center  mb-[1.5rem] md:mb-[1.875rem] lg:mb-[2.5rem] 2xl:mb-[3rem]   lg:text-[1rem] 
