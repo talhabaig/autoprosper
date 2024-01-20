@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { DoubleEllipseGradient } from "@/components/ui/EllipseGradient";
+import { DoubleEllipseGradient } from "@/components/ui/ellipseGradient";
 import { NavigationContentType } from "./Navigations/type";
 import Link from "next/link";
 import { Button } from "./button";
