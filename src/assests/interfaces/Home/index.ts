@@ -60,3 +60,24 @@ export interface SuggestionForCustomer {
   monthlypayment?: string;
   variant?: string;
 }
+
+
+export interface FormData {
+  firstName: string;
+  middleName: string;
+  lastName: string;
+  dateOfBirth: string;
+  city: string;
+  state: string;
+  state2: string;
+  SSN: string;
+  monthlyIncome: string;
+}
+
+export interface GetPreQualifiedSecureFinancing {
+  id?: number;
+  imageSrc?: string;
+  heading?: string;
+  description?: string;
+  icon?: React.ReactNode | any;
+}

@@ -13,7 +13,7 @@ const Login = () => {
         <h2 className="heading1 text-center mb-[12px]">Login</h2>
         <p
           className="text-dark-3 text-center mb-[24px] md:mb-8 lg:text-[1rem] 
-       xl:leading-[150%]"
+           xl:leading-[150%]"
         >
           Your responses will be securely stored in your account, ensuring no
           sharing with dealers.
