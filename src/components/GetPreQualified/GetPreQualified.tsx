@@ -1,6 +1,6 @@
 import React from "react";
 
-import { GetPreQualifiedSecureFinancing } from "../../../assests/interfaces/Home/index";
+import { GetPreQualifiedSecureFinancing } from "../../assests/interfaces/Home/index";
 import {
   DocumentRounded,
   SecureLock,
@@ -68,6 +68,7 @@ const GetPreQualified = () => {
           </div>
         </div>
       </section>
+
       <GetPreQuallifiedForm />
 
       <section className="bg-dark-7 py-[3rem]   2xl:py-[4rem] 3xl:py-[6rem]">

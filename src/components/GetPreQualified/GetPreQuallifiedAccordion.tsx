@@ -21,6 +21,7 @@ const accordionData = [
       "Yes. It comes with default styles that match the other components' aesthetic.",
     style: "",
   },
+  
   {
     id: "item-3",
     question: "Why should I pre-qualify for financing?",

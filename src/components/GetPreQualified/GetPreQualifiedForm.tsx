@@ -4,7 +4,7 @@ import CustomInput from "@/components/Common/InputField/InputField";
 import React, { useState } from "react";
 import Select from "react-select";
 
-import { FormData } from "../../../assests/interfaces/Home/index";
+import { FormData } from "../../assests/interfaces/Home/index";
 
 const options = [
   { value: "option1", label: "Option 1" },
