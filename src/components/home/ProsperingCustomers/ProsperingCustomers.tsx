@@ -34,7 +34,7 @@ const ProsperingCustomers: React.FC = () => {
           gallery.
         </SectionDesc>
       </div>
-      <div className="w-full md:max-w-[1576px]">
+      <div className="w-full">
         <Carousel
           className="w-full flex flex-col md:block"
           opts={{
