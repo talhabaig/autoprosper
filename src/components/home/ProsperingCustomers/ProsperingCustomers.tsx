@@ -46,7 +46,7 @@ const ProsperingCustomers: React.FC = () => {
             {customers.map((customer, index) => (
               <CarouselItem
                 key={"carousel"+index}
-                className="basis-1/4 md:basis-[15%]"
+                className="basis-1/4 md:basis-[15%] lg:basis-[10%]"
               >
                 <Image
                   src={customer}
