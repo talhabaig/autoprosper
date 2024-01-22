@@ -63,7 +63,7 @@ const FindandMake = () => {
               lg:last-of-type:shadow-[0px_36px_72px_-18px_rgba(10,24,53,0.25)] lg:last-of-type:bg-btn-primary-gradient"
             >
               <div className="h-full bg-white rounded-[12px]">
-                <div className="rounded-tr-[12px] max-w-[680px]  rounded-tl-[12px] px-[4px] pt-[4px] overflow-hidden bg-white">
+                <div className="rounded-tr-[12px] max-w-[699px]  rounded-tl-[12px] px-[4px] pt-[4px] overflow-hidden bg-white">
                   <Image
                     src={item.imageSrc ? item.imageSrc : ""}
                     width={682}

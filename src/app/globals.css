@@ -4,7 +4,7 @@
 
 @layer components {
   .container {
-    @apply sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] 3xl:max-w-[1420px] 4xl:max-w-[1420px];
+    @apply sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] 3xl:max-w-[1460px] 4xl:max-w-[1460px];
   }
   .heading1{
     @apply text-primary-text text-center mb-[0.75rem] lg:mb-[1.125rem] text-[2rem] font-normal lg:text-[2.4rem] xl:text-[3rem] 4xl:text-[3.5rem];

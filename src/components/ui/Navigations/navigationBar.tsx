@@ -1,3 +1,5 @@
+"use client";
+
 import { UserIcon } from "lucide-react";
 import BurgerIcon from "../../Icons/BurgerIcon";
 import { Button } from "../button";
@@ -57,7 +59,7 @@ const NavigationBar = () => {
     },
   ];
 
-  const desktopNavigationData = navigationData.filter((o) => !o.mobileOnly)
+  const desktopNavigationData = navigationData.filter((o) => !o.mobileOnly);
 
   const [selectedItem, setSelectedItem] =
     useState<NavigationContentType | null>(null);
@@ -105,16 +107,20 @@ const NavigationBar = () => {
             {selectedItem?.content}
           </SheetContent>
         </Sheet>
-        <Image src="/images/logo.png" alt="logo" width="200" height="42" />
+        <Link href="/">
+          <Image src="/images/logo.png" alt="logo" width="200" height="42" />
+        </Link>
         <UserIcon />
       </div>
       <div className="hidden relative md:flex mx-auto justify-between items-center md:w-screen lg:px-40 lg:py-[30px] md:px-10 md:py-[15px]">
-        <Image src="/images/logo.png" alt="logo" width="200" height="42" />
-        <NavigationMenu className="hidden md:inline"  >
+        <Link href="/">
+          <Image src="/images/logo.png" alt="logo" width="200" height="42" />
+        </Link>
+        <NavigationMenu className="hidden md:inline">
           <NavigationMenuList>
             {desktopNavigationData.map((navigation, index) => (
-              <NavigationMenuItem  key={index + "-nav"}>
-                <NavigationMenuTrigger >
+              <NavigationMenuItem key={index + "-nav"}>
+                <NavigationMenuTrigger>
                   {navigation.title}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-white md:w-screen py-[10px] transition-all overflow-y-scroll">
