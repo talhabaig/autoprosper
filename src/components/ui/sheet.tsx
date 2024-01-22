@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { DoubleEllipseGradient } from "@/components/ui/EllipseGradient";
+import { DoubleEllipseGradient } from "@/components/ui/ellipseGradient";
 import { NavigationContentType } from "./Navigations/type";
 import Link from "next/link";
 import { Button } from "./button";
@@ -81,6 +81,7 @@ const SheetContent = React.forwardRef<
         className={cn(sheetVariants({ side }), className)}
         {...props}
       >
+        <DoubleEllipseGradient className="absolute bottom-0 -z-10" />
         {children}
         {selectedItem?.title ? (
           <div
@@ -98,7 +99,6 @@ const SheetContent = React.forwardRef<
           <X className="h-4 w-4" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>
-        <DoubleEllipseGradient className="absolute bottom-0 -z-10" />
       </SheetPrimitive.Content>
     </SheetPortal>
   )
@@ -171,7 +171,7 @@ const SheetItem: React.FC<SheetItemProps> = ({ label, ...props }) => {
       {...props}
     >
       <div className="text-sm font-bold">{label}</div>
-      <ChevronRight className="md:hidden"/>
+      <ChevronRight className="md:hidden" />
     </div>
   );
 };
@@ -233,10 +233,10 @@ const SheetSectionDetails: React.FC<SheetSectionDetailsProps> = ({
           {content.list.map((list) => list.element)}
         </div>
         <Button
-          className="rounded-full border-gray text-gray md:w-1/2 md:px-[24px] md:py-[18px]"
+          className="rounded-full border-gray text-gray md:w-auto lg:w-[192px] lg:px-6 "
           variant="outline"
         >
-          {content.button.text} {content.button.icon}
+          {content.button.text} <span>{content.button.icon}</span>
         </Button>
       </div>
     </>

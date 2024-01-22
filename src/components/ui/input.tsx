@@ -61,7 +61,7 @@ const Select: React.FC<SelectProps> = ({ options, ...props }) => {
         </label>
       <select className="w-full text-[13px] md:text-lg text-dark-1 focus:outline-none bg-gray-50 focus:ring-0">
         {options?.map((opt) => (
-          <option key={opt.value} value={opt.value}>
+          <option key={'opt'+randomId.toString()} value={opt.value}>
             {opt.label}
           </option>
         ))}

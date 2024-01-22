@@ -67,21 +67,16 @@ const Shop = () => {
         <div className="text-gray text-xs font-bold mb-[15px] tracking-[1.2px]">
           BROWSE BY BODY STYLE
         </div>
-        <div className="grid grid-cols-4 w-full gap-[15px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-[15px]">
           {bodyStyles.map((style) => (
-            <Card className="group rounded-xl md:relative border-0 bg-white flex flex-col gap-[19px] justify-center items-center pt-[30px] pb-[15px] shadow-xl md:pl-3 md:p-6 lg:pl-6 lg:pr-[46px] md:shadow-none md:border-[1px] lg:gap-[24px] md:border-dark-5 md:hover:border-dark md:justify-center md:items-start">
-              <div className="flex h-full flex-col relative justify-center items-center">
+            <Card className="group rounded-xl relative bg-white flex flex-col gap-[19px] justify-center items-start px-[12px] pt-[30px] pb-[15px] md:pl-3 md:p-6 lg:pl-6 lg:pr-[46px] shadow-none border-[1px] lg:gap-[24px] border-dark-5 hover:border-dark">
+              <div className="flex h-full flex-col justify-center items-center">
                 {style.icon}
-                <EllipseGradient
-                  width="47"
-                  height="47"
-                  className="absolute z-0 -bottom-[8px] md:hidden"
-                />
               </div>
-              <div className="font-bold md:font-normal text-xs text-dark-muted">
+              <div className="font-normal text-xs text-dark-muted">
                 {style.label}
               </div>
-              <div className="hidden md:group-hover:block absolute bg-green rounded-full top-2 right-2">
+              <div className="hidden group-hover:block absolute bg-green rounded-full top-2 right-2">
                 <ArrowRight width={16} height={16} className="text-dark p-1 " />
               </div>
             </Card>

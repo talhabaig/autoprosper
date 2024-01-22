@@ -4,6 +4,7 @@ import {
 } from "@/components/ui/sheet";
 import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
+import { ArrowRight } from "@/components/Icons/Icons";
 
 const Finance = () => {
   const navigationData = [
@@ -48,7 +49,7 @@ const Finance = () => {
       ],
       button: {
         text: "VIEW ALL FAQS",
-        icon: <ArrowRightIcon className="ml-[5px]" />,
+        icon: <ArrowRight width="18" height="18" className="ml-[5px] fill-dark-4" />,
       },
     },
 
@@ -88,7 +89,7 @@ const Finance = () => {
       ],
       button: {
         text: "READ MORE ARTICLE",
-        icon: <ArrowRightIcon className="ml-[5px]" />,
+        icon: <ArrowRight width="18" height="18" className="ml-[5px] fill-dark-4" />,
       },
     },
   ];
