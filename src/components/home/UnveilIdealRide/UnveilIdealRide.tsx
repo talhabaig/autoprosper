@@ -62,7 +62,7 @@ const UnveilIdealRide: React.FC = () => {
           experience from start to finish.
         </SectionDesc>
       </div>
-      <div className="pl-[15px] md:px-[76px] w-full md:max-w-[1576px]">
+      <div className="pl-[15px] md:px-[76px] w-full">
         <Carousel
           className="w-full flex flex-col md:block"
           opts={{

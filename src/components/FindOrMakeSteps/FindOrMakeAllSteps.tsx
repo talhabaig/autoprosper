@@ -68,9 +68,10 @@ const FindOrMakeAllSteps: React.FC<FirstTimeBuyer> = () => {
 
   return (
     <>
-      <NavigationBar />
-      {/* && step < 6 */}
-      {step > 0 && (
+
+      <NavigationBar variant="dark" />
+      {step > 0 && step < 6 && (
+
         <section
           className={`mt-auto mainWrapperFirstTimeBuyer ${
             step === 6 && "bg-dark-7"

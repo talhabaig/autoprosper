@@ -72,7 +72,7 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
 
   return (
     <>
-      <NavigationBar />
+      <NavigationBar variant="dark"/>
       <section className={`mt-auto mainWrapperFirstTimeBuyer ${step === 6 && 'bg-dark-7'}`}>
         <div className="container firstTimeBuyerContainerWrapper">
           {/* <h1>Step {step}</h1> */}
