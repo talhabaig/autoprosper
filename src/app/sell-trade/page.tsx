@@ -1,14 +1,13 @@
-import ProductSingle from "@/components/ProductDetail/ProductSingle";
+import SellTradeVehicle from "@/components/SellOrTrade/SellTradeVehicle";
 import NavigationBar from "../../components/ui/Navigations/navigationBar";
 
 import React from "react";
-import Footer from "@/components/footer/Footer";
 
 const page = () => {
   return (
     <>
-      <NavigationBar />
-      <ProductSingle /> <Footer />
+      <NavigationBar  variant ='dark'/>
+      <SellTradeVehicle />
     </>
   );
 };

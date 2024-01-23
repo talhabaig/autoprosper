@@ -131,7 +131,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             height="42"
           />
         )}
-                </Link>
+        </Link>
 
         <NavigationMenu className="hidden md:inline">
           <NavigationMenuList>
