@@ -11,7 +11,9 @@ import { FirstTimeBuyer } from "../../assests/interfaces/Home/index";
 import NavigationBar from "../ui/Navigations/navigationBar";
 import Button from "../Common/Button/Button";
 import SuggestionForYou from "./SuggestionForYou/SuggestionForYou";
-import GetPreQualified from "./GetPreQualified/GetPreQualified";
+// import GetPreQualified from "./GetPreQualified/GetPreQualified";
+
+
 
 const FindOrMakeAllSteps: React.FC<FirstTimeBuyer> = () => {
   const [step, setStep] = useState(1);
@@ -41,7 +43,7 @@ const FindOrMakeAllSteps: React.FC<FirstTimeBuyer> = () => {
     setfuelConsuptionType(value);
   };
   const handleNext = () => {
-    if (step < 8) {
+    if (step < 6) {
       setStep((prevStep) => {
         return prevStep + 1;
       });
@@ -66,16 +68,18 @@ const FindOrMakeAllSteps: React.FC<FirstTimeBuyer> = () => {
 
   return (
     <>
+
       <NavigationBar variant="dark" />
       {step > 0 && step < 6 && (
+
         <section
           className={`mt-auto mainWrapperFirstTimeBuyer ${
-            step === 7 && "bg-dark-7"
+            step === 6 && "bg-dark-7"
           }`}
         >
           <div className="container firstTimeBuyerContainerWrapper">
             {/* <h1>FindOrMakeStep {step}</h1> */}
-            {step > 1 && step < 7 && (
+            {step > 1 && step < 6 && (
               <div className=" py-[10px] mb-[28px]">
                 <span
                   className="inline-block"
@@ -101,8 +105,11 @@ const FindOrMakeAllSteps: React.FC<FirstTimeBuyer> = () => {
             {step === 5 && (
               <RidePowerConsuption onChange={handleRidePowerConsuption} />
             )}
+            {step === 6 && <SuggestionForYou />}
+
+            {/* {step === 7 && <GetPreQualified />} */}
           </div>
-          {step < 7 && (
+          {step < 6 && (
             <div className="border-t border-solid border-dark-6 mt-[30px lg:mt-0]">
               <div className="container flex justify-center lg:justify-end items-center py-[12px] lg:py-[30px]">
                 <Button
@@ -124,9 +131,6 @@ const FindOrMakeAllSteps: React.FC<FirstTimeBuyer> = () => {
           )}
         </section>
       )}
-      {step === 6 && <GetPreQualified />}
-
-      {step === 7 && <SuggestionForYou />}
     </>
   );
 };

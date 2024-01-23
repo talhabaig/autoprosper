@@ -81,3 +81,18 @@ export interface GetPreQualifiedSecureFinancing {
   description?: string;
   icon?: React.ReactNode | any;
 }
+
+
+export interface productDetail {
+  id?: number;
+  imageSrc?: string;
+  contentLabel?: string;
+  heading?: string;
+  description?: string;
+  buttonLabel?: string;
+  buttonIcon?: React.ReactNode | any;
+  totalAmount?: number;
+  downPayment?: number;
+  monthlyPayment?: number;
+  totalMilage?: number;
+}

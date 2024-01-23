@@ -26,6 +26,7 @@ const discountAndCreditData: DiscountAndCreditDataItem[] = [
     paragraph:
       "AutoProsper's experts will tailor a personal plan to fit your situation. Better to start sooner than later.",
     buttonLabel: "Learn More",
+    
     buttonIcon: (
       <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
     ),
