@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer/Footer";
+import Footer from "@/components/footer/Footer";
 import AutoProsperAdvnatage from "@/components/home/AutoProsperAdvnatage/AutoProsperAdvnatage";
 import ConsultancyAndGrouth from "@/components/home/ConsultancyAndGrouth/ConsultancyAndGrouth";
 import DiscountCreditHistory from "@/components/home/DiscountCreditHistory/DiscountCreditHistory";
