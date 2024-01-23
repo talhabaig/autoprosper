@@ -1,9 +1,12 @@
+"use client";
 import React from "react";
 import { ArrowDown, ArrowRight, BlueTooth } from "../Icons/Icons";
 import Button from "../Common/Button/Button";
 import Image from "next/image";
 import { productDetail } from "../../assests/interfaces/Home/index";
 import styles from "./ProductDetailSingle.module.css";
+import ProductFilters from "./ProductFilters";
+import Link from "next/link";
 
 const upGradeRideDetails: productDetail[] = [
   {
@@ -25,9 +28,22 @@ const upGradeRideDetails: productDetail[] = [
 ];
 
 const ProductSingle = () => {
+  const handleSortBySelect = (selectedOption: any) => {
+    console.log("Sort By Selected in parent:", selectedOption);
+    // Do something with sortBy and filter
+  };
+
+  const handleInputChnage = (value: string) => {
+    console.log("Filter Selected in parent:", value);
+  };
+
   return (
-    <section className="pt-[24px] pb-[3rem]  2xl:pb-[4rem] 3xl:pb-[6rem] bg-white">
+    <section className="pt-[24px] pb-[3rem]  xl:pb-[6rem] 3xl:pb-[7rem] bg-white">
       <div className="container ">
+        <ProductFilters
+          onOptionSelect={handleSortBySelect}
+          onInputChange={handleInputChnage}
+        />
         {upGradeRideDetails.map((item) => (
           <div
             key={item.id}
@@ -113,12 +129,14 @@ const ProductSingle = () => {
                   </div>
                 </div>
                 <div>
-                  <Button
-                    variant="primary"
-                    label={item.buttonLabel}
-                    children={item.buttonIcon}
-                    className="w-full"
-                  />
+                  <Link href="/get-pre-qualified">
+                    <Button
+                      variant="primary"
+                      label={item.buttonLabel}
+                      children={item.buttonIcon}
+                      className="w-full  lg:max-w-[230px]"
+                    />
+                  </Link>
                 </div>
               </div>
             </div>

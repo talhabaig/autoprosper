@@ -32,7 +32,7 @@ const Finance = () => {
                 What values guide AutoProsper's operations?
               </Link>
             </div>
-          ),
+          ).props.children,
         },
         {
           element: (
@@ -44,7 +44,7 @@ const Finance = () => {
                 What distinguishes AutoProsper's approach to car buying?
               </Link>
             </div>
-          ),
+          ).props.children,
         },
       ],
       button: {

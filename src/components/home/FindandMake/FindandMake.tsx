@@ -34,7 +34,7 @@ const cardData: FindOrMakeCardWithRoute[] = [
     buttonIcon: (
       <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
     ),
-    route: "find-or-make",
+    route: "start-now",
     // buttonVariant: "transparent",
     // buttonIcon:    <ArrowRight  className="fill-gray w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />,
   },
