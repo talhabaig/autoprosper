@@ -144,3 +144,45 @@ input:-webkit-autofill:active {
     min-height: calc(100vh - 230px);
   }
 }
+.active{
+  background-color: transparent !important;
+  color: #001B44 !important;
+  font-weight: 700 !important;
+}
+/* .activeTabs{
+  background-color: #00ffa2;
+} */
+.tabText{
+ border: 1px solid #B7BCC3;
+ width: 24px;
+ height: 24px;
+ border-radius: 100px;
+ display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-size: 14px;
+}
+.active .tabText{
+  background-color: #001B44;
+  color: #fff;
+}
+.vehicleNav .nav-item{
+  margin-right: 10px;
+}
+@media (min-width: 992px) {
+  .mainWrapperFirstTimeBuyer {
+    min-height: calc(100vh - 102px);
+  }
+  .firstTimeBuyerContainerWrapper {
+    min-height: calc(100vh - 230px);
+  }
+}
+@media (max-width: 767px) {
+  .vehicleNav {
+    flex-direction: row !important;
+       width: 500px;
+       overflow: scroll;
+  }
+}
+

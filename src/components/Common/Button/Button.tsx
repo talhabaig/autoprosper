@@ -5,7 +5,7 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 type propType = {
   label?: string;
-  variant?: "primary" | "transparent" | "secondary" | "small" | undefined;
+  variant?: "primary" | "transparent" | "secondary" | "small" | "gray" | undefined;
   className?: string;
   isLoading?: boolean;
   children?: JSX.Element | string;
@@ -36,6 +36,9 @@ const Button: React.FC<propType> = ({
   } else if (variant === "transparent") {
     classList =
       "text-gray border border-solid border-gray text-[0.875rem] xl:text-[1rem]  xl:tarcaking-[1.44px]   min-w-[185px] min-h-[46px] xl:min-w-[220px] xl:min-h-[56px]  rounded-[100px] font-[700] hover:bg-dark hover:text-white";
+  }else if (variant === "gray") {
+    classList =
+      "text-black border border-solid border-gray bg-[#ECEEF1] text-[0.875rem] xl:text-[1rem]  xl:tarcaking-[1.44px]   min-w-[185px] min-h-[46px] xl:min-w-[220px] xl:min-h-[56px]  rounded-[100px] font-[700]";
   }
 
   function handleClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
