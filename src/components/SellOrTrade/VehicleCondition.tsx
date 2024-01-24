@@ -83,11 +83,129 @@ const VehicleCondition = () => {
               onChange={() => handleDivClick(item?.value)}
             />
             <h3 className="text-[#5D6878] lg:text-[18px] py-2 font-[500]">
-              Great
+            {item?.label}
             </h3>
           </div>
         ))}
       </Form>
+      <h3 className="text-[#001B44] text-[18px]  font-[700] mb-2 lg:mt-5">
+        Has the car been in an accident?
+      </h3>
+      <Form className="flex formSelect mt-3">
+        {[
+          { id: 1, label: "radio1", type: "radio", value: "radio1" },
+          { id: 2, type: "radio", label: "radio2", value: "radio2" },
+        ].map((item: any) => (
+          <div
+            key={`default-${item?.type}`}
+            className={`border ${
+              selectedValue === item?.value
+                ? "border-black"
+                : "border-[#B7BCC3]"
+            }  rounded-[12px] cursor-pointer w-[190px] h-[70px] px-4 py-2 mr-4`}
+            onClick={() => handleDivClick(item?.value)}
+          >
+            <Form.Check
+              type={item?.type}
+              id={`default-${item?.id}`}
+              checked={selectedValue === item?.value}
+              onChange={() => handleDivClick(item?.value)}
+            />
+            <h3 className="text-[#5D6878] lg:text-[18px] py-2 font-[500]">
+            {item?.label}
+            </h3>
+          </div>
+        ))}
+      </Form>
+      <h3 className="text-[#001B44] text-[18px]  font-[700] mb-2 lg:mt-5">
+        Has the car been smoked in?
+      </h3>
+      <Form className="flex formSelect mt-3">
+        {[
+          { id: 1, label: "radio1", type: "radio", value: "radio1" },
+          { id: 2, type: "radio", label: "radio2", value: "radio2" },
+        ].map((item: any) => (
+          <div
+            key={`default-${item?.type}`}
+            className={`border ${
+              selectedValue === item?.value
+                ? "border-black"
+                : "border-[#B7BCC3]"
+            }  rounded-[12px] cursor-pointer w-[190px] h-[70px] px-4 py-2 mr-4`}
+            onClick={() => handleDivClick(item?.value)}
+          >
+            <Form.Check
+              type={item?.type}
+              id={`default-${item?.id}`}
+              checked={selectedValue === item?.value}
+              onChange={() => handleDivClick(item?.value)}
+            />
+            <h3 className="text-[#5D6878] lg:text-[18px] py-2 font-[500]">
+            {item?.label}
+            </h3>
+          </div>
+        ))}
+      </Form>
+      <h3 className="text-[#001B44] text-[18px]  font-[700] mb-2 lg:mt-5">
+        Any active loan or lease on the car?      
+      </h3>
+      <Form className="flex formSelect mt-3">
+        {[
+          { id: 1, label: "radio1", type: "radio", value: "radio1" },
+          { id: 2, type: "radio", label: "radio2", value: "radio2" },
+          { id: 3, label: "radio3", type: "radio", value: "radio3" },
+        ].map((item: any) => (
+          <div
+            key={`default-${item?.type}`}
+            className={`border ${
+              selectedValue === item?.value
+                ? "border-black"
+                : "border-[#B7BCC3]"
+            }  rounded-[12px] cursor-pointer w-[190px] h-[70px] px-4 py-2 mr-4`}
+            onClick={() => handleDivClick(item?.value)}
+          >
+            <Form.Check
+              type={item?.type}
+              id={`default-${item?.id}`}
+              checked={selectedValue === item?.value}
+              onChange={() => handleDivClick(item?.value)}
+            />
+            <h3 className="text-[#5D6878] lg:text-[18px] py-2 font-[500]">
+            {item?.label}
+            </h3>
+          </div>
+        ))}
+      </Form>
+      <h3 className="text-[#001B44] text-[18px]  font-[700] mb-2 lg:mt-5">
+        How many keys are available?     
+      </h3>
+      <Form className="flex formSelect mt-3">
+        {[
+          { id: 1, label: "1", type: "radio", value: "radio1" },
+          { id: 2, type: "radio", label: "2", value: "radio2" },
+        ].map((item: any) => (
+          <div
+            key={`default-${item?.type}`}
+            className={`border ${
+              selectedValue === item?.value
+                ? "border-black"
+                : "border-[#B7BCC3]"
+            }  rounded-[12px] cursor-pointer w-[190px] h-[70px] px-4 py-2 mr-4`}
+            onClick={() => handleDivClick(item?.value)}
+          >
+            <Form.Check
+              type={item?.type}
+              id={`default-${item?.id}`}
+              checked={selectedValue === item?.value}
+              onChange={() => handleDivClick(item?.value)}
+            />
+            <h2 className="text-[#5D6878] lg:text-[18px] py-2 font-[500]">
+              {item?.label}
+            </h2>
+          </div>
+        ))}
+      </Form>
+      
     </>
   );
 };

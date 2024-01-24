@@ -32,7 +32,7 @@ const VehicleDetail = () => {
     <div className="flex md:max-w-[890px] w-full justify-center">
       <div className="w-full font- [400]">
         <h1 className="heading text-left  text-[#001B44] text-[32px] lg:text-[56px] mb-[20px] font-[400]">
-          Detail
+          Details
         </h1>
         <p className="text-left text-[#4B5768]  text-[20px] font-[400] ">
           Unable to find a vehicle without specific details
