@@ -82,7 +82,7 @@ const RadioButtonImage: React.FC<RadioButtonImagesProps> = ({
       {options.map((option) => (
         <label
           key={option.label}
-          className={`${className} ${styles.customRadio} max-w-[46%] w-full min-h-[80px] md:max-w-[216px] md:min-h-[141px] border border-solid border-dark-5 rounded-[12px] bg-white cursor-pointer relative p-[12px] md:p-[24px] text-dark-3 group hover:!border-dark hover:!text-dark ${
+          className={`${className} ${styles.customRadio} max-w-[46%] w-full min-h-[80px] md:max-w-[216px] lg:min-h-[141px] border border-solid border-dark-5 rounded-[12px] bg-white cursor-pointer relative p-[12px] md:p-[24px] text-dark-3 group hover:!border-dark hover:!text-dark ${
             selectedOptions.includes(option.label) ? "!border-dark !text-dark" : ""
           }`}
         >
@@ -99,7 +99,7 @@ const RadioButtonImage: React.FC<RadioButtonImagesProps> = ({
             <div className="flex flex-col gap-6">
               {renderImage(option.image, option.label)}
               <div className="flex flex-col gap-3">
-                <h3 className="text-[0.875rem] md:text-[1rem] lg:text-[1.125rem] font-medium ">
+                <h3 className="text-[0.875rem] md:text-[1rem] lg:text-[1.125rem] font-medium">
                   {option.label}
                 </h3>
                 {typeof option.sub === "string" ? (

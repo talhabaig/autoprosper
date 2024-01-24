@@ -15,8 +15,8 @@ const ZipCode: React.FC<ZipCodeProps> = ({ onChange }) => {
           Could you provide your ZIP code, please?
         </p>
       </div>
-      <div className="flex gap-[12px] justify-center lg:gap-[24px]  items-stretch flex-wrap pb-[30px] 2xl:pb-[50px]">
-        <TextBox className="min-w-[456px] text-lg" label="Zip Code" onChange={(e) => onChange(e.target.value) } />
+      <div className="flex gap-[12px] md:max-w-[456px] w-full justify-center mx-auto lg:gap-[24px]  items-stretch flex-wrap pb-[30px] 2xl:pb-[50px]">
+        <TextBox className="text-sm md:text-lg" label="Zip Code" onChange={(e) => onChange(e.target.value) } />
       </div>
     </>
   );

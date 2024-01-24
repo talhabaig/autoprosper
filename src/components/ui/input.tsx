@@ -74,7 +74,7 @@ const TextBox = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
     const randomId = Math.floor(Math.random() * (100 - 0) + 0);
     return (
-      <div className="relative flex items-center gap-3 rounded-xl px-5 py-[17px] bg-gray-50 border-[1px] border-dark-4 appearance-none">
+      <div className="relative w-full flex items-center gap-3 rounded-xl px-5 py-[17px] bg-gray-50 border-[1px] border-dark-4 appearance-none">
         <input
           type={type}
           className={cn(

@@ -45,7 +45,7 @@ const Trim: React.FC = () => {
 
   return (
     <>
-      <div className="flex">
+      <div className="flex justify-center md:justify-start">
         {filters.map((f) => (
           <Button
             onClick={() => setFilter(f)}

@@ -17,7 +17,7 @@ const Package: React.FC = () => {
       id: 2,
       label: "Basic ($800)",
       sub: (
-        <ul className="list-disc ml-6">
+        <ul className="list-disc ml-6 text-[10px] lg:text-[12px] text-dark-3">
           <li>18”X8.0” Multi Spoke Bi Color</li>
           <li>Wheels</li>
           <li>Wireless Charging</li>
@@ -28,7 +28,7 @@ const Package: React.FC = () => {
       id: 2,
       label: "Well-Equpped",
       sub: (
-        <ul className="list-disc ml-6">
+        <ul className="list-disc ml-6 text-[10px] lg:text-[12px] text-dark-3">
           <li>18”X8.0” Multi Spoke Bi Color</li>
           <li>Wheels</li>
           <li>Wireless Charging</li>
@@ -38,12 +38,12 @@ const Package: React.FC = () => {
   ];
 
   return (
-    <div className="grid grid-cols-4 gap-[12px] justify-center lg:gap-[24px]">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-[12px] justify-center lg:gap-[24px] pb-[30px] 2xl:pb-[50px]">
       <RadioButtonImage
         options={options}
         selectedOptions={selectedOptions}
         onChange={handleOptionChange}
-        className=""
+        className="!min-w-[100%]"
         allowMultiple={false}
       />
     </div>

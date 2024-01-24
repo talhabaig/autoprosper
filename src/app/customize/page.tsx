@@ -1,9 +1,9 @@
 "use client";
-import CustomizeByBrand from "@/components/CustomizePage/CustomizeByBrand";
+import Customize from "@/components/CustomizePage/Customize";
 import React from "react";
 
 const CustomizeBrand = () => {
-  return <CustomizeByBrand />;
+  return <Customize />;
 };
 
 export default CustomizeBrand;

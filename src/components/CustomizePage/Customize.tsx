@@ -14,6 +14,7 @@ import Exterior from "./CustomizeSteps/Exterior";
 import Interior from "./CustomizeSteps/Interior";
 import Package from "./CustomizeSteps/Package";
 import Incentives from "./CustomizeSteps/Incentives";
+import Review from "./CustomizeSteps/Review";
 
 interface StepConfig {
   key: string;
@@ -40,48 +41,63 @@ const CustomizeByBrand: React.FC = () => {
       text: "Trim",
       content: <Trim />,
       title: "Select trim",
-      subTitle: "Choose a trim level for the BMW 2 Series model"
+      subTitle: "Choose a trim level for the BMW 2 Series model",
+      displaySkipButton: true,
+      displayNextButton: true,
     },
     {
       id: 2,
       text: "Drivetrain",
       content: <Drivetrain />,
       title: "Select drivetrain",
-      subTitle: "Pick the desired drivetrain option for your car to suit your preferences."
+      subTitle: "Pick the desired drivetrain option for your car to suit your preferences.",
+      displaySkipButton: true,
+      displayNextButton: true,
     },
     {
       id: 3,
       text: "Exterior",
       title: "Exterior color",
       subTitle: "Select the perfect exterior color for your car to match your style.",
-      content: <Exterior />
+      content: <Exterior />,
+      displaySkipButton: true,
+      displayNextButton: true,
     },
     {
       id: 4,
       text: "Interior",
       title: "Interior color",
       subTitle: "Select the perfect interior color for your car to match your style.",
-      content: <Interior />
+      content: <Interior />,
+      displaySkipButton: true,
+      displayNextButton: true,
     },
     {
       id: 5,
       text: "Package",
       title: "Choose package",
       subTitle: "Popular options in stock or customized assistance available",
-      content: <Package />
+      content: <Package />,
+      displaySkipButton: true,
+      displayNextButton: true,
     },
     {
       id: 6,
       text: "Incentives",
       title: "Available incentives ",
       subTitle: "Explore potential incentives available to you for added savings and benefits.",
-      content: <Incentives />
+      content: <Incentives />,
+      displaySkipButton: true,
+      displayNextButton: true,
     },
     {
       id: 7,
       text: "Reviews",
-      title: "Select drivetrain",
-      subTitle: "Pick the desired drivetrain option for your car to suit your preferences."
+      title: "Reviews",
+      subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      content: <Review />,
+      displaySkipButton: true,
+      displayNextButton: true,
     },
   ];
 
@@ -119,7 +135,7 @@ const CustomizeByBrand: React.FC = () => {
         setCustomizeStep((prevStep) => prevStep + 1);
       },
       handlePrev: () => {
-        if (customizeStep >= 0) {
+        if (customizeStep > 0) {
           setCustomizeStep((prevStep) => prevStep - 1);
         } else {
           handleBack()
@@ -157,6 +173,8 @@ const CustomizeByBrand: React.FC = () => {
   }, [step, data]);
 
   const currentStepConfig = stepsConfig[step];
+  const currentCustomizeStepConfig = customizeSteps[customizeStep];
+  const isComplete =  step == stepsConfig.length - 1
 
   return (
     <>
@@ -182,7 +200,16 @@ const CustomizeByBrand: React.FC = () => {
             currentStepConfig.displaySkipButton) && (
             <div className="border-t border-solid border-dark-6 mt-[30px lg:mt-0]">
               <div className="container flex justify-center lg:justify-end items-center py-[12px] lg:py-[30px]">
-                {currentStepConfig.displayNextButton && (
+              {(currentStepConfig.displaySkipButton || (currentCustomizeStepConfig.displaySkipButton && isComplete)) && (
+                  <Button
+                    variant="transparent"
+                    className="lg:min-h-[56px] ml-2 bg-dark-7 !text-dark !border-0 hover:bg-dark-6"
+                    onClick={handleSkip}
+                  >
+                    Skip for now
+                  </Button>
+                )}
+                {(currentStepConfig.displayNextButton || (currentCustomizeStepConfig.displayNextButton && isComplete))&& (
                   <Button
                     variant="small"
                     className="lg:min-h-[56px]"
@@ -193,15 +220,6 @@ const CustomizeByBrand: React.FC = () => {
                       <span className="hidden lg:inline-block">Continue</span>
                       <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
                     </>
-                  </Button>
-                )}
-                {currentStepConfig.displaySkipButton && (
-                  <Button
-                    variant="small"
-                    className="lg:min-h-[56px] ml-2"
-                    onClick={handleSkip}
-                  >
-                    Skip
                   </Button>
                 )}
               </div>
