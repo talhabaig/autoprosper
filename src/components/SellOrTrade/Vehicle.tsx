@@ -9,10 +9,10 @@ const Vehicle = () => {
     <>
       <div className="flex md:max-w-[890px] w-full justify-center">
         <div className="w-full font- [400]">
-          <h1 className="heading text-left  text-[#001B44] text-[32px] lg:text-[56px]  mb-[20px]  ">
+          <h1 className="heading text-left  text-[#001B44] text-[32px] lg:text-[56px] font-[400]  mb-[20px]  ">
             Vehicle
           </h1>
-          <p className="text-left text-[#4B5768] lg:text-[20px] ">
+          <p className="text-left text-[#4B5768] font-[400] lg:text-[20px] ">
             Unable to find a vehicle without specific details
           </p>
           <Tab.Container id="left-tabs-example" defaultActiveKey="first">

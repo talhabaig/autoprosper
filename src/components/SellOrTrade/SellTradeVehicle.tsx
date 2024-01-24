@@ -27,44 +27,46 @@ const SellTradeVehicle = () => {
               <h1 className="text-left  text-[#001B44] lg:text-[32px]  font-[700] mb-[15px]">
                 Sell/Trade
               </h1>
-              <p className="text-left text-[#5D6878]  lg:text-sm lg:mb-10px">
+              <p className="text-left text-[#5D6878] text-[14px]  font-[400   lg:mb-10px">
                 Either transform it into your dream ride online or <br />
                 effortlessly sell for the best offers at home.
               </p>
-              <Nav variant="pills" className="flex-column vehicleNav firstTab">
-                <Nav.Item>
-                  <Nav.Link
-                    eventKey="first"
-                    className="text-left px-0 text-[#B7BCC3]  hover:text-[#B7BCC3]"
-                  >
-                    <span className="tabText">1</span> Vehicle
-                  </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link
-                    eventKey="second"
-                    className="text-left px-0 text-[#B7BCC3]  hover:text-[#B7BCC3]"
-                  >
-                    <span className="tabText">2</span> Details
-                  </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link
-                    eventKey="third"
-                    className="text-left px-0 text-[#B7BCC3]  hover:text-[#B7BCC3]"
-                  >
-                    <span className="tabText">3</span> Condition
-                  </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link
-                    eventKey="forth"
-                    className="text-left px-0 text-[#B7BCC3]  hover:text-[#B7BCC3]"
-                  >
-                    <span className="tabText">4</span> Information
-                  </Nav.Link>
-                </Nav.Item>
-              </Nav>
+              <div className="firstTab">
+                <Nav variant="pills" className="flex-column vehicleNav ">
+                  <Nav.Item>
+                    <Nav.Link
+                      eventKey="first"
+                      className="text-left px-0 text-[#B7BCC3]  hover:text-[#B7BCC3]"
+                    >
+                      <span className="tabText">1</span> Vehicle
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link
+                      eventKey="second"
+                      className="text-left px-0 text-[#B7BCC3]  hover:text-[#B7BCC3]"
+                    >
+                      <span className="tabText">2</span> Details
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link
+                      eventKey="third"
+                      className="text-left px-0 text-[#B7BCC3]  hover:text-[#B7BCC3]"
+                    >
+                      <span className="tabText">3</span> Condition
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link
+                      eventKey="forth"
+                      className="text-left px-0 text-[#B7BCC3]  hover:text-[#B7BCC3]"
+                    >
+                      <span className="tabText">4</span> Information
+                    </Nav.Link>
+                  </Nav.Item>
+                </Nav>
+              </div>
             </div>
             <div className="flex md:max-w-[890px] w-full ">
               <Tab.Content>

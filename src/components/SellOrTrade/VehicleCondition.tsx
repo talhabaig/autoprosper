@@ -9,10 +9,10 @@ const VehicleCondition = () => {
   };
   return (
     <>
-      <h1 className="text-left heading  text-[#001B44] text-[32px] lg:text-[56px]  font-[700] mb-[15px]">
+      <h1 className="text-left heading  text-[#001B44] text-[32px] lg:text-[56px]  font-[400] mb-[15px]">
         Condition
       </h1>
-      <p className="text-left text-[#5D6878]  lg:text-sm lg:mb-10px">
+      <p className="text-left text-[#5D6878]  lg:mb-10px font-[400] text-[20px]">
         Tell us a little more about your vehicle so we can determine your offer.
         Your offer will be finalized after condition has been verified by
         inspection.
@@ -73,7 +73,7 @@ const VehicleCondition = () => {
               selectedValue === item?.value
                 ? "border-black"
                 : "border-[#B7BCC3]"
-            } rounded cursor-pointer w-[190px] h-[70px] px-4 py-2 mr-4`}
+            }  rounded-[12px] cursor-pointer w-[190px] h-[70px] px-4 py-2 mr-4`}
             onClick={() => handleDivClick(item?.value)}
           >
             <Form.Check
