@@ -1,13 +1,20 @@
 "use client";
 import React from "react";
 import { BackArrow } from "../Icons/Icons";
-import { Tab, Tabs } from "../Common/Tabs/Tabs";
+// import { Tab, Tabs } from "../Common/Tabs/Tabs";
 import Vehicle from "./Vehicle";
 import VehicleDetail from "./VehicleDetail";
+import LeftTabsExample from "../Common/Tabs/SideBarTab";
+
+import Col from 'react-bootstrap/Col';
+import Nav from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+import Tab from 'react-bootstrap/Tab';
 
 const SellTradeVehicle = () => {
   return (
     <>
+    <Tab.Container id="left-tabs-example" defaultActiveKey="first">
       <div className="mt-[60px] px-[14px] max-w-full text-center md:py-[0px] flex flex-col md:flex-row md:gap-[30px] justify-between md:justify-center md:px-10 lg:px-[159px] mx-auto">
         <div className="w-full md:max-w-[590px] flex flex-col  ">
           <a
@@ -23,50 +30,30 @@ const SellTradeVehicle = () => {
           <p className="text-left text-[#5D6878]  lg:text-sm lg:mb-0">
             Either transform it into your dream ride online or <br />
             effortlessly sell for the best offers at home.
-          </p>
-
-          <Tabs vertical={true}>
-            <Tab component={<Vehicle />}>Vehicle</Tab>
-            <Tab component="content of tab 2" active>Details</Tab>
-            {/* <Tab component={<VehicleDetail />}>
-              Details
-            </Tab> */}
-            <Tab component="content of tab 3">Condition</Tab>
-            <Tab component="content of tab 4">Information</Tab>
-          </Tabs>
-          
+          </p>  
+          <Nav variant="pills" className="flex-column">
+            <Nav.Item>
+              <Nav.Link eventKey="first">Vehicle</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="second">Details</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="third">Condition</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="forth">Information</Nav.Link>
+            </Nav.Item>
+          </Nav>
         </div>
         <div className="flex md:max-w-[890px] w-full justify-center">
-          <div className="w-full font- [400]">
-            <h1 className="text-left  text-[#001B44] lg:text-[56px]  mb-[20px]">
-              Vehicle
-            </h1>
-            <p className="text-left text-[#4B5768] lg:text-[20px] ">
-              Unable to find a vehicle without specific details
-            </p>
-            <Tabs>
-              <Tab component="content of tab 1" active>Tab 1</Tab>
-              <Tab component="content of tab 2">
-                Tab 2
-              </Tab>
-              <Tab component="content of tab 3">Tab 3</Tab>
-              <Tab component="content of tab 4">Tab 4</Tab>
-              <p>fgsdgs</p>
-            </Tabs>
-            <a
-              href=""
-              className="block text-left underline  text-[#001B44] lg:text-[14px]  mb-[20px] font-[700]"
-            >
-              Where is my VIN?
-            </a>
-            <input
-              type="text"
-              placeholder="VIN (Vehicle Identification Number)"
-              className=" block w-[350px] md:w-[456px] h-[72px] rounded-[12px] border-solid border-2 border-[#8E97A6] indent-4"
-            />
-          </div>
+        <Tab.Content>
+            <Tab.Pane eventKey="first"><Vehicle /></Tab.Pane>
+            <Tab.Pane eventKey="second"><VehicleDetail /></Tab.Pane>
+          </Tab.Content>
         </div>
       </div>
+      </Tab.Container>
     </>
   );
 }

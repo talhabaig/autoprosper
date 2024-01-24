@@ -35,14 +35,16 @@ export function Tabs({ children, vertical = false }: any) {
         ))}
       </div>
       <div className={`p-5 ${vertical ? "flex flex-col" : ""}`}>
-        {children.map((item: any, i: any) => (
-          <div
+        {children.map((item: any, i: any) => {
+          return(
+            <div
             key={`content-${i}`}
             className={` ${i === activeTab ? "flex" : "hidden"}`}
           >
             {item.props.component}
           </div>
-        ))}
+          )
+        })}
       </div>
     </>
   );
