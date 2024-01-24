@@ -12,8 +12,6 @@ import NavigationBar from "../ui/Navigations/navigationBar";
 import Button from "../Common/Button/Button";
 import SuggestionForYou from "./SuggestionForYou/SuggestionForYou";
 
-
-
 const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
   const [step, setStep] = useState(1);
   const [essentialFeatures, setessentialFeatures] = useState<string[]>([]);
@@ -72,8 +70,12 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
 
   return (
     <>
-      <NavigationBar variant="dark"/>
-      <section className={`mt-auto mainWrapperFirstTimeBuyer ${step === 6 && 'bg-dark-7'}`}>
+      <NavigationBar variant="dark" />
+      <section
+        className={`mt-auto mainWrapperFirstTimeBuyer ${
+          step === 6 && "bg-dark-7"
+        }`}
+      >
         <div className="container firstTimeBuyerContainerWrapper">
           {/* <h1>Step {step}</h1> */}
           {step > 1 && step < 6 && (

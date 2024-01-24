@@ -61,6 +61,7 @@ export interface SuggestionForCustomer {
   variant?: string;
 }
 
+
 export interface FormData {
   firstName: string;
   middleName: string;
@@ -81,6 +82,7 @@ export interface GetPreQualifiedSecureFinancing {
   icon?: React.ReactNode | any;
 }
 
+
 export interface productDetail {
   id?: number;
   imageSrc?: string;
@@ -93,19 +95,4 @@ export interface productDetail {
   downPayment?: number;
   monthlyPayment?: number;
   totalMilage?: number;
-}
-
-export interface Option {
-  value?: string;
-  label?: string;
-}
-
-export interface ProductFilterState {
-  sortBy?: string;
-  filter?: string;
-}
-
-export interface ProductFiltersProps {
-  onOptionSelect: (options: { sortBy?: string; filter?: string }) => void;
-  onInputChange: (inputValue: string) => void;
 }
