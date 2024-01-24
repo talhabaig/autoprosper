@@ -6,7 +6,7 @@ import React from "react";
 const page = () => {
   return (
     <>
-      <NavigationBar />
+      <NavigationBar variant ='dark'/>
       <GetPreQualified />
     </>
   );

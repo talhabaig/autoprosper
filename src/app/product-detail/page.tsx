@@ -7,7 +7,7 @@ import Footer from "@/components/footer/Footer";
 const page = () => {
   return (
     <>
-      <NavigationBar />
+      <NavigationBar variant ='dark' />
       <ProductSingle /> <Footer />
     </>
   );
