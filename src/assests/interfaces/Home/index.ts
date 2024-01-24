@@ -95,9 +95,6 @@ export interface productDetail {
   downPayment?: number;
   monthlyPayment?: number;
   totalMilage?: number;
-<<<<<<< HEAD
-}
-=======
 }
 
 export interface Option {
@@ -157,4 +154,3 @@ export interface userAddressDetails {
   status?: string;
   zipCode?: string;
 }
->>>>>>> 214883e7251e35a2ee4465e2e35efbec9b882b6f

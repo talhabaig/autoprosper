@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Tab, Tabs } from "../Common/Tabs/Tabs";
 import { Select } from "../ui/input";
 import CustomInput from "../Common/InputField/InputField";
 

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { BackArrow } from "../Icons/Icons";
-// import { Tab, Tabs } from "../Common/Tabs/Tabs";
 import Vehicle from "./Vehicle";
 import VehicleDetail from "./VehicleDetail";
 import Nav from "react-bootstrap/Nav";
