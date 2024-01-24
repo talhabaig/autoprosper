@@ -1,4 +1,3 @@
-import styles from "./SellTradeVehicle.module.css";
 import { useState } from "react";
 
 import Form from "react-bootstrap/Form";
