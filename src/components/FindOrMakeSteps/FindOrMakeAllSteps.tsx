@@ -13,8 +13,6 @@ import Button from "../Common/Button/Button";
 import SuggestionForYou from "./SuggestionForYou/SuggestionForYou";
 // import GetPreQualified from "./GetPreQualified/GetPreQualified";
 
-
-
 const FindOrMakeAllSteps: React.FC<FirstTimeBuyer> = () => {
   const [step, setStep] = useState(1);
   const [essentialFeatures, setessentialFeatures] = useState<string[]>([]);
@@ -68,10 +66,9 @@ const FindOrMakeAllSteps: React.FC<FirstTimeBuyer> = () => {
 
   return (
     <>
-
       <NavigationBar variant="dark" />
-      {step > 0 && step < 6 && (
-
+      {/* && step < 6 */}
+      {step > 0 && (
         <section
           className={`mt-auto mainWrapperFirstTimeBuyer ${
             step === 6 && "bg-dark-7"

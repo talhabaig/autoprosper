@@ -28,7 +28,7 @@ const Service = () => {
                 What values guide AutoProsper's operations?
               </Link>
             </div>
-          ),
+          ).props.children,
         },
         {
           element: (

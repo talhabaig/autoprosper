@@ -136,6 +136,9 @@ input:-webkit-autofill:active {
   display: none;
 }
 
+.filterWrapper .css-13cymwt-control{
+  display: none;
+}
 @media (min-width: 992px) {
   .mainWrapperFirstTimeBuyer {
     min-height: calc(100vh - 102px);

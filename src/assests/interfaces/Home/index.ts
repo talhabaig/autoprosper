@@ -61,7 +61,6 @@ export interface SuggestionForCustomer {
   variant?: string;
 }
 
-
 export interface FormData {
   firstName: string;
   middleName: string;
@@ -82,7 +81,6 @@ export interface GetPreQualifiedSecureFinancing {
   icon?: React.ReactNode | any;
 }
 
-
 export interface productDetail {
   id?: number;
   imageSrc?: string;
@@ -95,4 +93,62 @@ export interface productDetail {
   downPayment?: number;
   monthlyPayment?: number;
   totalMilage?: number;
+}
+
+export interface Option {
+  value?: string;
+  label?: string;
+}
+
+export interface ProductFilterState {
+  sortBy?: string;
+  filter?: string;
+}
+
+export interface ProductFiltersProps {
+  onOptionSelect: (options: { sortBy?: string; filter?: string }) => void;
+  onInputChange: (inputValue: string) => void;
+}
+
+export interface LowerCarPaymentForm {
+  firstName?: string;
+  lastName?: string;
+  phoneNumber?: string;
+  emailAddress?: string;
+  streetAddress?: string;
+  unitName?: string;
+  city?: string;
+  status?: string;
+  zipCode?: string;
+  car?: string;
+  year?: string;
+  make?: string;
+  model?: string;
+  vin?: string;
+  currentMonthlyPayment?: string;
+  currentInterestRate?: string;
+  payOffAmount?: string;
+  totalMonths?: string;
+}
+export interface LowerCarPaymentForm {
+  userNameDetais?: string[];
+  userAddressDetails?: string[];
+  carDetails?: string[];
+  carPaymentDetails?: string[];
+}
+
+export interface userNameAndEmailDetails {
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  emailAddress: string;
+}
+
+
+export interface userAddressDetails {
+  streetAddress?: string;
+  unitName?: string;
+  city?: string;
+  status?: string;
+  zipCode?: string;
 }
