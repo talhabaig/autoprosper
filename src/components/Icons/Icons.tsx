@@ -2040,6 +2040,7 @@ export const DrivingKid: React.FC<propType> = ({
     </svg>
   );
 };
+ 
 
 
 export const PinLocation: React.FC<propType> = ({
@@ -2086,4 +2087,4 @@ export const EditIcon: React.FC<propType> = ({
       />
     </svg>
   );
-};
+}; 
