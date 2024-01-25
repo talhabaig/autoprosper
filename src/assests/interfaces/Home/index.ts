@@ -61,6 +61,7 @@ export interface SuggestionForCustomer {
   variant?: string;
 }
 
+
 export interface FormData {
   firstName: string;
   middleName: string;
@@ -80,6 +81,7 @@ export interface GetPreQualifiedSecureFinancing {
   description?: string;
   icon?: React.ReactNode | any;
 }
+
 
 export interface productDetail {
   id?: number;
