@@ -1,34 +1,12 @@
+"use client";
 import React, { useState } from "react";
-import { ConvertibleIcon } from "../Icons/BodyStyleIcons";
-import { Select } from "../ui/input";
-import { ToyotaIcon } from "../Icons/BrandIcons";
 import Image from "next/image";
 import { EllipseGradient } from "../ui/ellipseGradient";
 import Button from "../Common/Button/Button";
 
-interface FormData {
-  color: string;
-}
-
-const options = [
-  { value: "option1", label: "Arctic Frost Pearl1" },
-  { value: "option2", label: "Arctic Frost Pearl2" },
-  { value: "option3", label: "Arctic Frost Pearl3" },
-];
 const YourCashOffer = () => {
-  const [formData, setFormData] = useState<FormData>({
-    color: "",
-  });
-
-  const InputHandler = (fieldName: string, value: string) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [fieldName]: value,
-    }));
-    console.log("Email changed:", formData);
-  };
   return (
-    <div className="w-[456px]">
+    <div className="w-[456px] m-auto">
       <div className="flex min-h-[187px] relative justify-center">
         <Image
           src="/home/red-toyota.png"

@@ -1,13 +1,16 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { BackArrow } from "../Icons/Icons";
 import Vehicle from "./Vehicle";
 import VehicleDetail from "./VehicleDetail";
 import VehicleCondition from "./VehicleCondition";
 import VehicleInformation from "./VehicleInformation";
+import CalculatingOffer from "./CalculatingOffer";
+import Button from "../Common/Button/Button";
+import YourVehicle from "./YourVehicle";
 
 const SellTradeVehicle: React.FC = () => {
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(0);
 
   const handleStepChange = (step: number) => {
     setActiveStep(step);
@@ -33,79 +36,107 @@ const SellTradeVehicle: React.FC = () => {
               Either transform it into your dream ride online or <br />
               effortlessly sell for the best offers at home.
             </p>
-            <div className="firstTab">
-              <div className="flex-column vehicleNav ">
+            <div className="TabBtn firstTab">
+              <div className="flex md:flex-col flex-column vehicleNav ">
                 <button
-                  onClick={() => handleStepChange(1)}
+                  onClick={() => handleStepChange(0)}
                   className={`text-left px-0 ${
-                    activeStep === 1
-                      ? "text-[#B7BCC3] hover:text-[#B7BCC3]"
-                      : "text-gray-500"
+                    activeStep === 0 ? "text-[#000]" : "text-gray-500"
                   }`}
                 >
-                  <span className="tabText">1</span> Vehicle
+                  <span
+                    className={`tabText text-left px-0 ${
+                      activeStep === 0
+                        ? "bg-black text-white"
+                        : "bg-[default-color] text-[default-color]"
+                    }`}
+                  >
+                    1
+                  </span>{" "}
+                  Vehicle
                 </button>
                 <button
                   onClick={() => handleStepChange(2)}
                   className={`text-left px-0 ${
-                    activeStep === 2
-                      ? "text-[#B7BCC3] hover:text-[#B7BCC3]"
-                      : "text-gray-500"
+                    activeStep === 2 ? "text-[#000]" : "text-gray-500"
                   }`}
                 >
-                  <span className="tabText">2</span> Details
+                  <span
+                    className={`tabText text-left px-0 ${
+                      activeStep === 2
+                        ? "bg-black text-white"
+                        : "bg-[default-color] text-[default-color]"
+                    }`}
+                  >
+                    2
+                  </span>{" "}
+                  Details
                 </button>
                 <button
                   onClick={() => handleStepChange(3)}
                   className={`text-left px-0 ${
-                    activeStep === 3
-                      ? "text-[#B7BCC3] hover:text-[#B7BCC3]"
-                      : "text-gray-500"
+                    activeStep === 3 ? "text-[#000]" : "text-gray-500"
                   }`}
                 >
-                  <span className="tabText">3</span> Condition
+                  <span
+                    className={`tabText text-left px-0 ${
+                      activeStep === 3
+                        ? "bg-black text-white"
+                        : "bg-[default-color] text-[default-color]"
+                    }`}
+                  >
+                    3
+                  </span>{" "}
+                  Condition
                 </button>
                 <button
                   onClick={() => handleStepChange(4)}
                   className={`text-left px-0 ${
-                    activeStep === 4
-                      ? "text-[#B7BCC3] hover:text-[#B7BCC3]"
-                      : "text-gray-500"
+                    activeStep === 4 ? "text-[#000]" : "text-gray-500"
                   }`}
                 >
-                  <span className="tabText">4</span> Information
+                  <span
+                    className={`tabText text-left px-0 ${
+                      activeStep === 4
+                        ? "bg-black text-white"
+                        : "bg-[default-color] text-[default-color]"
+                    }`}
+                  >
+                    4
+                  </span>{" "}
+                  Information
                 </button>
               </div>
             </div>
           </div>
           <div className="flex md:max-w-[890px] w-full ">
-            <div>
-              {activeStep === 1 && <Vehicle />}
+            <div className="m-auto md:m-0">
+              {activeStep === 0 && <Vehicle />}
+              {activeStep === 1 && <YourVehicle />}
               {activeStep === 2 && <VehicleDetail />}
               {activeStep === 3 && <VehicleCondition />}
               {activeStep === 4 && <VehicleInformation />}
+              {activeStep === 5 && <CalculatingOffer />}
             </div>
           </div>
         </div>
       </div>
-      <div className="footerBox">
-        {activeStep > 1 && (
-          <button
+      <div className={`${activeStep === 5 ? " hidden" : "block footerBox"} `}>
+        {activeStep > 0 && (
+          <Button
+            variant="gray"
             className="mr-3"
             onClick={() => handleStepChange(activeStep - 1)}
           >
             Back
-          </button>
+          </Button>
         )}
-        {activeStep < 4 ? (
-          <button
-            className=""
-            onClick={() => handleStepChange(activeStep + 1)}
-          >
+        {activeStep < 5 ? (
+          <Button className="" onClick={() => handleStepChange(activeStep + 1)}>
             Continue
-          </button>
+          </Button>
         ) : (
-          <button className="">Find vehicle</button>
+          <Button className="">Find vehicle</Button>
         )}
       </div>
     </>

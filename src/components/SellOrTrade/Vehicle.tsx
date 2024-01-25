@@ -13,13 +13,13 @@ const Vehicle = () => {
           <p className="text-left text-[#4B5768] font-[400] lg:text-[20px] ">
             Unable to find a vehicle without specific details
           </p>
-          <div className="flex space-x-6 mt-6">
+          <div className="flex space-x-6 mt-6 vinTab">
             <button
               onClick={() => setActiveTab("first")}
-              className={`text-left ${
+              className={`text-left  ${
                 activeTab === "first"
-                  ? "text-[#B7BCC3] hover:text-[#B7BCC3]"
-                  : "text-[#4B5768]"
+                  ? "bg-black text-white"
+                  : "bg-[default-color] text-[default-color]"
               }`}
             >
               VIN
@@ -28,8 +28,8 @@ const Vehicle = () => {
               onClick={() => setActiveTab("second")}
               className={`text-left ${
                 activeTab === "second"
-                  ? "text-[#B7BCC3] hover:text-[#B7BCC3]"
-                  : "text-[#4B5768]"
+                  ? "bg-black text-white"
+                  : "bg-[default-color] text-[default-color]"
               }`}
             >
               License Plate
@@ -38,8 +38,8 @@ const Vehicle = () => {
               onClick={() => setActiveTab("third")}
               className={`text-left ${
                 activeTab === "third"
-                  ? "text-[#B7BCC3] hover:text-[#B7BCC3]"
-                  : "text-[#4B5768]"
+                  ? "bg-black text-white"
+                  : "bg-[default-color] text-[default-color]"
               }`}
             >
               Make/Model
