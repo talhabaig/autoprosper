@@ -121,7 +121,7 @@ const SellTradeVehicle: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className={`${activeStep === 5 ? " hidden" : "block footerBox"} `}>
+      <div className={`${activeStep === 5 ? " hidden" : "flex footerBox"} `}>
         {activeStep > 0 && (
           <Button
             variant="gray"
