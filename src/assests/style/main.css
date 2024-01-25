@@ -136,6 +136,9 @@ input:-webkit-autofill:active {
 .rectSelectWrapper .css-1u9des2-indicatorSeparator {
   display: none;
 }
+.firstTab .nav-link{
+  color: #B7BCC3;
+}
 .active{
   background-color: transparent !important;
   color: #001B44 !important;
@@ -178,6 +181,9 @@ text-align: center;
 }
 .detailSelect select{
   background: transparent;
+}
+.detailSelect select label{
+  text-indent: 0;
 }
 
 .active{
