@@ -16,7 +16,10 @@ const ChildFormComponent: React.FC<ChildFormComponentProps> = ({
     emailAddress: "",
   });
 
-  const handleInputChange = (name: keyof userNameAndEmailDetails, value: string) => {
+  const handleInputChange = (
+    name: keyof userNameAndEmailDetails,
+    value: string | number,
+  ) => {
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -66,18 +69,6 @@ const ChildFormComponent: React.FC<ChildFormComponentProps> = ({
         onChange={(value) => handleInputChange("emailAddress", value)}
         className="mb-[18px] md:mb-6"
       />
-
-      <div>
-        <span
-          className="block text-dark-3 text-[14px] leading-[150%] lg:text-[16px] [&>span]:font-bold
-        [&>span]:text-dark"
-        >
-          By clicking the "Next " "button" you consent, acknowledge, and agree
-          to the following:- Auto Approve's <span>Terms Of Service</span> and{" "}
-          <span> Privacy Policy </span> and to receive important notices and
-          other communications electronically
-        </span>
-      </div>
     </>
   );
 };

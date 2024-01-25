@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 
-// import { Inter } from "next/font/google";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import { Inter } from "next/font/google"; 
 import "./globals.css";
 import "../assests/style/main.css";
 import { MessageSquare } from "lucide-react";
