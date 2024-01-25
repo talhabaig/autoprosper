@@ -1,10 +1,11 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { EllipseGradient } from "../ui/ellipseGradient";
 import Button from "../Common/Button/Button";
 
-const YourCashOffer = () => {
+interface YourCashOfferProps {}
+
+const YourCashOffer: React.FC<YourCashOfferProps> = () => {
   return (
     <div className="w-[456px] m-auto">
       <div className="flex min-h-[187px] relative justify-center">
@@ -12,8 +13,8 @@ const YourCashOffer = () => {
           src="/home/red-toyota.png"
           alt="car image"
           className="relative z-10 object-contain"
-          width="348"
-          height="174"
+          width={348}
+          height={174}
         />
         <EllipseGradient className="absolute z-0" />
       </div>
@@ -47,7 +48,7 @@ const YourCashOffer = () => {
       </p>
       <a
         href=""
-        className="block text-center text-[#FF3363] text-[14px]  font-[700] underline"
+        className="block text-center text-[#FF3363] text-[14px] font-[700] underline"
       >
         Not sure yet? Save this Offer
       </a>

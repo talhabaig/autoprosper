@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { BackArrow } from "../Icons/Icons";
+import { ArrowRight, BackArrow } from "../Icons/Icons";
 import Vehicle from "./Vehicle";
 import VehicleDetail from "./VehicleDetail";
 import VehicleCondition from "./VehicleCondition";
@@ -14,6 +14,98 @@ const SellTradeVehicle: React.FC = () => {
 
   const handleStepChange = (step: number) => {
     setActiveStep(step);
+  };
+
+  const renderStepComponent = () => {
+    switch (activeStep) {
+      case 0:
+        return <Vehicle />;
+      case 1:
+        return <YourVehicle />;
+      case 2:
+        return <VehicleDetail />;
+      case 3:
+        return <VehicleCondition />;
+      case 4:
+        return <VehicleInformation />;
+      case 5:
+        return <CalculatingOffer />;
+      default:
+        return null;
+    }
+  };
+
+  const renderFooterButtons = () => {
+    switch (activeStep) {
+      case 0:
+        return (
+          <>
+            <Button
+              variant="gray"
+              className="mr-3"
+              onClick={() => handleStepChange(activeStep - 1)}
+            >
+              Cancel Edit
+            </Button>
+            <Button
+              onClick={() => handleStepChange(activeStep + 1)}
+            >
+              Find vehicle
+            </Button>
+          </>
+        );
+      case 1:
+        return (
+          <>
+            <Button
+              variant="gray"
+              className="mr-3"
+              onClick={() => handleStepChange(activeStep - 1)}
+            >
+              Edit Vehicle
+            </Button>
+            <Button
+              variant="small"
+              className="lg:min-h-[56px]"
+              onClick={() => handleStepChange(activeStep + 1)}
+            >
+              <>
+                <span className="lg:inline-block">Continue</span>
+                <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
+              </>
+            </Button>
+          </>
+        );
+      case 2:
+      case 3:
+        return (
+          <Button
+            variant="small"
+            className="lg:min-h-[56px]"
+            onClick={() => handleStepChange(activeStep + 1)}
+          >
+            <>
+              <span className="lg:inline-block">Continue</span>
+              <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
+            </>
+          </Button>
+        );
+      case 4:
+        return (
+          <Button
+            variant="small"
+            className="lg:min-h-[56px]"
+            onClick={() => handleStepChange(activeStep + 1)}
+          >
+            <>
+              <span className="lg:inline-block">Claim exclusive offer</span>
+              <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
+            </>
+          </Button>
+        );
+      default:
+        return null;
+    }
   };
 
   return (
@@ -41,12 +133,12 @@ const SellTradeVehicle: React.FC = () => {
                 <button
                   onClick={() => handleStepChange(0)}
                   className={`text-left px-0 ${
-                    activeStep === 0 ? "text-[#000]" : "text-gray-500"
+                    activeStep <= 1 ? "text-[#000]" : "text-gray-500"
                   }`}
                 >
                   <span
                     className={`tabText text-left px-0 ${
-                      activeStep === 0
+                      activeStep <= 1
                         ? "bg-black text-white"
                         : "bg-[default-color] text-[default-color]"
                     }`}
@@ -92,12 +184,12 @@ const SellTradeVehicle: React.FC = () => {
                 <button
                   onClick={() => handleStepChange(4)}
                   className={`text-left px-0 ${
-                    activeStep === 4 ? "text-[#000]" : "text-gray-500"
+                    activeStep >= 4 ? "text-[#000]" : "text-gray-500"
                   }`}
                 >
                   <span
                     className={`tabText text-left px-0 ${
-                      activeStep === 4
+                      activeStep >= 4
                         ? "bg-black text-white"
                         : "bg-[default-color] text-[default-color]"
                     }`}
@@ -111,33 +203,13 @@ const SellTradeVehicle: React.FC = () => {
           </div>
           <div className="flex md:max-w-[890px] w-full ">
             <div className="m-auto md:m-0">
-              {activeStep === 0 && <Vehicle />}
-              {activeStep === 1 && <YourVehicle />}
-              {activeStep === 2 && <VehicleDetail />}
-              {activeStep === 3 && <VehicleCondition />}
-              {activeStep === 4 && <VehicleInformation />}
-              {activeStep === 5 && <CalculatingOffer />}
+              {renderStepComponent()}
             </div>
           </div>
         </div>
       </div>
-      <div className={`${activeStep === 5 ? " hidden" : "flex footerBox"} `}>
-        {activeStep > 0 && (
-          <Button
-            variant="gray"
-            className="mr-3"
-            onClick={() => handleStepChange(activeStep - 1)}
-          >
-            Back
-          </Button>
-        )}
-        {activeStep < 5 ? (
-          <Button className="" onClick={() => handleStepChange(activeStep + 1)}>
-            Continue
-          </Button>
-        ) : (
-          <Button className="">Find vehicle</Button>
-        )}
+      <div className={`${activeStep === 5 ? "hidden" : "flex footerBox"}`}>
+        {renderFooterButtons()}
       </div>
     </>
   );

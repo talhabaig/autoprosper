@@ -1,12 +1,11 @@
-import { CircleCar } from "@/assests/Images";
 import Image from "next/image";
 import React from "react";
 
-const CalculatingOffer = () => {
+const CalculatingOffer: React.FC = () => {
   return (
     <div className="w-full">
       <Image
-        src={CircleCar}
+        src="/images/circleCar.png"
         width={200}
         height={200}
         alt="CircleCar"

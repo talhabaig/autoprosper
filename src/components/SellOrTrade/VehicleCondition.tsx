@@ -110,7 +110,7 @@ const VehicleCondition = () => {
       <h1 className="text-left heading text-[#001B44] text-[32px] lg:text-[56px] font-[400] mb-[15px]">
         Condition
       </h1>
-      <p className="text-left text-[#5D6878] lg:mb-10px font-[400] text-[20px]">
+      <p className="text-left text-[#5D6878] lg:mb-10px font-[400] text-[16px]">
         Tell us a little more about your vehicle so we can determine your offer.
         Your offer will be finalized after the condition has been verified by
         inspection.

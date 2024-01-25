@@ -1,9 +1,10 @@
-import { useState } from "react";
-import CustomInputField from "../Common/InputField/CustomInputField";
+import React, { useState } from "react";
 import CustomText from "../Common/InputField/CustomInput";
 import RadioOption from "../Common/RadioButton/RadioBtn";
 
-const VehicleInformation = () => {
+interface VehicleInformationProps {}
+
+const VehicleInformation: React.FC<VehicleInformationProps> = () => {
   const activeAvailable = [
     {
       id: 1,
@@ -13,13 +14,13 @@ const VehicleInformation = () => {
     {
       id: 2,
       label: "Phone",
-      value: "Phone ",
+      value: "Phone",
     },
   ];
 
-  const [selectedValue, setSelectedValue] = useState("");
+  const [selectedValue, setSelectedValue] = useState<string>("");
 
-  const handleDivClick = (value: any) => {
+  const handleDivClick = (value: string) => {
     setSelectedValue(value);
   };
 
@@ -28,7 +29,7 @@ const VehicleInformation = () => {
       <h1 className="heading text-left text-[#001B44] text-[32px] lg:text-[56px] font-[400] mb-[20px]">
         Information
       </h1>
-      <p className="text-left text-[#4B5768] font-[400] lg:text-[20px]">
+      <p className="text-left text-[#4B5768] font-[400] lg:text-[16px]">
         Provide your email for sending our exclusive offers and updates.
       </p>
       <h3 className="text-[#001B44] text-[18px] font-[700] mb-3 lg:mt-5">
@@ -64,16 +65,15 @@ const VehicleInformation = () => {
         What is the best way to contact you? (Optional)
       </h3>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-3">
-        {activeAvailable.map((item: any) => (
+        {activeAvailable.map((item) => (
           <RadioOption
             key={item.id}
             id={item.id}
             label={item.label}
             value={item.value}
             selected={selectedValue === item.value}
-            description={item.description}
             onSelect={handleDivClick}
-          />
+            description={""}          />
         ))}
       </div>
 

@@ -1,20 +1,24 @@
 import React, { useState } from "react";
-import { ConvertibleIcon } from "../Icons/BodyStyleIcons";
-import { Select } from "../ui/input";
-import { ToyotaIcon } from "../Icons/BrandIcons";
 import Image from "next/image";
 import { EllipseGradient } from "../ui/ellipseGradient";
+import { Select } from "../ui/input";
 
 interface FormData {
   color: string;
 }
 
-const options = [
+interface Option {
+  value: string;
+  label: string;
+}
+
+const options: Option[] = [
   { value: "option1", label: "Arctic Frost Pearl1" },
   { value: "option2", label: "Arctic Frost Pearl2" },
   { value: "option3", label: "Arctic Frost Pearl3" },
 ];
-const YourVehicle = () => {
+
+const YourVehicle: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     color: "",
   });
@@ -26,12 +30,13 @@ const YourVehicle = () => {
     }));
     console.log("Email changed:", formData);
   };
+
   return (
     <div>
       <h1 className="heading text-left  text-[#001B44] text-[32px] lg:text-[56px] mb-[20px] font-[400]">
         Vehicle
       </h1>
-      <p className="text-left text-[#4B5768]  text-[20px] font-[400] ">
+      <p className="text-left text-[#4B5768]  text-[16px] font-[400] ">
         Unable to find a vehicle without specific details
       </p>
       <div className="flex min-h-[187px] relative justify-center">
@@ -39,8 +44,8 @@ const YourVehicle = () => {
           src="/home/red-toyota.png"
           alt="car image"
           className="relative z-10 object-contain"
-          width="348"
-          height="174"
+          width={348}
+          height={174}
         />
         <EllipseGradient className="absolute z-0" />
       </div>
@@ -50,7 +55,7 @@ const YourVehicle = () => {
       </p>
       <p className="text-center text-[#4B5768] text-[16px] font-[400]">
         <span className="bg-[#ECEEF1] rounded-[100px] px-[10px] py-[5px] mr-3">
-          VIP
+          VIN
         </span>{" "}
         1GNEK13Z82R12
       </p>
@@ -70,7 +75,7 @@ const YourVehicle = () => {
           }}
           placeholder="State"
           className="rectSelectWrapper"
-          label="Color"
+          label="Trim"
         />
       </div>
     </div>

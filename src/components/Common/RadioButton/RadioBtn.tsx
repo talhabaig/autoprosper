@@ -1,6 +1,6 @@
 import React from "react";
 
-interface RadioOptionProps {
+export interface RadioOptionProps {
   id: number;
   label: string;
   value: string;
