@@ -15,7 +15,7 @@ const SellTradeVehicle = () => {
       <div className="homePage">
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
           <div className="mt-[60px] px-[14px] max-w-full md:py-[0px] flex flex-col md:flex-row md:gap-[30px] justify-between md:justify-center md:px-10 lg:px-[159px] mx-auto ">
-            <div className="w-full md:max-w-[590px] flex flex-col  ">
+            <div className="w-full xl:w-[550px] flex flex-col  ">
               <a
                 href=""
                 className="text-left  cursor-pointer  font-weight: 700 lg:text-[16px] mb-[20px] text-[#5D6878]"
@@ -67,7 +67,7 @@ const SellTradeVehicle = () => {
                 </Nav>
               </div>
             </div>
-            <div className="flex md:max-w-[890px] w-full ">
+            <div className="flex xl:w-[950px] w-full ">
               <Tab.Content>
                 <Tab.Pane eventKey="first">
                   <Vehicle />
