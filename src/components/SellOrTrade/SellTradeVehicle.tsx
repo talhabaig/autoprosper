@@ -13,7 +13,8 @@ import CalculatingOffer from "./CalculatingOffer";
 import YourCashOffer from "./YourCashOffer";
 
 const SellTradeVehicle = () => {
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(0);
+  console.log("🚀 ~ SellTradeVehicle ~ activeStep:", activeStep)
   // const [isYourVehicle, setYourVehicle] = useState(false);
   const handleStepChange = (step: any) => {
     // if(isYourVehicle=== false){
@@ -47,13 +48,14 @@ const SellTradeVehicle = () => {
                 <Nav variant="pills" className="flex-column vehicleNav ">
                   <Nav.Item>
                     <Nav.Link
-                      eventKey="1"
-                      onClick={() => handleStepChange(1)}
-                      className={`text-left px-0 ${activeStep === 1 ? 'text-[#B7BCC3] hover:text-[#B7BCC3]' : 'text-gray-500'}`}
+                      eventKey="0"
+                      onClick={() => handleStepChange(0)}
+                      className={`text-left px-0 ${activeStep === 0  ? 'text-[#B7BCC3] hover:text-[#B7BCC3]' : 'text-gray-500'}`}
                     >
                       <span className="tabText">1</span> Vehicle
                     </Nav.Link>
                   </Nav.Item>
+                 
                   <Nav.Item>
                     <Nav.Link
                       eventKey="2"
@@ -86,8 +88,10 @@ const SellTradeVehicle = () => {
             </div>
             <div className="flex xl:w-[950px] w-full ">
               <Tab.Content>
+                <Tab.Pane eventKey="0">
+                  <Vehicle />
+                </Tab.Pane>
                 <Tab.Pane eventKey="1">
-                  {/* <Vehicle /> */}
                   <YourVehicle />
                 </Tab.Pane>
                 <Tab.Pane eventKey="2">
@@ -97,11 +101,10 @@ const SellTradeVehicle = () => {
                   <VehicleCondition />
                 </Tab.Pane>
                 <Tab.Pane eventKey="4">
-                  {/* <VehicleInformation /> */}
-                  {/* <CalculatingOffer /> */}
-
-                  {/* last screen uncoment for design */}
-                  <YourCashOffer />
+                  <VehicleInformation />
+                </Tab.Pane>
+                <Tab.Pane eventKey="5">
+                  <CalculatingOffer />
                 </Tab.Pane>
               </Tab.Content>
             </div>
@@ -117,7 +120,7 @@ const SellTradeVehicle = () => {
             onClick={() => handleStepChange(activeStep - 1)}
           />
         )}
-        {activeStep < 4 ? (
+        {activeStep < 5 ? (
           <Button
             variant="primary"
             label="Continue"
