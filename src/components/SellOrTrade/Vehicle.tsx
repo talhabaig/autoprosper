@@ -4,7 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import Tab from "react-bootstrap/Tab";
 import Button from "../Common/Button/Button";
 
-const Vehicle = () => {
+const Vehicle = ({isYourVehicle}: any) => {
+  console.log("🚀 ~ Vehicle ~ isYourVehicle:", isYourVehicle)
   return (
     <>
       <div className="flex md:max-w-[890px] w-full justify-center">

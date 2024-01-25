@@ -2040,3 +2040,28 @@ export const DrivingKid: React.FC<propType> = ({
     </svg>
   );
 };
+
+
+export const CircleImage: React.FC<propType> = ({
+  width,
+  height,
+  fill,
+  className,
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      fill={fill}
+      className={className}
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 156">
+        <path d="M156 78C156 121.078 121.078 156 78 156C34.9218 156 0 121.078 0 78C0 34.9218 34.9218 0 78 0C121.078 0 156 34.9218 156 78ZM2.34 78C2.34 119.786 36.2141 153.66 78 153.66C119.786 153.66 153.66 119.786 153.66 78C153.66 36.2141 119.786 2.34 78 2.34C36.2141 2.34 2.34 36.2141 2.34 78Z" fill="url(#paint0_linear_1413_8979)"/>
+        <defs>
+        <linearGradient id="paint0_linear_1413_8979" x1="-2.44985e-06" y1="51.1651" x2="156" y2="51.1651" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#00FFA2"/>
+        <stop offset="1" stop-color="#FFE664"/>
+        </linearGradient>
+        </defs>
+    </svg>
+  );
+};
