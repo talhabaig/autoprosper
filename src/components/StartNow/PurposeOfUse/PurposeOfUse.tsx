@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import RadioButton from "../../Common/CheckButton/RadioButton";
 import {
-  Home,
-  DailyCommute,
-  OffroadDriving,
-  LongerRoadTrips,
-  DrivingKid,
-  PerformanceHandeling,
+  GasAndDiesel,
+  Hybrid,
+  PlugInHybrid,
+  Electric,
 } from "../../Icons/Icons";
 
 interface PurposeOfUse {
@@ -26,44 +24,44 @@ const PurposeOfUse: React.FC<PurposeOfUse> = ({ onChange }) => {
       id: 1,
       label: "Household errands",
       imageUrl: "/home/discover-ideal.png",
-      icon: <Home className="fill-dark-3" />,
+      icon: <GasAndDiesel className="fill-dark-3" />,
     },
     {
       id: 2,
       label: "Daily commute",
       imageUrl: "/home/discover-ideal.png",
-      icon: <DailyCommute className="fill-dark-3" />,
+      icon: <Hybrid className="fill-dark-3" />,
     },
     {
       id: 3,
       label: "outdoor activities ",
       imageUrl: "/home/discover-ideal.png",
-      icon: <PerformanceHandeling className="fill-dark-3" />,
+      icon: <PlugInHybrid className="fill-dark-3" />,
     },
     {
       id: 4,
       label: "Offroad driving",
       imageUrl: "/home/discover-ideal.png",
-      icon: <OffroadDriving className="fill-dark-3" />,
+      icon: <Electric className="fill-dark-3" />,
     },
     {
       id: 5,
       label: "Longer road trips ",
       imageUrl: "/home/discover-ideal.png",
-      icon: <LongerRoadTrips className="fill-dark-3" />,
+      icon: <PlugInHybrid className="fill-dark-3" />,
     },
     {
       id: 6,
       label: "Driving kid and their stuff",
       imageUrl: "/home/discover-ideal.png",
-      icon: <DrivingKid className="fill-dark-3" />,
+      icon: <Electric className="fill-dark-3" />,
     },
   ];
 
   return (
     <>
-      <div className="max-w-[840px] mx-auto">
-        <h2 className="heading1 max-w-[760px] mx-auto">
+      <div className="max-w-[940px] mx-auto">
+        <h2 className="heading1">
           For what purpose do you intend to use this car?
         </h2>
         <p className="text-dark-2 text-center mb-[24px] md:mb-[30px] lg:text-[1rem] xl:mb-[40px] xl:text-[1.25rem] xl:leading-[1.5]">

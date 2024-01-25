@@ -38,9 +38,9 @@ const cardData: AutoProsperAdvantages[] = [
 const AutoProsperAdvnatage = () => {
   return (
     <section className="sectionWrapper py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-dark-7">
-      <div className="container">
+      <div className="container px-0 sm:px-4">
         <div className="max-w-[360px] mx-auto text-center md:max-w-[550px] lg:max-w-[600px] 2xl:max-w-[800px]">
-          <h2 className="heading2 mb-[0.625rem] lg:mb-[1.125rem] md:max-w-[70%] md:mx-auto lg:max-w-[84%] 3xl:max-w-full">
+          <h2 className="heading2 mb-[0.5rem] lg:mb-[1.125rem] md:max-w-[70%] md:mx-auto lg:max-w-[84%] 3xl:max-w-full">
             What makes AutoProsper worth joining?
           </h2>
           <p className="paragraph-large mb-[1.5rem] md:mb-[1.875rem] lg:mb-[2.5rem] 2xl:mb-[3rem]   ">
@@ -53,12 +53,12 @@ const AutoProsperAdvnatage = () => {
           {cardData.map((item) => (
             <div
               key={item.id}
-              className="md:flex-grow md:w-[48%] lg:w-[30%] md:mb-[3rem] lg:pb-[0]"
+              className="md:flex-grow md:w-[48%] lg:w-[30%] md:mb-[3rem] lg:pb-[0] lg:mb-0"
             >
               <div
-                className="h-full py-[1.5rem] md:py-0 md:max-w-[360px] md:pl-[1.875rem] 
+                className="h-full py-[1.5rem] md:py-0 md:max-w-[360px] md:pl-[1.875rem] 3xl:pl-[2rem]
                border-t-[1px] border-solid border-primary-text
-               md:border-l-[1px] md:border-t-[0] md:pb-[2rem] lg:pb-[0] "
+               md:border-l-[1px] md:border-t-[0] md:pb-[2rem] lg:pb-8 px-[1.125rem] md:px-0"
               >
                 <div
                   className="mb-[1.125rem] lg:mb-[1.5rem] 3xl:mb-[2rem] "
@@ -66,7 +66,7 @@ const AutoProsperAdvnatage = () => {
                   {item.icon}
                 </div>
 
-                <h3 className="heading3 text-left md:mb-[1.125rem]  lg:mb-[1.5rem] 3xl:mb-[2rem] lg:mr-[30%] 2xl:mr-[26%]">
+                <h3 className="heading3 mb-[0.5rem] text-left md:mb-[1.125rem]  lg:mb-[1.5rem] 3xl:mb-[2rem] lg:mr-[30%] 2xl:mr-[26%]">
                   {item.heading}
                 </h3>
                 <p className="paragraph-large mb-0 ">

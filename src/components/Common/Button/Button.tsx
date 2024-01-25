@@ -48,7 +48,7 @@ const Button: React.FC<propType> = ({
     <button
       {...props}
       onClick={handleClick}
-      className={`flex items-center transition-all duration-300 justify-center gap-[8px]  ${classList} ${className} disabled:bg-disabled `}
+      className={`flex items-center transition-all duration-300 justify-center gap-[6px]  ${classList} ${className} disabled:bg-disabled `}
     >
       {label}
       {children}

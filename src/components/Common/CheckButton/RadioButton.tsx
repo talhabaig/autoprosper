@@ -65,6 +65,11 @@ const RadioButton: React.FC<RadioButtonsProps> = ({
 
             <div className={styles.iconTitleWrapper}>
               <span className="group-hover:[&>svg]:fill-dark w-[26px] h-[26px] md:w-[34px] md:h-[34px] lg:w-[46px] mb-[12px] md:mb-[24px] inline-block">
+                {/* <img
+                  src={option.imageUrl}
+                  className=" lg:h-[46px]"
+                  alt={option.label}
+                /> */}
                 {option.icon}
               </span>
               <h3 className="text-[0.875rem] md:text-[1rem] lg:text-[1.125rem] font-medium ">
