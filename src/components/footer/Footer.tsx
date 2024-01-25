@@ -49,7 +49,7 @@ const Finance = [
     title: "Finance",
     items: [
       { id: 1, label: "Get Pre-Qualified", href: "/get-pre-qualified" },
-      { id: 2, label: "Estimate Your Payment", href: "/estimate-your-payment" },
+      { id: 2, label: "Estimate Your Payment", href: "/estimate-payment" },
     ],
   },
 ];
@@ -92,11 +92,11 @@ const socialMedia = [
 
 const Footer = () => {
   return (
-    <footer className=" pt-[3.75rem] pb-[1.5rem] 2xl:pt-[5rem] 3xl:pt-[7.5rem] 2xl:pb-[3.75rem]  overflow-hidden bg-primary-text">
+    <footer className=" pt-[3.75rem] pb-[1.5rem] 2xl:pt-[5rem] 3xl:pt-[7.5rem] 2xl:pb-[3.75rem]  overflow-hidden bg-dark">
       <div className="container">
         <div className="flex flex-wrap justify-between">
           <div className="md:flex-grow w-[48%] lg:w-[18%]">
-            <h5 className="text-[1rem] xl:text-[1.25rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
+            <h5 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
               {Learn[0].title}
             </h5>
             <ul className="mb-[2.5rem] lg:mb-0">
@@ -116,10 +116,10 @@ const Footer = () => {
             </ul>
           </div>
           <div className="md:flex-grow w-[48%] lg:w-[18%]">
-            <h5 className="text-[1rem] xl:text-[1.25rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
+            <h5 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
               {Help[0].title}
             </h5>
-            <ul className="mb-[2.5rem] lg:mb-0">
+            <ul className="mb-[2rem] lg:mb-0">
               {Help[0].items.map((item) => (
                 <li
                   className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]"
@@ -136,7 +136,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="md:flex-grow w-[48%] lg:w-[18%]">
-            <h5 className="text-[1rem] xl:text-[1.25rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
+            <h5 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
               {Shop[0].title}
             </h5>
             <ul className="mb-[2.5rem] lg:mb-0">
@@ -156,7 +156,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="md:flex-grow w-[48%] lg:w-[18%]">
-            <h5 className="text-[1rem] xl:text-[1.25rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
+            <h5 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
               {Finance[0].title}
             </h5>
             <ul className="mb-[3.75rem]">
@@ -165,16 +165,17 @@ const Footer = () => {
                   className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]"
                   key={item.id}
                 >
-                  <Link href={item.href}>
-                    <span className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer">
-                      {item.label}
-                    </span>
-                  </Link>
+                  <span
+                    className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer"
+                    id={item.href}
+                  >
+                    {item.label}
+                  </span>
                 </li>
               ))}
             </ul>
             <div className="lg:hidden">
-              <h5 className="text-[1rem] xl:text-[1.25rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
+              <h5 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
                 {socialMedia[0].title}
               </h5>
               <ul className="mb-[2.5rem] lg:mb-0 flex items-center gap-[20px]">
@@ -221,9 +222,9 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="border-t-[1px] border-solid border-dark-gray mt-[1.5rem] xl:mt-[2rem] 2xl:mt-[3.75rem]">
+        <div className="border-t-[1px] border-solid border-dark-gray mt-8 xl:mt-[2rem] 2xl:mt-[3.75rem]">
           <div
-            className="pt-[30px] 2xl:pt-[3.75rem] flex items-center justify-center gap-[10px]
+            className="pt-8 2xl:pt-[3.75rem] flex items-center justify-center gap-[10px]
            text-dark-gray text-[12px] 2xl:text-[14px] xl:text-[0.875rem] lg:gap-[18px] 2xl:gap-[24px]"
           >
             <span>© 2023 AutoProsper LLC</span>

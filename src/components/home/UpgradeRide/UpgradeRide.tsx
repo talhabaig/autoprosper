@@ -29,7 +29,7 @@ function UpgradeRide() {
               key={item.id}
               className="md:flex md:justify-between md:items-center pb-[3.75rem] lg:pb-[5rem] 3xl:pb-[6.875rem] last-of-type:pb-0"
             >
-              <div className="md:flex-[0_0_auto] md:w-[48%] 3xl:w-[49%] mb-[1.875rem] md:mb-0">
+              <div className="md:flex-[0_0_auto] md:w-[48%] 3xl:w-[49%] mb-[1.5rem] md:mb-0">
                 <Image
                   src={item.imageSrc ? item.imageSrc : ""}
                   width={690}
@@ -42,14 +42,14 @@ function UpgradeRide() {
                 items-center md:justify-start md:items-start md:text-start">
                   <div className="pb-[0.75rem] md:pb-[1.125rem] xl:pb-[1.5rem]">
                     <span
-                      className="inline-block p-[5px_10px] leading-[1.3] rounded-[100px] tracking-[1px] 
+                      className="inline-block p-[4px_8px] 3xl:p-[5px_10px] leading-[1.3] rounded-[100px] tracking-[1px] 
                      font-bold text-dark-3 uppercase text-[0.625rem] lg:text-[0.75rem]  bg-dark-7"
                     >
                       {item.contentLabel}
                     </span>
                   </div>
-                  <h2 className="heading2 md:text-start max-w-[320px] md:max-w-[320px]  xl:max-w-[380px] 3xl:max-w-full">{item.heading}</h2>
-                  <p className="paragraph-large mb-[1.25rem] xl:mb-[1.5rem] 2xl:mb-[2rem]">
+                  <h2 className="heading2 md:text-start max-w-[320px] md:max-w-[320px]  xl:max-w-[380px] 3xl:mb-[1.125rem] 3xl:max-w-full">{item.heading}</h2>
+                  <p className="paragraph-large mb-[1.125rem] xl:mb-[1.5rem] 2xl:mb-[2rem]">
                     {item.description}
                   </p>
                   <div>
