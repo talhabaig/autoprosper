@@ -28,11 +28,11 @@ const FirstTimeBuyer = () => {
         <div
           className={`max-w-[310px] md:max-w-[328px] lg:max-w-[424px] xl:max-w-[505px] 2xl:max-w-[650px] absolute top-[58%]  mx-[0.938rem] flex flex-col text-center items-center justify-center`}
         >
-          <h2 className="heading2 md:px-[5px] lg:px-0 xl:mb-[1.125rem] 2xl:max-w-[78%] 3xl:max-w-[98%] 3xl:px-8 text-white">
+          <h2 className="heading2 xl:mb-[1.125rem] 2xl:max-w-[78%] 3xl:max-w-[98%] text-white">
             <span className={styles.textGradient}>First time </span>buyer (born
             1998-2005) program offer
           </h2>
-          <p className="paragraph-large text-white mb-[1.125rem] xl:mb-[1.5rem] 2xl:mb-[2rem]">
+          <p className="paragraph-large text-white mb-[1.25rem] xl:mb-[1.5rem] 2xl:mb-[2rem]">
             For first-time car buyers born between 1998-2005, unlock exclusive
             offers and tailored programs to ease your vehicle purchase.
           </p>

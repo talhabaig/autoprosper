@@ -30,12 +30,12 @@ const ConsultancyAndGrouth = () => {
           {cardData.map((item) => (
             <div
               key={item.id}
-              className="md:flex-grow md:w-[48%]  bg-white rounded-[12px] mb-[1.188rem] lg:mb-0"
+              className="md:flex-grow md:w-[48%]  bg-white rounded-[12px] mb-[0.625rem] lg:mb-0"
             >
               <div
-                className="h-full py-[2rem] lg:py-[1.5rem] px-[1.125rem] text-center  flex flex-col 
+                className="h-full py-[1.875rem] lg:py-[1.5rem] px-[0.9375rem] text-center  flex flex-col 
                 lg:flex-row items-center gap-[0.625rem] lg:gap-[1.25rem] xl:gap-[1.5rem]  xl:px-[1.25rem] 
-                2xl:pl-[1.5rem] 2xl:pr-[1.875rem] 3xl:px-[1.5rem] "
+                2xl:pl-[1.5rem] 2xl:pr-[1.875rem] 3xl:pr-[2.625rem] "
               >
                 <div className=" rounded-full mb-[0.9375rem] lg:mb-0 lg:w-[33%]  flex-[0_0_auto]">
                   <Image
