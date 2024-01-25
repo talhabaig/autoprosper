@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { BackArrow, ArrowRight } from "../Icons/Icons";
 import NavigationBar from "../ui/Navigations/navigationBar";
 import Button from "../Common/Button/Button";
-import PrefferedCarBrand from "./PrefferedCarBrand/PrefferedCarBrand";
-import SelectModel from "./SelectModel/SelectModel";
+import PrefferedCarBrand from "./Brand/PrefferedCarBrand/PrefferedCarBrand";
+import SelectModel from "./Brand/SelectModel/SelectModel";
 import ZipCode from "./ZipCode/ZipCode";
 import BuildOption from "./BuildOption/BuildOption";
 import Customize from "./CustomizeLayout";
@@ -15,6 +15,9 @@ import Interior from "./CustomizeSteps/Interior";
 import Package from "./CustomizeSteps/Package";
 import Incentives from "./CustomizeSteps/Incentives";
 import Review from "./CustomizeSteps/Review";
+import VehiclePreference from "./Type/VehiclePreference/VehiclePreference";
+import SelectBrand from "./Type/SelectBrand/SelectBrand";
+import TypeSelectModel from "./Type/SelectModel/SelectModel";
 
 interface StepConfig {
   key: string;
@@ -29,6 +32,7 @@ interface StepConfig {
 const CustomizeByBrand: React.FC = () => {
   const [step, setStep] = useState(0);
   const [customizeStep, setCustomizeStep] = useState(0);
+  const [type, setType] = useState<'brand' | 'type'>('brand');
   const [data, setData] = useState({
     prefferedCarBrand: [],
     carBrand: [],
@@ -101,7 +105,7 @@ const CustomizeByBrand: React.FC = () => {
     },
   ];
 
-  const stepsConfig: StepConfig[] = [
+  const brandStepsConfig: StepConfig[] = [
     {
       key: "prefferedCarBrand",
       component: PrefferedCarBrand,
@@ -144,6 +148,57 @@ const CustomizeByBrand: React.FC = () => {
     },
   ];
 
+  const typeStepsConfig: StepConfig[] = [
+    {
+      key: "vehiclePreference",
+      component: VehiclePreference,
+      displayBackButton: false,
+      displayNextButton: true,
+    },
+    {
+      key: "selectBrand",
+      component: SelectBrand,
+      displayBackButton: true,
+      displayNextButton: true,
+    },
+    {
+      key: "typeSelectModel",
+      component: TypeSelectModel,
+      displayBackButton: true,
+      displayNextButton: true,
+    },
+    {
+      key: "zipCode",
+      component: ZipCode,
+      displayBackButton: true,
+      displayNextButton: true,
+    },
+    {
+      key: "buildOption",
+      component: BuildOption,
+      displayBackButton: true,
+      displayNextButton: true,
+    },
+    {
+      key: "customize",
+      component: Customize,
+      displayBackButton: true,
+      displayNextButton: true,
+      handleNext: () => {
+        setCustomizeStep((prevStep) => prevStep + 1);
+      },
+      handlePrev: () => {
+        if (customizeStep > 0) {
+          setCustomizeStep((prevStep) => prevStep - 1);
+        } else {
+          handleBack()
+        }
+      }
+    },
+  ];
+
+  const stepsConfig = type === 'brand' ? brandStepsConfig : typeStepsConfig
+
   const handleStepChange = (value: string[] | string) => {
     setData((prevData) => ({ ...prevData, [stepsConfig[step].key]: value }));
   };
@@ -172,10 +227,10 @@ const CustomizeByBrand: React.FC = () => {
     }
   }, [step, data]);
 
+
   const currentStepConfig = stepsConfig[step];
   const currentCustomizeStepConfig = customizeSteps[customizeStep];
   const isComplete =  step == stepsConfig.length - 1
-
   return (
     <>
       <NavigationBar variant="dark" />
@@ -193,7 +248,8 @@ const CustomizeByBrand: React.FC = () => {
             {React.createElement(currentStepConfig.component, {
               onChange: handleStepChange,
               steps: currentStepConfig.key === 'customize' ? customizeSteps : undefined,
-              currentStep: currentStepConfig.key === 'customize' ? customizeStep : step
+              currentStep: currentStepConfig.key === 'customize' ? customizeStep : step,
+              setType: setType
             })}
           </div>
           {(currentStepConfig.displayNextButton ||
