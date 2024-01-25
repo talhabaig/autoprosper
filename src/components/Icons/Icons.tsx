@@ -2040,6 +2040,7 @@ export const DrivingKid: React.FC<propType> = ({
     </svg>
   );
 };
+<<<<<<< HEAD
 
 
 export const PinLocation: React.FC<propType> = ({
@@ -2087,3 +2088,5 @@ export const EditIcon: React.FC<propType> = ({
     </svg>
   );
 };
+=======
+>>>>>>> parent of 4bdb300 (home ui fixes)
