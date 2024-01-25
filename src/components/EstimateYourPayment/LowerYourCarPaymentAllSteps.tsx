@@ -42,17 +42,17 @@ const LowerYourCarPaymentAllSteps = () => {
 
   return (
     <>
-      <NavigationBar variant="dark" />
-      <section>
-        <div className="max-w-[480px] mx-auto px-4">
-          <h1 className="heading1 md:mb-[32px]">Lower your car payment now</h1>
-          {step > 1 && step < 4 && (
+     {step > 1 && step < 4 && (
             <div className=" py-[10px] mb-[28px]">
               <span className="inline-block" onClick={() => setStep(step - 1)}>
                 <BackArrow className="w-[24px] h-[24px] cursor-pointer" />{" "}
               </span>
             </div>
           )}
+      <section>
+        <div className="max-w-[480px] mx-auto px-4">
+          <h1 className="heading1 md:mb-[32px]">Lower your car payment now</h1>
+          
 
           {step === 1 && <UserNameandEmail onChange={handleNameAndEmail} />}
           {step === 2 && <UserAddressDetails onChange={handleUserAddress} />}
