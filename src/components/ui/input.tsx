@@ -70,4 +70,26 @@ const Select: React.FC<SelectProps> = ({ options, ...props }) => {
   );
 };
 
-export { Input, Select };
+const TextBox = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, ...props }, ref) => {
+    const randomId = Math.floor(Math.random() * (100 - 0) + 0);
+    return (
+      <div className="relative w-full flex items-center gap-3 rounded-xl px-5 py-[17px] bg-gray-50 border-[1px] border-dark-4 appearance-none">
+        <input
+          type={type}
+          className={cn(
+            "w-full text-basetext-dark-4 focus:outline-none bg-gray-50 focus:ring-0 ",
+            className
+          )}
+          id={randomId.toString()}
+          ref={ref}
+          placeholder={props.label}
+          {...props}
+        />
+      </div>
+    );
+  }
+);
+TextBox.displayName = "TextBox";
+
+export { Input, Select, TextBox};

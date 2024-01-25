@@ -10,7 +10,7 @@ import {
   TruckIcon,
   WagonIcon,
 } from "@/components/Icons/BodyStyleIcons";
-// import { EllipseGradient } from "@/components/ui/EllipseGradient";
+import { EllipseGradient } from "@/components/ui/EllipseGradient";
 import { ArrowRight } from "lucide-react";
 
 const Shop = () => {
