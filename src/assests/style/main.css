@@ -73,6 +73,7 @@ body {
   box-sizing: border-box;
   line-height: 1.2;
   color: #545d72;
+
 }
 
 img {
@@ -123,6 +124,9 @@ input:-webkit-autofill:active {
 .rectSelectWrapper .css-1u9des2-indicatorSeparator {
   display: none;
 }
+.firstTab .nav-link{
+  color: #B7BCC3;
+}
 .active{
   background-color: transparent !important;
   color: #001B44 !important;
@@ -165,6 +169,9 @@ text-align: center;
 }
 .detailSelect select{
   background: transparent;
+}
+.detailSelect select label{
+  text-indent: 0;
 }
 
 .active{
@@ -213,11 +220,18 @@ text-align: center;
   margin-bottom: 20px;
   border-radius: 12px;
 }
-.formSelect .form-check-input:checked {
+.selected-radio .form-check-input:checked {
   background-color: #00FFA2 !important;
   border-color: #00FFA2;
 }
-
+.TabBtn button{
+  margin-bottom: 10px;
+}
+.vinTab button{
+  border-radius: var(--Number-96, 96px);
+  border: 3px solid var(--dark-dark_6, #E5E8ED);
+  padding: 13px 26px;
+}
 @media (min-width: 992px) {
   .mainWrapperFirstTimeBuyer {
     min-height: calc(100vh - 102px);
@@ -247,6 +261,19 @@ text-align: center;
   }
   .heading{
     margin-top: 30px !important;
+}
+.vinTab button{
+  padding: 9px 18px;
+}
+.firstTab .tabText{
+  margin-right: 2px;
+}
+.vehicleNav button{
+  margin-right: 12px;
+}
+.TabBtn{
+  width: 100%;
+    overflow-x: scroll;
 }
 }
 
