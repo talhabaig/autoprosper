@@ -1,14 +1,9 @@
-// pages/index.js
 "use client";
-// pages/index.js
-import StartNowAllSteps from "@/components/StartNow/StartNowAllSteps";
+import FindOrMakeAllSteps from "@/components/FindOrMakeSteps/FindOrMakeAllSteps";
+import React from "react";
 
-const StartNow = () => {
-  return (
-    <>
-      <StartNowAllSteps />
-    </>
-  );
+const FindOrMakePage = () => {
+  return <FindOrMakeAllSteps />;
 };
 
-export default StartNow;
+export default FindOrMakePage;

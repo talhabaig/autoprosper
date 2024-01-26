@@ -139,7 +139,7 @@ const SelectModel: React.FC<PreferredCarBrandProps> = ({ onChange }) => {
   return (
     <>
       <div className="max-w-[940px] mx-auto">
-        <h2 className="heading1">Select model</h2>
+        <h2 className="heading1">Select model </h2>
         <p className="text-dark-2 text-center mb-[24px] md:mb-[30px] lg:text-[1rem] xl:mb-[40px]
          xl:text-[1.25rem] xl:leading-[1.5]">
           Which specific BMW model are you considering at the moment?

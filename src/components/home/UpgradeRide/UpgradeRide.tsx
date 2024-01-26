@@ -3,6 +3,7 @@ import Button from "../../Common/Button/Button";
 import { ArrowRight } from "../../Icons/Icons";
 import Image from "next/image";
 import { upGradeRide } from "../../../assests/interfaces/Home/index";
+import Link from "next/link";
 
 const upGradeRideDetails: upGradeRide[] = [
   {
@@ -38,8 +39,10 @@ function UpgradeRide() {
                 />
               </div>
               <div className="md:flex-[0_0_auto] md:w-[48%] 3xl:w-[49%] ">
-                <div className="text-center  max-w-[632px] mx-auto flex flex-col justify-center 
-                items-center md:justify-start md:items-start md:text-start">
+                <div
+                  className="text-center  max-w-[632px] mx-auto flex flex-col justify-center 
+                items-center md:justify-start md:items-start md:text-start"
+                >
                   <div className="pb-[0.75rem] md:pb-[1.125rem] xl:pb-[1.5rem]">
                     <span
                       className="inline-block p-[4px_8px] 3xl:p-[5px_10px] leading-[1.3] rounded-[100px] tracking-[1px] 
@@ -48,17 +51,21 @@ function UpgradeRide() {
                       {item.contentLabel}
                     </span>
                   </div>
-                  <h2 className="heading2 md:text-start max-w-[320px] md:max-w-[320px]  xl:max-w-[380px] 3xl:mb-[1.125rem] 3xl:max-w-full">{item.heading}</h2>
+                  <h2 className="heading2 md:text-start max-w-[320px] md:max-w-[320px]  xl:max-w-[380px] 3xl:mb-[1.125rem] 3xl:max-w-full">
+                    {item.heading}
+                  </h2>
                   <p className="paragraph-large mb-[1.125rem] xl:mb-[1.5rem] 2xl:mb-[2rem]">
                     {item.description}
                   </p>
                   <div>
-                    <Button
-                      variant="primary"
-                      label={item.buttonLabel}
-                      children={item.buttonIcon}
-                      className="min-w-[157px] xl:min-w-[190px]"
-                    />
+                    <Link href="/sell-trade">
+                      <Button
+                        variant="primary"
+                        label={item.buttonLabel}
+                        children={item.buttonIcon}
+                        className="min-w-[157px] xl:min-w-[190px]"
+                      />
+                    </Link>
                   </div>
                 </div>
               </div>

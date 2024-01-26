@@ -145,14 +145,16 @@ const SuggestionForYou = () => {
         ))}
       </div>
       <div className="flex flex-col items-center justify-center pb-[30px]">
-        <Button
-          variant="primary"
-          label="Shop All Cars"
-          className="min-w-[244px] xl:min-w-[290px] mb-[24px]"
-          children={
-            <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
-          }
-        />
+        <Link href="/login">
+          <Button
+            variant="primary"
+            label="Shop All Cars"
+            className="min-w-[244px] xl:min-w-[290px] mb-[24px]"
+            children={
+              <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
+            }
+          />
+        </Link>
         <div className="flex items-center gap-[8px] mb-[24px]">
           <QuestionMarkRounded className="w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px]" />{" "}
           <span>See financing details</span>

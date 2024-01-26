@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Important
-tailwind is used in project if dome dev want to include bootstrap must check compatibility with tailwind
+tailwind is used in project if dev want to include bootstrap must check compatibility with tailwind
 
 ## Getting Started
 

@@ -40,29 +40,23 @@ const VinOptions = [
 const VehicleInformationForm: React.FC<ChildFormComponentProps> = ({
   onChange,
 }) => {
-  const [vehicleInformation, setvehicleInformation] =
-    useState<VehicleFormInformation>({
-      car: "",
-      year: "",
-      make: "",
-      model: "",
-      vehicleIdentificationNumber: "",
-    });
-    const InputHandler = (fieldName: string, value: string) => {
-      setvehicleInformation((prevData) => {
-        const updatedData = {
-          ...prevData,
-          [fieldName]: value,
-        };
-        onChange(vehicleInformation);
-        return updatedData;
-      });
-    };
-    const handleSendData = () => {
-   
-      onChange(vehicleInformation);
-      console.log("Sending data to parent on button click:", vehicleInformation);
-    };
+  const [vehicleInformation, setVehicleInformation] = useState<VehicleFormInformation>({
+    car: "",
+    year: "",
+    make: "",
+    model: "",
+    vehicleIdentificationNumber: "",
+  });
+
+  const handleChange = (name: string, value: string) => {
+    setVehicleInformation((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+
+    // Send updated vehicleInformation to parent component
+    onChange(vehicleInformation);
+  };
 
   return (
     <>
@@ -73,11 +67,7 @@ const VehicleInformationForm: React.FC<ChildFormComponentProps> = ({
             onChange={(selectedOption) => {
               if (selectedOption) {
                 const value = selectedOption.value;
-                setvehicleInformation((prevData) => {
-                  const updatedData = { ...prevData, car: value };
-
-                  return updatedData;
-                });
+                handleChange("car", value);
               }
             }}
             placeholder="Car"
@@ -90,11 +80,7 @@ const VehicleInformationForm: React.FC<ChildFormComponentProps> = ({
             onChange={(selectedOption) => {
               if (selectedOption) {
                 const value = selectedOption.value;
-                setvehicleInformation((prevData) => {
-                  const updatedData = { ...prevData, year: value };
-
-                  return updatedData;
-                });
+                handleChange("year", value);
               }
             }}
             placeholder="Year"
@@ -107,11 +93,7 @@ const VehicleInformationForm: React.FC<ChildFormComponentProps> = ({
             onChange={(selectedOption) => {
               if (selectedOption) {
                 const value = selectedOption.value;
-                setvehicleInformation((prevData) => {
-                  const updatedData = { ...prevData, make: value };
-
-                  return updatedData;
-                });
+                handleChange("make", value);
               }
             }}
             placeholder="Make"
@@ -124,11 +106,7 @@ const VehicleInformationForm: React.FC<ChildFormComponentProps> = ({
             onChange={(selectedOption) => {
               if (selectedOption) {
                 const value = selectedOption.value;
-                setvehicleInformation((prevData) => {
-                  const updatedData = { ...prevData, model: value };
-
-                  return updatedData;
-                });
+                handleChange("model", value);
               }
             }}
             placeholder="Model"
@@ -141,22 +119,12 @@ const VehicleInformationForm: React.FC<ChildFormComponentProps> = ({
             onChange={(selectedOption) => {
               if (selectedOption) {
                 const value = selectedOption.value;
-                setvehicleInformation((prevData) => {
-                  const updatedData = {
-                    ...prevData,
-                    vehicleIdentificationNumber: value,
-                  };
-
-                  return updatedData;
-                });
+                handleChange("vehicleIdentificationNumber", value);
               }
             }}
             placeholder="VIN (optional)"
             className="rectSelectWrapper"
           />
-        </div>
-        <div className="w-full mb-[18px]">
-          <button onClick={handleSendData} className="btn">Send Data to Parent</button>
         </div>
       </div>
     </>

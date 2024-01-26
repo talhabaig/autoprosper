@@ -3,6 +3,7 @@ import Button from "@/components/Common/Button/Button";
 import CustomInput from "@/components/Common/InputField/InputField";
 import React, { useState } from "react";
 import Select from "react-select";
+import Link from "next/link";
 
 import { FormData } from "../../assests/interfaces/Home/index";
 
@@ -51,25 +52,25 @@ const GetPreQuallifiedForm = () => {
                 type="text"
                 placeholder="First Name"
                 onChange={(value) => InputHandler("firstName", value)}
-                className="w-full sm:w-[48%] md:w-[31%] gap-[18px] md:gap-8"
+                className="w-full sm:w-[48%] md:w-[31%] xl:w-[31.5%] gap-[18px] md:gap-8"
               />
               <CustomInput
                 type="text"
                 placeholder="Middle Name (Optional)"
                 onChange={(value) => InputHandler("middleName", value)}
-                className="w-full sm:w-[48%] md:w-[31%] gap-[18px] md:gap-8"
+                className="w-full sm:w-[48%] md:w-[31%] xl:w-[31.5%] gap-[18px] md:gap-8"
               />
               <CustomInput
                 type="text"
                 placeholder="Last Name"
                 onChange={(value) => InputHandler("lastName", value)}
-                className="w-full sm:w-[48%] md:w-[31%] gap-[18px] md:gap-8"
+                className="w-full sm:w-[48%] md:w-[31%] xl:w-[31.5%] gap-[18px] md:gap-8"
               />
               <CustomInput
                 type="text"
                 placeholder="Date of Birth"
                 onChange={(value) => InputHandler("dateOfBirth", value)}
-                className="w-full sm:w-[48%] md:w-[31%] gap-[18px] md:gap-8"
+                className="w-full sm:w-[48%] md:w-[31%] xl:w-[31.5%] gap-[18px] md:gap-8"
               />
             </div>
           </div>
@@ -85,9 +86,9 @@ const GetPreQuallifiedForm = () => {
                 type="text"
                 placeholder="City"
                 onChange={(value) => InputHandler("city", value)}
-                className="w-full sm:w-[48%] md:w-[31%] gap-[18px] md:gap-8"
+                className="w-full sm:w-[48%] md:w-[31%] xl:w-[31.5%] gap-[18px] md:gap-8"
               />
-              <div className="w-full sm:w-[48%] md:w-[31%] gap-[18px] md:gap-8">
+              <div className="w-full sm:w-[48%] md:w-[31%] xl:w-[31.5%] gap-[18px] md:gap-8">
                 <Select
                   options={options}
                   onChange={(selectedOption) => {
@@ -104,7 +105,7 @@ const GetPreQuallifiedForm = () => {
                   className="rectSelectWrapper"
                 />
               </div>
-              <div className="w-full sm:w-[48%] md:w-[31%] gap-[18px] md:gap-8">
+              <div className="w-full sm:w-[48%] md:w-[31%] xl:w-[31.5%] gap-[18px] md:gap-8">
                 <Select
                   options={options}
                   onChange={(selectedOption) => {
@@ -136,13 +137,13 @@ const GetPreQuallifiedForm = () => {
                 type="number"
                 placeholder="Last 4 Digit of SSN"
                 onChange={(value) => InputHandler("SSN", value)}
-                className="w-full sm:w-[48%] md:w-[31%] gap-[18px] md:gap-8"
+                className="w-full sm:w-[48%] md:w-[31%] xl:w-[31.5%] gap-[18px] md:gap-8"
               />
               <CustomInput
                 type="number"
                 placeholder="Montly Income"
                 onChange={(value) => InputHandler("monthlyIncome", value)}
-                className="w-full sm:w-[48%] md:w-[31%] gap-[18px] md:gap-8"
+                className="w-full sm:w-[48%] md:w-[31%] xl:w-[31.5%] gap-[18px] md:gap-8"
               />
             </div>
           </div>
@@ -164,16 +165,18 @@ const GetPreQuallifiedForm = () => {
             </div>
           </div>
           <div className="px-[15px]">
-            <Button
-              variant="primary"
-              label="Get Pre-Qualified"
-              className="w-full md:w-[initial]  "
-              onClick={() => {
-                if (agreed === true) {
-                  console.log(agreed && " checked!", "Form Data:", formData);
-                }
-              }}
-            />
+            <Link href="/suggestion-for-you">
+              <Button
+                variant="primary"
+                label="Get Pre-Qualified"
+                className="w-full md:w-[initial]  "
+                onClick={() => {
+                  if (agreed === true) {
+                    console.log(agreed && " checked!", "Form Data:", formData);
+                  }
+                }}
+              />
+            </Link>
           </div>
         </div>
       </section>
