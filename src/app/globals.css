@@ -10,7 +10,7 @@
     @apply text-primary-text text-center mb-[0.75rem] lg:mb-[1.125rem] text-[2rem] font-normal lg:text-[2.4rem] xl:text-[3rem] 4xl:text-[3.5rem];
   }
   .heading2 {
-    @apply text-dark text-center mb-[0.938rem] text-[1.5rem] font-bold lg:text-[2rem] xl:text-[2.375rem] 3xl:text-[3rem] leading-[130%];
+    @apply text-dark text-center mb-[0.75rem] text-[1.5rem] font-bold lg:text-[2rem] xl:text-[2.375rem] 3xl:text-[2.75rem] leading-[130%];
   }
   .heading3 {
     @apply text-dark text-center mb-[0.938rem] text-[1.125rem] font-bold lg:text-[1.5rem]  2xl:text-[1.75rem] 3xl:text-[2rem];

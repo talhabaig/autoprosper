@@ -70,7 +70,7 @@ const FindOrMakeAllSteps: React.FC<FirstTimeBuyer> = () => {
     <>
 
       <NavigationBar variant="dark" />
-      {step > 0 && step < 6 && (
+     
 
         <section
           className={`mt-auto mainWrapperFirstTimeBuyer ${
@@ -130,7 +130,8 @@ const FindOrMakeAllSteps: React.FC<FirstTimeBuyer> = () => {
             </div>
           )}
         </section>
-      )}
+        {/* {step > 0 && step < 6 && (
+      )} */}
     </>
   );
 };

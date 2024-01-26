@@ -1,26 +1,28 @@
 import React, { useState } from "react";
 
 interface CustomInputProps {
-  type?: string;
+  type?: "text" | "number" | "tel" | "email"; // Specify the type for better validation
   placeholder?: string;
-  onChange?: (value: string) => void;
+  onChange?: (value: string | number) => void;
   className?: string;
   label?: string;
-  value?: string;
+  value?: string | number;
 }
 
 const CustomInputField: React.FC<CustomInputProps> = ({
-  type,
+  type = "text",
   placeholder,
   onChange,
   className,
   label,
   value,
 }) => {
-  const [inputValue, setInputValue] = useState<string>(value || "");
+  const [inputValue, setInputValue] = useState<string | number>(
+    value !== undefined ? value : ""
+  );
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value;
+    const newValue = type === "number" ? parseFloat(e.target.value) : e.target.value;
     setInputValue(newValue);
 
     onChange && onChange(newValue);
