@@ -8,6 +8,7 @@ interface HelpOptionSubProps {
 }
 
 const HelpOptionSub: React.FC<HelpOptionSubProps> = ({ startingPrice, city, highway }) => (
+
   <div className="flex justify-between">
     <div>
       <div className="text-dark text-xs">{startingPrice}</div>

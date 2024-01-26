@@ -62,19 +62,7 @@ html {
   scrollbar-width: thin !important;
 }
 
-::-webkit-scrollbar {
-  width: 0.4em;
-  height: 0.4em;
-}
 
-::-webkit-scrollbar-thumb {
-  background: #00ffa2;
-  border-radius: 100vw;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #01ae9b;
-}
 
 body {
   margin: 0;

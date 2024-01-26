@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RadioButton from "../../Common/CheckButton/RadioButton";
+import RadioButton from "@/components/Common/CheckButton/RadioButton";
 import {
   Honda,
   VolkswagenBrand,
@@ -11,14 +11,16 @@ import {
   MercedesBrand,
   NissanBrand,
   MazdaBrand,
-} from "../../Icons/Icons";
+} from "@/components/Icons/Icons";
 import { Button } from "@/components/ui/button";
 
+type CustomizeType = 'brand' | 'type'
 interface PreferredCarBrandProps {
   onChange: (values: string[]) => void;
+  setType: (values: CustomizeType) => void;
 }
 
-const PrefferedCarBrand: React.FC<PreferredCarBrandProps> = ({ onChange }) => {
+const SelectBrand: React.FC<PreferredCarBrandProps> = ({ onChange, setType }) => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
   const handleOptionChange = (values: string[]) => {
@@ -88,19 +90,14 @@ const PrefferedCarBrand: React.FC<PreferredCarBrandProps> = ({ onChange }) => {
       icon: <MazdaBrand className="fill-dark-3" />,
     },
   ];
-
   return (
     <>
       <div className="max-w-[940px] mx-auto mb-[48px]">
-        <h2 className="heading1">Order & customize</h2>
+        <h2 className="heading1">Select brand</h2>
         <p className="text-dark-2 text-center mb-[24px] md:mb-[30px] lg:text-[1rem] xl:mb-[40px]
          xl:text-[1.25rem] xl:leading-[1.5]">
-          Explore the latest cars by brand or body type for an exciting range of new options.
+          Choose sedan models from a variety of reputable automotive brands.
         </p>
-        <div className="flex flex-row justify-center gap-[12px]">
-          <Button variant="normal" size="sm">Brand</Button>
-          <Button variant="outline" size="sm">Type</Button>
-        </div>
       </div>
       <div className="flex gap-[12px] justify-center lg:gap-[24px]  items-stretch flex-wrap pb-[30px] 2xl:pb-[50px]">
         <RadioButton
@@ -114,4 +111,4 @@ const PrefferedCarBrand: React.FC<PreferredCarBrandProps> = ({ onChange }) => {
   );
 };
 
-export default PrefferedCarBrand;
+export default SelectBrand;
