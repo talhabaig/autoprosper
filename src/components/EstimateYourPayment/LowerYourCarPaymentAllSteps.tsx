@@ -1,16 +1,20 @@
 // components/StepForm.js
 "use client";
 
-import { useState } from "react";
-import UserNameandEmail from "./UserNameDetails/UserNameDetails";
+import { useEffect, useState } from "react";
 import { BackArrow, ArrowRight } from "../Icons/Icons";
-import NavigationBar from "../ui/Navigations/navigationBar";
 import Button from "../Common/Button/Button";
 import UserAddressDetails from "./UserAddressDetails/UserAddressDetails";
+import UserNameandEmail from "./UserNameDetails/UserNameDetails";
 import {
   userNameAndEmailDetails,
   userAddressDetails,
+  VehicleFormInformation,
+  LoanInformationForm,
 } from "../../assests/interfaces/Home/index";
+import Link from "next/link";
+import VehicleInformationForm from "./VehicleInformationForm/VehicleInformation";
+import UserLoanInformation from "./LoanInformation/LoanInformation";
 
 const LowerYourCarPaymentAllSteps = () => {
   const [step, setStep] = useState(1);
@@ -18,64 +22,177 @@ const LowerYourCarPaymentAllSteps = () => {
     useState<userNameAndEmailDetails>();
   const [addressDetails, setUserAddressDetails] =
     useState<userAddressDetails>();
+  const [vehicleInformation, setVehicleInformation] =
+    useState<VehicleFormInformation>();
+
+  const [loanInfo, setLoanInfo] = useState<LoanInformationForm>();
 
   const handleNext = () => {
-    if (step < 4) {
-      setStep(step + 1);
+    if (step < 5) {
+      setStep((prevData) => {
+        return prevData + 1;
+      });
       console.log("step", step);
-    } else if (step === 2) {
-      console.log("Step:", step);
-      console.log("Logging states:", userNameDetails, addressDetails);
-      setStep(step + 1);
     }
   };
 
   const handleNameAndEmail = (value: userNameAndEmailDetails) => {
     setUserNameDetails(value);
-    console.log("userNameDetails", userNameDetails);
   };
 
   const handleUserAddress = (value: userAddressDetails) => {
     setUserAddressDetails(value);
-    console.log("userNameDetails", addressDetails);
   };
+  const handleVehicleInformation = (value: VehicleFormInformation) => {
+    setVehicleInformation((prevData) => {
+      return { ...prevData, ...value };
+    });
+  };
+
+  const handleLoanInformation = (value: LoanInformationForm) => {
+    setLoanInfo(value);
+  };
+
+  useEffect(() => {
+    if (step === 5) {
+      console.log("Logging states:", [
+        userNameDetails,
+        addressDetails,
+        vehicleInformation,
+        loanInfo,
+      ]);
+    }
+  }, [step]);
 
   return (
     <>
-     {step > 1 && step < 4 && (
-            <div className=" py-[10px] mb-[28px]">
-              <span className="inline-block" onClick={() => setStep(step - 1)}>
-                <BackArrow className="w-[24px] h-[24px] cursor-pointer" />{" "}
-              </span>
-            </div>
-          )}
-      <section>
+      <div className="sm:mt-[1.75rem] md:mt-[2.8rem] lg:mt-[3.75rem] p-[18px] pb-0 max-w-[480px] mx-auto">
+        {step === 1 ? (
+          <Link href="/">
+            <span className="inline-block">
+              <BackArrow className="w-[24px] h-[24px] cursor-pointer" />{" "}
+            </span>
+          </Link>
+        ) : (
+          <span className="inline-block" onClick={() => setStep(step - 1)}>
+            <BackArrow className="w-[24px] h-[24px] cursor-pointer" />{" "}
+          </span>
+        )}
+      </div>
+      <section className="py-[2rem]">
         <div className="max-w-[480px] mx-auto px-4">
-          <h1 className="heading1 md:mb-[32px]">Lower your car payment now</h1>
-          
+          <span className="text-primary text-[14px] block text-center mb-[4px]">
+            {step === 1
+              ? "Basic information"
+              : step === 2
+              ? "Personal information"
+              : step === 3
+              ? "Vehicle information"
+              : step === 4
+              ? "Loan information"
+              : ""}
+          </span>
+
+          {step < 5 && (
+            <h1 className="heading1 md:mb-[32px]">
+              Lower your car payment now
+            </h1>
+          )}
+          {step === 1 && (
+            <span className="text-dark-3 block text-center text-[14px] leading-[150%] md:text-[16px] mb-[24px]">
+              Simple, easy and fast!
+            </span>
+          )}
 
           {step === 1 && <UserNameandEmail onChange={handleNameAndEmail} />}
           {step === 2 && <UserAddressDetails onChange={handleUserAddress} />}
-          {step === 3 && <div>abc</div>}
-          {step === 4 && <div>xyz</div>}
-        </div>
-        {step < 4 && (
-          <div className="container flex justify-center lg:justify-end items-center py-[12px] lg:py-[30px]">
+          {step === 3 && (
+            <VehicleInformationForm onChange={handleVehicleInformation} />
+          )}
+          {step === 4 && (
+            <UserLoanInformation onChange={handleLoanInformation} />
+          )}
+          {step === 5 && (
+            <>
+              <h1 className="heading1 md:mb-[32px]">Thank you</h1>{" "}
+              <p
+                className="block text-dark-3 text-[14px] leading-[150%] lg:text-[16px] [&>span]:font-bold
+         [&>span]:text-dark mb-[18px] md:mb-[24px]"
+              >
+                We are reviewing all of our options and reaching out to our
+                lending partners to try and find a fit for your refinance.
+              </p>
+            </>
+          )}
+          {step < 6 && (
+            <div className=" flex justify-center mb-[18px] md:mb-[24px]">
+              {step === 2 ? (
+                <Button
+                  variant="small"
+                  className="lg:min-h-[56px] w-full"
+                  onClick={() => {
+                    handleNext();
+                  }}
+                  children={
+                    <>
+                      <span className="inline-block">I Agree</span>
+                      <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
+                    </>
+                  }
+                />
+              ) : step === 5 ? (
+                <Button
+                  variant="small"
+                  className="lg:min-h-[56px] w-full"
+                  onClick={() => {
+                    handleNext();
+                  }}
+                  children={
+                    <>
+                      <span className="inline-block">Done</span>
+                      <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
+                    </>
+                  }
+                />
+              ) : (
+                <Button
+                  variant="small"
+                  className="lg:min-h-[56px] w-full"
+                  onClick={() => {
+                    handleNext();
+                  }}
+                  children={
+                    <>
+                      <span className="inline-block">Next</span>
+                      <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
+                    </>
+                  }
+                />
+              )}
+            </div>
+          )}
+
+          <div
+            className="flex gap-[13px] text-dark-3 text-[14px]
+             md:text-[1rem] items-center justify-between leading-[150%] mb-[18px] md:mb-6"
+          >
+            <hr className="block w-[40%] h-[1px] bg-dark-6 flex-[0_0_auto]" />
+            <span className="flex-[0_0_auto] inline-block">Or</span>
+            <hr className="block w-[40%] h-[1px] bg-dark-6 flex-[0_0_auto]" />
+          </div>
+          <div>
             <Button
-              variant="small"
-              className="lg:min-h-[56px]"
-              onClick={() => {
-                handleNext();
-              }}
+              variant="transparent"
+              className="lg:min-h-[56px] w-full bg-dark hover:!opacity-90  border-[none] text-white font-bold"
+              label="Call Now"
               children={
                 <>
-                  <span className="inline-block">Continue</span>
                   <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
                 </>
               }
             />
           </div>
-        )}
+        </div>
       </section>
     </>
   );

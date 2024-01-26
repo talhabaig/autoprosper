@@ -139,11 +139,12 @@ export interface LowerCarPaymentForm {
   carPaymentDetails?: string[];
 }
 
+
 export interface userNameAndEmailDetails {
-  firstName: string;
-  lastName: string;
-  phoneNumber: string;
-  emailAddress: string;
+  firstName?: string;
+  lastName?: string;
+  phoneNumber?: string;
+  emailAddress?: string;
 }
 
 
@@ -153,4 +154,19 @@ export interface userAddressDetails {
   city?: string;
   status?: string;
   zipCode?: string;
+}
+
+export interface VehicleFormInformation {
+  car?: string;
+  year?: string;
+  make?: string;
+  model?: string;
+  vehicleIdentificationNumber?: string;
+}
+
+export interface LoanInformationForm {
+  currentMonthlyPayment?: number;
+  currentInterestRate?: number;
+  payOffAmount?: number;
+  totalMonths?: number;
 }

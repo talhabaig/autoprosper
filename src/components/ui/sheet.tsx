@@ -210,7 +210,7 @@ interface SheetSectionDetailsProps {
   content: {
     title: string;
     list: Array<{
-      element: string;
+      element: React.ReactNode; // Change the type to React.ReactNode
     }>;
     button: {
       text: string;

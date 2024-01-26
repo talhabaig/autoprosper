@@ -1,8 +1,13 @@
 import RadioButtonImage from "@/components/Common/CheckButton/RadioButtonImage";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+interface HelpOptionSubProps {
+  startingPrice: string; 
+  city: string;
+  highway: string;
+}
 
-const HelpOptionSub = ({ startingPrice, city, highway }) => (
+const HelpOptionSub: React.FC<HelpOptionSubProps> = ({ startingPrice, city, highway }) => (
   <div className="flex justify-between">
     <div>
       <div className="text-dark text-xs">{startingPrice}</div>
