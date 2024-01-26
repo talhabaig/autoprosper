@@ -12,6 +12,7 @@ import NavigationBar from "../ui/Navigations/navigationBar";
 import Button from "../Common/Button/Button";
 import SuggestionForYou from "./SuggestionForYou/SuggestionForYou";
 import PurposeOfUse from "./PurposeOfUse/PurposeOfUse";
+import Link from "next/link";
 
 const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
   const [step, setStep] = useState(1);
@@ -59,33 +60,16 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
         fuelConsuptionType,
         carPurpose,
       });
-
-      // // Log data in the parent component
-      // onDataLog({
-      //   essentialFeatures,
-      //   carBrand,
-      //   totalSeats,
-      //   vehiclePreference,
-      //   fuelConsuptionType,
-      // });
-
-      setStep(step + 1);
-
-      // You can also send the data to a server or perform other actions
     }
   };
 
   return (
     <>
       <NavigationBar variant="dark" />
-      <section
-        className={`mt-auto mainWrapperFirstTimeBuyer ${
-          step === 7 && "bg-dark-7"
-        }`}
-      >
+      <section className={`mt-auto mainWrapperFirstTimeBuyer `}>
         <div className="container firstTimeBuyerContainerWrapper">
           {/* <h1>Step {step}</h1> */}
-          {step > 1 && step < 7 && (
+          {step > 1 && step < 8 && (
             <div className=" py-[10px] mb-[28px]">
               <span className="inline-block" onClick={() => setStep(step - 1)}>
                 <BackArrow className="w-[24px] h-[24px] cursor-pointer" />{" "}
@@ -109,11 +93,28 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
           {step === 6 && (
             <RidePowerConsuption onChange={handleRidePowerConsuption} />
           )}
-          {step === 7 && <SuggestionForYou />}
+          {/* {step === 7 && <SuggestionForYou />} */}
         </div>
-        {step < 7 && (
-          <div className="border-t border-solid border-dark-6 mt-[30px lg:mt-0]">
-            <div className="container flex justify-center lg:justify-end items-center py-[12px] lg:py-[30px]">
+        <div className="border-t border-solid border-dark-6 mt-[30px lg:mt-0]">
+          <div className="container flex justify-center lg:justify-end items-center py-[12px] lg:py-[30px]">
+            {step === 6 ? (
+              <Link href="get-pre-qualified">
+                <Button
+                  variant="small"
+                  className="lg:min-h-[56px]"
+                  onClick={() => {
+                    handleNext();
+                  }}
+                  children={
+                    <>
+                      <span className="lg:hidden">Next</span>
+                      <span className="hidden lg:inline-block">Continue</span>
+                      <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
+                    </>
+                  }
+                />
+              </Link>
+            ) : (
               <Button
                 variant="small"
                 className="lg:min-h-[56px]"
@@ -128,9 +129,9 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
                   </>
                 }
               />
-            </div>
+            )}
           </div>
-        )}
+        </div>
       </section>
     </>
   );

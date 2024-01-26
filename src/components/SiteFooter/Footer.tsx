@@ -48,8 +48,8 @@ const Finance = [
   {
     title: "Finance",
     items: [
-      { id: 1, label: "Get Pre-Qualified", href: "/get-pre-qualified" },
-      { id: 2, label: "Estimate Your Payment", href: "/estimate-payment" },
+      { id: 1, label: "Get Pre-Qualified", href: "get-pre-qualified" },
+      { id: 2, label: "Estimate Your Payment", href: "estimate-your-payment" },
     ],
   },
 ];
@@ -165,12 +165,11 @@ const Footer = () => {
                   className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]"
                   key={item.id}
                 >
-                  <span
-                    className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer"
-                    id={item.href}
-                  >
-                    {item.label}
-                  </span>
+                  <Link href={item.href}>
+                    <span className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer">
+                      {item.label}
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>
