@@ -81,7 +81,7 @@ const Discover = () => {
           className="mb-[24px] md:mb-0 md:hidden"
         />
       </div>
-      <div className="flex md:max-w-[696px] w-full justify-center mb-[48px] md:mb-0">
+      <div className="flex md:max-w-[696px] w-full justify-center">
         <GradientCard variant="hide-on-mobile" className="w-full">
           <div className="flex flex-col gap-[32px] md:h-full w-full items-center justify-center bg-white rounded-md md:p-[32px]">
             <Carousel

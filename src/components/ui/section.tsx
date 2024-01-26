@@ -3,6 +3,7 @@ import React, { DetailedHTMLProps, HTMLAttributes, ReactElement, ReactNode } fro
 
 interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
+  className?: string;
 }
 
 interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -13,10 +14,10 @@ interface SectionDescProps extends React.HTMLAttributes<HTMLDivElement> {
   children: any;
 }
 
-const Section: React.FC<SectionProps> = ({ children, ...props }) => {
+const Section: React.FC<SectionProps> = ({ children, className, ...props }) => {
   return (
     <section
-      className="mt-[48px] md:mt-0 px-[18px] max-w-full text-center md:py-[96px] flex flex-col md:flex-row md:gap-[24px] justify-between md:justify-center md:px-10 lg:px-[159px] mx-auto"
+      className={cn("px-[18px] max-w-full text-center py-[48px] md:py-[96px] flex flex-col md:flex-row md:gap-[24px] justify-between md:justify-center md:px-10 lg:px-[159px] mx-auto", className)}
       {...props}
     >
       {children}
