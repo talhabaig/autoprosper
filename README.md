@@ -1,10 +1,14 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Important
+tailwind is used in project if dome dev want to include bootstrap must check compatibility with tailwind
+
 ## Getting Started
 
 First, run the development server:
 
 ```bash
+npm i
 npm run dev
 # or
 yarn dev
@@ -13,8 +17,7 @@ pnpm dev
 # or
 bun dev
 ```
-Tailwind is used in this project
-by setting font-size: 62.5%;  in the project font-size 1rem is considered 10px
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

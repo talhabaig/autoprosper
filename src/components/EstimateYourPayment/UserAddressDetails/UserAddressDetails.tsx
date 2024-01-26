@@ -17,7 +17,7 @@ const UserAddressDetails: React.FC<ChildFormComponentProps> = ({
     zipCode: "",
   });
 
-  const handleInputChange = (name: keyof userAddressDetails, value: string) => {
+  const handleInputChange = (name: keyof userAddressDetails, value: string | number) => {
     setUserAddress((prevData) => ({
       ...prevData,
       [name]: value,
@@ -75,6 +75,18 @@ const UserAddressDetails: React.FC<ChildFormComponentProps> = ({
           label="Zip Code"
           className="mb-[18px] md:mb-6"
         />
+
+        <div>
+          <span
+            className="block text-dark-3 text-[14px] leading-[150%] lg:text-[16px] [&>span]:font-bold
+         [&>span]:text-dark mb-[18px] md:mb-[24px]"
+          >
+            By clicking the "Next " "button" you consent, acknowledge, and agree
+            to the following:- Auto Approve's <span>Terms Of Service</span> and{" "}
+            <span> Privacy Policy </span> and to receive important notices and
+            other communications electronically
+          </span>
+        </div>
       </div>
     </>
   );

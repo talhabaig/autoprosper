@@ -34,7 +34,7 @@ const Customize: React.FC<TrimProps> = ({ steps, currentStep }) => {
             <p className="text-[14px] font-bold md:font-normal text-dark m-0 p-0">BMW 2 Series</p>
           </div>
         </div>
-        <div className="flex flex-row md:flex-col gap-3 overflow-x-scroll max-w-full scrollbar">
+        <div className="flex flex-row md:flex-col gap-3 overflow-x-scroll max-w-full">
           {steps.map((step, index) => (
             <div className="flex items-center gap-[6px]">
               <div
