@@ -22,7 +22,7 @@ const customers = [
 
 const ProsperingCustomers: React.FC = () => {
   return (
-    <Section className="bg-dark py-[60px] md:py-[120px]">
+    <Section className="bg-dark !flex-col">
       <div className="w-full md:max-w-[690px] px-[15px] md:px-0 flex flex-col items-center mx-auto text-center">
         <SectionHeader className="text-primary-light">
           Delivery to prospering customers
