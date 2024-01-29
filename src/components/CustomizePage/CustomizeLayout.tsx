@@ -56,7 +56,7 @@ const Customize: React.FC<TrimProps> = ({ steps, currentStep }) => {
           )}
           <p
             className="text-dark-2 text-center mb-[24px] md:mb-[30px] lg:text-[1rem] xl:mb-[40px]
-         xl:text-[1.25rem] xl:leading-[1.5] md:text-left"
+            xl:text-[1.25rem] xl:leading-[1.5] md:text-left"
           >
 
             {currentStepConfig?.subTitle}
