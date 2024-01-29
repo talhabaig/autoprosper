@@ -83,7 +83,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
       <div className="md:hidden flex p-[15px] justify-between items-center">
         <Sheet>
           <SheetContent
-            className="w-full px-0 py-[60px] transition-all overflow-y-scroll"
+            className="w-full px-0 py-[84px] transition-all overflow-y-scroll"
             selectedItem={selectedItem}
             onBack={handleBackButton}
           >
@@ -120,7 +120,8 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
           </div>
         </Sheet>
       </div>
-      <div className="hidden relative md:flex mx-auto justify-between items-center md:w-screen lg:px-40 lg:py-[30px] md:px-10 md:py-[15px]">
+      <div className="w-full relative">
+      <div className="hidden md:flex mx-auto justify-between items-center md:w-screen lg:py-[30px] md:py-[15px] container">
         <Link href="/">
           {variant === "dark" ? (
             <Image
@@ -156,6 +157,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             SIGNUP
           </Button>
         </Link>
+      </div>
       </div>
     </>
   );

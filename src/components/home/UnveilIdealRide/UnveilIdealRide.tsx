@@ -79,7 +79,7 @@ const UnveilIdealRide: React.FC = () => {
       <div className="md:px-[76px] w-full">
         <Carousel
         setApi={setApi}
-          className="w-full flex flex-col md:block"
+          className="w-full flex flex-col md:block lg:max-w-[1368px] lg:mx-auto"
           opts={{
             loop: true,
             align: "start"
@@ -87,7 +87,7 @@ const UnveilIdealRide: React.FC = () => {
         >
           <CarouselContent>
             {carouselData.map((data, index) => (
-              <CarouselItem key={"carousel" + index} className="basis-3/4 md:basis-2/5 lg:basis-1/3">
+              <CarouselItem key={"carousel" + index} className="basis-3/4  lg:max-w-[456px] lg:max-h-[462px]">
                 <CarouselCard data={data} active={selected === index}/>
               </CarouselItem>
             ))}

@@ -36,7 +36,7 @@ const ProsperingCustomers: React.FC = () => {
       </div>
       <div className="w-full">
         <Carousel
-          className="w-full flex flex-col md:block"
+          className="w-full flex flex-col md:block max-w-[1728px] lg:mx-auto"
           opts={{
             loop: true,
             align: "start",
@@ -46,7 +46,7 @@ const ProsperingCustomers: React.FC = () => {
             {customers.map((customer, index) => (
               <CarouselItem
                 key={"carousel"+index}
-                className="basis-1/4 lg:basis-[14%]"
+                className="basis-1/4 lg:basis-[15%]"
               >
                 <img
                   src={customer}
