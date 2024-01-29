@@ -79,7 +79,7 @@ const UnveilIdealRide: React.FC = () => {
       <div className="md:px-[76px] w-full">
         <Carousel
         setApi={setApi}
-          className="w-full flex flex-col md:block lg:max-w-[1368px] lg:mx-auto"
+          className="w-full flex flex-col lg:block lg:max-w-[1368px] lg:mx-auto"
           opts={{
             loop: true,
             align: "start"
@@ -92,9 +92,9 @@ const UnveilIdealRide: React.FC = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="bg-white hidden md:flex"/>
-          <CarouselNext variant="gradient" className="hidden md:flex mx-auto" />
-          <div className="flex mx-auto mt-[24px] gap-[12px] md:hidden">
+          <CarouselPrevious className="bg-white hidden lg:flex mx-auto w-[56px] h-[56px]"/>
+          <CarouselNext variant="gradient" className="hidden lg:flex mx-auto w-[56px] h-[56px]" />
+          <div className="flex mx-auto mt-[24px] gap-[12px] lg:hidden">
             <CarouselPrevious className="bg-white w-[46px] h-[46px]"/>
             <CarouselNext variant="gradient" className="w-[46px] h-[46px]" />
           </div>
