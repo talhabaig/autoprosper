@@ -107,15 +107,15 @@ const VehicleCondition = () => {
 
   return (
     <>
-      <h1 className="text-left heading text-[#001B44] text-[32px] lg:text-[56px] font-[400] mb-[15px]">
+      <h1 className="text-left heading text-[#001B44] text-[32px] lg:text-[56px] font-[400] mb-[12px]">
         Condition
       </h1>
-      <p className="text-left text-[#5D6878] lg:mb-10px font-[400] text-[16px]">
+      <p className="text-left text-[#5D6878] lg:mb-10px font-[400] text-[14px]">
         Tell us a little more about your vehicle so we can determine your offer.
         Your offer will be finalized after the condition has been verified by
         inspection.
       </p>
-      <h3 className="text-[#001B44] text-[18px] font-[700] mb-2">
+      <h3 className="text-[#001B44] text-[14px] font-[700] mb-2">
         What is the condition of the car?
       </h3>
       <a
@@ -125,7 +125,7 @@ const VehicleCondition = () => {
         Car condition guidelines
       </a>
 
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-3">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-3">
         {radioOptions.map((item: any) => (
           <RadioOption
             key={item.id}
@@ -139,10 +139,10 @@ const VehicleCondition = () => {
         ))}
       </div>
 
-      <h3 className="text-[#001B44] text-[18px] font-[700] mb-2 mt-3 lg:mt-5">
+      <h3 className="text-[#001B44] text-[18px] font-[700] mb-[12px] mt-[24px] lg:mt-5">
         Are there active warning lights?
       </h3>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-3">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-3">
         {activeWarning.map((item: any) => (
           <RadioOption
             key={item.id}
@@ -159,7 +159,7 @@ const VehicleCondition = () => {
       <h3 className="text-[#001B44] text-[18px] font-[700] mb-2 mt-3 lg:mt-5">
         Has the car been in an accident?{" "}
       </h3>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-3">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-3">
         {activeAccidentVal.map((item: any) => (
           <RadioOption
             key={item.id}

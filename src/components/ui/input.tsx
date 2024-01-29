@@ -22,7 +22,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const randomId = Math.floor(Math.random() * (100 - 0) + 0) + props.label;
 
     return (
-      <div className="flex flex-col items-start justify-start gap-2 md:gap-3 rounded-xl px-4 py-[8px] md:py-[15px] bg-gray-50 border-[1px] border-dark-4 appearance-none">
+      <div className="flex flex-col items-start justify-start gap-2 md:gap-3 rounded-xl px-4 py-[8px] md:py-[15px] bg-gray-50 border-[1px] border-dark-4 appearance-none  ">
         <label
           htmlFor={randomId.toString()}
           className="cursor-text text-left text-dark-4 text-[10px] "
@@ -52,7 +52,7 @@ Input.displayName = "Input";
 const Select: React.FC<SelectProps> = ({ options, ...props }) => {
   const randomId = Math.floor(Math.random() * (100 - 0) + 0) + props.label;
   return (
-    <div className="flex flex-col items-start justify-start gap-2 md:gap-3 rounded-xl px-4 py-[8px] md:py-[15px] bg-gray-50 border-[1px] border-dark-4 appearance-none">
+    <div className="flex flex-col items-start justify-start gap-2 md:gap-3 rounded-xl px-4 py-[8px] md:py-[15px]  bg-gray-50 border-[1px] border-dark-4 appearance-none xl:w-[53%]">
       <label
         htmlFor={randomId.toString()}
         className="cursor-text text-left text-dark-4 text-[10px] indent-1 "
