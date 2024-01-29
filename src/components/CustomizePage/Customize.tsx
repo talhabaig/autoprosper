@@ -229,7 +229,7 @@ const CustomizeByBrand: React.FC = () => {
 
 
   const currentStepConfig = stepsConfig[step];
-  const currentCustomizeStepConfig = customizeSteps[customizeStep];
+  const currentCustomizeStepConfig = customizeSteps[customizeStep] || {};
   const isComplete =  step == stepsConfig.length - 1
   return (
     <>
@@ -252,6 +252,7 @@ const CustomizeByBrand: React.FC = () => {
               setType: setType
             })}
           </div>
+          
           {(currentStepConfig.displayNextButton ||
             currentStepConfig.displaySkipButton) && (
             <div className="border-t border-solid border-dark-6 mt-[30px lg:mt-0]">

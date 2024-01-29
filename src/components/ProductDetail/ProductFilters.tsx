@@ -10,7 +10,6 @@ import {
   ProductFiltersProps,
 } from "../../assests/interfaces/Home/index";
 
-
 const sortByOptions: Option[] = [
   { value: "option1", label: "Option 1" },
   { value: "option2", label: "Option 2" },
@@ -61,12 +60,13 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setSearchValue(value);
-    onInputChange(value);
+    setSearchValue(value); // Update the state with the new value
+    console.log("inputvalue", value); // Log the current value
+    onInputChange(value); // Pass the current value to the callback
   };
 
   return (
-    <div className="md:flex  md:flex-row md:justify-between md:mb-[12px] lg:mb-[24px] xl:mb-[36px] 2xl:mb-[44px]">
+    <div className="md:flex  md:flex-row md:justify-between md:mb-[30px] lg:mb-[40px]  xl:mb-[44px] 2xl:mb-[50px]">
       <div className="w-full md:w-[49%] flex items-center flex-wrap justify-between md:justify-start gap-[12px] xl:gap-[12px] mb-[16px] md:mb-0">
         <div className="min-w-[46%] md:min-w-[132px] md:max-w-[132px] xl:min-w-[149px] filterWrapper">
           <span
@@ -113,7 +113,10 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
       {searchValue.length > 4 ? (
         // Elements to show when sortBy has a value
         <div className="md:w-[49%] md:flex md:justify-end md:gap-[8px]">
-          <div onClick={() => setSearchValue('')} className="bg-btn-primary-gradient  cursor-pointer p-[1px] rounded-[12px] overflow-hidden w-full max-w-[632px] mx-auto">
+          <div
+            onClick={() => setSearchValue("")}
+            className="bg-btn-primary-gradient  cursor-pointer p-[1px] rounded-[12px] overflow-hidden w-full max-w-[632px] mx-auto"
+          >
             <div className="bg-white flex justify-between items-center min-h-[56px] px-2 xl:pr-[24px] rounded-[12px]">
               <div className="flex items-center gap-[8px] flex-[0_0_auto] w-[70%]">
                 <Image

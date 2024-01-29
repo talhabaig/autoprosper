@@ -4,8 +4,13 @@ import { ArrowRight } from "../../Icons/Icons";
 import Image from "next/image";
 import { DiscountAndCreditDataItem } from "../../../assests/interfaces/Home/index";
 import styles from "./DiscountCredit.module.css";
+import Link from "next/link";
 
-const discountAndCreditData: DiscountAndCreditDataItem[] = [
+interface DiscountAndCreditDataItemExtended extends DiscountAndCreditDataItem {
+  route: string;
+}
+
+const discountAndCreditData: DiscountAndCreditDataItemExtended[] = [
   {
     id: 1,
     imageSrc: "/home/militiry-cars.png",
@@ -14,6 +19,7 @@ const discountAndCreditData: DiscountAndCreditDataItem[] = [
     paragraph:
       "Attention military members! Unlock exclusive discounts on our lineup of pickup trucks as a thank you for your service. Experience reliability and power tailored to your needs.",
     buttonLabel: "Learn more",
+    route: "get-pre-qualified",
     buttonIcon: (
       <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
     ),
@@ -26,12 +32,12 @@ const discountAndCreditData: DiscountAndCreditDataItem[] = [
     paragraph:
       "AutoProsper's experts will tailor a personal plan to fit your situation. Better to start sooner than later.",
     buttonLabel: "Learn more",
-    
+    route: "get-pre-qualified",
+
     buttonIcon: (
       <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
     ),
   },
-  
 ];
 
 function DiscountAndCredit() {
@@ -53,8 +59,10 @@ function DiscountAndCredit() {
                   alt={item.contentLabel || ""}
                 />
               </div>
-              <div className="text-center flex flex-col justify-center items-center md:flex-[0_0_auto] md:w-[48%]
-               3xl:w-[49%] 2xl:px-8 md:justify-start md:items-start md:text-start">
+              <div
+                className="text-center flex flex-col justify-center items-center md:flex-[0_0_auto] md:w-[48%]
+               3xl:w-[49%] 2xl:px-8 md:justify-start md:items-start md:text-start"
+              >
                 <div className="pb-[0.75rem] md:pb-[1.125rem] xl:pb-[1.5rem]">
                   <span
                     className="inline-block p-[4px_8px] lg:p-[5px_10px] leading-[1.3] rounded-[100px] tracking-[1px] 
@@ -72,11 +80,15 @@ function DiscountAndCredit() {
                   {item.paragraph}
                 </p>
                 <div>
-                  <Button
-                    variant="primary"
-                    label={item.buttonLabel} 
-                    children={item.buttonIcon} className=""
-                  />
+                  
+                  <Link href={item.route}>
+                    <Button
+                      variant="primary"
+                      label={item.buttonLabel}
+                      children={item.buttonIcon}
+                      className=""
+                    />
+                  </Link>
                 </div>
               </div>
             </div>

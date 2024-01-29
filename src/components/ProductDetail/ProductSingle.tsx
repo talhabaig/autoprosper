@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { ArrowDown, ArrowRight, BlueTooth } from "../Icons/Icons";
 import Button from "../Common/Button/Button";
 import Image from "next/image";
 import { productDetail } from "../../assests/interfaces/Home/index";
 import styles from "./ProductDetailSingle.module.css";
+import ProductFilters from "./ProductFilters";
 
 const upGradeRideDetails: productDetail[] = [
   {
@@ -25,9 +27,25 @@ const upGradeRideDetails: productDetail[] = [
 ];
 
 const ProductSingle = () => {
+  const [inputData, setInputData] = useState("");
+  const [selectedOptionData, setSelectedOptionData] = useState("");
+
+  const handleInputChange = (inputValue: string) => {
+    console.log("Input Value in Parent:", inputValue);
+    setInputData(inputValue);
+  };
+  const handleOptionSelect = (selectedOptionData: any) => {
+    console.log("Selected Option in Parent:", selectedOptionData);
+    setSelectedOptionData(selectedOptionData);
+  };
   return (
-    <section className="pt-[24px] pb-[3rem]  2xl:pb-[4rem] 3xl:pb-[6rem] bg-white">
+    <section className="pt-[24px] pb-[3rem] lg:pb-[5rem] 2xl:pb-[6rem]   bg-white">
       <div className="container ">
+        <ProductFilters
+          onOptionSelect={handleOptionSelect}
+          onInputChange={handleInputChange}
+        />
+
         {upGradeRideDetails.map((item) => (
           <div
             key={item.id}
@@ -67,7 +85,9 @@ const ProductSingle = () => {
             </div>
             <div className="md:flex-[0_0_auto] lg:w-[48%] 3xl:w-[49%] ">
               <div className="max-w-[632px] mx-auto flex flex-col text-start">
-                <p className="text-[14px] mb-[0.75rem] ">{item.description}</p>
+                <p className="text-[14px] mb-[0.75rem] leading-[150%]">
+                  {item.description}
+                </p>
                 <div className="pb-[0.75rem] ">
                   <span
                     className="inline-block p-[5px_10px] leading-[1.3] rounded-[100px] tracking-[1px] 
@@ -117,7 +137,7 @@ const ProductSingle = () => {
                     variant="primary"
                     label={item.buttonLabel}
                     children={item.buttonIcon}
-                    className="w-full"
+                    className="w-full lg:w-[230px]"
                   />
                 </div>
               </div>

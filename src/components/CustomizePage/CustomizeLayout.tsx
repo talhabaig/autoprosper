@@ -51,16 +51,19 @@ const Customize: React.FC<TrimProps> = ({ steps, currentStep }) => {
       </div>
       <div className="flex flex-col items-start">
         <div className="w-full md:max-w-[940px]">
+        {currentStepConfig && (
           <h2 className="heading1 md:!text-left">{currentStepConfig.title}</h2>
+          )}
           <p
             className="text-dark-2 text-center mb-[24px] md:mb-[30px] lg:text-[1rem] xl:mb-[40px]
          xl:text-[1.25rem] xl:leading-[1.5] md:text-left"
           >
-            {currentStepConfig.subTitle}
+
+            {currentStepConfig?.subTitle}
           </p>
         </div>
         <div className="flex flex-col gap-[12px] justify-center lg:gap-[24px] w-full items-stretch flex-wrap pb-[30px] 2xl:pb-[50px]">
-          {currentStepConfig.content}
+          {currentStepConfig?.content}
         </div>
       </div>
     </div>

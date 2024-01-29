@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BackArrow, ArrowRight } from "../Icons/Icons";
+import { BackArrow, ArrowRight, ThankYouCircle } from "../Icons/Icons";
 import Button from "../Common/Button/Button";
 import UserAddressDetails from "./UserAddressDetails/UserAddressDetails";
 import UserNameandEmail from "./UserNameDetails/UserNameDetails";
@@ -32,7 +32,12 @@ const LowerYourCarPaymentAllSteps = () => {
       setStep((prevData) => {
         return prevData + 1;
       });
-      console.log("step", step);
+      console.log("Button states:", [
+        userNameDetails,
+        addressDetails,
+        vehicleInformation,
+        loanInfo,
+      ]);
     }
   };
 
@@ -55,7 +60,7 @@ const LowerYourCarPaymentAllSteps = () => {
 
   useEffect(() => {
     if (step === 5) {
-      console.log("Logging states:", [
+      console.log("UseEffect states:", [
         userNameDetails,
         addressDetails,
         vehicleInformation,
@@ -66,21 +71,21 @@ const LowerYourCarPaymentAllSteps = () => {
 
   return (
     <>
-      <div className="sm:mt-[1.75rem] md:mt-[2.8rem] lg:mt-[3.75rem] p-[18px] pb-0 max-w-[480px] mx-auto">
-        {step === 1 ? (
-          <Link href="/">
-            <span className="inline-block">
+      <section className="pb-[2rem] min-h-screen md:flex md:flex-col md:justify-center max-w-[480px] mx-auto ">
+        <div className="sm:mt-[1.75rem]  p-[18px] pb-0  ">
+          {step === 1 ? (
+            <Link href="/">
+              <span className="inline-block">
+                <BackArrow className="w-[24px] h-[24px] cursor-pointer" />{" "}
+              </span>
+            </Link>
+          ) : (
+            <span className="inline-block" onClick={() => setStep(step - 1)}>
               <BackArrow className="w-[24px] h-[24px] cursor-pointer" />{" "}
             </span>
-          </Link>
-        ) : (
-          <span className="inline-block" onClick={() => setStep(step - 1)}>
-            <BackArrow className="w-[24px] h-[24px] cursor-pointer" />{" "}
-          </span>
-        )}
-      </div>
-      <section className="py-[2rem]">
-        <div className="max-w-[480px] mx-auto px-4">
+          )}
+        </div>
+        <div className=" mt-[24px]   px-4">
           <span className="text-primary text-[14px] block text-center mb-[4px]">
             {step === 1
               ? "Basic information"
@@ -94,7 +99,7 @@ const LowerYourCarPaymentAllSteps = () => {
           </span>
 
           {step < 5 && (
-            <h1 className="heading1 md:mb-[32px]">
+            <h1 className={`heading1 mb-[18px] md:mb-[32px] `}>
               Lower your car payment now
             </h1>
           )}
@@ -114,14 +119,19 @@ const LowerYourCarPaymentAllSteps = () => {
           )}
           {step === 5 && (
             <>
-              <h1 className="heading1 md:mb-[32px]">Thank you</h1>{" "}
-              <p
-                className="block text-dark-3 text-[14px] leading-[150%] lg:text-[16px] [&>span]:font-bold
-         [&>span]:text-dark mb-[18px] md:mb-[24px]"
-              >
-                We are reviewing all of our options and reaching out to our
-                lending partners to try and find a fit for your refinance.
-              </p>
+              <div className="text-center">
+                <div className="flex justify-center items-center mb-[30px] md:mb-[34px]">
+                  <ThankYouCircle className="w-[150px] h-[150px] md:w-[183px] md:h-[183px]" />
+                </div>
+                <h1 className="heading1 md:mb-[32px]">Thank you</h1>{" "}
+                <p
+                  className="block text-dark-3 text-[14px] leading-[150%] lg:text-[16px] [&>span]:font-bold
+              [&>span]:text-dark mb-[18px] md:mb-[24px]"
+                >
+                  We are reviewing all of our options and reaching out to our
+                  lending partners to try and find a fit for your refinance.
+                </p>
+              </div>
             </>
           )}
           {step < 6 && (
@@ -141,19 +151,18 @@ const LowerYourCarPaymentAllSteps = () => {
                   }
                 />
               ) : step === 5 ? (
-                <Button
-                  variant="small"
-                  className="lg:min-h-[56px] w-full"
-                  onClick={() => {
-                    handleNext();
-                  }}
-                  children={
-                    <>
-                      <span className="inline-block">Done</span>
-                      <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
-                    </>
-                  }
-                />
+                <Link className="w-full" href="/">
+                  <Button
+                    variant="small"
+                    className="lg:min-h-[56px] w-full"
+                    children={
+                      <>
+                        <span className="inline-block">Done</span>
+                        <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
+                      </>
+                    }
+                  />
+                </Link>
               ) : (
                 <Button
                   variant="small"

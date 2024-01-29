@@ -20,7 +20,7 @@ export interface SelectProps
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, currency, ...props }, ref) => {
     const randomId = Math.floor(Math.random() * (100 - 0) + 0) + props.label;
-    
+
     return (
       <div className="flex flex-col h-[52px] md:h-[72px] items-start justify-start gap-2 md:gap-[9px] rounded-xl px-4 py-[8px] md:py-[15px] bg-gray-50 border-[1px] border-dark-4 appearance-none">
         <label
@@ -93,4 +93,4 @@ const TextBox = React.forwardRef<HTMLInputElement, InputProps>(
 );
 TextBox.displayName = "TextBox";
 
-export { Input, Select, TextBox};
+export { Input, Select, TextBox };

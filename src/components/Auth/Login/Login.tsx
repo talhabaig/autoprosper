@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Button from "../../Common/Button/Button";
 import LoginWithGoogle from "../LoginWithGoogle/LoginWithGoogle";
 import LoginWithFaceBook from "../LoginWithFaceBook/LoginWithFaceBook";
+import Link from "next/link";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
@@ -29,11 +30,13 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <Button
-          variant="primary"
-          label="Continue"
-          className="min-w-full w-full mb-[18px] md:mb-6"
-        />
+        <Link href="/">
+          <Button
+            variant="primary"
+            label="Continue"
+            className="min-w-full w-full mb-[18px] md:mb-6"
+          />
+        </Link>
         <div className="flex gap-[13px] text-dark-3 text-[14px] md:text-[1rem] items-center leading-[150%] mb-[18px] md:mb-6">
           <hr className="block w-full h-[1px] bg-dark-6" />
           <span>Or</span>
