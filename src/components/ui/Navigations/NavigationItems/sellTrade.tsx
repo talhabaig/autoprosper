@@ -26,7 +26,7 @@ const SellTrade = () => {
           element: (
             <div>
               <Link
-                className="text-xs font-normal text-dark-muted underline leading-[18px]"
+                className="text-sm font-normal text-dark-3 underline leading-[21px]"
                 href="#"
               >
                 What values guide AutoProsper's operations?
@@ -36,9 +36,9 @@ const SellTrade = () => {
         },
         {
           element: (
-            <div>
+            <div className="md:mt-[12px]">
               <Link
-                className="text-xs font-normal text-dark-muted underline leading-[18px]"
+                className="text-sm font-normal text-dark-3 underline leading-[21px]"
                 href="#"
               >
                 What distinguishes AutoProsper's approach to car buying?
@@ -60,10 +60,10 @@ const SellTrade = () => {
           element: (
             <div className="flex-col gap-[5px]">
               <Link href="#">
-                <h1 className="text-primary-text font-normal text-sm">
+                <h1 className="text-dark font-normal text-sm">
                   2024 Nissan Kicks®
                 </h1>
-                <p className="p-0 m-0 font-normal text-[10px] text-dark-muted">
+                <p className="p-0 m-0 font-normal text-sm text-dark-3 leading-[21px]">
                   Calculate your affordable car budget. Explore vehicles within
                   your financial range based on your affordability assessment.
                 </p>
@@ -75,10 +75,10 @@ const SellTrade = () => {
           element: (
             <div className="flex-col gap-[5px] mt-[15px]">
               <Link href="#">
-                <h1 className="text-primary-text font-normal text-sm">
+                <h1 className="text-dark font-normal text-sm">
                   2024 Nissan Kicks®
                 </h1>
-                <p className="p-0 m-0 font-normal text-[10px] text-dark-muted">
+                <p className="p-0 m-0 font-normal text-sm text-dark-3 leading-[21px]">
                   Calculate your affordable car budget. Explore vehicles within
                   your financial range based on your affordability assessment.
                 </p>
@@ -95,9 +95,9 @@ const SellTrade = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row  lg:pl-40 lg:py-[30px] md:pl-10 md:py-[15px] md:divide-x-[1px] md:divide-gray">
+    <div className="flex flex-col md:flex-row lg:py-[30px] md:py-[15px] container md:divide-x-[1px] md:divide-gray">
       <SheetSectionItems title="SELL OR TRADE-IN" items={navigationData} />
-      <div className="px-[15px]  mt-[30px] gap-[30px] flex flex-col md:flex-row">
+      <div className="md:pl-[36px] lg:pl-[72px]  mt-[30px] gap-[24px] flex flex-col md:flex-row">
         {contents.map((content) => (
           <SheetSectionDetails content={content} />
         ))}
