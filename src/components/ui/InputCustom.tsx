@@ -53,7 +53,7 @@ Input.displayName = "Input";
 const Select: React.FC<SelectProps> = ({ options, ...props }) => {
   const randomId = Math.floor(Math.random() * (100 - 0) + 0) + props.label;
   return (
-    <div className="flex flex-col items-start justify-start gap-2 md:gap-3 rounded-xl px-4 py-[8px] md:py-[15px]  bg-gray-50 border-[1px] border-dark-4 appearance-none xl:w-[53%]">
+    <div className="flex flex-col items-start justify-start gap-[0.25rem] md:gap-2 rounded-xl p-[8px_18px] md:p-[12px_24px]  bg-gray-50 border-[1px] border-dark-4 appearance-none xl:w-[53%]">
 
       <label
         htmlFor={randomId.toString()}
@@ -61,7 +61,7 @@ const Select: React.FC<SelectProps> = ({ options, ...props }) => {
       >
         {props.label}
       </label>
-      <select className="-ml-[4px] w-full text-[14px] md:text-lg md:leading-[22.68px] text-dark-1 focus:outline-none bg-gray-50 focus:ring-0">
+      <select className="-ml-[4px] w-full text-[14px] md:text-lg md:leading-[22.68px] text-[#001B44] font-medium focus:outline-none bg-gray-50 focus:ring-0">
         {options?.map((opt) => (
           <option key={'opt' + randomId.toString()} value={opt.value}>
             {opt.label}

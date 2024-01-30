@@ -51,8 +51,8 @@ const VehicleCondition = () => {
   const activeLease = [
     {
       id: 1,
-      label: "Lone",
-      value: "Lone",
+      label: "Loan",
+      value: "Loan",
     },
     {
       id: 2,
@@ -95,32 +95,32 @@ const VehicleCondition = () => {
   const activeAvailable = [
     {
       id: 1,
-      label: "Yes",
+      label: "1",
       value: "activeavailableYes",
     },
     {
       id: 2,
-      label: "No",
+      label: "2",
       value: "activeavailableNo",
     },
   ];
 
   return (
     <>
-      <h1 className="text-left heading text-[#001B44] text-[32px] lg:text-[56px] font-[400] mb-[12px]">
+      <h1 className="text-left heading text-[#001B44] text-[32px] xl:text-[48px] 2xl:text-[56px]  font-[400] mb-[12px] xl:mb-[18px]">
         Condition
       </h1>
-      <p className="text-left text-[#5D6878] lg:mb-10px font-[400] text-[14px]">
+      <p className="text-left text-[#5D6878] lg:mb-10px font-[400] text-[14px] 2xl:mb-[48px] xl:text-lg 2xl:text-xl">
         Tell us a little more about your vehicle so we can determine your offer.
         Your offer will be finalized after the condition has been verified by
         inspection.
       </p>
-      <h3 className="text-[#001B44] text-[14px] font-[700] mb-2">
+      <h3 className="text-[#001B44] text-[14px] lg:text-[16px] xl:text-[18px] font-[700] mb-2">
         What is the condition of the car?
       </h3>
       <a
         href=""
-        className="mb-3 block text-left underline text-[#FF3363] text-[14px] font-[700]"
+        className="mb-3 block text-left underline text-[#FF3363] xl:mb-6 text-[14px] font-[700]"
       >
         Car condition guidelines
       </a>
@@ -156,7 +156,7 @@ const VehicleCondition = () => {
         ))}
       </div>
 
-      <h3 className="text-[#001B44] text-[18px] font-[700] mb-2 mt-3 lg:mt-5">
+      <h3 className="text-[#001B44] text-[18px] font-[700] mb-[12px] mt-[24px] lg:mt-5">
         Has the car been in an accident?{" "}
       </h3>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-3">
@@ -173,10 +173,10 @@ const VehicleCondition = () => {
         ))}
       </div>
 
-      <h3 className="text-[#001B44] text-[18px] font-[700] mb-2 mt-3 lg:mt-5">
+      <h3 className="text-[#001B44] text-[18px] font-[700] mb-[12px] mt-[24px] lg:mt-5">
         Has the car been smoked in?
       </h3>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-3">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-3">
         {activesmoked.map((item: any) => (
           <RadioOption
             key={item.id}
@@ -190,10 +190,10 @@ const VehicleCondition = () => {
         ))}
       </div>
 
-      <h3 className="text-[#001B44] text-[18px] font-[700] mb-2 mt-3 lg:mt-5">
+      <h3 className="text-[#001B44] text-[18px] font-[700] mb-[12px] mt-[24px] lg:mt-5">
         Any active loan or lease on the car?
       </h3>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-3">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-3">
         {activeLease.map((item: any) => (
           <RadioOption
             key={item.id}
@@ -207,10 +207,10 @@ const VehicleCondition = () => {
         ))}
       </div>
 
-      <h3 className="text-[#001B44] text-[18px] font-[700] mb-2 mt-3 lg:mt-5">
+      <h3 className="text-[#001B44] text-[18px] font-[700] mb-[12px] mt-[24px] lg:mt-5">
         How many keys are available?
       </h3>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-3">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-3">
         {activeAvailable.map((item: any) => (
           <RadioOption
             key={item.id}

@@ -66,7 +66,7 @@ const Vehicle: React.FC = () => {
               <input
                 type="text"
                 placeholder="VIN (Vehicle Identification Number)"
-                className="block w-full  rounded-xl border-solid border p-[17px_18px] 3xl:p-[24px] xl:w-[50%] 3xl:w-[59%] border-[#8E97A6]"
+                className="block w-full  rounded-xl border-solid border p-[17px_18px] 3xl:p-[24px] lg:w-[50%] 3xl:w-[59%] border-[#8E97A6]"
                 onChange={handleInputChange}
               />
             </>
