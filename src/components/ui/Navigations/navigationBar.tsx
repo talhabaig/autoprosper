@@ -114,7 +114,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
                 aria-expanded="false"
               >
                 <span className="sr-only">Open div menu</span>
-                <BurgerIcon />
+                <BurgerIcon fill={variant === "light" ? 'white' : 'black'} />
               </button>
             </SheetTrigger>
           </div>
