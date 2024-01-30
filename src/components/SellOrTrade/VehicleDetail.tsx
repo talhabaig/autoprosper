@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Select } from "../ui/input";
+import { Select } from "../ui/InputCustom";
 import CustomInput from "../Common/InputField/InputField";
 
 interface FormData {
