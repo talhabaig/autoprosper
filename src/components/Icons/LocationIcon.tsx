@@ -1,10 +1,19 @@
-const LocationIcon: React.FC = () => {
+
+type propType = {
+  width?: string;
+  height?: string;
+  fill?: string;
+  className?: string;
+};
+
+const LocationIcon: React.FC<propType> = ({ className, fill, height, width }) => {
   return (
     <svg
       width="18"
       height="25"
       viewBox="0 0 18 25"
       fill="none"
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

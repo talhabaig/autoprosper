@@ -43,6 +43,7 @@ const config: Config = {
       },
       backgroundImage: {
         "hero": "url('/images/cover.png')",
+        "hero-mobile": "url('/images/cover-mobile.png')",
         "rainbow-gradient": "linear-gradient(89.62deg, #FF3363 10%, #FFE664 76.98%, #00FFA2 91.85%), linear-gradient(0deg, #FFFFFF, #FFFFFF)",
         "custom": "linear-gradient(90deg, #00FFA2 0%, #FFE664 100%)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

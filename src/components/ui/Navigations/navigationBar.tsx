@@ -82,20 +82,8 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
     <>
       <div className="md:hidden flex p-[15px] justify-between items-center">
         <Sheet>
-          <SheetTrigger asChild>
-            <button
-              data-collapse-toggle="navbar-default"
-              type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="navbar-default"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Open div menu</span>
-              <BurgerIcon />
-            </button>
-          </SheetTrigger>
           <SheetContent
-            className="w-full px-0 py-[60px] transition-all overflow-y-scroll"
+            className="w-full px-0 py-[84px] transition-all overflow-y-scroll"
             selectedItem={selectedItem}
             onBack={handleBackButton}
           >
@@ -112,34 +100,46 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             )}
             {selectedItem?.content}
           </SheetContent>
-        </Sheet>
-        <Link href="/">
-          <Image src="/images/logo.png" alt="logo" width="200" height="42" />
-        </Link>
-        <UserIcon />
-      </div>
-      <div className="hidden relative md:flex mx-auto justify-between items-center md:w-screen lg:px-40 lg:py-[30px] md:px-10 md:py-[15px]">
-
           <Link href="/">
-        {variant === "dark" ? (
-          <Image src="/images/logo-dark.png" alt="logo" width="200" height="42" />
-        ) : (
-          <Image
-            src="/images/logo.png"
-            alt="logo"
-            width="200"
-            height="42"
-          />
-        )}
+            <Image src="/images/logo.png" alt="logo" width="200" height="42" />
+          </Link>
+          <div className="flex flex-row items-center justify-between gap-[18px]">
+            <UserIcon />
+            <SheetTrigger asChild>
+              <button
+                data-collapse-toggle="navbar-default"
+                type="button"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                aria-controls="navbar-default"
+                aria-expanded="false"
+              >
+                <span className="sr-only">Open div menu</span>
+                <BurgerIcon />
+              </button>
+            </SheetTrigger>
+          </div>
+        </Sheet>
+      </div>
+      <div className="w-full relative">
+      <div className="hidden md:flex mx-auto justify-between items-center md:w-screen lg:py-[30px] md:py-[15px] container">
+        <Link href="/">
+          {variant === "dark" ? (
+            <Image
+              src="/images/logo-dark.png"
+              alt="logo"
+              width="200"
+              height="42"
+            />
+          ) : (
+            <Image src="/images/logo.png" alt="logo" width="200" height="42" />
+          )}
         </Link>
 
         <NavigationMenu className="hidden md:inline">
           <NavigationMenuList>
             {desktopNavigationData.map((navigation, index) => (
               <NavigationMenuItem key={index + "-nav"}>
-
                 <NavigationMenuTrigger variant={variant}>
-
                   {navigation.title}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-white md:w-screen py-[10px] transition-all overflow-y-scroll">
@@ -157,6 +157,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             SIGNUP
           </Button>
         </Link>
+      </div>
       </div>
     </>
   );

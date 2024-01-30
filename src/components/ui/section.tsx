@@ -3,6 +3,7 @@ import React, { DetailedHTMLProps, HTMLAttributes, ReactElement, ReactNode } fro
 
 interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
+  className?: string;
 }
 
 interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -13,10 +14,10 @@ interface SectionDescProps extends React.HTMLAttributes<HTMLDivElement> {
   children: any;
 }
 
-const Section: React.FC<SectionProps> = ({ children, ...props }) => {
+const Section: React.FC<SectionProps> = ({ children, className, ...props }) => {
   return (
     <section
-      className="mt-[60px] px-[14px] max-w-full text-center md:py-[120px] flex flex-col md:flex-row md:gap-[30px] justify-between md:justify-center md:px-10 lg:px-[159px] mx-auto"
+      className={cn("px-[18px] max-w-full text-center py-[48px] md:py-[96px] flex flex-col md:flex-row justify-between md:justify-center md:px-10 lg:px-[159px] mx-auto", className)}
       {...props}
     >
       {children}
@@ -31,7 +32,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
 }) => {
   return (
     <h1
-      className={cn("font-bold text-2xl md:text-5xl text-dark md:leading-[60.5px] mb-[10px] md:mb-[18px]", className)}
+      className={cn("font-bold text-2xl md:text-[44px] text-dark leading-[31.2px] md:leading-[57.2px] mb-[10px] md:mb-[18px]", className)}
       {...props}
     >
       {children}
@@ -42,7 +43,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
 const SectionDesc: React.FC<SectionDescProps> = ({ children, className, ...props }) => {
   return (
     <p
-      className={cn("font-normal text-xs md:text-xl text-dark-muted md:leading-[30px] md:mb-[60px] mb-[30px]", className)}
+      className={cn("font-normal text-xs md:text-xl text-dark-2 leading-[18px] md:leading-[30px] md:mb-[48px] mb-[24px]", className)}
       {...props}
     >
       {children}

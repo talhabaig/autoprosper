@@ -12,7 +12,7 @@ const Switch = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SwitchPrimitives.Root
     className={cn(
-      "peer inline-flex  p-[7px]  w-[65px] shrink-0 cursor-pointer items-center rounded-full border-2 border-gray data-[state=checked]:border-green transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50 data-[state=unchecked]:bg-white",
+      "peer inline-flex p-[5.06px] md:p-[7px] w-[46.94px] h-[26px] md:w-[65px] md:h-[36px] shrink-0 cursor-pointer items-center rounded-full border-2 border-gray data-[state=checked]:border-green transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50 data-[state=unchecked]:bg-white",
       className
     )}
     {...props}
@@ -20,11 +20,11 @@ const Switch = React.forwardRef<
   >
     <SwitchPrimitives.Thumb
       className={cn(
-        "group is-checked pointer-events-none block relative h-5 w-5 rounded-full bg-gray shadow-lg ring-0 transition-transform data-[state=checked]:bg-green data-[state=checked]:translate-x-6 data-[state=unchecked]:translate-x-0"
+        "group is-checked pointer-events-none block relative w-[15.89px] h-[15.89px] md:h-5 md:w-5 rounded-full bg-gray shadow-lg ring-0 transition-transform data-[state=checked]:bg-green data-[state=checked]:translate-x-4 md:data-[state=checked]:translate-x-6 data-[state=unchecked]:translate-x-0"
       )}
     >
-      <XIcon className="absolute top-1 left-[5px] group-data-[state=checked]:hidden" />
-      <CheckIcon className="absolute top-1 left-[4px] group-data-[state=unchecked]:hidden" />
+      <XIcon className="absolute top-[5px] md:top-1 left-[5px] group-data-[state=checked]:hidden w-[5.78px] h-[5.78px] md:w-[10px] md:h-[10px]" />
+      <CheckIcon className="absolute top-[5px] md:top-1 left-[4px] group-data-[state=unchecked]:hidden w-[5.78px] h-[5.78px] md:w-[10px] md:h-[10px]" />
     </SwitchPrimitives.Thumb>
   </SwitchPrimitives.Root>
 ));
@@ -40,9 +40,9 @@ const SwitchWithLabel: React.FC<SwitchWithLabelProps> = ({
   ...props
 }) => {
   return (
-    <div className={cn("flex items-center space-x-2", className)} {...props}>
+    <div className={cn("flex items-center space-x-[12px]", className)} {...props}>
       <Switch id={label} />
-      <Label className="text-gray text-[17px] font-normal" htmlFor={label}>
+      <Label className="ml-0 text-dark-2 text-[14px] md:text-[17px] font-normal" htmlFor={label}>
         {label}
       </Label>
     </div>

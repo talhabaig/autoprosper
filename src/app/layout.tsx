@@ -29,9 +29,9 @@ export default function RootLayout({
         {/* Navbar */}
         {children}
         {/* footer */}
-        <div className="fixed bottom-4 right-4 z-50">
-          <button className="bg-primary hover:scale-110 transition-all text-white font-bold p-[14px] rounded-full shadow-lg">
-            <MessageSquare fill="#fff" width="20" height="18" />
+        <div className="fixed bottom-[18px] right-[18px] md:bottom-[30px] md:right-[30px] z-50 w-[46px] h-[46px] md:w-[56px] md:h-[56px]">
+          <button className="bg-primary hover:scale-110 transition-all text-white font-bold p-[14px] rounded-full shadow-lg w-full h-full">
+            <MessageSquare fill="#fff" className="mx-auto w-[14.29px] h-[12.86px] md:w-[20px] md:h-[18px]" />
           </button>
         </div>
       </body>
