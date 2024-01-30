@@ -1,3 +1,13 @@
+export const sortOptions = [
+  { id: 1, value: "recentfirst_at-desc", label: "Updated Date: Recent First" },
+  { id: 2, value: "oldestfirst_at-asc", label: "Updated Date: Oldest First" },
+  { id: 3, value: "lowtohigh-asc", label: "Price: Low to High" },
+  { id: 4, value: "hightolow-desc", label: "Price: High to Low" },
+  { id: 5, value: "latestyear_year-desc", label: "Model Year: Latest First" },
+  { id: 6, value: "oldestfirst_year-asc", label: "Model Year: Oldest First" },
+  { id: 7, value: "lowtohighmilage-asc", label: "Mileage: Low to High" },
+  { id: 8, value: "highttolowmilage-desc", label: "Mileage: High to Low" }
+];
 export const DistanceOptions = [
     {
       id: 1,
@@ -128,90 +138,90 @@ export const DistanceOptions = [
   export const Features = [
     {
       id: 1,
-      label: "red",
+      label: "automatic transmission",
     },
     {
       id: 2,
-      label: "green",
+      label: "manual transmission",
     },
     {
       id: 3,
-      label: "blue",
+      label: "4-wheel drive",
     },
     {
       id: 4,
-      label: "black",
+      label: "2-wheel drive",
     },
   ];
   export const Drivetrain = [
     {
       id: 1,
-      label: "red",
+      label: "front-wheel drive",
     },
     {
       id: 2,
-      label: "green",
+      label: "rear-wheel drive",
     },
     {
       id: 3,
-      label: "blue",
+      label: "all-wheel drive",
     },
     {
       id: 4,
-      label: "black",
+      label: "four-wheel drive",
     },
   ];
   export const Engine = [
     {
       id: 1,
-      label: "red",
+      label: "4-cylinder",
     },
     {
       id: 2,
-      label: "green",
+      label: "6-cylinder",
     },
     {
       id: 3,
-      label: "blue",
+      label: "V6",
     },
     {
       id: 4,
-      label: "black",
+      label: "V8",
     },
   ];
   export const FuelType = [
     {
       id: 1,
-      label: "red",
+      label: "Gasoline",
     },
     {
       id: 2,
-      label: "green",
+      label: "Diesel",
     },
     {
       id: 3,
-      label: "blue",
+      label: "Electric",
     },
     {
       id: 4,
-      label: "black",
+      label: "Hybrid",
     },
   ];
   export const VehicleHistory = [
     {
       id: 1,
-      label: "red",
+      label: "Accident-free",
     },
     {
       id: 2,
-      label: "green",
+      label: "One owner",
     },
     {
       id: 3,
-      label: "blue",
+      label: "Service records available",
     },
     {
       id: 4,
-      label: "black",
+      label: "No major repairs",
     },
   ];

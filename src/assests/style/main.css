@@ -266,3 +266,11 @@ text-align: center;
 .filterWrapper .css-13cymwt-control{
   display: none;
 }
+.selectLabelWrapper label{
+  width: 100%;
+}
+
+.accordionWrapper [data-state='open'] > .ArrowRight {
+  transform: rotate(90deg) !important;
+  transition: 0.3s ease;
+}
