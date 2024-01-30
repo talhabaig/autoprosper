@@ -40,26 +40,30 @@ const SellTradeVehicle: React.FC = () => {
       case 0:
         return (
           <>
+          
             <Button
-              variant="gray"
-              className="mr-3"
+              variant="primary"
+              className="p-[14px_18px] !bg-[#ECEEF1] min-w-[156px] !bg-bg-none"
               onClick={() => handleStepChange(activeStep - 1)}
             >
               Cancel Edit
             </Button>
             <Button
+            className="p-[14px_18px] !min-w-[156px]"
               onClick={() => handleStepChange(activeStep + 1)}
             >
               Find vehicle
             </Button>
+          
           </>
+          
         );
       case 1:
         return (
           <>
             <Button
               variant="gray"
-              className="mr-3"
+              className="mr-3 p-[14px_18px] !bg-[#ECEEF1] min-w-[156px] !bg-bg-none"
               onClick={() => handleStepChange(activeStep - 1)}
             >
               Edit Vehicle
@@ -110,36 +114,36 @@ const SellTradeVehicle: React.FC = () => {
 
   return (
     <>
-      <div className="homePage">
-        <div className="mt-[60px] px-[14px] max-w-full md:py-[0px] flex flex-col md:flex-row md:gap-[30px] justify-between md:justify-center md:px-10 lg:px-[159px] mx-auto ">
-          <div className="w-full md:max-w-[590px] flex flex-col">
+    <section>
+      <div className="container">
+        <div className="mt-[12px] :mt-12 max-w-full flex flex-col md:flex-row justify-between">
+          <div className="w-full border-b border-b-[#E5E8ED] md:border-b-0 md:w-[30%] 3xl:w-[40%] flex flex-col">
             <a
               href=""
-              className="text-left cursor-pointer font-weight: 700 lg:text-[16px] mb-[20px] text-[#5D6878]"
+              className="cursor-pointer mb-[12px]"
               onClick={() => handleStepChange(activeStep - 1)}
             >
               <BackArrow className="w-[24px] h-[24px] inline-block" />
-              Back
             </a>
-            <h1 className="text-left text-[#001B44] lg:text-[32px] font-[700] mb-[15px]">
+            <h1 className="text-left text-lg text-[#001B44] lg:text-[28px] 2xl:text-[32px] font-[700] mb-2">
               Sell/Trade
             </h1>
-            <p className="text-left text-[#5D6878] text-[14px] font-[400 lg:mb-10px]">
+            <p className="text-left text-[#5D6878] text-sm  font-normal mb-12px]">
               Either transform it into your dream ride online or <br />
               effortlessly sell for the best offers at home.
             </p>
             <div className="TabBtn firstTab">
-              <div className="flex md:flex-col flex-column vehicleNav ">
+              <div className="flex md:flex-col flex-column gap-[12px] vehicleNav ">
                 <button
                   onClick={() => handleStepChange(0)}
-                  className={`text-left px-0 ${
-                    activeStep <= 1 ? "text-[#000]" : "text-gray-500"
+                  className={`text-left px-0  ${
+                    activeStep <= 1 ? "text-[#001B44]" : "text-gray-500"
                   }`}
                 >
                   <span
-                    className={`tabText text-left px-0 ${
+                    className={`tabText text-left px-0  ${
                       activeStep <= 1
-                        ? "bg-black text-white"
+                        ? "bg-[#001B44] text-white "
                         : "bg-[default-color] text-[default-color]"
                     }`}
                   >
@@ -149,14 +153,14 @@ const SellTradeVehicle: React.FC = () => {
                 </button>
                 <button
                   onClick={() => handleStepChange(2)}
-                  className={`text-left px-0 ${
-                    activeStep === 2 ? "text-[#000]" : "text-gray-500"
+                  className={`text-left px-0  ${
+                    activeStep === 2 ? "text-[#001B44]" : "text-gray-500"
                   }`}
                 >
                   <span
                     className={`tabText text-left px-0 ${
                       activeStep === 2
-                        ? "bg-black text-white"
+                        ? "bg-[#001B44] text-white"
                         : "bg-[default-color] text-[default-color]"
                     }`}
                   >
@@ -167,13 +171,13 @@ const SellTradeVehicle: React.FC = () => {
                 <button
                   onClick={() => handleStepChange(3)}
                   className={`text-left px-0 ${
-                    activeStep === 3 ? "text-[#000]" : "text-gray-500"
+                    activeStep === 3 ? "text-[#001B44]" : "text-gray-500"
                   }`}
                 >
                   <span
                     className={`tabText text-left px-0 ${
                       activeStep === 3
-                        ? "bg-black text-white"
+                        ? "bg-[#001B44] text-white"
                         : "bg-[default-color] text-[default-color]"
                     }`}
                   >
@@ -184,13 +188,13 @@ const SellTradeVehicle: React.FC = () => {
                 <button
                   onClick={() => handleStepChange(4)}
                   className={`text-left px-0 ${
-                    activeStep >= 4 ? "text-[#000]" : "text-gray-500"
+                    activeStep >= 4 ? "text-[#001B44]" : "text-gray-500"
                   }`}
                 >
                   <span
                     className={`tabText text-left px-0 ${
                       activeStep >= 4
-                        ? "bg-black text-white"
+                        ? "bg-[#001B44] text-white"
                         : "bg-[default-color] text-[default-color]"
                     }`}
                   >
@@ -201,14 +205,15 @@ const SellTradeVehicle: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="flex md:max-w-[890px] w-full ">
-            <div className="m-auto md:m-0">
+          <div className="flex md:w-[65%]  3xl:w-[60%]">
+            <div className=" w-full">
               {renderStepComponent()}
             </div>
           </div>
         </div>
       </div>
-      <div className={`${activeStep === 5 ? "hidden" : "flex footerBox"}`}>
+      </section>
+      <div className={`${activeStep === 5 ? "hidden" : "flex gap-3 justify-center border-t p-[12px_18px] border-[#E5E8ED] mt-6  "}`}>
         {renderFooterButtons()}
       </div>
     </>
