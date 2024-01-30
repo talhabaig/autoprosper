@@ -33,10 +33,10 @@ const YourVehicle: React.FC = () => {
 
   return (
     <div>
-      <h1 className="heading text-left  text-[#001B44] text-[32px] lg:text-[56px] mb-[20px] font-[400]">
+      <h1 className="heading text-left  text-[#001B44] text-[32px] lg:text-[56px] mb-[12px] font-[400]">
         Vehicle
       </h1>
-      <p className="text-left text-[#4B5768]  text-[16px] font-[400] ">
+      <p className="text-left text-[#4B5768]  text-[14px] font-[400] ">
         Unable to find a vehicle without specific details
       </p>
       <div className="flex min-h-[187px] relative justify-center">
@@ -50,17 +50,17 @@ const YourVehicle: React.FC = () => {
         <EllipseGradient className="absolute z-0" />
       </div>
 
-      <p className="text-center text-[#001B44] text-[24px] font-[400]">
+      <p className="text-center mb-[12px] text-[#001B44] text-[18px] xl:text-[24px] font-[400]">
         2024 Nissan Kicks®
       </p>
-      <p className="text-center text-[#4B5768] text-[16px] font-[400]">
-        <span className="bg-[#ECEEF1] rounded-[100px] px-[10px] py-[5px] mr-3">
+      <p className="text-center mb-3 text-[#4B5768] text-[14px] xl:mb-6 font-[400]">
+        <span className="bg-[#ECEEF1] text-[#5D6878] rounded-[100px] p-[4px_8px] xl:p-[5px_10px] mr-3 text-[10px] xl:text-[16px] font-bold">
           VIN
         </span>{" "}
         1GNEK13Z82R12
       </p>
 
-      <div className="block w-[350px] md:w-[456px] h-[72px] rounded-[12px]  indent-4 detailSelect">
+      <div className="block rounded-[12px]  indent-4 detailSelect">
         <Select
           options={options}
           onChange={(selectedOption: any) => {

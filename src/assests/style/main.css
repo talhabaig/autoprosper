@@ -212,21 +212,9 @@ text-align: center;
   margin-right: 10px;
 }
 .homePage{
-  min-height: 70vh;
+  /* min-height: 70vh; */
   position: relative;
 
-}
-.footerBox{
-  /* position: absolute;
-  bottom: 0; */
-  display: flex;
-  text-align: end;
-    width: 100%;
-    border-top: 1px solid var(--dark-dark_6, #E5E8ED);
-    background: var(--primary-white, #FFF);
-    justify-content: end;
-    padding: 30px 158px 30px;
-    margin-top: 30px;
 }
 .formSelect .border{
   display: inline-block;
@@ -237,14 +225,7 @@ text-align: center;
   background-color: #00FFA2 !important;
   border-color: #00FFA2;
 }
-.TabBtn button{
-  margin-bottom: 10px;
-}
-.vinTab button{
-  border-radius: var(--Number-96, 96px);
-  border: 3px solid var(--dark-dark_6, #E5E8ED);
-  padding: 13px 26px;
-}
+
 @media (min-width: 992px) {
   .mainWrapperFirstTimeBuyer {
     min-height: calc(100vh - 102px);
@@ -267,22 +248,14 @@ text-align: center;
     height: 100%;
 
   }
-  .footerBox{
-    position: inherit;
-    padding: 30px;
-    margin-top: 30px;
-  }
   .heading{
-    margin-top: 30px !important;
+    margin-top: 24px;
 }
 .vinTab button{
-  padding: 9px 18px;
+  padding: 9px 16px;
 }
 .firstTab .tabText{
-  margin-right: 2px;
-}
-.vehicleNav button{
-  margin-right: 12px;
+  margin-right: 6px;
 }
 .TabBtn{
   width: 100%;
