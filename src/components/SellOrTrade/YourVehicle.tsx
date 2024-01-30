@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { EllipseGradient } from "../ui/ellipseGradient";
-import { Select } from "../ui/input";
+import { Select } from "../ui/InputCustom";
 
 interface FormData {
   color: string;
