@@ -9,7 +9,8 @@ export type CarouselData = {
 }
 
 export interface CarouselProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    data: CarouselData
+    data: CarouselData;
+    active?: boolean;
  }
 
 

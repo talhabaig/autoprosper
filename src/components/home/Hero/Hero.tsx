@@ -2,13 +2,14 @@
 import { Button } from "@/components/ui/button";
 import RightArrow from "@/components/Icons/RightArrow";
 import NavigationBar from "@/components/ui/Navigations/navigationBar";
+import { ArrowRight } from "@/components/Icons/Icons";
 
 
 export default function Hero() {
   return (
-    <div className="min-h-screen min-w-full bg-cover bg-hero bg-center">
+    <div className="min-h-[643px] md:min-h-screen min-w-full bg-cover bg-hero-mobile md:bg-hero bg-center">
       <NavigationBar />
-      <div className="mt-[60px] md:mt-[120px] max-w-[330px] md:max-w-[711px] h-screen text-center mx-auto my-auto flex flex-col items-center gap-[20px] md:gap-[32px]">
+      <div className="mt-[60px] md:mt-[120px] max-w-[330px] md:max-w-[711px] h-full md:h-screen text-center mx-auto my-auto flex flex-col items-center gap-[20px] md:gap-[32px]">
         <div className="flex flex-col gap-[18px]">
           <h1 className="text-[32px] leading-10 md:text-[64px] text-white md:leading-[71px] font-normal">
             Strive for Your{" "}
@@ -25,11 +26,11 @@ export default function Hero() {
         </div>
         <Button
           variant="gradient"
-          className="py-[14px] px-7 md:px-[18px] md:py-9 md:w-[211px] font-bold"
+          className="py-[18px] px-6 md:px-[18px] md:py-9 w-[153px] h-[46px] md:w-[211px] font-bold text-sm"
         >
           Get Started{" "}
           <span className="ml-[6px] md:ml-[10px]">
-            <RightArrow />
+            <ArrowRight className="h-[18px] w-[18px] md:h-6 md:w-6"/>
           </span>
         </Button>
       </div>

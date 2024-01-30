@@ -1,13 +1,25 @@
 import LocationIcon from "../../Icons/LocationIcon";
-import { Card } from "@/components/ui/card";
-import Image from 'next/image'
+import { Card, GradientCard } from "@/components/ui/card";
+import Image from 'next/image';
 import { CarouselProps } from "./type";
 import { EllipseGradient } from "@/components/ui/ellipseGradient";
 
-const CarouselCard: React.FC<CarouselProps> = ({ data }) => {
+const CarouselCard: React.FC<CarouselProps> = ({ data, active }) => {
+  if (active) {
+    return (
+      <GradientCard className="w-full rounded-xl">
+        <CarouselCardContent data={data} />
+      </GradientCard>
+    );
+  } else {
+    return <CarouselCardContent data={data} />;
+  }
+};
+
+const CarouselCardContent: React.FC<CarouselProps> = ({ data }) => {
   return (
-    <Card className="bg-white rounded-xl h-auto border-0 p-6">
-      <div className="flex flex-col justify-center">
+    <Card className="bg-white rounded-xl h-auto border-0 p-[18px] md:p-6">
+      <div className="flex flex-col justify-center gap-[12px] md:gap-[24px]">
         <div className="flex min-h-[187px] relative justify-center">
           <Image
             src={data.image}
@@ -17,24 +29,18 @@ const CarouselCard: React.FC<CarouselProps> = ({ data }) => {
             height="174"
           />
           <EllipseGradient className="absolute z-0"/>
-          {/* <Image
-            src="/home/ellipse-gradient.png"
-            alt="car image"
-            className="absolute z-0 !bottom-11"
-            layout="fill"
-          /> */}
           {data.brandIcon}
         </div>
-        <div className="flex flex-col mt-6">
-          <h1 className="font-normal text-dark text-[24px] leading-[34px]">
+        <div className="flex flex-col gap-[8px] md:gap-[12px]">
+          <h1 className="text-left font-normal text-dark text-[18px] leading-[23.4px] md:text-[24px] md:leading-[34px]">
             {data.brandName}
           </h1>
-          <p className="p-0 font-normal text-[16px] leading-[25px] text-dark-2">
+          <p className="text-left p-0 font-normal text-[12px] leading-[18px] md:text-[16px] md:leading-[24px] text-dark-2">
             {data.description}
           </p>
-          <div className="flex gap-[8px]">
-            <LocationIcon />
-            <span className="font-normal text-[15px] text-dark-2 leading-[25px]">
+          <div className="flex gap-[4px] md:gap-[8px] items-center">
+            <LocationIcon className="w-[11.26px] h-[16px] md:w-[16.9px] md:h-[24px]" />
+            <span className="font-normal text-[12px] leading-[18px] md:text-[15px] text-dark-3 md:leading-[25px]">
               {data.location}
             </span>
           </div>
@@ -43,6 +49,5 @@ const CarouselCard: React.FC<CarouselProps> = ({ data }) => {
     </Card>
   );
 };
-
 
 export default CarouselCard;

@@ -22,7 +22,7 @@ const customers = [
 
 const ProsperingCustomers: React.FC = () => {
   return (
-    <Section className="bg-dark py-[60px] md:py-[120px]">
+    <Section className="bg-dark !flex-col md:!px-0">
       <div className="w-full md:max-w-[690px] px-[15px] md:px-0 flex flex-col items-center mx-auto text-center">
         <SectionHeader className="text-primary-light">
           Delivery to prospering customers
@@ -36,7 +36,7 @@ const ProsperingCustomers: React.FC = () => {
       </div>
       <div className="w-full">
         <Carousel
-          className="w-full flex flex-col md:block"
+          className="w-full flex flex-col md:block max-w-[1728px] lg:mx-auto"
           opts={{
             loop: true,
             align: "start",
@@ -46,13 +46,10 @@ const ProsperingCustomers: React.FC = () => {
             {customers.map((customer, index) => (
               <CarouselItem
                 key={"carousel"+index}
-                className="basis-1/4 md:basis-[15%] lg:basis-[10%]"
+                className="basis-1/4 lg:basis-[15%]"
               >
-                <Image
+                <img
                   src={customer}
-                  width="0"
-                  height="0"
-                  sizes="100vw"
                   className="w-[210px] h-auto rounded-xl"
                   alt="prospering customers"
                 />
