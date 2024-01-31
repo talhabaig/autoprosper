@@ -170,3 +170,12 @@ export interface LoanInformationForm {
   payOffAmount?: number;
   totalMonths?: number;
 }
+
+export interface ProductCardDetails {
+  productName?: string;
+  location?: string;
+  productImage?: string;
+  productLabel?: string;
+  totalMilage?: string;
+  totalPrice?: string;
+}

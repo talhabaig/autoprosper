@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Accordion,
@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Plus } from "@/components/Icons/Icons";
+import { ArrowRightCurved } from "@/components/Icons/Icons";
 import { Search, SortBy } from "../../Icons/Icons";
 import {
   Option,
@@ -29,14 +29,15 @@ import {
   Engine,
   FuelType,
   VehicleHistory,
+  sortOptions,
 } from "./FilterOptions";
 
 const InventoryFilters: React.FC<ProductFiltersProps> = ({
   onOptionSelect,
   onInputChange,
 }) => {
-  const [isContentVisible, setIsContentVisible] = useState(true);
-
+  const [selectedSort, setSelectedSort] = useState<string>("");
+  const [isContentVisible, setIsContentVisible] = useState<boolean>(true);
   const [productFilter, setProductFilter] = useState<ProductFilterState>({
     sortBy: "",
     filter: "",
@@ -70,10 +71,19 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setSearchValue(value); // Update the state with the new value
-    console.log("inputvalue", value); // Log the current value
-    onInputChange(value); // Pass the current value to the callback
+    setSearchValue(value);
+    onInputChange(value);
   };
+
+  const handleSortSelection = (sortOption: string) => {
+    setSelectedSort((prevSort) => {
+      onOptionSelect({ sortBy: sortOption });
+      return sortOption;
+    });
+  };
+  useEffect(() => {
+    console.log("Selected Sort:", selectedSort);
+  }, [selectedSort]);
 
   return (
     <>
@@ -142,21 +152,37 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                ${isContentVisible ? "block" : "hidden"}`}
           >
             <TabsContent value="sortBy">
-              Make changes to your account here.
+              <ul>
+                {sortOptions.map((option) => (
+                  <li
+                    key={option.id}
+                    onClick={() => handleSortSelection(option.value)}
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden text-left 
+                    font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px] cursor-pointer 
+                   border-b border-solid border-dark last-of-type:border-[0] group"
+                  >
+                   <span className="group-hover:underline"> {option.label} </span>
+                  </li>
+                ))}
+              </ul>
             </TabsContent>
             <TabsContent value="Filter">
-              <Accordion type="single" collapsible className="w-full">
+              <Accordion
+                type="single"
+                collapsible
+                className="w-full accordionWrapper"
+              >
                 <AccordionItem
                   key="item-1"
                   className="border-t-[0] border-b border-solid border-dark"
                   value="item-1"
                 >
                   <AccordionTrigger
-                    className="text-[14px] lg:text-[16px] [&>*:nth-child(even)]:!hidden
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden
                     font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px]  text-left"
                   >
                     Distance
-                    <Plus className="flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
+                    <ArrowRightCurved className="ArrowRight flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
                   </AccordionTrigger>
                   <AccordionContent>
                     <div className="flex flex-wrap [&>:label]:w-full">
@@ -164,7 +190,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                         options={DistanceOptions}
                         selectedOptions={selectedOptions}
                         onChange={(values) => {
-                          setSelectedOptions(values); 
+                          setSelectedOptions(values);
                         }}
                         className=""
                         allowMultiple={false}
@@ -174,11 +200,11 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                 </AccordionItem>
                 <AccordionItem key="item-2" value="item-2">
                   <AccordionTrigger
-                    className="text-[14px] lg:text-[16px] [&>*:nth-child(even)]:!hidden
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden
                     font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px]  text-left"
                   >
                     Make & Model
-                    <Plus className="flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
+                    <ArrowRightCurved className="ArrowRight flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
                   </AccordionTrigger>
                   <AccordionContent>
                     {" "}
@@ -187,7 +213,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                         options={MakeAndModel}
                         selectedOptions={selectedOptions}
                         onChange={(values) => {
-                          setSelectedOptions(values); 
+                          setSelectedOptions(values);
                         }}
                         className=""
                         allowMultiple={false}
@@ -197,11 +223,11 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                 </AccordionItem>
                 <AccordionItem key="item-3" value="item-3">
                   <AccordionTrigger
-                    className="text-[14px] lg:text-[16px] [&>*:nth-child(even)]:!hidden
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden
                     font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px]  text-left"
                   >
                     Price
-                    <Plus className="flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
+                    <ArrowRightCurved className="ArrowRight flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
                   </AccordionTrigger>
                   <AccordionContent>
                     {" "}
@@ -210,7 +236,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                         options={PriceList}
                         selectedOptions={selectedOptions}
                         onChange={(values) => {
-                          setSelectedOptions(values); 
+                          setSelectedOptions(values);
                         }}
                         className=""
                         allowMultiple={false}
@@ -220,11 +246,11 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                 </AccordionItem>
                 <AccordionItem key="item-4" value="item-4">
                   <AccordionTrigger
-                    className="text-[14px] lg:text-[16px] [&>*:nth-child(even)]:!hidden
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden
                     font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px]  text-left"
                   >
                     Year
-                    <Plus className="flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
+                    <ArrowRightCurved className="ArrowRight flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
                   </AccordionTrigger>
                   <AccordionContent>
                     {" "}
@@ -233,7 +259,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                         options={PriceList}
                         selectedOptions={selectedOptions}
                         onChange={(values) => {
-                          setSelectedOptions(values); 
+                          setSelectedOptions(values);
                         }}
                         className=""
                         allowMultiple={false}
@@ -243,11 +269,11 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                 </AccordionItem>
                 <AccordionItem key="item-5" value="item-5">
                   <AccordionTrigger
-                    className="text-[14px] lg:text-[16px] [&>*:nth-child(even)]:!hidden
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden
                     font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px]  text-left"
                   >
                     Body type
-                    <Plus className="flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
+                    <ArrowRightCurved className="ArrowRight flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
                   </AccordionTrigger>
                   <AccordionContent>
                     {" "}
@@ -256,7 +282,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                         options={BodyType}
                         selectedOptions={selectedOptions}
                         onChange={(values) => {
-                          setSelectedOptions(values); 
+                          setSelectedOptions(values);
                         }}
                         className=""
                         allowMultiple={false}
@@ -266,11 +292,11 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                 </AccordionItem>
                 <AccordionItem key="item-6" value="item-6">
                   <AccordionTrigger
-                    className="text-[14px] lg:text-[16px] [&>*:nth-child(even)]:!hidden
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden
                     font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px]  text-left"
                   >
                     MPG
-                    <Plus className="flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
+                    <ArrowRightCurved className="ArrowRight flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
                   </AccordionTrigger>
                   <AccordionContent>
                     {" "}
@@ -279,7 +305,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                         options={Mpg}
                         selectedOptions={selectedOptions}
                         onChange={(values) => {
-                          setSelectedOptions(values); 
+                          setSelectedOptions(values);
                         }}
                         className=""
                         allowMultiple={false}
@@ -289,11 +315,11 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                 </AccordionItem>
                 <AccordionItem key="item-7" value="item-7">
                   <AccordionTrigger
-                    className="text-[14px] lg:text-[16px] [&>*:nth-child(even)]:!hidden
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden
                     font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px]  text-left"
                   >
                     Mileage
-                    <Plus className="flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
+                    <ArrowRightCurved className="ArrowRight flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
                   </AccordionTrigger>
                   <AccordionContent>
                     {" "}
@@ -302,7 +328,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                         options={Mileage}
                         selectedOptions={selectedOptions}
                         onChange={(values) => {
-                          setSelectedOptions(values); 
+                          setSelectedOptions(values);
                         }}
                         className=""
                         allowMultiple={false}
@@ -312,11 +338,11 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                 </AccordionItem>
                 <AccordionItem key="item-8" value="item-8">
                   <AccordionTrigger
-                    className="text-[14px] lg:text-[16px] [&>*:nth-child(even)]:!hidden
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden
                     font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px]  text-left"
                   >
                     Color
-                    <Plus className="flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
+                    <ArrowRightCurved className="ArrowRight flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
                   </AccordionTrigger>
                   <AccordionContent>
                     {" "}
@@ -325,7 +351,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                         options={Color}
                         selectedOptions={selectedOptions}
                         onChange={(values) => {
-                          setSelectedOptions(values); 
+                          setSelectedOptions(values);
                         }}
                         className=""
                         allowMultiple={false}
@@ -335,11 +361,11 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                 </AccordionItem>
                 <AccordionItem key="item-9" value="item-9">
                   <AccordionTrigger
-                    className="text-[14px] lg:text-[16px] [&>*:nth-child(even)]:!hidden
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden
                     font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px]  text-left"
                   >
                     Features
-                    <Plus className="flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
+                    <ArrowRightCurved className="ArrowRight flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
                   </AccordionTrigger>
                   <AccordionContent>
                     {" "}
@@ -348,7 +374,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                         options={Features}
                         selectedOptions={selectedOptions}
                         onChange={(values) => {
-                          setSelectedOptions(values); 
+                          setSelectedOptions(values);
                         }}
                         className=""
                         allowMultiple={false}
@@ -358,11 +384,11 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                 </AccordionItem>
                 <AccordionItem key="item-10" value="item-10">
                   <AccordionTrigger
-                    className="text-[14px] lg:text-[16px] [&>*:nth-child(even)]:!hidden
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden
                     font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px]  text-left"
                   >
                     Drivetrain
-                    <Plus className="flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
+                    <ArrowRightCurved className="ArrowRight flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
                   </AccordionTrigger>
                   <AccordionContent>
                     {" "}
@@ -371,7 +397,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                         options={Drivetrain}
                         selectedOptions={selectedOptions}
                         onChange={(values) => {
-                          setSelectedOptions(values); 
+                          setSelectedOptions(values);
                         }}
                         className=""
                         allowMultiple={false}
@@ -381,11 +407,11 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                 </AccordionItem>
                 <AccordionItem key="item-11" value="item-11">
                   <AccordionTrigger
-                    className="text-[14px] lg:text-[16px] [&>*:nth-child(even)]:!hidden
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden
                     font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px]  text-left"
                   >
                     Engine
-                    <Plus className="flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
+                    <ArrowRightCurved className="ArrowRight flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
                   </AccordionTrigger>
                   <AccordionContent>
                     {" "}
@@ -394,7 +420,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                         options={Engine}
                         selectedOptions={selectedOptions}
                         onChange={(values) => {
-                          setSelectedOptions(values); 
+                          setSelectedOptions(values);
                         }}
                         className=""
                         allowMultiple={false}
@@ -404,11 +430,11 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                 </AccordionItem>
                 <AccordionItem key="item-12" value="item-12">
                   <AccordionTrigger
-                    className="text-[14px] lg:text-[16px] [&>*:nth-child(even)]:!hidden
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden
                     font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px]  text-left"
                   >
                     Fuel type
-                    <Plus className="flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
+                    <ArrowRightCurved className="ArrowRight flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
                   </AccordionTrigger>
                   <AccordionContent>
                     {" "}
@@ -417,7 +443,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                         options={FuelType}
                         selectedOptions={selectedOptions}
                         onChange={(values) => {
-                          setSelectedOptions(values); 
+                          setSelectedOptions(values);
                         }}
                         className=""
                         allowMultiple={false}
@@ -425,22 +451,26 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
                     </div>
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem key="item-13" value="item-13">
+                <AccordionItem
+                  className="border-b-[0]"
+                  key="item-13"
+                  value="item-13"
+                >
                   <AccordionTrigger
-                    className="text-[14px] lg:text-[16px] [&>*:nth-child(even)]:!hidden 
+                    className="text-[14px] 2xl:text-[16px] [&>*:nth-child(even)]:!hidden 
                     font-bold leading-[130%] text-dark no-underline py-[14px] xl:py-[18px]  text-left"
                   >
                     Vehicle history
-                    <Plus className="flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
+                    <ArrowRightCurved className="ArrowRight flex-[0_0_auto] w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px] " />
                   </AccordionTrigger>
                   <AccordionContent>
                     {" "}
-                    <div className="flex flex-wrap [&>:label]:w-full">
+                    <div className="flex flex-wrap selectLabelWrapper">
                       <RadioButtonSingle
                         options={VehicleHistory}
                         selectedOptions={selectedOptions}
                         onChange={(values) => {
-                          setSelectedOptions(values); 
+                          setSelectedOptions(values);
                         }}
                         className=""
                         allowMultiple={false}
