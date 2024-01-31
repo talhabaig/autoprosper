@@ -224,6 +224,7 @@ text-align: center;
 .selected-radio .form-check-input:checked {
   background-color: #00FFA2 !important;
   border-color: #00FFA2;
+
 }
 
 @media (min-width: 992px) {

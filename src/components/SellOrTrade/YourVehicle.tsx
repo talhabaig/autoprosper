@@ -13,9 +13,9 @@ interface Option {
 }
 
 const options: Option[] = [
-  { value: "option1", label: "Arctic Frost Pearl1" },
-  { value: "option2", label: "Arctic Frost Pearl2" },
-  { value: "option3", label: "Arctic Frost Pearl3" },
+  { value: "option1", label: "Kicks® SR" },
+  { value: "option2", label: "Kicks® SR" },
+  { value: "option3", label: "Kicks® SR" },
 ];
 
 const YourVehicle: React.FC = () => {
@@ -39,7 +39,7 @@ const YourVehicle: React.FC = () => {
       <p className="text-left text-[#4B5768]  text-[14px] font-[400] ">
         Unable to find a vehicle without specific details
       </p>
-      <div className="flex min-h-[187px] relative justify-center">
+      <div className="flex min-h-[187px] mb-6 relative justify-center">
         <Image
           src="/home/red-toyota.png"
           alt="car image"
@@ -60,7 +60,7 @@ const YourVehicle: React.FC = () => {
         1GNEK13Z82R12
       </p>
 
-      <div className="block rounded-[12px]  indent-4 detailSelect">
+      <div className="block rounded-[12px] detailSelect">
         <Select
           options={options}
           onChange={(selectedOption: any) => {

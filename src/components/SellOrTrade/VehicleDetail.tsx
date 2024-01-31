@@ -13,9 +13,9 @@ interface Option {
 }
 
 const options: Option[] = [
-  { value: "option1", label: "Arctic Frost Pearl1" },
-  { value: "option2", label: "Arctic Frost Pearl2" },
-  { value: "option3", label: "Arctic Frost Pearl3" },
+  { value: "option1", label: "Melbourne Red Metallic" },
+  { value: "option2", label: "Melbourne Red Metallic" },
+  { value: "option3", label: "Melbourne Red Metallic" },
 ];
 
 const VehicleDetail: React.FC = () => {
