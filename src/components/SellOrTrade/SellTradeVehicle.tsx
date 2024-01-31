@@ -128,11 +128,11 @@ const SellTradeVehicle: React.FC = () => {
             <h1 className="text-left text-lg text-[#001B44] lg:text-[28px] 2xl:text-[32px] font-[700] mb-2 xl:mb-3">
               Sell/Trade
             </h1>
-            <p className="text-left text-[#5D6878] text-sm  font-normal mb-12px]">
+            <p className="text-left text-[#5D6878] text-sm  font-normal] mb-0 xl:mb-6">
               Either transform it into your dream ride online or <br />
               effortlessly sell for the best offers at home.
             </p>
-            <div className="TabBtn firstTab font-[14px]">
+            <div className="TabBtn firstTab text-[14px] my-3">
               <div className="flex md:flex-col flex-column gap-[12px] vehicleNav ">
                 <button
                   onClick={() => handleStepChange(0)}

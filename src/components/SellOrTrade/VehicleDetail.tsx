@@ -35,13 +35,13 @@ const VehicleDetail: React.FC = () => {
   return (
     <div className="flex md:max-w-[890px] w-full justify-center">
       <div className="w-full font- [400]">
-        <h1 className="heading text-left  text-[#001B44] text-[32px] lg:text-[56px] mb-[12px] font-[400]">
+        <h1 className="heading text-left  text-[#001B44] text-[32px] lg:text-[48px] 2xl:text-[56px] mb-[12px] 2xl:mb-[18px] font-[400]">
           Details
         </h1>
-        <p className="text-left text-[#4B5768]  text-[14px] font-[400] ">
+        <p className="text-left text-[#4B5768]  text-[14px] font-[400] 2xl:mb-12 ">
           Unable to find a vehicle without specific details
         </p>
-        <div className="block w-[100%] mb-[12px] rounded-[12px]">
+        <div className="block w-[100%] mb-[12px] 2xl:mb-6 rounded-[12px]">
         <Select
           options={options}
           onChange={(selectedOption: any) => {
@@ -55,7 +55,7 @@ const VehicleDetail: React.FC = () => {
           label="Color"
         />
         </div>
-        <div className="relative md:mt-4">
+        <div className="relative">
           <label
             className="absolute top-[15px] md:top-[30px] left-[18px] text-[#5D6878] text-[12px] "
             htmlFor=""

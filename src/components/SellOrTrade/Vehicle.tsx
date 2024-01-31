@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent } from "react";
+import { InfoIcon } from "../Icons/Icons";
 
 type VehicleTab = "first" | "second" | "third";
 
@@ -19,13 +20,13 @@ const Vehicle: React.FC = () => {
         <h1 className="heading text-left  text-[#001B44] text-[32px] lg:text-[32px] xl:text-[48px] 2xl:text-[56px] font-[400]  mb-[12px] 3xl:mb-[18px]">
           Vehicle
         </h1>
-        <p className="text-left text-[#4B5768] font-[400] text-[14px] 3xl:text-[20px] 3xl:mb-[48px] ">
+        <p className="text-left text-[#4B5768] font-[400] text-[14px] 3xl:text-[20px] 2xl:mb-[48px] ">
           Unable to find a vehicle without specific details
         </p>
-        <div className="flex gap-1 md:gap-2 3xl:gap-3 vinTab">
+        <div className="flex gap-1 md:gap-2 3xl:gap-3 ">
           <button
             onClick={() => handleTabChange("first")}
-            className={`text-left text-[12px] font-bold rounded-[96px] border-[3px] border-[#E5E8ED] md:p-[10px_20px] 3xl:text-[16px] 3xl:p-[13px_26px]  ${
+            className={`text-left text-[12px] font-bold p-[9px_14px] rounded-[96px] border-[3px] border-[#E5E8ED] md:p-[10px_20px] 3xl:text-[16px] 3xl:p-[13px_26px]  ${
               activeTab === "first"
                 ? "bg-[#001B44] text-white !border-[0px]"
                 : "bg-[default-color]  text-[#8E97A6] "
@@ -35,7 +36,7 @@ const Vehicle: React.FC = () => {
           </button>
           <button
             onClick={() => handleTabChange("second")}
-            className={`text-left text-[12px] font-bold border-[3px] rounded-[96px] border-[#E5E8ED] md:p-[10px_20px] 3xl:text-[16px] 3xl:p-[13px_26px] ${
+            className={`text-left text-[12px] font-bold border-[3px] p-[9px_14px] rounded-[96px] border-[#E5E8ED] md:p-[10px_20px] 3xl:text-[16px] 3xl:p-[13px_26px] ${
               activeTab === "second"
                 ? "bg-[#001B44] text-white !border-[0px]"
                 : "bg-[default-color] text-[#8E97A6]"
@@ -45,7 +46,7 @@ const Vehicle: React.FC = () => {
           </button>
           <button
             onClick={() => handleTabChange("third")}
-            className={`text-left text-[12px] font-bold border-[3px] rounded-[96px] border-[#E5E8ED] md:p-[10px_20px] 3xl:text-[16px] 3xl:p-[13px_26px] ${
+            className={`text-left text-[12px] font-bold border-[3px] p-[9px_14px] rounded-[96px] border-[#E5E8ED] md:p-[10px_20px] 3xl:text-[16px] 3xl:p-[13px_26px] ${
               activeTab === "third"
                 ? "bg-[#001B44] text-white !border-[0px]"
                 : "bg-[default-color] text-[#8E97A6]"
@@ -59,9 +60,10 @@ const Vehicle: React.FC = () => {
             <>
               <a
                 href=""
-                className="block text-left underline text-[#001B44] text-[14px] mb-[18px] 3xl:mb-[32px] font-[700]"
+                className="flex gap-1 2xl:gap-2 text-left underline text-[#001B44] text-[14px] mb-[18px] 2xl:mb-[32px] 2xl:mt-12 font-[700]"
               >
-                Where is my VIN?
+                < InfoIcon className="w-[18px] 2xl:w-[20px] "/> Where is my VIN?
+
               </a>
               <input
                 type="text"
