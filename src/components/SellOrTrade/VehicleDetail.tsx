@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Select } from "../ui/InputCustom";
+import { InfoIcon, RoundedChecked } from "../Icons/Icons";
 
 interface FormData {
   color: string;
@@ -34,14 +35,14 @@ const VehicleDetail: React.FC = () => {
   return (
     <div className="flex md:max-w-[890px] w-full justify-center">
       <div className="w-full font- [400]">
-        <h1 className="heading text-left  text-[#001B44] text-[32px] lg:text-[48px] 2xl:text-[56px] mb-[12px] 2xl:mb-[18px] font-[400]">
+        <h1 className="heading text-left  text-[#001B44] text-[32px] xl:text-[48px] 2xl:text-[56px] font-[400] mt-6 md:mt-0 mb-[12px] 3xl:mb-[18px]">
           Details
         </h1>
-        <p className="text-left text-[#4B5768]  text-[14px] font-[400] 2xl:mb-12 ">
+        <p className="text-left text-[#4B5768] font-[400] text-[14px] xl:text-[16px] 3xl:text-[20px] 2xl:mb-[48px]">
           Unable to find a vehicle without specific details
         </p>
         <div className="lg:max-w-[456px]">
-          <div className="block w-[100%] mb-[12px] 2xl:mb-6 rounded-[12px]">
+          <div className="block w-[100%] mb-[12px] 2xl:mb-6 rounded-[12px] font-bold">
             <Select
               options={options}
               onChange={(selectedOption: any) => {
@@ -63,7 +64,9 @@ const VehicleDetail: React.FC = () => {
             >
               Mileage
             </label>
-            <span className="absolute top-0 right-0 bg-[red] text-white">hello</span>
+            <span className="absolute top-3 right-3 ">
+            <RoundedChecked/>
+            </span>
             <input
               className="shadow appearance-none border w-full pt-[24px] pb-[8px] px-[18px] text-gray-700 leading-tight 
              focus:shadow-outline border-dark-4 focus:outline-none focus:bg-white focus:border-dark rounded-[12px]

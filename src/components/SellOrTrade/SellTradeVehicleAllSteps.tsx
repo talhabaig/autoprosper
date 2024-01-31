@@ -96,11 +96,11 @@ const SellTradeVehicle: React.FC = () => {
         return (
           <Button
             variant="small"
-            className="lg:min-h-[56px]"
+            className="lg:min-h-[56px] !p-[18px_32px]"
             onClick={() => handleStepChange(activeStep + 1)}
           >
             <>
-              <span className="lg:inline-block">Claim exclusive offer</span>
+              <span className="lg:inline-block  ">Claim exclusive offer</span>
               <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
             </>
           </Button>
@@ -116,12 +116,12 @@ const SellTradeVehicle: React.FC = () => {
         <div
           className={`container pb-[24px] ${styles.sellAndTradeContainerWrapper}`}
         >
-          <div className="pt-[12px] 2xl:pt-12 max-w-full flex flex-col md:flex-row justify-between">
+          <div className="pt-[12px] md:pt-6 xl:pt-8 2xl:pt-12 max-w-full flex flex-col md:flex-row justify-between">
             <div className="w-full border-b border-b-[#E5E8ED] md:border-b-0 md:w-[30%] 3xl:w-[40%] ">
               <div className="flex flex-col lg:max-w-[340px]">
                 <a
                   href=""
-                  className="cursor-pointer mb-[12px]"
+                  className="cursor-pointer mb-[12px] xl:mb-6"
                   onClick={() => handleStepChange(activeStep - 1)}
                 >
                   <BackArrow className="w-[24px] h-[24px] inline-block" />
