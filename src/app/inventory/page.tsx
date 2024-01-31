@@ -1,11 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import NavigationBar from "../../components/ui/Navigations/navigationBar";
 import InventoryFilters from "@/components/Inventory/InventoryFilters/InvertoryFilters";
 import { ProductCardDetails } from "../../assests/interfaces/Home";
 import Image from "next/image";
-// import styles from "./InventeryCard.module.css";
+
 import {
   BlueTooth,
   Location,
@@ -15,6 +15,7 @@ import {
   ArrowRightCurved,
   DoubleRightArrow,
 } from "@/components/Icons/Icons";
+import CustomPagination from "@/components/Common/Pagination/CustomPagination";
 
 const carDetailsCard: ProductCardDetails[] = [
   {
@@ -92,6 +93,11 @@ const carDetailsCard: ProductCardDetails[] = [
 ];
 
 const InventoryLayout = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const cardsPerPage = 5;
+  const indexOfLastCard = currentPage * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const currentCards = carDetailsCard.slice(indexOfFirstCard, indexOfLastCard);
   const handleOptionSelect = (options: {
     sortBy?: string;
     filter?: string;
@@ -101,6 +107,10 @@ const InventoryLayout = () => {
 
   const handleInputChange = (inputValue: string) => {
     console.log("Input value:", inputValue);
+  };
+
+  const paginate = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
   };
   return (
     <>
@@ -140,7 +150,7 @@ const InventoryLayout = () => {
           </div>
           <div className="flex justify-between  flex-col-reverse  md:flex-row">
             <div className="md:w-[66%] lg:w-[70%] 2xl:w-[72%] 3xl:w-[75%] mb-[16px]">
-              {carDetailsCard.map((details, index) => (
+              {currentCards.map((details, index) => (
                 <div
                   key={index}
                   className="p-[10px] rounded-[16px] border border-solid border-dark-5 
@@ -181,6 +191,7 @@ const InventoryLayout = () => {
                       >
                         New
                       </span>
+                      <span>{index}</span>
                     </div>
                     <div className="absolute  bottom-[12px] left-1/2 -translate-x-1/2">
                       <div className="bg-btn-primary-gradient p-[2px] rounded-[100px] overflow-hidden cursor-pointer">
@@ -274,6 +285,15 @@ const InventoryLayout = () => {
                   </div>
                 </div>
               ))}
+           
+              <div>
+                <CustomPagination
+                  currentPage={currentPage}
+                  itemsPerPage={cardsPerPage}
+                  totalItems={carDetailsCard.length}
+                  paginate={paginate}
+                />
+              </div>
             </div>
             <div
               className="md:w-[33%] lg:w-[28%] 2xl:w-[26.2%] 3xl:w-[24%] md:h-[max-content] md:sticky md:top-[40px]
