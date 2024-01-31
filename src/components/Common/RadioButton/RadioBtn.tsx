@@ -22,7 +22,7 @@ const RadioOption: React.FC<RadioOptionProps> = ({
       key={`default-${id}`}
       className={`border ${
         selected
-          ? "border-dark rounded-[12px] selected-radio"
+          ? "border-dark rounded-[12px] "
           : "border-[#B7BCC3] rounded-[12px]"
       } rounded cursor-pointer p-3 2xl:p-6`}
       onClick={() => onSelect(value)}
