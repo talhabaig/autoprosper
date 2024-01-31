@@ -11,7 +11,7 @@ const Vehicle: React.FC = () => {
   };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e)
+    console.log(e);
   };
 
   return (
@@ -62,8 +62,7 @@ const Vehicle: React.FC = () => {
                 href=""
                 className="flex gap-1 2xl:gap-2 text-left underline text-[#001B44] text-[14px] mb-[18px] 2xl:mb-[32px] 2xl:mt-12 font-[700]"
               >
-                < InfoIcon className="w-[18px] 2xl:w-[20px] "/> Where is my VIN?
-
+                <InfoIcon className="w-[18px] 2xl:w-[20px] " /> Where is my VIN?
               </a>
               <input
                 type="text"

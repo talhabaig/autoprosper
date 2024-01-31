@@ -13,6 +13,7 @@ import {
   Lock,
   LockVariant2,
   ArrowRightCurved,
+  DoubleRightArrow,
 } from "@/components/Icons/Icons";
 
 const carDetailsCard: ProductCardDetails[] = [
@@ -106,13 +107,27 @@ const InventoryLayout = () => {
       <NavigationBar variant="dark" />
       <section>
         <div className="container">
-          <div className="hidden md:block  mb-[1.125rem] xl:mb-[1.5rem] ">
+          <div className="hidden lg:block  mb-[1.125rem] xl:mb-[1.5rem] ">
             <div
-              className="inline-flex p-[10px_22px] leading-[150%] rounded-[100px] 
-                     font-bold text-dark-3 uppercase text-[0.625rem] lg:text-[0.75rem] 
-                     border border-solid border-dark-6 "
+              className="inline-flex items-center gap-[10px] p-[10px_22px] leading-[150%] 
+              font-bold text-dark-3 uppercase text-[0.625rem] lg:text-[0.75rem] 
+              border border-solid border-dark-6  rounded-[100px]"
             >
-              <span className="text-dark-4 inline-block"> Home </span>
+              <span
+                className="first-of-type:text-dark-4 first-of-type:font-normal inline-flex justify-center gap-[10px]
+               text-dark font-bold [&>svg]:last-of-type:hidden"
+              >
+                {" "}
+                Home <DoubleRightArrow className="w-[18px] h-[18px]" />{" "}
+              </span>
+              <span
+                className="first-of-type:text-dark-4 first-of-type:font-normal inline-flex justify-center gap-[10px]
+               text-dark font-bold last-of-type:[&>svg]:hidden"
+              >
+                {" "}
+                Used car search{" "}
+                <DoubleRightArrow className="w-[18px] h-[18px]" />{" "}
+              </span>
             </div>
           </div>
           <div className="hidden md:block mb-[1.125rem] xl:mb-[1.5rem] ">

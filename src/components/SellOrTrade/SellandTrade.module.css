@@ -1,0 +1,21 @@
+.sellAndTradeSectionWrapper {
+  min-height: calc(100vh - 80px);
+}
+.sellAndTradeContainerWrapper {
+  min-height: calc(100vh - 180px);
+}
+
+@media (min-width: 360px) {
+  .btnWrapper {
+    min-width: 156px;
+  }
+}
+
+@media (min-width: 992px) {
+  .sellAndTradeSectionWrapper {
+    min-height: calc(100vh - 110px);
+  }
+  .sellAndTradeContainerWrapper {
+    min-height: calc(100vh - 210px);
+  }
+}
