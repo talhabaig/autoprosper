@@ -2143,3 +2143,50 @@ export const ThankYouCircle: React.FC<propType> = ({
     </svg>
   );
 };
+
+export const CrossIcon: React.FC<propType> = ({
+  width,
+  height,
+  fill,
+  className,
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 18 18"
+      fill={fill}
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.1815 8.59599L0.514497 1.92898L1.92871 0.514771L8.59572 7.18178L10.8181 9.40411L17.4851 16.0711L16.0708 17.4853L9.40384 10.8183L7.1815 8.59599Z"
+        fill="#001B44"
+      />
+      <path
+        d="M10.8185 8.59599L17.4855 1.92898L16.0713 0.514771L9.40428 7.18178L7.18195 9.40411L0.51494 16.0711L1.92915 17.4853L8.59616 10.8183L10.8185 8.59599Z"
+        fill="#001B44"
+      />
+    </svg>
+  );
+};
+
+export const DropIcon: React.FC<propType> = ({
+  width,
+  height,
+  fill,
+  className,
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 8 4"
+      fill={fill}
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M4 4L0 0H8L4 4Z" fill="#5D6878" />
+    </svg>
+  );
+};

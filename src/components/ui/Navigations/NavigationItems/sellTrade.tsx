@@ -1,10 +1,8 @@
-import {
-  SheetSectionDetails,
-  SheetSectionItems,
-} from "@/components/ui/sheet";
+import { SheetSectionDetails, SheetSectionItems } from "@/components/ui/sheet";
 import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
 import { ArrowRight } from "@/components/Icons/Icons";
+import NavigationItemsWrapper from "./navigationItemsWrapper";
 
 const SellTrade = () => {
   const navigationData = [
@@ -49,7 +47,9 @@ const SellTrade = () => {
       ],
       button: {
         text: "VIEW ALL FAQS",
-        icon: <ArrowRight width="18" height="18" className="ml-[5px] fill-dark-4" />,
+        icon: (
+          <ArrowRight width="18" height="18" className="ml-[5px] fill-dark-4" />
+        ),
       },
     },
 
@@ -89,20 +89,24 @@ const SellTrade = () => {
       ],
       button: {
         text: "READ MORE ARTICLE",
-        icon: <ArrowRight width="18" height="18" className="ml-[5px] fill-dark-4" />,
+        icon: (
+          <ArrowRight width="18" height="18" className="ml-[5px] fill-dark-4" />
+        ),
       },
     },
   ];
 
   return (
-    <div className="flex flex-col md:flex-row lg:py-[30px] md:py-[15px] container md:divide-x-[1px] md:divide-gray">
-      <SheetSectionItems title="SELL OR TRADE-IN" items={navigationData} />
-      <div className="md:pl-[36px] lg:pl-[72px]  mt-[30px] gap-[24px] flex flex-col md:flex-row">
-        {contents.map((content) => (
-          <SheetSectionDetails content={content} />
-        ))}
+    <NavigationItemsWrapper>
+      <div className="flex flex-col md:flex-row md:divide-x-[1px] md:divide-dark-6">
+        <SheetSectionItems title="SELL OR TRADE-IN" items={navigationData} />
+        <div className="md:pl-[36px] lg:pl-[72px]  mt-[30px] gap-[24px] flex flex-col md:flex-row">
+          {contents.map((content) => (
+            <SheetSectionDetails content={content} />
+          ))}
+        </div>
       </div>
-    </div>
+    </NavigationItemsWrapper>
   );
 };
 

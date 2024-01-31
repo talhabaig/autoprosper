@@ -12,6 +12,7 @@ import {
 } from "@/components/Icons/BodyStyleIcons";
 // import { EllipseGradient } from "@/components/ui/EllipseGradient";
 import { ArrowRight } from "lucide-react";
+import NavigationItemsWrapper from "./navigationItemsWrapper";
 
 const Shop = () => {
   const navigationData = [
@@ -61,15 +62,16 @@ const Shop = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row container lg:py-[30px] md:py-[15px] md:divide-x-[1px] md:divide-gray">
+    <NavigationItemsWrapper>
+      <div className="flex flex-col md:flex-row md:divide-x-[1px] md:divide-dark-6">
       <SheetSectionItems title="SEARCH ALL" items={navigationData} />
       <div className="px-[15px] md:px-[36px] lg:px-[72px] mt-[20px] md:mt-0 w-full">
         <div className="text-gray text-xs font-bold mb-[15px] tracking-[1.2px]">
           BROWSE BY BODY STYLE
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-[24px] ">
-          {bodyStyles.map((style) => (
-            <Card className="md:max-h-[141px] md:max-w-[216px] group rounded-xl relative bg-white flex flex-col gap-[19px] justify-center items-start px-[12px] pt-[30px] pb-[15px] md:pl-3 md:p-6  shadow-none border-[1px] md:gap-[24px] border-dark-5 hover:border-dark">
+          {bodyStyles.map((style, index) => (
+            <Card key={'bodystyle'+index} className="md:max-h-[141px] md:max-w-[216px] group rounded-xl relative bg-white flex flex-col gap-[19px] justify-center items-start px-[12px] pt-[30px] pb-[15px] md:pl-3 md:p-6  shadow-none border-[1px] md:gap-[24px] border-dark-5 hover:border-dark">
               <div className="flex h-full flex-col justify-center items-center">
                 {style.icon}
               </div>
@@ -84,6 +86,7 @@ const Shop = () => {
         </div>
       </div>
     </div>
+    </NavigationItemsWrapper>
   );
 };
 

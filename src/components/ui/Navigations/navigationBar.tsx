@@ -80,15 +80,32 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
 
   return (
     <>
-      <div className="md:hidden flex p-[15px] justify-between items-center">
+      <div className="md:hidden flex p-[15px] justify-between items-center h-full">
         <Sheet>
+          <Link href="/">
+            <Image src="/images/logo.png" alt="logo" width="152" height="32" />
+          </Link>
+          <div className="flex flex-row items-center gap-[18px]">
+            <UserIcon width={24} height={24} stroke="#fff" />
+            <SheetTrigger asChild>
+              <button
+                data-collapse-toggle="navbar-default"
+                type="button"
+                aria-controls="navbar-default"
+                aria-expanded="false"
+              >
+                <span className="sr-only">Open div menu</span>
+                <BurgerIcon fill={variant === "light" ? "white" : "black"} />
+              </button>
+            </SheetTrigger>
+          </div>
           <SheetContent
-            className="w-full px-0 py-[84px] transition-all overflow-y-scroll"
+            className="w-full min-h-full px-0 pt-[84px] transition-all overflow-y-scroll overflow-x-hidden"
             selectedItem={selectedItem}
             onBack={handleBackButton}
           >
             {!selectedItem && (
-              <div className="divide-y first:border-t-2 z-10 divide-gray-100 border-y-[1px] border-border-color">
+              <div className="divide-y h-full first:border-t-2 z-10 divide-gray-100 border-y-[1px] border-border-color">
                 {navigationData.map((nav, index) => (
                   <SheetItem
                     key={index}
@@ -100,64 +117,51 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             )}
             {selectedItem?.content}
           </SheetContent>
-          <Link href="/">
-            <Image src="/images/logo.png" alt="logo" width="200" height="42" />
-          </Link>
-          <div className="flex flex-row items-center justify-between gap-[18px]">
-            <UserIcon />
-            <SheetTrigger asChild>
-              <button
-                data-collapse-toggle="navbar-default"
-                type="button"
-                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                aria-controls="navbar-default"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Open div menu</span>
-                <BurgerIcon fill={variant === "light" ? 'white' : 'black'} />
-              </button>
-            </SheetTrigger>
-          </div>
         </Sheet>
       </div>
       <div className="w-full relative">
-      <div className="hidden md:flex mx-auto justify-between items-center md:w-screen lg:py-[30px] md:py-[15px] container">
-        <Link href="/">
-          {variant === "dark" ? (
-            <Image
-              src="/images/logo-dark.png"
-              alt="logo"
-              width="200"
-              height="42"
-            />
-          ) : (
-            <Image src="/images/logo.png" alt="logo" width="200" height="42" />
-          )}
-        </Link>
+        <div className="hidden md:flex mx-auto justify-between items-center md:w-screen lg:py-[30px] md:py-[15px] container">
+          <Link href="/">
+            {variant === "dark" ? (
+              <Image
+                src="/images/logo-dark.png"
+                alt="logo"
+                width="200"
+                height="42"
+              />
+            ) : (
+              <Image
+                src="/images/logo.png"
+                alt="logo"
+                width="200"
+                height="42"
+              />
+            )}
+          </Link>
 
-        <NavigationMenu className="hidden md:inline">
-          <NavigationMenuList>
-            {desktopNavigationData.map((navigation, index) => (
-              <NavigationMenuItem key={index + "-nav"}>
-                <NavigationMenuTrigger variant={variant}>
-                  {navigation.title}
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-white md:w-screen py-[10px] transition-all overflow-y-scroll">
-                  {navigation.content}
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
-        <Link href="/login">
-          <Button
-            variant="gradient"
-            className="text-dark px-5 py-2.5 font-bold"
-          >
-            SIGNUP
-          </Button>
-        </Link>
-      </div>
+          <NavigationMenu className="hidden md:inline">
+            <NavigationMenuList>
+              {desktopNavigationData.map((navigation, index) => (
+                <NavigationMenuItem id={index+ "-nav"} key={index + "-nav"}>
+                  <NavigationMenuTrigger variant={variant}>
+                    {navigation.title}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white md:w-screen py-[10px] transition-all overflow-y-scroll">
+                    {navigation.content}
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+          <Link href="/login">
+            <Button
+              variant="gradient"
+              className="text-dark px-5 py-2.5 font-bold"
+            >
+              SIGNUP
+            </Button>
+          </Link>
+        </div>
       </div>
     </>
   );
