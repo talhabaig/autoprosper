@@ -53,7 +53,7 @@ Input.displayName = "Input";
 const Select: React.FC<SelectProps> = ({ options, ...props }) => {
   const randomId = Math.floor(Math.random() * (100 - 0) + 0) + props.label;
   return (
-    <div className="flex flex-col items-start justify-start gap-[0.25rem] md:gap-2 rounded-xl p-[8px_18px] md:p-[12px_24px]  bg-gray-50 border-[1px] border-dark-4 appearance-none xl:w-[53%]">
+    <div className="flex flex-col items-start justify-start gap-[0.25rem] md:gap-2 rounded-xl p-[8px_18px] md:p-[12px_24px]  bg-gray-50 border-[1px] border-dark-4 appearance-none `">
 
       <label
         htmlFor={randomId.toString()}
