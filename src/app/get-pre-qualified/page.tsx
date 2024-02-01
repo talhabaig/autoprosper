@@ -1,4 +1,4 @@
-import GetPreQualified from "@/components/GetPreQualified/GetPreQualified";
+import GetPreQualified from "@/components/GetPreQualified/GetPreQualifiedAllSteps/GetPreQualified";
 import NavigationBar from "../../components/ui/Navigations/navigationBar";
 
 

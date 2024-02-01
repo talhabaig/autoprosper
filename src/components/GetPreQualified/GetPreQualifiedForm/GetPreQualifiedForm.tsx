@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Select from "react-select";
 import Link from "next/link";
 
-import { FormData } from "../../assests/interfaces/Home/index";
+import { FormData } from "../../../assests/interfaces/Home/index";
 
 const options = [
   { value: "option1", label: "Option 1" },

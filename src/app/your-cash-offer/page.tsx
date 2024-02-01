@@ -1,7 +1,7 @@
 import NavigationBar from "../../components/ui/Navigations/navigationBar";
 
 import React from "react";
-import YourCashOffer from "@/components/SellOrTrade/YourCashOffer";
+import YourCashOffer from "@/components/SellOrTrade/YourCashOffer/YourCashOffer";
 
 const page = () => {
   return (
