@@ -191,7 +191,6 @@ const InventoryLayout = () => {
                       >
                         New
                       </span>
-                      <span>{index}</span>
                     </div>
                     <div className="absolute  bottom-[12px] left-1/2 -translate-x-1/2">
                       <div className="bg-btn-primary-gradient p-[2px] rounded-[100px] overflow-hidden cursor-pointer">
@@ -285,7 +284,7 @@ const InventoryLayout = () => {
                   </div>
                 </div>
               ))}
-           
+
               <div>
                 <CustomPagination
                   currentPage={currentPage}

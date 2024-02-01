@@ -1,3 +1,4 @@
+import { ArrowRightCurved } from "@/components/Icons/Icons";
 import React, { useState } from "react";
 
 interface CustomPaginationProps {
@@ -38,41 +39,46 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({
   };
 
   return (
-    <div className="flex">
-      {/* Display the range of items being shown */}
-      <span>
-        Showing items {startIndex} to {endIndex} of {totalItems}
-      </span>
-      {/* Render buttons for each page */}
-      {/* Show the previous button if not on the first page */}
-      <div className="flex gap-[12px] items-center">
+    <div className="flex flex-col items-center">
+      <div className="flex gap-[12px] lg:gap-[20px] items-center mb-[12px]">
         <button
-          className="bg-green-light w-[28px] h-[28px] rounded-[50%]"
+          className="bg-green-light w-[30px] h-[30px]
+           rounded-[50%] flex items-center justify-center
+           lg:w-[42px] lg:h-[42px]"
           onClick={() => handlePaginate(currentPage - 1)}
           disabled={currentPage === 1}
         >
-          P
+          <ArrowRightCurved className="w-[12px] h-[12px] lg:w-[16px] lg:h-[16px] fill-dark-3 rotate-180" />
         </button>
 
         {pageNumbers.map((number) => (
           <button
             key={number}
-            className={`pagination-btn ${
-              currentPage === number ? "active" : ""
+            className={`w-[30px] h-[30px] border border-solid border-dark-4 font-bold
+            rounded-[50%] flex items-center justify-center text-[12px] text-black
+            hover:text-white hover:bg-dark leading-[1]  lg:w-[42px] lg:h-[42px] lg:text-[16px] ${
+              currentPage === number ? "bg-dark border-dark text-white" : ""
             }`}
             onClick={() => handlePaginate(number)}
           >
             {number}
           </button>
         ))}
+
+        {pageNumbers}
         {/* Show the next button if not on the last page */}
         <button
-          className="bg-btn-primary-gradient w-[28px] h-[28px] rounded-[50%]"
+          className="bg-btn-primary-gradient w-[30px] h-[30px]
+           rounded-[50%] flex items-center justify-center  lg:w-[42px] lg:h-[42px]"
           onClick={() => handlePaginate(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
-          n
+          <ArrowRightCurved className="w-[12px] h-[12px] lg:w-[16px] lg:h-[16px] fill-dark" />
         </button>
+      </div>
+      <div className="[&>span]:font-bold">
+        Showing items <span>{startIndex}</span> to <span>{endIndex}</span> of{" "}
+        <span>{totalItems}</span>
       </div>
     </div>
   );
