@@ -17,10 +17,10 @@ const Vehicle: React.FC = () => {
   return (
     <div className="flex w-full justify-start">
       <div className="w-full font-[400] ">
-        <h1 className="heading text-left  text-[#001B44] text-[32px] lg:text-[32px] xl:text-[48px] 2xl:text-[56px] font-[400]  mb-[12px] 3xl:mb-[18px]">
+        <h1 className="heading text-left  text-[#001B44] text-[32px] xl:text-[48px] 2xl:text-[56px] font-[400] mt-6 md:mt-0 mb-[12px] 3xl:mb-[18px]">
           Vehicle
         </h1>
-        <p className="text-left text-[#4B5768] font-[400] text-[14px] 3xl:text-[20px] 2xl:mb-[48px] ">
+        <p className="text-left text-[#4B5768] font-[400] text-[14px] xl:text-[16px] 3xl:text-[20px] 2xl:mb-[48px] ">
           Unable to find a vehicle without specific details
         </p>
         <div className="flex gap-1 md:gap-2 3xl:gap-3 ">
@@ -67,7 +67,7 @@ const Vehicle: React.FC = () => {
               <input
                 type="text"
                 placeholder="VIN (Vehicle Identification Number)"
-                className="block w-full  rounded-xl border-solid border p-[17px_18px] 3xl:p-[24px] lg:w-[50%] 3xl:w-[59%] border-[#8E97A6]"
+                className="block w-full text-sm rounded-xl border-solid border p-[17px_18px] 3xl:p-[24px] lg:w-[50%] 3xl:w-[59%] border-[#8E97A6]"
                 onChange={handleInputChange}
               />
             </>
