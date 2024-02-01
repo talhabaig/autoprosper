@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import { ArrowRight, BackArrow } from "../Icons/Icons";
-import Vehicle from "./Vehicle";
-import VehicleDetail from "./VehicleDetail";
-import VehicleCondition from "./VehicleCondition";
-import VehicleInformation from "./VehicleInformation";
-import CalculatingOffer from "./CalculatingOffer";
-import Button from "../Common/Button/Button";
-import YourVehicle from "./YourVehicle";
+import { ArrowRight, BackArrow } from "../../Icons/Icons";
+import Vehicle from "../Vehicle/Vehicle";
+import VehicleDetail from "../VehicleDetail/VehicleDetail";
+import VehicleCondition from "../VehicleCondition/VehicleCondition";
+import VehicleInformation from "../VehicleInformation/VehicleInformation";
+import CalculatingOffer from "../CalculatinOffer/CalculatingOffer";
+import Button from "../../Common/Button/Button";
+import YourVehicle from "../YourVehicle/YourVehicle";
 import styles from "./SellandTrade.module.css";
 
 const SellTradeVehicle: React.FC = () => {

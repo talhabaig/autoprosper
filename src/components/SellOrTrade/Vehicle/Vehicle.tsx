@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from "react";
-import { InfoIcon } from "../Icons/Icons";
+import { InfoIcon } from "../../Icons/Icons";
 
 type VehicleTab = "first" | "second" | "third";
 

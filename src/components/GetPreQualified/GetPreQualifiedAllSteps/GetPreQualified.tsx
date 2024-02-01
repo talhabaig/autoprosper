@@ -1,14 +1,14 @@
 import React from "react";
 
-import { GetPreQualifiedSecureFinancing } from "../../assests/interfaces/Home/index";
+import { GetPreQualifiedSecureFinancing } from "../../../assests/interfaces/Home/index";
 import {
   DocumentRounded,
   SecureLock,
   CreditCard,
   ArrowRight,
 } from "@/components/Icons/Icons";
-import GetPreQuallifiedForm from "./GetPreQualifiedForm";
-import GetPreQuallifiedAccordion from "./GetPreQuallifiedAccordion";
+import GetPreQuallifiedForm from "../GetPreQualifiedForm/GetPreQualifiedForm";
+import GetPreQuallifiedAccordion from "../GetPreQualifiedAccordion/GetPreQuallifiedAccordion";
 import Button from "@/components/Common/Button/Button";
 
 const cardData: GetPreQualifiedSecureFinancing[] = [

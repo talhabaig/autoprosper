@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { Select } from "../ui/InputCustom";
+import { Select } from "../../ui/InputCustom";
 
 interface FormData {
   color: string;

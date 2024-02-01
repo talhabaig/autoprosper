@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Select } from "../ui/InputCustom";
-import { InfoIcon, RoundedChecked } from "../Icons/Icons";
+import { Select } from "../../ui/InputCustom";
+import { InfoIcon, RoundedChecked } from "../../Icons/Icons";
 
 interface FormData {
   color: string;

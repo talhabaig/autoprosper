@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { EllipseGradient } from "../ui/ellipseGradient";
-import Button from "../Common/Button/Button";
+import { EllipseGradient } from "../../ui/ellipseGradient";
+import Button from "../../Common/Button/Button";
 
 interface YourCashOfferProps {}
 

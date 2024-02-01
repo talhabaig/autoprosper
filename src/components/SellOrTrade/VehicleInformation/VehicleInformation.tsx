@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CustomText from "../Common/InputField/CustomInput";
-import RadioOption from "../Common/RadioButton/RadioBtn";
+import CustomText from "../../Common/InputField/CustomInput";
+import RadioOption from "../../Common/RadioButton/RadioBtn";
 
 interface VehicleInformationProps {}
 
