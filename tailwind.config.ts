@@ -58,6 +58,7 @@ const config: Config = {
         "btn-primary-gradient-hover":
           "linear-gradient(90deg, rgb(0, 255, 162) 40%, rgb(255, 230, 100) 80%)",
         "bg-none": "none",
+        "banner-gradient": "linear-gradient(90deg, #0A1835 10.21%, rgba(10, 24, 53, 0.00) 100%)",
       },
     },
     container: {
