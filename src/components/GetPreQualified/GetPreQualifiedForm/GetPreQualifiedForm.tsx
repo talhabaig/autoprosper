@@ -76,7 +76,7 @@ const GetPreQuallifiedForm = () => {
           </div>
           <div className="py-8 md:py-12  px-[15px]  border-b border-solid border-dark-6  max-w-[940px] mx-auto">
             <div className="mb-[18px] md:mb-8 max-w-[560px]">
-              <h3 className="heading4 font-bold">Personal Information</h3>
+              <h3 className="heading4 font-bold">City & State</h3>
               <p className="text-dark-3 text-[0.875rem] md:text-[16px] leading-[150%]">
                 Tell us the city and state you currently live in.
               </p>

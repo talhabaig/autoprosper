@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, ChangeEvent } from "react";
 import Select from "react-select";
-import { ArrowRight, Search, SortBy } from "../Icons/Icons";
+import { ArrowRight, Search, SortBy, FilterSortBy } from "../Icons/Icons";
 import Image from "next/image";
 
 import {
@@ -94,7 +94,7 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
             className="cursor-pointer bg-dark-7 p-[10px_22px] flex items-center justify-center gap-[6px]
             rounded-[100px] w-full  min-h-[36px] xl:min-h-[56px] text-dark font-bold text-[14px] xl:text-[16px]"
           >
-            <SortBy className="w-[16px] h-[16px] fill-dark xl:w-[20px] xl:h-[20px]" />{" "}
+            <FilterSortBy className="w-[16px] h-[16px] fill-dark xl:w-[20px] xl:h-[20px]" />{" "}
             Filter
           </span>
           {isDropdownOpenFilter && (

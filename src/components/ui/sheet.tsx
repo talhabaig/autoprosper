@@ -16,6 +16,7 @@ import { DoubleEllipseGradient } from "@/components/ui/ellipseGradient";
 import { NavigationContentType } from "./Navigations/type";
 import Link from "next/link";
 import { Button } from "./button";
+import { CrossIcon } from "../Icons/Icons";
 
 const Sheet = SheetPrimitive.Root;
 
@@ -41,7 +42,7 @@ const SheetOverlay = React.forwardRef<
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
 const sheetVariants = cva(
-  "fixed z-50 gap-4 bg-white p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+  "fixed z-50 gap-4 bg-white shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
   {
     variants: {
       side: {
@@ -81,7 +82,6 @@ const SheetContent = React.forwardRef<
         className={cn(sheetVariants({ side }), className)}
         {...props}
       >
-        <DoubleEllipseGradient className="absolute bottom-0 -z-10" />
         {children}
         {selectedItem?.title ? (
           <div
@@ -95,8 +95,8 @@ const SheetContent = React.forwardRef<
             Menu
           </div>
         )}
-        <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-neutral-100 dark:ring-offset-neutral-950 dark:focus:ring-neutral-300 dark:data-[state=open]:bg-neutral-800">
-          <X className="h-4 w-4" />
+        <SheetPrimitive.Close className="absolute right-[21.51px] top-[21.51px] rounded-sm ">
+          <CrossIcon width="16.97" height="16.97" className="fill-dark" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>
       </SheetPrimitive.Content>
@@ -167,17 +167,19 @@ interface SheetItemProps extends React.HTMLAttributes<HTMLDivElement> {
 const SheetItem: React.FC<SheetItemProps> = ({ label, ...props }) => {
   return (
     <div
-      className="flex justify-between pl-[15px] pr-[14px] z-10 py-[23px] border-x-0 border-border-color"
+      className="flex justify-between px-[18px] z-10 py-[19px] border-x-0 border-border-color"
       {...props}
     >
-      <div className="text-sm font-bold">{label}</div>
+      <div className="text-sm leading-[17.64px] font-bold text-dark-3">
+        {label}
+      </div>
       <ChevronRight className="md:hidden" />
     </div>
   );
 };
 
 interface SheetSectionItemsProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
+  title?: string;
   items: Array<{
     label: string;
     link: string;
@@ -192,16 +194,16 @@ const SheetSectionItems: React.FC<SheetSectionItemsProps> = ({
 }) => {
   return (
     <div className="md:relative flex flex-col lg:w-[336px] md:mr-[36px] lg:mr-[72px]">
-      <div className="text-xs text-gray px-[15px] font-bold mb-[15px] tracking-[1.2px]">
-        {title}
-      </div>
-      <div className="divide-y first:border-t-2 divide-gray-100 border-y-[1px] border-border-color">
+      {title && (
+        <div className="text-xs leading-[15.12px] text-dark-4 px-[15px] font-bold mb-[15px] tracking-[1.08px]">
+          {title}
+        </div>
+      )}
+      <div className={`divide-y ${title && 'first:border-t-2' } divide-gray-100 border-y-[1px] border-border-color text-dark-3`}>
         {items.map((item, index) => (
           <SheetItem key={index} label={item.label} />
         ))}
       </div>
-
-      <DoubleEllipseGradient className="hidden md:block absolute -bottom-10 right-7" />
     </div>
   );
 };
@@ -233,7 +235,7 @@ const SheetSectionDetails: React.FC<SheetSectionDetailsProps> = ({
           {content.list.map((list) => list.element)}
         </div>
         <Button
-          className="rounded-full border-gray text-gray md:w-auto lg:w-[192px] lg:px-6 "
+          className="rounded-full border-gray text-gray md:w-fit lg:w-[192px] lg:px-6 "
           variant="outline"
         >
           {content.button.text} <span>{content.button.icon}</span>

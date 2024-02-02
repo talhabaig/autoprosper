@@ -134,6 +134,7 @@ const LowerYourCarPaymentAllSteps = () => {
               </div>
             </>
           )}
+         
           {step < 6 && (
             <div className=" flex justify-center mb-[18px] md:mb-[24px]">
               {step === 2 ? (

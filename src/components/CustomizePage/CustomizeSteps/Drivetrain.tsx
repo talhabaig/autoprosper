@@ -13,13 +13,13 @@ const Drivetrain: React.FC = () => {
     {
       id: 1,
       label: "Front wheel drive",
-      image: <img src="/customize/fwd.png" width="116" className="mx-auto" />,
+      image: <img src="/customize/fwd.png" width="83" className="mx-auto" />,
       sub: 'Opt for a front-wheel-drive setup for enhanced control and handling on roads.',
     },
     {
       id: 2,
       label: "All wheel drive",
-      image: <img src="/customize/awd.png" width="116" className="mx-auto" />,
+      image: <img src="/customize/awd.png" width="83" className="mx-auto" />,
       sub: 'Choose all-wheel drive for superior traction and stability in various driving conditions.',
     },
   ];
