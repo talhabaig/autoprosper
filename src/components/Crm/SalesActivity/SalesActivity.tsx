@@ -6,7 +6,6 @@ import {
   EmailSent,
   SmsSent,
 } from "@/components/Icons/Icons";
-import { Heading } from "lucide-react";
 import React from "react";
 
 const SalesActivityList = [
@@ -56,7 +55,10 @@ const SalesActivity = () => {
           Sales Activity
         </h1>
         {SalesActivityList.map((item, index) => (
-          <div key={index} className="rounded-full py-[5px] pr-4 pl-[5px] bg-[#E2FFF5] flex items-center justify-between mb-2">
+          <div
+            key={index}
+            className="rounded-full py-[5px] pr-4 pl-[5px] bg-[#E2FFF5] flex items-center justify-between mb-2"
+          >
             <div className="flex items-center gap-3">
               <div
                 className={`w-[38px] h-[38px] rounded-full flex items-center justify-center

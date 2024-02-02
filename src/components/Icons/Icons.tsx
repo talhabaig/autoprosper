@@ -2478,7 +2478,8 @@ export const ChatBubble: React.FC<propType> = ({
     </svg>
   );
 };
-export const FilterSortBy: React.FC<propType> = ({
+
+export const CrossIcon: React.FC<propType> = ({
   width,
   height,
   fill,
@@ -2486,17 +2487,41 @@ export const FilterSortBy: React.FC<propType> = ({
 }) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
+      viewBox="0 0 18 18"
       fill={fill}
       className={className}
-      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M9.1669 16.6663C8.93078 16.6663 8.73287 16.5865 8.57315 16.4268C8.41342 16.267 8.33356 16.0691 8.33356 15.833V10.833L3.50023 4.66634C3.2919 4.38856 3.26065 4.0969 3.40648 3.79134C3.55231 3.48579 3.80579 3.33301 4.1669 3.33301H15.8336C16.1947 3.33301 16.4481 3.48579 16.594 3.79134C16.7398 4.0969 16.7086 4.38856 16.5002 4.66634L11.6669 10.833V15.833C11.6669 16.0691 11.587 16.267 11.4273 16.4268C11.2676 16.5865 11.0697 16.6663 10.8336 16.6663H9.1669ZM10.0002 10.2497L14.1252 4.99967H5.87523L10.0002 10.2497Z"
+        d="M7.1815 8.59599L0.514497 1.92898L1.92871 0.514771L8.59572 7.18178L10.8181 9.40411L17.4851 16.0711L16.0708 17.4853L9.40384 10.8183L7.1815 8.59599Z"
         fill="#001B44"
       />
+      <path
+        d="M10.8185 8.59599L17.4855 1.92898L16.0713 0.514771L9.40428 7.18178L7.18195 9.40411L0.51494 16.0711L1.92915 17.4853L8.59616 10.8183L10.8185 8.59599Z"
+        fill="#001B44"
+      />
+    </svg>
+  );
+};
+
+export const DropIcon: React.FC<propType> = ({
+  width,
+  height,
+  fill,
+  className,
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 8 4"
+      fill={fill}
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M4 4L0 0H8L4 4Z" fill="#5D6878" />
     </svg>
   );
 };

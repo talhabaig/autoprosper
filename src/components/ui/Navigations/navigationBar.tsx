@@ -3,25 +3,10 @@
 import { UserIcon } from "lucide-react";
 import BurgerIcon from "../../Icons/BurgerIcon";
 import { Button } from "../button";
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetItem,
-  SheetDescription,
-} from "../sheet";
+import { Sheet, SheetTrigger, SheetContent, SheetItem } from "../sheet";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Shop from "./NavigationItems/shop";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "./navigation";
 import { NavigationsType, NavigationContentType } from "./type";
 import SellTrade from "./NavigationItems/sellTrade";
 import Service from "./NavigationItems/service";
@@ -29,6 +14,8 @@ import Finance from "./NavigationItems/finance";
 import Learn from "./NavigationItems/learn";
 import Help from "./NavigationItems/help";
 import Link from "next/link";
+import { DropIcon } from "@/components/Icons/Icons";
+import { DoubleEllipseGradient } from "../ellipseGradient";
 
 interface NavigationBarInterface {
   variant?: "light" | "dark";
@@ -71,24 +58,69 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
     useState<NavigationContentType | null>(null);
 
   const handleSheetItemClick = (index: number) => {
-    setSelectedItem(navigationData[index]);
+    const clickedItem = navigationData[index];
+    if (
+      selectedItem &&
+      clickedItem &&
+      selectedItem.title === clickedItem.title
+    ) {
+      handleCloseContent();
+    } else {
+      setSelectedItem(clickedItem);
+    }
   };
 
   const handleBackButton = () => {
     setSelectedItem(null);
   };
 
+  const handleCloseContent = () => {
+    setSelectedItem(null);
+  };
+
   return (
     <>
-      <div className="md:hidden flex p-[15px] justify-between items-center">
+      <div className="md:hidden flex p-[15px] justify-between items-center h-full">
         <Sheet>
+          <Link href="/">
+            {variant === "dark" ? (
+              <Image
+                src="/images/logo-dark.png"
+                alt="logo"
+                width="152"
+                height="32"
+              />
+            ) : (
+              <Image
+                src="/images/logo.png"
+                alt="logo"
+                width="152"
+                height="32"
+              />
+            )}
+          </Link>
+          <div className="flex flex-row items-center gap-[18px]">
+            <UserIcon width={24} height={24} stroke={variant === "dark" ? "#000" : "#fff"} />
+            <SheetTrigger asChild>
+              <button
+                data-collapse-toggle="navbar-default"
+                type="button"
+                aria-controls="navbar-default"
+                aria-expanded="false"
+              >
+                <span className="sr-only">Open div menu</span>
+                <BurgerIcon fill={variant === "light" ? "white" : "black"} />
+              </button>
+            </SheetTrigger>
+          </div>
           <SheetContent
-            className="w-full px-0 py-[84px] transition-all overflow-y-scroll"
+            className="w-full min-h-full px-0 pt-[84px] transition-all overflow-y-scroll overflow-x-hidden"
             selectedItem={selectedItem}
             onBack={handleBackButton}
           >
+            <DoubleEllipseGradient className="md:hidden absolute bottom-0 -z-10 md:right-0" />
             {!selectedItem && (
-              <div className="divide-y first:border-t-2 z-10 divide-gray-100 border-y-[1px] border-border-color">
+              <div className="divide-y h-full first:border-t-2 z-10 divide-gray-100 border-y-[1px] border-border-color">
                 {navigationData.map((nav, index) => (
                   <SheetItem
                     key={index}
@@ -100,65 +132,75 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             )}
             {selectedItem?.content}
           </SheetContent>
-          <Link href="/">
-            <Image src="/images/logo.png" alt="logo" width="200" height="42" />
-          </Link>
-          <div className="flex flex-row items-center justify-between gap-[18px]">
-            <UserIcon />
-            <SheetTrigger asChild>
-              <button
-                data-collapse-toggle="navbar-default"
-                type="button"
-                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                aria-controls="navbar-default"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Open div menu</span>
-                <BurgerIcon />
-              </button>
-            </SheetTrigger>
-          </div>
         </Sheet>
       </div>
-      <div className="w-full relative">
-      <div className="hidden md:flex mx-auto justify-between items-center md:w-screen lg:py-[30px] md:py-[15px] container">
-        <Link href="/">
-          {variant === "dark" ? (
-            <Image
-              src="/images/logo-dark.png"
-              alt="logo"
-              width="200"
-              height="42"
-            />
-          ) : (
-            <Image src="/images/logo.png" alt="logo" width="200" height="42" />
-          )}
-        </Link>
+      <div
+        className={`w-full relative ${
+          selectedItem ? "bg-white" : "bg-transparent"
+        }`}
+      >
+        <div className="hidden md:flex mx-auto justify-between items-center md:w-screen lg:py-[30px] md:py-[15px] container">
+          <Link href="/">
+            {variant === "dark" || selectedItem ? (
+              <Image
+                src="/images/logo-dark.png"
+                alt="logo"
+                width="200"
+                height="42"
+              />
+            ) : (
+              <Image
+                src="/images/logo.png"
+                alt="logo"
+                width="200"
+                height="42"
+              />
+            )}
+          </Link>
 
-        <NavigationMenu className="hidden md:inline">
-          <NavigationMenuList>
+          <div className="inline-flex lg:gap-[48px]">
             {desktopNavigationData.map((navigation, index) => (
-              <NavigationMenuItem key={index + "-nav"}>
-                <NavigationMenuTrigger variant={variant}>
-                  {navigation.title}
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-white md:w-screen py-[10px] transition-all overflow-y-scroll">
-                  {navigation.content}
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+              <div
+                key={index}
+                className={`inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm  lg:text-base lg:leading-[24px] font-medium transition-colors ${
+                  variant === "light" && !selectedItem
+                    ? "text-white"
+                    : "text-dark-3"
+                }`}
+                onMouseEnter={() => handleSheetItemClick(index)}
+                onClick={() => handleSheetItemClick(index)}
+              >
+                {navigation.title}
+                <DropIcon
+                  className={`top-[1px] ml-1 h-[4px] w-[8px] transition duration-200 ${
+                    selectedItem?.title === navigation.title ? "rotate-180" : ""
+                  }`}
+                  aria-hidden="true"
+                />
+                {selectedItem?.title === navigation.title && (
+                  <div className="bg-green rounded-full absolute bottom-0 w-[5%] h-[3px]"></div>
+                )}
+              </div>
             ))}
-          </NavigationMenuList>
-        </NavigationMenu>
-        <Link href="/login">
-          <Button
-            variant="gradient"
-            className="text-dark px-5 py-2.5 font-bold"
-          >
-            SIGNUP
-          </Button>
-        </Link>
+          </div>
+          <Link href="/login">
+            <Button
+              variant="gradient"
+              className="text-dark md:h-[36px] md:w-[85px] font-bold"
+            >
+              SIGNUP
+            </Button>
+          </Link>
+        </div>
       </div>
-      </div>
+      {selectedItem && (
+        <div
+          className="hidden md:block absolute top-15 left-0 right-0 bg-white z-10"
+          id="content-area"
+        >
+          {selectedItem.content}
+        </div>
+      )}
     </>
   );
 };

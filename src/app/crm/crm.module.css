@@ -91,7 +91,7 @@
   /* on mobile number 10 */
   .gallery__item--7 {
     background: #e2f3ff;
-   
+
     grid-column: 1 / span 6;
     grid-row: 18 / 27;
   }
