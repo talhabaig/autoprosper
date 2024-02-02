@@ -13,6 +13,7 @@ import {
 // import { EllipseGradient } from "@/components/ui/EllipseGradient";
 import { ArrowRight } from "lucide-react";
 import NavigationItemsWrapper from "./navigationItemsWrapper";
+import React from "react";
 
 const Shop = () => {
   const navigationData = [
@@ -57,7 +58,7 @@ const Shop = () => {
     },
     {
       label: "Convertible",
-      icon: <ConvertibleIcon className="relative z-10" />,
+      icon: <ConvertibleIcon className="relative z-10 fill-dark" />,
     },
   ];
 
@@ -71,11 +72,11 @@ const Shop = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-[24px] ">
           {bodyStyles.map((style, index) => (
-            <Card key={'bodystyle'+index} className="md:max-h-[141px] md:max-w-[216px] group rounded-xl relative bg-white flex flex-col gap-[19px] justify-center items-start px-[12px] pt-[30px] pb-[15px] md:pl-3 md:p-6  shadow-none border-[1px] md:gap-[24px] border-dark-5 hover:border-dark">
-              <div className="flex h-full flex-col justify-center items-center">
-                {style.icon}
+            <Card key={'bodystyle'+index} className="group md:max-h-[141px] md:max-w-[216px] group rounded-xl relative bg-white flex flex-col gap-[19px] justify-center items-start px-[12px] pt-[30px] pb-[15px] md:pl-3 md:p-6  shadow-none border-[1px] md:gap-[38px] border-dark-5 hover:border-dark">
+              <div className="flex h-full flex-col justify-center items-center group-hover:fill-dark">
+              {style.icon}
               </div>
-              <div className="font-normal text-xs text-dark-muted">
+              <div className="font-normal text-xs text-dark-3 group-hover:text-dark">
                 {style.label}
               </div>
               <div className="hidden group-hover:flex items-center justify-center absolute bg-green rounded-full top-3 right-3 w-[26px] h-[26px]">

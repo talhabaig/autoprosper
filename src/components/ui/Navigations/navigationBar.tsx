@@ -3,25 +3,10 @@
 import { UserIcon } from "lucide-react";
 import BurgerIcon from "../../Icons/BurgerIcon";
 import { Button } from "../button";
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetItem,
-  SheetDescription,
-} from "../sheet";
+import { Sheet, SheetTrigger, SheetContent, SheetItem } from "../sheet";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Shop from "./NavigationItems/shop";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "./navigation";
 import { NavigationsType, NavigationContentType } from "./type";
 import SellTrade from "./NavigationItems/sellTrade";
 import Service from "./NavigationItems/service";
@@ -29,6 +14,8 @@ import Finance from "./NavigationItems/finance";
 import Learn from "./NavigationItems/learn";
 import Help from "./NavigationItems/help";
 import Link from "next/link";
+import { DropIcon } from "@/components/Icons/Icons";
+import { DoubleEllipseGradient } from "../ellipseGradient";
 
 interface NavigationBarInterface {
   variant?: "light" | "dark";
@@ -71,12 +58,41 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
     useState<NavigationContentType | null>(null);
 
   const handleSheetItemClick = (index: number) => {
-    setSelectedItem(navigationData[index]);
+    const clickedItem = desktopNavigationData[index];
+    if (
+      selectedItem &&
+      clickedItem &&
+      selectedItem.title === clickedItem.title
+    ) {
+      handleCloseContent();
+    } else {
+      setSelectedItem(clickedItem);
+    }
   };
 
   const handleBackButton = () => {
     setSelectedItem(null);
   };
+
+  const handleCloseContent = () => {
+    setSelectedItem(null);
+  };
+
+  useEffect(() => {
+    const handleBodyClick = (event: MouseEvent) => {
+      const contentArea = document.getElementById("content-area");
+
+      if (contentArea && !contentArea.contains(event.target as Node)) {
+        handleCloseContent();
+      }
+    };
+
+    document.body.addEventListener("click", handleBodyClick);
+
+    return () => {
+      document.body.removeEventListener("click", handleBodyClick);
+    };
+  }, []);
 
   return (
     <>
@@ -105,6 +121,9 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             onBack={handleBackButton}
           >
             {!selectedItem && (
+              <DoubleEllipseGradient className="md:hidden absolute bottom-0 -z-10 md:right-0" />
+            )}
+            {!selectedItem && (
               <div className="divide-y h-full first:border-t-2 z-10 divide-gray-100 border-y-[1px] border-border-color">
                 {navigationData.map((nav, index) => (
                   <SheetItem
@@ -119,10 +138,14 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
           </SheetContent>
         </Sheet>
       </div>
-      <div className="w-full relative">
+      <div
+        className={`w-full relative ${
+          selectedItem ? "bg-white" : "bg-transparent"
+        }`}
+      >
         <div className="hidden md:flex mx-auto justify-between items-center md:w-screen lg:py-[30px] md:py-[15px] container">
           <Link href="/">
-            {variant === "dark" ? (
+            {variant === "dark" || selectedItem ? (
               <Image
                 src="/images/logo-dark.png"
                 alt="logo"
@@ -139,30 +162,49 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             )}
           </Link>
 
-          <NavigationMenu className="hidden md:inline">
-            <NavigationMenuList>
-              {desktopNavigationData.map((navigation, index) => (
-                <NavigationMenuItem id={index+ "-nav"} key={index + "-nav"}>
-                  <NavigationMenuTrigger variant={variant}>
-                    {navigation.title}
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-white md:w-screen py-[10px] transition-all overflow-y-scroll">
-                    {navigation.content}
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
+          <div className="inline-flex lg:gap-[48px]">
+            {desktopNavigationData.map((navigation, index) => (
+              <div
+                key={index}
+                className={`inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm  lg:text-base lg:leading-[24px] font-medium transition-colors ${
+                  variant === "light" && !selectedItem
+                    ? "text-white"
+                    : "text-dark-3"
+                }`}
+                onMouseEnter={() => handleSheetItemClick(index)}
+                onClick={() => handleSheetItemClick(index)}
+              >
+                {navigation.title}
+                <DropIcon
+                  className={`top-[1px] ml-1 h-[4px] w-[8px] transition duration-200 ${
+                    selectedItem?.title === navigation.title ? "rotate-180" : ""
+                  }`}
+                  aria-hidden="true"
+                />
+                {selectedItem?.title === navigation.title && (
+                  <div className="bg-green rounded-full absolute bottom-0 w-[5%] h-[3px]"></div>
+                )}
+              </div>
+            ))}
+          </div>
           <Link href="/login">
             <Button
               variant="gradient"
-              className="text-dark px-5 py-2.5 font-bold"
+              className="text-dark md:h-[36px] md:w-[85px] font-bold"
             >
               SIGNUP
             </Button>
           </Link>
         </div>
       </div>
+      {selectedItem && (
+        <div
+          className="hidden md:block absolute top-15 left-0 right-0 bg-white z-10"
+          id="content-area"
+        >
+          {selectedItem.content}
+        </div>
+      )}
     </>
   );
 };

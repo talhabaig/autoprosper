@@ -170,7 +170,7 @@ const SheetItem: React.FC<SheetItemProps> = ({ label, ...props }) => {
       className="flex justify-between px-[18px] z-10 py-[19px] border-x-0 border-border-color"
       {...props}
     >
-      <div className="text-sm font-bold text-dark-3">{label}</div>
+      <div className="text-sm leading-[17.64px] font-bold text-dark-3">{label}</div>
       <ChevronRight className="md:hidden" />
     </div>
   );
@@ -200,8 +200,6 @@ const SheetSectionItems: React.FC<SheetSectionItemsProps> = ({
           <SheetItem key={index} label={item.label} />
         ))}
       </div>
-
-      <DoubleEllipseGradient className="hidden md:block absolute -bottom-10 right-7" />
     </div>
   );
 };
