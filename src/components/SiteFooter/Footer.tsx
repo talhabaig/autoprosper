@@ -32,14 +32,14 @@ const Shop = [
   {
     title: "Shop",
     items: [
-      { id: 1, label: "SUV", href: "/suv" },
-      { id: 2, label: "Truck", href: "/truck" },
-      { id: 3, label: "Sedan", href: "/sedan" },
-      { id: 4, label: "Hatchback", href: "/hatchback" },
-      { id: 5, label: "Coupe", href: "/coupe" },
-      { id: 6, label: "Wagon", href: "/wagon" },
-      { id: 7, label: "Minivan", href: "/minivan" },
-      { id: 8, label: "Convertible", href: "/convertible" },
+      { id: 1, label: "SUV", href: "/inventory" },
+      { id: 2, label: "Truck", href: "/inventory" },
+      { id: 3, label: "Sedan", href: "/inventory" },
+      { id: 4, label: "Hatchback", href: "/inventory" },
+      { id: 5, label: "Coupe", href: "/inventory" },
+      { id: 6, label: "Wagon", href: "/inventory" },
+      { id: 7, label: "Minivan", href: "/inventory" },
+      { id: 8, label: "Convertible", href: "/inventory" },
     ],
   },
 ];
@@ -145,12 +145,14 @@ const Footer = () => {
                   className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]"
                   key={item.id}
                 >
-                  <span
-                    className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer"
-                    id={item.href}
-                  >
-                    {item.label}
-                  </span>
+                  <Link href={item.href}>
+                    <span
+                      className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer"
+                      id={item.href}
+                    >
+                      {item.label}
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>

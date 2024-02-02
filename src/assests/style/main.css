@@ -62,7 +62,6 @@ html {
 }
 
 
-
 body {
   margin: 0;
   padding: 0;
@@ -72,7 +71,6 @@ body {
   box-sizing: border-box;
   line-height: 1.2;
   color: #545d72;
-
 }
 
 img {
@@ -99,6 +97,8 @@ input:-webkit-autofill:active {
 .rectSelectWrapper * {
   cursor: pointer;
 }
+
+/* ======== custom react select style============== */
 .rectSelectWrapper .css-13cymwt-control,
 .rectSelectWrapper .css-t3ipsp-control {
   padding: 8px 14px;
@@ -120,117 +120,83 @@ input:-webkit-autofill:active {
 .rectSelectWrapper .css-t3ipsp-control:focus {
   border: 1px solid #001b44;
 }
+
 .rectSelectWrapper .css-1u9des2-indicatorSeparator {
   display: none;
 }
-.firstTab .nav-link{
-  color: #B7BCC3;
+
+/* ======custom react select style=============== */
+.firstTab .nav-link {
+  color: #b7bcc3;
 }
-.active{
+
+.active {
   background-color: transparent !important;
-  color: #001B44 !important;
+  color: #001b44 !important;
   font-weight: 700 !important;
 }
-/* .activeTabs{
-  background-color: #00ffa2;
-} */
-.firstTab .tabText{
- border: 1px solid #B7BCC3;
- width: 24px;
- height: 24px;
- border-radius: 100px;
- display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 8px;
-    font-size: 14px;
+
+.firstTab .tabText {
+  border: 1px solid #b7bcc3;
+  width: 24px;
+  height: 24px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  font-size: 14px;
 }
-.firstTab .active .tabText{
-  background-color: #001B44;
+.firstTab .active .tabText {
+  background-color: #001b44;
   color: #fff;
 }
-.firstTab .vehicleNav .nav-item{
+.firstTab .vehicleNav .nav-item {
   margin-right: 10px;
 }
-.vehicleTab{
+.vehicleTab {
   margin-bottom: 20px;
 }
-.vehicleTab a{
+.vehicleTab a {
   border-radius: var(--Number-96, 96px) !important;
-  border: 3px solid var(--dark-dark_6, #E5E8ED);
+  border: 3px solid var(--dark-dark_6, #e5e8ed);
   margin-right: 16px;
   padding: 10px 26px;
-text-align: center;
+  text-align: center;
 }
-.vehicleTab .active{
-  background-color: #001B44 !important;
+.vehicleTab .active {
+  background-color: #001b44 !important;
   color: #fff !important;
 }
-.detailSelect select{
+.detailSelect select {
   background: transparent;
 }
-.detailSelect select label{
+.detailSelect select label {
   text-indent: 0;
 }
 
-.active{
+.active {
   background-color: transparent !important;
-  color: #001B44 !important;
+  color: #001b44 !important;
   font-weight: 700 !important;
 }
 
-.tabText{
- border: 1px solid #B7BCC3;
- width: 24px;
- height: 24px;
- border-radius: 100px;
- display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 8px;
-    font-size: 14px;
+.tabText {
+  border: 1px solid #b7bcc3;
+  width: 24px;
+  height: 24px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  font-size: 14px;
 }
-.active .tabText{
-  background-color: #001B44;
+.active .tabText {
+  background-color: #001b44;
   color: #fff;
 }
-.vehicleNav .nav-item{
-  margin-right: 10px;
-}
-.homePage{
-  min-height: 70vh;
-  position: relative;
 
-}
-.footerBox{
-  /* position: absolute;
-  bottom: 0; */
-  display: flex;
-  text-align: end;
-    width: 100%;
-    border-top: 1px solid var(--dark-dark_6, #E5E8ED);
-    background: var(--primary-white, #FFF);
-    justify-content: end;
-    padding: 30px 158px 30px;
-    margin-top: 30px;
-}
-.formSelect .border{
-  display: inline-block;
-  margin-bottom: 20px;
-  border-radius: 12px;
-}
-.selected-radio .form-check-input:checked {
-  background-color: #00FFA2 !important;
-  border-color: #00FFA2;
-}
-.TabBtn button{
-  margin-bottom: 10px;
-}
-.vinTab button{
-  border-radius: var(--Number-96, 96px);
-  border: 3px solid var(--dark-dark_6, #E5E8ED);
-  padding: 13px 26px;
-}
 @media (min-width: 992px) {
   .mainWrapperFirstTimeBuyer {
     min-height: calc(100vh - 102px);
@@ -239,43 +205,15 @@ text-align: center;
     min-height: calc(100vh - 230px);
   }
 }
-@media (max-width: 767px) {
-  .firstTab .vehicleNav {
-    flex-direction: row !important;
-       width: 500px;
-       overflow: scroll;
-  }
-  .vehicleTab a{
-    padding: 9px 16px;
-    margin-right: 5px;
-  }
-  .homePage{
-    height: 100%;
 
-  }
-  .footerBox{
-    position: inherit;
-    padding: 30px;
-    margin-top: 30px;
-  }
-  .heading{
-    margin-top: 30px !important;
-}
-.vinTab button{
-  padding: 9px 18px;
-}
-.firstTab .tabText{
-  margin-right: 2px;
-}
-.vehicleNav button{
-  margin-right: 12px;
-}
-.TabBtn{
-  width: 100%;
-    overflow-x: scroll;
-}
-}
-
-.filterWrapper .css-13cymwt-control{
+.filterWrapper .css-13cymwt-control {
   display: none;
+}
+.selectLabelWrapper label {
+  width: 100%;
+}
+
+.accordionWrapper [data-state="open"] > .ArrowRight {
+  transform: rotate(90deg) !important;
+  transition: 0.3s ease;
 }

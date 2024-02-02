@@ -1,4 +1,4 @@
-import SellTradeVehicle from "@/components/SellOrTrade/SellTradeVehicle";
+import SellTradeVehicle from "@/components/SellOrTrade/SellandTradeVehicleAllSteps/SellTradeVehicleAllSteps";
 import NavigationBar from "../../components/ui/Navigations/navigationBar";
 
 import React from "react";

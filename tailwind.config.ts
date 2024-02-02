@@ -17,6 +17,7 @@ const config: Config = {
         yellow: "#FFE664",
         "yellow-light": "#F5F3E8",
         dark: "#001B44",
+        purple: "#B017BD",
         "dark-2": "#4B5768",
         "dark-3": "#5D6878",
         "dark-4": "#8E97A6",
@@ -40,6 +41,7 @@ const config: Config = {
         "light-gray-3": "#545D72",
         "light-gray-4": "#F6F9FC",
         "dark-gray": "#97A5C1",
+        
       },
       backgroundImage: {
         "hero": "url('/images/cover.png')",

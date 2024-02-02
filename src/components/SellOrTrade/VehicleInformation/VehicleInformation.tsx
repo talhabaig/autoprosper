@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CustomText from "../Common/InputField/CustomInput";
-import RadioOption from "../Common/RadioButton/RadioBtn";
+import CustomText from "../../Common/InputField/CustomInput";
+import RadioOption from "../../Common/RadioButton/RadioBtn";
 
 interface VehicleInformationProps {}
 
@@ -26,42 +26,42 @@ const VehicleInformation: React.FC<VehicleInformationProps> = () => {
 
   return (
     <>
-      <h1 className="heading text-left text-[#001B44] text-[32px] lg:text-[56px] font-[400] mb-[20px]">
+      <h1 className="heading text-left text-[#001B44] text-[32px] xl:text-[48px] 2xl:text-[56px] 2xl:mb-[18px] font-[400] mb-[12px]">
         Information
       </h1>
-      <p className="text-left text-[#4B5768] font-[400] lg:text-[16px]">
+      <p className="text-left text-[#4B5768] font-[400] lg:text-[14px] 2xl:mb-12 2xl:text-xl">
         Provide your email for sending our exclusive offers and updates.
       </p>
-      <h3 className="text-[#001B44] text-[18px] font-[700] mb-3 lg:mt-5">
+      <h3 className="text-[#001B44] text-[14px] font-[700] mb-3 2xl:text-lg 2xl:mb-6">
         What is the condition of the car?
       </h3>
 
-      <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="mb-3 grid grid-cols-1 md:grid-cols-2 gap-3">
         <CustomText
           type="text"
           placeholder="First name"
-          className="h-16 text-[#8E97A6] text-[18px] font-[500] rounded-[12px]"
+          className="text-[#8E97A6] text-[14px] 2xl:text-lg font-[500] rounded-[12px] [&>input]:p-[17px_18px] [&>input]:2xl:p-6"
         />
         <CustomText
           type="text"
           placeholder="Last name"
-          className="h-16 text-[#8E97A6] text-[18px] font-[500] rounded-[12px]"
+          className="text-[#8E97A6] text-[14px] 2xl:text-lg font-[500] rounded-[12px] [&>input]:p-[17px_18px] [&>input]:2xl:p-6"
         />
       </div>
       <div className="mb-5 grid grid-cols-1 md:grid-cols-2 gap-4">
         <CustomText
           type="text"
           placeholder="Email Address"
-          className="h-16 text-[#8E97A6] text-[18px] font-[500] rounded-[12px]"
+          className="text-[#8E97A6] text-[14px] 2xl:text-lg font-[500] rounded-[12px] [&>input]:p-[17px_18px] [&>input]:2xl:p-6"
         />
         <CustomText
           type="text"
           placeholder="Phone"
-          className="h-16 text-[#8E97A6] text-[18px] font-[500] rounded-[12px]"
+          className="text-[#8E97A6] text-[14px] 2xl:text-lg font-[500] rounded-[12px] [&>input]:p-[17px_18px] [&>input]:2xl:p-6"
         />
       </div>
 
-      <h3 className="text-[#001B44] text-[18px] font-[700] mb-2 lg:mt-5">
+      <h3 className="text-[#001B44] text-[14px] font-[700] mb-3 lg:mt-5">
         What is the best way to contact you? (Optional)
       </h3>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-3">
@@ -77,22 +77,22 @@ const VehicleInformation: React.FC<VehicleInformationProps> = () => {
         ))}
       </div>
 
-      <div className="my-4 grid grid-cols-2">
+      <div className="my-6">
         <CustomText
           type="text"
           placeholder="Zip Code"
-          className="h-16 text-[#8E97A6] text-[18px] font-[500] rounded-[12px]"
+          className="text-[#8E97A6] text-[14px] 2xl:text-lg font-[500] rounded-[12px] [&>input]:p-[17px_18px] [&>input]:2xl:p-6 lg:w-[50%]"
         />
       </div>
-      <p className="text-left text-[#4B5768] font-[400] text-[16px] mb-2 mt-4">
+      <p className="text-left text-[#4B5768] font-[400] text-[14px] mb-2 2xl:text-[16px] 2xl:mb-3">
         By selecting Claim exclusive offer you agree to Catherine team contact
         for offer details and information.
       </p>
       <a
         href=""
-        className="block text-[#FF3363] text-[14px] font-[700] underline"
+        className="block text-[#FF3363] text-[14px] font-[700] underline 2xl:text-[16px]"
       >
-        Car condition guidelines
+        Terms and conditions
       </a>
     </>
   );
