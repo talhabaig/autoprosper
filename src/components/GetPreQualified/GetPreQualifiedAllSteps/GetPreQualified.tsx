@@ -15,7 +15,7 @@ const cardData: GetPreQualifiedSecureFinancing[] = [
   {
     id: 1,
     imageSrc: "/home/discover-ideal.png",
-    heading: "Navigate the auto maze",
+    heading: "Your credit card remains unaffected",
     description:
       "Zero effect on your credit card during this process—no impact on your credit score whatsoever.",
     icon: (
@@ -25,7 +25,7 @@ const cardData: GetPreQualifiedSecureFinancing[] = [
   {
     id: 2,
     imageSrc: "/home/special-order.png",
-    heading: "Cut through the noise",
+    heading: "Your data remains completely safe and protected.",
     description:
       "Rest assured, your data remains completely safeguarded within our secure systems, ensuring utmost protection at all times.",
     icon: (
@@ -35,7 +35,7 @@ const cardData: GetPreQualifiedSecureFinancing[] = [
   {
     id: 3,
     imageSrc: "/home/special-order.png",
-    heading: "Personalize car matching",
+    heading: "Get personalized loan terms",
     description:
       "Experience tailored financial solutions with loan terms personalized to meet your unique needs and financial goals.",
     icon: (
@@ -51,14 +51,14 @@ const GetPreQualified = () => {
         <div className="container">
           {" "}
           <div
-            className="max-w-[930px] mx-auto pt-[3rem] pb-[4rem]  2xl:pt-[4rem] 
+            className="2xl:max-w-[730px] md:max-w-[450px] lg:max-w-[530px] xl:max-w-[650px] 4xl:max-w-[750px] mx-auto pt-[40px] pb-[96px]  2xl:pt-[4rem] 
           2xl:pb-[8rem] 3xl:pt-[6rem] 3xl:pb-[11.6rem]"
           >
-            <h1 className="heading1">
+            <h1 className="heading1 text-dark">
               Secure Financing with a Pre-Qualification Check.
             </h1>
             <p
-              className="text-dark-2 text-center lg:text-[1rem]   xl:text-[1.25rem] xl:leading-[1.5]
+              className="text-dark-2 text-center mb-0 text-sm lg:text-[1rem]   xl:text-[1.25rem] xl:leading-[1.5]
              max-w-[700px] mx-auto"
             >
               Discover your eligibility for an auto loan instantly without
@@ -92,7 +92,7 @@ const GetPreQualified = () => {
                     {item.icon}
                   </div>
 
-                  <h3 className="heading4 text-left ">{item.heading}</h3>
+                  <h3 className="heading4 text-center lg:text-left ">{item.heading}</h3>
                   <p className="text-dark-3 text-[0.875rem] md:text-[16px] leading-[150%]">
                     {item.description}
                   </p>
@@ -104,6 +104,7 @@ const GetPreQualified = () => {
       </section>
 
       <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]">
+      <div className="container">
         <div className="max-w-[360px] mx-auto text-center md:max-w-[480px] lg:max-w-[540px] 2xl:max-w-[700px]">
           <h2 className="heading2 mb-[0.625rem] lg:mb-[1.125rem]">
             Finance FAQs
@@ -113,7 +114,7 @@ const GetPreQualified = () => {
             wealth of information waiting to be explored and understood!
           </p>
         </div>
-        <div className="container">
+        
           <div className="mb-8 md:mb-[2.2rem] lg:mb-[2.5rem] 2xl:mb-[3rem] 4xl:mb-[4rem]">
             <GetPreQuallifiedAccordion />
           </div>

@@ -39,7 +39,7 @@ const ProductSingle = () => {
     setSelectedOptionData(selectedOptionData);
   };
   return (
-    <section className="pt-[24px] pb-[3rem] lg:pb-[5rem] 2xl:pb-[6rem]   bg-white">
+    <section className="pt-[24px] pb-[3rem] lg:pb-[5rem] 2xl:pb-[6rem] lg:border border-[#E5E8ED]  bg-white">
       <div className="container ">
         <ProductFilters
           onOptionSelect={handleOptionSelect}
@@ -100,7 +100,7 @@ const ProductSingle = () => {
                   {item.heading}
                 </h1>
                 <div className="flex items-center flex-wrap mb-[24px] gap-[12px] lg:gap-[18px] text-[14px] lg:text-[16px] lg:mb-[32px]">
-                  <span>${item.totalAmount}</span>
+                  <span>{item.totalMilage} Miles</span>
                   <span className="flex items-center gap-[8px]">
                     {" "}
                     <BlueTooth className="w-[18px] h-[18px] 2xl:w-[24px] 2xl:h-[24px]" />{" "}
@@ -112,7 +112,7 @@ const ProductSingle = () => {
                     className="text-dark w-[31%] font-normal
                      text-center"
                   >
-                    {item?.totalAmount}
+                   $ {item?.totalAmount}
                   </div>
                   <div
                     className="flex items-center justify-center gap-[8px] w-[31%]
@@ -122,14 +122,14 @@ const ProductSingle = () => {
                       <ArrowDown className="w-[24px] h-[24px]" />
                     </span>
                     <span className="inline-block text-dark font-bold">
-                      {item?.totalAmount}
+                     $ {item?.downPayment}
                     </span>
                   </div>
                   <div
                     className="text-dark w-[31%] font-bold pl-[12px] lg:text-[16px] 
                    text-center"
                   >
-                    ${item?.downPayment}
+                    ${item?.monthlyPayment}/mo
                   </div>
                 </div>
                 <div>
