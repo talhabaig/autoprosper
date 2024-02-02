@@ -84,7 +84,7 @@ const Discover = () => {
       </div>
       <div className="flex md:max-w-[696px] w-full justify-center">
         <GradientCard variant="hide-on-mobile" className={`w-full ${style.cardShadow}`}>
-          <div className="flex flex-col gap-[32px] md:h-full w-full items-center justify-center bg-white rounded-md md:p-[32px]">
+          <div className="flex flex-col gap-[24px] md:gap-[32px] md:h-full w-full items-center justify-center bg-white rounded-md md:p-[32px]">
             <Carousel
               className="w-full flex flex-col md:hidden "
               opts={{
@@ -191,7 +191,7 @@ const Discover = () => {
               ))}
             </div>
 
-            <div className="grid grid-cols-2 gap-5 w-full">
+            <div className="grid grid-cols-2 gap-[12px] md:gap-[24px] w-full">
               <Select
                 type="text"
                 label="Searching for"
