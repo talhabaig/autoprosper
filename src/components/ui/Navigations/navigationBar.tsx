@@ -78,16 +78,29 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
     setSelectedItem(null);
   };
 
-
   return (
     <>
       <div className="md:hidden flex p-[15px] justify-between items-center h-full">
         <Sheet>
           <Link href="/">
-            <Image src="/images/logo.png" alt="logo" width="152" height="32" />
+            {variant === "dark" ? (
+              <Image
+                src="/images/logo-dark.png"
+                alt="logo"
+                width="152"
+                height="32"
+              />
+            ) : (
+              <Image
+                src="/images/logo.png"
+                alt="logo"
+                width="152"
+                height="32"
+              />
+            )}
           </Link>
           <div className="flex flex-row items-center gap-[18px]">
-            <UserIcon width={24} height={24} stroke="#fff" />
+            <UserIcon width={24} height={24} stroke={variant === "dark" ? "#000" : "#fff"} />
             <SheetTrigger asChild>
               <button
                 data-collapse-toggle="navbar-default"
@@ -105,7 +118,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             selectedItem={selectedItem}
             onBack={handleBackButton}
           >
-              <DoubleEllipseGradient className="md:hidden absolute bottom-0 -z-10 md:right-0" />
+            <DoubleEllipseGradient className="md:hidden absolute bottom-0 -z-10 md:right-0" />
             {!selectedItem && (
               <div className="divide-y h-full first:border-t-2 z-10 divide-gray-100 border-y-[1px] border-border-color">
                 {navigationData.map((nav, index) => (
