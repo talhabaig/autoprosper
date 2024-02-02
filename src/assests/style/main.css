@@ -231,3 +231,17 @@ input:-webkit-autofill:active {
   transform: rotate(90deg) !important;
   transition: 0.3s ease;
 }
+
+.gradientTextContent {
+  background: linear-gradient(
+    90deg,
+    #ff3363 0%,
+    #ffe464 48.99%,
+    #ffe664 49%,
+    #f8e766 49.01%,
+    #00ffa2 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
