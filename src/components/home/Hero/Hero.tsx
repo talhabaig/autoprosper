@@ -9,16 +9,16 @@ export default function Hero() {
   return (
     <div className="min-h-[643px] md:min-h-screen min-w-full bg-cover bg-hero-mobile md:bg-hero bg-center">
       <NavigationBar />
-      <div className="mt-[60px] md:mt-[120px] max-w-[330px] md:max-w-[711px] h-full md:h-screen text-center mx-auto my-auto flex flex-col items-center gap-[20px] md:gap-[32px]">
+      <div className="mt-[60px] md:mt-[120px] container md:max-w-[711px] h-full md:h-screen text-center mx-auto my-auto flex flex-col items-center gap-[20px] md:gap-[32px]">
         <div className="flex flex-col gap-[18px]">
-          <h1 className="text-[32px] leading-10 md:text-[64px] text-white md:leading-[71px] font-normal">
+          <h1 className="text-[32px] leading-[41.6px] md:text-[56px] text-white md:leading-[72.8px] font-normal">
             Strive for Your{" "}
             <span className="bg-rainbow-gradient bg-clip-text text-transparent">
               Dreams,
             </span>{" "}
             Tailored to Your Resources.
           </h1>
-          <p className="text-white md:px-10 text-[14px] md:text-[20px] leading-[21px] font-normal">
+          <p className="text-white md:px-10 text-[14px] leading-[21px] md:text-[20px] md:leading-[30px] font-normal">
             Start your car ownership journey with our straightforward advice and
             competitive deals tailored for the smart buyers—just a seamless path
             to getting the keys to your next car

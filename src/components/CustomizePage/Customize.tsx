@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BackArrow, ArrowRight } from "../Icons/Icons";
 import NavigationBar from "../ui/Navigations/navigationBar";
-import Button from "../Common/Button/Button";
 import PrefferedCarBrand from "./Brand/PrefferedCarBrand/PrefferedCarBrand";
 import SelectModel from "./Brand/SelectModel/SelectModel";
 import ZipCode from "./ZipCode/ZipCode";
@@ -18,6 +17,7 @@ import Review from "./CustomizeSteps/Review";
 import VehiclePreference from "./Type/VehiclePreference/VehiclePreference";
 import SelectBrand from "./Type/SelectBrand/SelectBrand";
 import TypeSelectModel from "./Type/SelectModel/SelectModel";
+import { Button } from "../ui/button";
 
 interface StepConfig {
   key: string;
@@ -100,8 +100,8 @@ const CustomizeByBrand: React.FC = () => {
       title: "Reviews",
       subTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       content: <Review />,
-      displaySkipButton: true,
-      displayNextButton: true,
+      displaySkipButton: false,
+      displayNextButton: false,
     },
   ];
 
@@ -115,7 +115,7 @@ const CustomizeByBrand: React.FC = () => {
     {
       key: "carBrand",
       component: SelectModel,
-      displayBackButton: true,
+      displayBackButton: false,
       displayNextButton: true,
     },
     {
@@ -158,7 +158,7 @@ const CustomizeByBrand: React.FC = () => {
     {
       key: "selectBrand",
       component: SelectBrand,
-      displayBackButton: true,
+      displayBackButton: false,
       displayNextButton: true,
     },
     {
@@ -256,20 +256,20 @@ const CustomizeByBrand: React.FC = () => {
           {(currentStepConfig.displayNextButton ||
             currentStepConfig.displaySkipButton) && (
             <div className="border-t border-solid border-dark-6 mt-[30px lg:mt-0]">
-              <div className="container flex justify-center lg:justify-end items-center py-[12px] lg:py-[30px]">
+              <div className="container flex justify-center gap-[12px] lg:justify-end items-center py-[12px] lg:py-[30px]">
               {(currentStepConfig.displaySkipButton || (currentCustomizeStepConfig.displaySkipButton && isComplete)) && (
                   <Button
-                    variant="transparent"
-                    className="lg:min-h-[56px] ml-2 bg-dark-7 !text-dark !border-0 hover:bg-dark-6"
+                  variant="outline"
+                    className="lg:min-h-[56px] ml-2 font-bold !bg-dark-7 !text-dark !border-0 hover:bg-dark-6 !w-[156px]"
                     onClick={handleSkip}
                   >
-                    Skip for now
+                    Skip
                   </Button>
                 )}
-                {(currentStepConfig.displayNextButton || (currentCustomizeStepConfig.displayNextButton && isComplete))&& (
+                {((currentStepConfig.displayNextButton && !isComplete) || (currentCustomizeStepConfig.displayNextButton && isComplete)) && (
                   <Button
-                    variant="small"
-                    className="lg:min-h-[56px]"
+                    variant="gradient"
+                    className="lg:min-h-[56px] w-[156px]"
                     onClick={currentStepConfig.handleNext ? currentStepConfig.handleNext : handleNext}
                   >
                     <>

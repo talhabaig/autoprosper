@@ -138,11 +138,10 @@ const SelectModel: React.FC<PreferredCarBrandProps> = ({ onChange }) => {
 
   return (
     <>
-      <div className="max-w-[940px] mx-auto">
-        <h2 className="heading1">Select model </h2>
-        <p className="text-dark-2 text-center mb-[24px] md:mb-[30px] lg:text-[1rem] xl:mb-[40px]
-         xl:text-[1.25rem] xl:leading-[1.5]">
-          Which specific BMW model are you considering at the moment?
+      <div className="max-w-[940px] mx-auto md:my-[48px] my-6">
+        <h2 className="text-dark text-center mb-[0.75rem] lg:mb-[1.125rem] text-[32px] leading-[41.6px] md:text-[56px] md:leading-[72.8px] font-normal">Select model</h2>
+        <p className="text-dark-2 text-center font-normal mb-[24px] md:mb-[30px] text-[14px] leading-[21px] lg:text-[20px] lg:leading-[30px]">
+        Which specific BMW model are you considering at the moment?
         </p>
       </div>
       <div className="flex gap-[12px] justify-center lg:gap-[24px]  items-stretch flex-wrap pb-[30px] 2xl:pb-[50px]">

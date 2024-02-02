@@ -5,22 +5,25 @@ interface HelpOptionSubProps {
   startingPrice: string; 
   city: string;
   highway: string;
+  isActive?: boolean;
 }
 
-const HelpOptionSub: React.FC<HelpOptionSubProps> = ({ startingPrice, city, highway }) => (
+const HelpOptionSub: React.FC<HelpOptionSubProps> = ({ startingPrice, city, highway, isActive }) => (
 
-  <div className="flex justify-between">
+  <div className="flex flex-col justify-between gap-[12px]">
     <div>
       <div className="text-dark text-xs">{startingPrice}</div>
-      <div className="text-dark-3 text-[10px]">Starting MSRP</div>
+      <div className={`${ isActive ? 'text-dark' : 'text-dark-3'} text-[10px]`}>Starting MSRP</div>
     </div>
-    <div>
+    <div className="flex gap-[12px]">
+    <div className="w-full">
       <div className="text-dark text-xs">{city}</div>
       <div className="text-dark-3 text-[10px]">City</div>
     </div>
-    <div>
+    <div className="w-full">
       <div className="text-dark text-xs">{highway}</div>
       <div className="text-dark-3 text-[10px]">Hwy</div>
+    </div>
     </div>
   </div>
 );
@@ -33,19 +36,19 @@ const Trim: React.FC = () => {
   const handleOptionChange = (values: string[]) => {
     setSelectedOptions(values);
   };
-
+console.log(selectedOptions)
   const options = [
     {
       id: 1,
       label: "X1 Series",
       image: "/customize/x1.png",
-      sub: <HelpOptionSub startingPrice="$39,395" city="24" highway="34" />,
+      sub: <HelpOptionSub startingPrice="$39,395" city="24" highway="34" isActive={selectedOptions.includes('X1 Series')}/>,
     },
     {
       id: 2,
       label: "X2 Series",
       image: "/customize/x2.png",
-      sub: <HelpOptionSub startingPrice="$39,395" city="24" highway="34" />,
+      sub: <HelpOptionSub startingPrice="$39,395" city="24" highway="34"isActive={selectedOptions.includes('X2 Series')}/>,
     },
   ];
 
@@ -67,7 +70,7 @@ const Trim: React.FC = () => {
           options={options}
           selectedOptions={selectedOptions}
           onChange={handleOptionChange}
-          className=""
+          className="h-fit"
         />
       </div>
     </>

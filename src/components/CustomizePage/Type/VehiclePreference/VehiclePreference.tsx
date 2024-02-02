@@ -83,22 +83,15 @@ const VehiclePreference: React.FC<VehiclePreferenceProps> = ({
 
   return (
     <>
-      <div className="max-w-[940px] mx-auto mb-[48px]">
-        <h2 className="heading1">Order & customize</h2>
-        <p
-          className="text-dark-2 text-center mb-[24px] md:mb-[30px] lg:text-[1rem] xl:mb-[40px]
-         xl:text-[1.25rem] xl:leading-[1.5]"
-        >
-          Explore the latest cars by brand or body type for an exciting range of
-          new options.
-        </p>
-        <div className="flex flex-row justify-center gap-[12px]">
-          <Button onClick={() => setType("brand")} variant="outline" size="sm">
-            Brand
-          </Button>
-          <Button onClick={() => setType("type")} variant="normal" size="sm">
-            Type
-          </Button>
+    <div className="max-w-[940px] mx-auto md:my-[48px] my-6">
+      <h2 className="text-dark text-center mb-[0.75rem] lg:mb-[1.125rem] text-[32px] leading-[41.6px] md:text-[56px] md:leading-[72.8px] font-normal">Order & customize</h2>
+      <p className="text-dark-2 text-center font-normal mb-[24px] md:mb-[30px] text-[14px] leading-[21px] lg:text-[20px] lg:leading-[30px]">
+      Explore the latest cars by brand or body type
+ for an exciting range of new options.
+      </p>
+        <div className="flex flex-row justify-between md:justify-center gap-[12px]">
+          <Button onClick={() => setType('brand')} variant="outline" size="sm" className="w-full md:w-auto border-[3px]">Brand</Button>
+          <Button onClick={() => setType('type')} variant="normal" size="sm" className="w-full md:w-auto border-[3px]">Type</Button>
         </div>
       </div>
       <div className="flex  gap-[12px] justify-center lg:gap-[24px]  items-stretch flex-wrap mb-[30px] 2xl:mb-[50px]">
