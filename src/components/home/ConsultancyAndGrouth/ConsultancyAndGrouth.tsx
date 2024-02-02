@@ -52,7 +52,7 @@ const ConsultancyAndGrouth = () => {
                    2xl:mr-[30%] 3xl:mr-[25%]">
                     {item.heading}
                   </h3>
-                  <p className="text-[0.875rem] lg:leading-[21px] mb-0 text-dark-2 lg:text-left">
+                  <p className="text-[0.875rem] leading-[18px] lg:leading-[21px] mb-0 text-dark-2 lg:text-left">
                     {item.description}
                   </p>
                 </div>

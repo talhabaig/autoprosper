@@ -76,7 +76,7 @@ const GuideAndTips = () => {
           {cardData.map((item, index) => (
             <div
               key={item.id}
-              className="flex-grow max-w-[215px] w-full xl:w-[22%] xl:max-w-full flex-[0_0_auto] rounded-[12px]  
+              className="flex-grow max-w-[240px] w-full xl:w-[22%] xl:max-w-full flex-[0_0_auto] rounded-[12px]  
               first-of-type:shadow-[0px_30px_20px_-18px_rgba(0,27,68,0.25)] p-[1px] mb-[1.875rem] 2xl:mb-12
               first-of-type:bg-btn-primary-gradient shadow-[0px_18px_36px_-18px_rgba(0,27,68,0.25)] bg-bg-none
               [&>span]:font-bold 
@@ -125,7 +125,7 @@ const GuideAndTips = () => {
             label="Read more article"
             className=""
             children={
-              <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
+              <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] hidden md:block lg:w-[1.25rem] lg:h-[1.25rem]" />
             }
           />
         </div>

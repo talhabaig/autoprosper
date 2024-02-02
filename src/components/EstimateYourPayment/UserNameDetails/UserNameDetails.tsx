@@ -69,7 +69,19 @@ const ChildFormComponent: React.FC<ChildFormComponentProps> = ({
         onChange={(value) => handleInputChange("emailAddress", value)}
         className="mb-[18px] md:mb-6"
       />
+     <div>
+          <span
+            className="lg:block text-dark-3 text-[14px] hidden leading-[150%] lg:text-[16px] [&>span]:font-bold
+         [&>span]:text-dark mb-[18px] md:mb-[24px]"
+          >
+            By clicking the "Next " "button" you consent, acknowledge, and agree
+            to the following:- Auto Approve's <span>Terms Of Service</span> and{" "}
+            <span> Privacy Policy </span> and to receive important notices and
+            other communications electronically
+          </span>
+        </div> 
     </>
+    
   );
 };
 

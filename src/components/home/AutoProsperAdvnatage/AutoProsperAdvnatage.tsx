@@ -39,7 +39,7 @@ const AutoProsperAdvnatage = () => {
   return (
     <section className="sectionWrapper py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-dark-7">
       <div className="container px-0 sm:px-4">
-        <div className="max-w-[360px] mx-auto text-center md:max-w-[550px] lg:max-w-[600px] 2xl:max-w-[800px]">
+        <div className="max-w-[360px] mx-auto text-center px-[18px] sm:px-0 md:max-w-[550px] lg:max-w-[600px] 2xl:max-w-[800px]">
           <h2 className="heading2 mb-[0.5rem] lg:mb-[1.125rem] md:max-w-[70%] md:mx-auto lg:max-w-[84%] 3xl:max-w-full">
             What makes AutoProsper worth joining?
           </h2>
