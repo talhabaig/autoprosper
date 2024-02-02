@@ -170,14 +170,16 @@ const SheetItem: React.FC<SheetItemProps> = ({ label, ...props }) => {
       className="flex justify-between px-[18px] z-10 py-[19px] border-x-0 border-border-color"
       {...props}
     >
-      <div className="text-sm leading-[17.64px] font-bold text-dark-3">{label}</div>
+      <div className="text-sm leading-[17.64px] font-bold text-dark-3">
+        {label}
+      </div>
       <ChevronRight className="md:hidden" />
     </div>
   );
 };
 
 interface SheetSectionItemsProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
+  title?: string;
   items: Array<{
     label: string;
     link: string;
@@ -192,10 +194,12 @@ const SheetSectionItems: React.FC<SheetSectionItemsProps> = ({
 }) => {
   return (
     <div className="md:relative flex flex-col lg:w-[336px] md:mr-[36px] lg:mr-[72px]">
-      <div className="text-xs leading-[15.12px] text-dark-4 px-[15px] font-bold mb-[15px] tracking-[1.08px]">
-        {title}
-      </div>
-      <div className="divide-y first:border-t-2 divide-gray-100 border-y-[1px] border-border-color text-dark-3">
+      {title && (
+        <div className="text-xs leading-[15.12px] text-dark-4 px-[15px] font-bold mb-[15px] tracking-[1.08px]">
+          {title}
+        </div>
+      )}
+      <div className={`divide-y ${title && 'first:border-t-2' } divide-gray-100 border-y-[1px] border-border-color text-dark-3`}>
         {items.map((item, index) => (
           <SheetItem key={index} label={item.label} />
         ))}
@@ -231,7 +235,7 @@ const SheetSectionDetails: React.FC<SheetSectionDetailsProps> = ({
           {content.list.map((list) => list.element)}
         </div>
         <Button
-          className="rounded-full border-gray text-gray md:w-auto lg:w-[192px] lg:px-6 "
+          className="rounded-full border-gray text-gray md:w-fit lg:w-[192px] lg:px-6 "
           variant="outline"
         >
           {content.button.text} <span>{content.button.icon}</span>

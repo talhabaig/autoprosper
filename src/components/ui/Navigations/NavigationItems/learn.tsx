@@ -28,7 +28,7 @@ const Learn = () => {
           element: (
             <div>
               <Link
-                className="text-xs font-normal text-dark-muted underline leading-[18px]"
+                className="text-xs md:text-[14px] font-normal text-dark-3 underline leading-[18px] md:leading-[21px]"
                 href="#"
               >
                 What values guide AutoProsper's operations?
@@ -38,9 +38,9 @@ const Learn = () => {
         },
         {
           element: (
-            <div>
+            <div className="mt-[12px]">
               <Link
-                className="text-xs font-normal text-dark-muted underline leading-[18px]"
+                className="text-xs md:text-[14px] font-normal text-dark-3 underline leading-[18px] md:leading-[21px]"
                 href="#"
               >
                 What distinguishes AutoProsper's approach to car buying?
@@ -50,9 +50,9 @@ const Learn = () => {
         },
       ],
       button: {
-        text: "VIEW ALL FAQS",
+        text: "View all FAqs",
         icon: (
-          <ArrowRight width="18" height="18" className="ml-[5px] fill-dark-4" />
+          <ArrowRight className="ml-[5px] fill-dark-4 w-[10.67px] h-[10.67px] md:w-[12px] md:h-[12px]" />
         ),
       },
     },
@@ -64,10 +64,10 @@ const Learn = () => {
           element: (
             <div className="flex-col gap-[5px]">
               <Link href="#">
-                <h1 className="text-primary-text font-normal text-sm">
+                <h1 className="text-dark font-normal text-sm md:text-[18px] md:leading-[23.4px]">
                   2024 Nissan Kicks®
                 </h1>
-                <p className="p-0 m-0 font-normal text-[10px] text-dark-muted">
+                <p className="p-0 m-0 font-normal text-[10px] md:text-sm text-dark-3 leading-[15px] md:leading-[21px]">
                   Calculate your affordable car budget. Explore vehicles within
                   your financial range based on your affordability assessment.
                 </p>
@@ -79,10 +79,10 @@ const Learn = () => {
           element: (
             <div className="flex-col gap-[5px] mt-[15px]">
               <Link href="#">
-                <h1 className="text-primary-text font-normal text-sm">
+                <h1 className="text-dark font-normal text-sm md:text-[18px] md:leading-[23.4px]">
                   2024 Nissan Kicks®
                 </h1>
-                <p className="p-0 m-0 font-normal text-[10px] text-dark-muted">
+                <p className="p-0 m-0 font-normal text-[10px] md:text-sm text-dark-3 leading-[15px] md:leading-[21px]">
                   Calculate your affordable car budget. Explore vehicles within
                   your financial range based on your affordability assessment.
                 </p>
@@ -92,9 +92,9 @@ const Learn = () => {
         },
       ],
       button: {
-        text: "READ MORE ARTICLE",
+        text: "Read more article",
         icon: (
-          <ArrowRight width="18" height="18" className="ml-[5px] fill-dark-4" />
+          <ArrowRight className="ml-[5px] fill-dark-4 w-[10.67px] h-[10.67px] md:w-[12px] md:h-[12px]" />
         ),
       },
     },
@@ -107,7 +107,7 @@ const Learn = () => {
           title="Car Question Answered"
           items={navigationData}
         />
-        <div className="px-[15px]  mt-[30px] gap-[30px] flex flex-col md:flex-row">
+        <div className="px-[18px] md:pl-[36px] lg:pl-[72px]  mt-[30px] gap-[24px] flex flex-col md:flex-row md:justify-between">
           {contents.map((content) => (
             <SheetSectionDetails content={content} />
           ))}

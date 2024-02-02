@@ -58,7 +58,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
     useState<NavigationContentType | null>(null);
 
   const handleSheetItemClick = (index: number) => {
-    const clickedItem = desktopNavigationData[index];
+    const clickedItem = navigationData[index];
     if (
       selectedItem &&
       clickedItem &&
@@ -78,21 +78,6 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
     setSelectedItem(null);
   };
 
-  useEffect(() => {
-    const handleBodyClick = (event: MouseEvent) => {
-      const contentArea = document.getElementById("content-area");
-
-      if (contentArea && !contentArea.contains(event.target as Node)) {
-        handleCloseContent();
-      }
-    };
-
-    document.body.addEventListener("click", handleBodyClick);
-
-    return () => {
-      document.body.removeEventListener("click", handleBodyClick);
-    };
-  }, []);
 
   return (
     <>
@@ -120,9 +105,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             selectedItem={selectedItem}
             onBack={handleBackButton}
           >
-            {!selectedItem && (
               <DoubleEllipseGradient className="md:hidden absolute bottom-0 -z-10 md:right-0" />
-            )}
             {!selectedItem && (
               <div className="divide-y h-full first:border-t-2 z-10 divide-gray-100 border-y-[1px] border-border-color">
                 {navigationData.map((nav, index) => (

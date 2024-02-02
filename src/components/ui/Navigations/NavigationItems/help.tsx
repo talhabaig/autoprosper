@@ -29,7 +29,7 @@ const Help = () => {
   
   return (
     <div className="flex-col">
-      <SheetSectionItems title="Car Question Answered" items={navigationData} />
+      <SheetSectionItems title="" items={navigationData} />
     </div>
   );
 };
