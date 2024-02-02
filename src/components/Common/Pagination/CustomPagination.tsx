@@ -65,8 +65,8 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({
           </button>
         ))}
 
-        {pageNumbers}
-        {/* Show the next button if not on the last page */}
+        {/* {pageNumbers} */}
+
         <button
           className="bg-btn-primary-gradient w-[30px] h-[30px]
            rounded-[50%] flex items-center justify-center  lg:w-[42px] lg:h-[42px]"

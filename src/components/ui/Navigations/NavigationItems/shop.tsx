@@ -12,6 +12,7 @@ import {
 } from "@/components/Icons/BodyStyleIcons";
 // import { EllipseGradient } from "@/components/ui/EllipseGradient";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const Shop = () => {
   const navigationData = [
@@ -69,17 +70,26 @@ const Shop = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-[24px] ">
           {bodyStyles.map((style) => (
-            <Card className="md:max-h-[141px] md:max-w-[216px] group rounded-xl relative bg-white flex flex-col gap-[19px] justify-center items-start px-[12px] pt-[30px] pb-[15px] md:pl-3 md:p-6  shadow-none border-[1px] md:gap-[24px] border-dark-5 hover:border-dark">
-              <div className="flex h-full flex-col justify-center items-center">
-                {style.icon}
-              </div>
-              <div className="font-normal text-xs text-dark-muted">
-                {style.label}
-              </div>
-              <div className="hidden group-hover:flex items-center justify-center absolute bg-green rounded-full top-3 right-3 w-[26px] h-[26px]">
-                <ArrowRight width={16} height={16} className="text-dark" />
-              </div>
-            </Card>
+            <Link href="/inventory">
+              <Card
+                className="md:max-h-[141px] md:max-w-[216px] group rounded-xl relative bg-white
+             flex flex-col gap-[19px] justify-center items-start px-[12px] pt-[30px] pb-[15px] 
+             md:pl-3 md:p-6  shadow-none border-[1px] md:gap-[24px] border-dark-5 hover:border-dark"
+              >
+                <div className="flex h-full flex-col justify-center items-center">
+                  {style.icon}
+                </div>
+                <div className="font-normal text-xs text-dark-muted">
+                  {style.label}
+                </div>
+                <div
+                  className="hidden group-hover:flex items-center justify-center
+               absolute bg-green rounded-full top-3 right-3 w-[26px] h-[26px]"
+                >
+                  <ArrowRight width={16} height={16} className="text-dark" />
+                </div>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
