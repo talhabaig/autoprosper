@@ -1,50 +1,64 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowDown, ArrowRight, QuestionMarkRounded } from "../../Icons/Icons";
 import { SuggestionForCustomer } from "../../../assests/interfaces/Home/index";
 import Button from "../../Common/Button/Button";
 import Link from "next/link";
-
-const cardData: SuggestionForCustomer[] = [
-  {
-    id: 1,
-    imageSrc: "/suggestionForYou/white-nissan.png",
-    heading: "2024 Nissan Kicks®",
-    totalamount: "$ 13,420",
-    downpayment: "$2,420",
-    monthlypayment: "$480",
-    variant: "LS",
-  },
-  {
-    id: 2,
-    imageSrc: "/suggestionForYou/blue-nissan.png",
-    heading: "2018 Chevrolet Trax",
-    totalamount: "$ 13,420",
-    downpayment: "$2,420",
-    monthlypayment: "$480",
-    variant: "LS",
-  },
-  {
-    id: 3,
-    imageSrc: "/suggestionForYou/white-nissan.png",
-    heading: "2015 Ford Escape",
-    totalamount: "$ 13,420",
-    downpayment: "$2,420",
-    monthlypayment: "$480",
-    variant: "LS",
-  },
-  {
-    id: 4,
-    imageSrc: "/suggestionForYou/blue-nissan.png",
-    heading: "2015 Hyundai Elantra",
-    totalamount: "$ 13,420",
-    downpayment: "$2,420",
-    monthlypayment: "$480",
-    variant: "LS",
-  },
-];
+import { useFirstBuyer } from "@/components/Common/context/FirstTimeBuyerContext";
+import { getCarSuggestions } from "../OpenAI";
+// const cardData: SuggestionForCustomer[] = [
+//   {
+//     id: 1,
+//     imageSrc: "/suggestionForYou/white-nissan.png",
+//     heading: "2024 Nissan Kicks®",
+//     totalamount: "$ 13,420",
+//     downpayment: "$2,420",
+//     monthlypayment: "$480",
+//     variant: "LS",
+//   },
+//   {
+//     id: 2,
+//     imageSrc: "/suggestionForYou/blue-nissan.png",
+//     heading: "2018 Chevrolet Trax",
+//     totalamount: "$ 13,420",
+//     downpayment: "$2,420",
+//     monthlypayment: "$480",
+//     variant: "LS",
+//   },
+//   {
+//     id: 3,
+//     imageSrc: "/suggestionForYou/white-nissan.png",
+//     heading: "2015 Ford Escape",
+//     totalamount: "$ 13,420",
+//     downpayment: "$2,420",
+//     monthlypayment: "$480",
+//     variant: "LS",
+//   },
+//   {
+//     id: 4,
+//     imageSrc: "/suggestionForYou/blue-nissan.png",
+//     heading: "2015 Hyundai Elantra",
+//     totalamount: "$ 13,420",
+//     downpayment: "$2,420",
+//     monthlypayment: "$480",
+//     variant: "LS",
+//   },
+// ];
 
 const SuggestionForYou = () => {
+  const { state } = useFirstBuyer();
+  const [cardData, setCardData] = useState([]);
+  useEffect(() => {
+    fetchData(state);
+  }, []);
+  const fetchData = async (state: any) => {
+    const res = await getCarSuggestions(state);
+    const modifiedRes = res.map((x: any) => ({
+      ...x,
+      imageSrc: "/suggestionForYou/white-nissan.png",
+    }));
+    setCardData(modifiedRes);
+  };
   return (
     <>
       <div className="max-w-[940px] mx-auto pt-[28px] xl:pt-[38px] 3xl:pt-[48px]">
@@ -61,9 +75,9 @@ const SuggestionForYou = () => {
         className={`flex flex-wrap md:justify-between md:items-stretch gap-[0.625rem]
           lg:gap-[1.125rem] 3xl:gap-6  `}
       >
-        {cardData.map((item, index) => (
+        {cardData.map((item: any, index) => (
           <div
-            key={item.id}
+            key={item?.id}
             className="flex-grow max-w-[324px] mx-auto md:mx-0 w-full md:max-w-[47%] lg:max-w-[31%] 
                2xl:max-w-[23%]  flex-[0_0_auto] rounded-[12px]  
               first-of-type:shadow-[0px_36px_72px_-18px_rgba(10,24,53,0.25)] p-[1px] mb-[1.875rem] 2xl:mb-[3.5rem]
@@ -85,14 +99,14 @@ const SuggestionForYou = () => {
                     width={246}
                     height={246}
                     className="rounded-tr-[12px] rounded-tl-[12px] min-w-full"
-                    alt={item.heading || ""}
+                    alt={item.CarModel || ""}
                   />
                   <Image
                     src={item.imageSrc ? item.imageSrc : ""}
                     width={260}
                     height={126}
                     className="mt-[-68px] xl:mt-[-66px] 2xl:mt-[-68px] 3xl:mt-[-66px] max-w-[260px] max-h-[126px]"
-                    alt={item.heading || ""}
+                    alt={item.CarModel || ""}
                   />
                 </div>
               </div>
@@ -101,7 +115,7 @@ const SuggestionForYou = () => {
                  3xl:px-[1.875rem] bg-white rounded-br-[12px] rounded-bl-[12px] flex flex-col justify-between"
               >
                 <h3 className="heading4 truncate text-[18px]">
-                  {item?.heading}
+                  {item?.CarModel + item?.CarYear}
                 </h3>
                 <div className="flex items-center gap-[8px] mb-4 md:mb-[20px] lg:mb-6 ">
                   <span
@@ -129,7 +143,7 @@ const SuggestionForYou = () => {
                     className="text-dark w-[49.5%] font-semibold pl-[12px] 
                     border-l border-solid border-dark flex justify-end"
                   >
-                    {item?.monthlypayment}/mo
+                    {item?.monthlypayment}
                   </div>
                 </div>
               </div>

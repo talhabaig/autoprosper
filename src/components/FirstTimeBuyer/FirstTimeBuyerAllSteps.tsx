@@ -1,58 +1,29 @@
 // components/StepForm.js
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WhatEssential from "./WhatEssential/WhatEssential";
-import PrefferedCarBrands from "./PrefferedCarBrand/PrefferedCarBrand";
-import TotalSeatRequirments from "./TotalSeatRequirments/TotalSeatRequirments";
+import PreferredCarBrands from "./PreferredCarBrands/PreferredCarBrand";
 import VehiclePreferences from "./VehiclePreference/VehiclePreference";
-import RidePowerConsuption from "./RidePowerConsuption/RidePowerConsuption";
+import RidePowerConsumption from "./RidePowerConsumption/RidePowerConsumption";
 import { BackArrow, ArrowRight } from "../Icons/Icons";
-
+import {
+  FirstBuyerProvider,
+  useFirstBuyer,
+} from "../Common/context/FirstTimeBuyerContext";
 import { FirstTimeBuyer } from "../../assests/interfaces/Home/index";
 import NavigationBar from "../ui/Navigations/navigationBar";
 import Button from "../Common/Button/Button";
 import SuggestionForYou from "./SuggestionForYou/SuggestionForYou";
+import TotalSeatRequirements from "./TotalSeatRequirements/TotalSeatRequirements";
+import { getCarSuggestions } from "./OpenAI";
 
 const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
   const [step, setStep] = useState(1);
-  const [essentialFeatures, setessentialFeatures] = useState<string[]>([]);
-  const [carBrand, setCarBrand] = useState<string[]>([]);
-  const [totalSeats, setTotalSeats] = useState<string[]>([]);
-  const [vehiclePreference, setVehiclePreference] = useState<string[]>([]);
-  const [fuelConsuptionType, setfuelConsuptionType] = useState<string[]>([]);
-
-  const handleessentialFeaturesChange = (value: string[]) => {
-    setessentialFeatures(value);
-  };
-
-  const handlePrefferedCarBrand = (value: string[]) => {
-    setCarBrand(value);
-  };
-
-  const handleTotalSeatsChange = (value: string[]) => {
-    setTotalSeats(value);
-  };
-
-  const handleVehiclePreference = (value: string[]) => {
-    setVehiclePreference(value);
-  };
-
-  const handleRidePowerConsuption = (value: string[]) => {
-    setfuelConsuptionType(value);
-  };
-
-  const handleNext = () => {
+  const { state } = useFirstBuyer();
+  const handleNext = async () => {
     if (step < 5) {
       setStep(step + 1);
     } else if (step === 5) {
       // Log data in the FirstTimeBuyerAllSteps component
-      console.log({
-        essentialFeatures,
-        carBrand,
-        totalSeats,
-        vehiclePreference,
-        fuelConsuptionType,
-      });
-
       // // Log data in the parent component
       // onDataLog({
       //   essentialFeatures,
@@ -86,21 +57,11 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
             </div>
           )}
 
-          {step === 1 && (
-            <WhatEssential onChange={handleessentialFeaturesChange} />
-          )}
-          {step === 2 && (
-            <PrefferedCarBrands onChange={handlePrefferedCarBrand} />
-          )}
-          {step === 3 && (
-            <TotalSeatRequirments onChange={handleTotalSeatsChange} />
-          )}
-          {step === 4 && (
-            <VehiclePreferences onChange={handleVehiclePreference} />
-          )}
-          {step === 5 && (
-            <RidePowerConsuption onChange={handleRidePowerConsuption} />
-          )}
+          {step === 1 && <WhatEssential />}
+          {step === 2 && <PreferredCarBrands />}
+          {step === 3 && <TotalSeatRequirements />}
+          {step === 4 && <VehiclePreferences />}
+          {step === 5 && <RidePowerConsumption />}
           {step === 6 && <SuggestionForYou />}
         </div>
         {step < 6 && (
@@ -128,4 +89,8 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
   );
 };
 
-export default FirstTimeBuyerAllSteps;
+export default () => (
+  <FirstBuyerProvider>
+    <FirstTimeBuyerAllSteps />
+  </FirstBuyerProvider>
+);

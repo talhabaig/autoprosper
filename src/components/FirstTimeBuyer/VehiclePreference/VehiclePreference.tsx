@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import RadioButton from "../../Common/CheckButton/RadioButton";
 import {
   Suv,
@@ -10,17 +10,21 @@ import {
   Minivan,
   Convertible,
 } from "../../Icons/Icons";
+import { useFirstBuyer } from "@/components/Common/context/FirstTimeBuyerContext";
 
-interface VehiclePreferenceProps {
-  onChange: (values: string[]) => void;
-}
-
-const VehiclePreference: React.FC<VehiclePreferenceProps> = ({ onChange }) => {
+const VehiclePreference: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const { state, setState } = useFirstBuyer();
+  useEffect(() => {
+    setSelectedOptions(state?.Vehicle_Preference ?? []);
+  }, []);
 
   const handleOptionChange = (values: string[]) => {
+    setState((prevState: any) => ({
+      ...prevState,
+      Vehicle_Preference: values,
+    }));
     setSelectedOptions(values);
-    onChange(values); // Pass the selected values to the parent component
   };
 
   const helpOptions = [
