@@ -48,7 +48,7 @@
   .gallery__item {
     border: 1px solid black;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
   }
   /* on mobile 2 */
   .gallery__item--1 {
@@ -134,7 +134,7 @@
   .gallery__item {
     border: 1px solid black;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
   }
   /* on mobile 2 */
   .gallery__item--1 {
