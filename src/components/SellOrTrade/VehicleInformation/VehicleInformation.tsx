@@ -26,10 +26,10 @@ const VehicleInformation: React.FC<VehicleInformationProps> = () => {
 
   return (
     <>
-      <h1 className="heading text-left text-[#001B44] text-[32px] xl:text-[48px] 2xl:text-[56px] 2xl:mb-[18px] font-[400] mb-[12px]">
+      <h1 className="heading text-left  text-[#001B44] text-[32px] xl:text-[48px] 2xl:text-[56px] font-[400] mt-6 md:mt-0 mb-[12px] 3xl:mb-[18px]">
         Information
       </h1>
-      <p className="text-left text-[#4B5768] font-[400] lg:text-[14px] 2xl:mb-12 2xl:text-xl">
+      <p className="text-left text-[#4B5768] font-[400] text-[14px] xl:text-[16px] 3xl:text-[20px] 2xl:mb-[48px]">
         Provide your email for sending our exclusive offers and updates.
       </p>
       <h3 className="text-[#001B44] text-[14px] font-[700] mb-3 2xl:text-lg 2xl:mb-6">
@@ -84,7 +84,7 @@ const VehicleInformation: React.FC<VehicleInformationProps> = () => {
           className="text-[#8E97A6] text-[14px] 2xl:text-lg font-[500] rounded-[12px] [&>input]:p-[17px_18px] [&>input]:2xl:p-6 lg:w-[50%]"
         />
       </div>
-      <p className="text-left text-[#4B5768] font-[400] text-[14px] mb-2 2xl:text-[16px] 2xl:mb-3">
+      <p className="text-left leading-[150%] text-[#4B5768] font-[400] text-[14px] mb-2 2xl:text-[16px] 2xl:mb-3">
         By selecting Claim exclusive offer you agree to Catherine team contact
         for offer details and information.
       </p>
