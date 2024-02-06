@@ -107,10 +107,10 @@ const VehicleCondition = () => {
 
   return (
     <>
-      <h1 className="text-left heading text-[#001B44] text-[32px] xl:text-[48px] 2xl:text-[56px]  font-[400] mb-[12px] xl:mb-[18px]">
+      <h1 className="heading text-left  text-[#001B44] text-[32px] xl:text-[48px] 2xl:text-[56px] font-[400] mt-6 md:mt-0 mb-[12px] 3xl:mb-[18px]">
         Condition
       </h1>
-      <p className="text-left text-[#5D6878] lg:mb-10px font-[400] text-[14px] 2xl:mb-[48px] xl:text-lg 2xl:text-xl">
+      <p className="text-left text-[#4B5768] font-[400] text-[14px] xl:text-[16px] 3xl:text-[20px] 2xl:mb-[48px] leading-[18px]">
         Tell us a little more about your vehicle so we can determine your offer.
         Your offer will be finalized after the condition has been verified by
         inspection.

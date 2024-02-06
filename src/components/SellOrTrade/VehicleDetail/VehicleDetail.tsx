@@ -64,8 +64,8 @@ const VehicleDetail: React.FC = () => {
             >
               Mileage
             </label>
-            <span className="absolute top-3 right-3 ">
-            <RoundedChecked/>
+            <span className="absolute top-[8px] right-[8px] lg:top-3 lg:right-3">
+            <RoundedChecked className="w-[18px] h-[18px] lg:w-[26px] lg:h-[26px]"/>
             </span>
             <input
               className="shadow appearance-none border w-full pt-[24px] pb-[8px] px-[18px] text-gray-700 leading-tight 

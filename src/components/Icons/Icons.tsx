@@ -2750,6 +2750,7 @@ export const RightArrow: React.FC<propType> = ({
     </svg>
   );
 };
+
 export const WrenchRounded: React.FC<propType> = ({
   width,
   height,
@@ -2952,6 +2953,30 @@ export const RatingStar: React.FC<propType> = ({
       <path
         d="M5.825 22L7.45 14.975L2 10.25L9.2 9.625L12 3L14.8 9.625L22 10.25L16.55 14.975L18.175 22L12 18.275L5.825 22Z"
         fill="#D6AC4A"
+      />
+    </svg>
+  );
+};
+
+export const TickTrue: React.FC<propType> = ({
+  width,
+  height,
+  fill,
+  className,
+}) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill={fill}
+      className={className}
+      viewBox="0 0 24 24"
+
+    >
+      <path
+        d="M9.54961 18.0001L3.84961 12.3001L5.27461 10.8751L9.54961 15.1501L18.7246 5.9751L20.1496 7.4001L9.54961 18.0001Z"
+        fill="#001B44"
       />
     </svg>
   );
