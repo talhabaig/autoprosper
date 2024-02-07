@@ -127,13 +127,13 @@ const ClientReviewSlider = () => {
           </CarouselContent>
 
           <CarouselPrevious
-            className="bg-white w-[46px] h-[46px]  absolute bottom-[-68px] md:bottom-[-88px] left-[40%]
-             -translate-x-1/2 top-[unset] lg:top-1/2 lg:left-[-30px] 2xl:left-[-40px]"
+            className="bg-white w-[46px] h-[46px]  absolute bottom-[-68px] md:bottom-[-88px] left-[30%]
+            md:left-[40%] top-[unset] lg:top-1/2 lg:left-[-30px] 2xl:left-[-40px]"
           />
           <CarouselNext
             variant="gradient"
             className="w-[46px] h-[46px]   absolute bottom-[-68px] md:bottom-[-88px] left-[unset] 
-            right-[40%] -translate-x-1/2 top-[unset] lg:top-1/2 lg:right-[-70px] 2xl:right-[-90px]"
+            right-[30%]  md:right-[40%] top-[unset] lg:top-1/2 lg:right-[-40px] 2xl:right-[-50px]"
           />
         </Carousel>
       </div>
