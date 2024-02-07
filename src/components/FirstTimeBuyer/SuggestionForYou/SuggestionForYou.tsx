@@ -149,8 +149,8 @@ const SuggestionForYou = () => {
           />
         </Link>
         <div className="flex items-center gap-[8px] mb-[24px]">
-          <QuestionMarkRounded className="w-[16px] h-[16px] 2xl:w-[20px] 2xl:h-[20px]" />{" "}
-          <span>See financing details</span>
+          <QuestionMarkRounded className="w-[18px] h-[18px] 2xl:w-[20px] 2xl:h-[20px]" />{" "}
+          <span className="text-[#FF3363] font-bold">See financing details</span>
         </div>
         <span className="block max-w-[690px] mx-auto text-dark-3 text-[14px] text-center">
           *Vehicle prices exclude taxes and finance charges and, subject to

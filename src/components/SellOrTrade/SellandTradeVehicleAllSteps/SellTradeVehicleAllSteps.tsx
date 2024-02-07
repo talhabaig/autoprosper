@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { ArrowRight, BackArrow } from "../../Icons/Icons";
+import { ArrowRight, BackArrow, TickTrue } from "../../Icons/Icons";
 import Vehicle from "../Vehicle/Vehicle";
 import VehicleDetail from "../VehicleDetail/VehicleDetail";
 import VehicleCondition from "../VehicleCondition/VehicleCondition";
@@ -121,10 +121,11 @@ const SellTradeVehicle: React.FC = () => {
               <div className="flex flex-col lg:max-w-[340px]">
                 <a
                   href=""
-                  className="cursor-pointer mb-[12px] xl:mb-6"
+                  className="cursor-pointer mb-[12px] xl:mb-6 flex items-center gap-2"
                   onClick={() => handleStepChange(activeStep - 1)}
                 >
-                  <BackArrow className="w-[24px] h-[24px] inline-block" />
+                  <BackArrow className="w-[20px] h-[20px]"/>
+                  <span className="text-[#5D6878] hidden md:block font-bold">Back</span>
                 </a>
                 <h1 className="text-left text-lg text-[#001B44] lg:text-[28px] 2xl:text-[32px] font-[700] mb-2 xl:mb-3">
                   Sell/Trade
@@ -202,6 +203,12 @@ const SellTradeVehicle: React.FC = () => {
                         4
                       </span>{" "}
                       Information
+                    </button>
+                    <button className="flex items-center text-[#B7BCC3] ">
+                    <span className="tabText bg-[#B7BCC3]">
+                      <TickTrue className="w-[16px] h-[16px] fill-white"/>
+                    </span>
+                        Vehicle
                     </button>
                   </div>
                 </div>

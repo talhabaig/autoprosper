@@ -14,6 +14,8 @@ import {
   LockVariant2,
   ArrowRightCurved,
   DoubleRightArrow,
+  InventoryMessage,
+  ArrowUpper,
 } from "@/components/Icons/Icons";
 import CustomPagination from "@/components/Common/Pagination/CustomPagination";
 
@@ -304,6 +306,19 @@ const InventoryLayout = () => {
               />
             </div>
           </div>
+        </div>
+        <div className="fixed bottom-[100px] right-[18px] md:bottom-[100px] md:right-[30px] ">
+          <button className="bg-dark hover:scale-110 transition-all p-[20px] rounded-[16px] md:flex items-center md:gap-1">
+            <InventoryMessage className="w-[24px] h-[24px]" />
+            <span className="text-[#FFF] text-[14px] hidden md:block font-bold leading-normal">
+              Message
+            </span>
+          </button>
+        </div>
+        <div className="fixed bottom-[20px] right-[100px]">
+          <button className=" hover:scale-110 transition-all bg-btn-primary-gradient p-[20px] rounded-full cursor-pointer">
+            <ArrowUpper className="w-[24px] h-[24px]" />
+          </button>
         </div>
       </section>
     </>
