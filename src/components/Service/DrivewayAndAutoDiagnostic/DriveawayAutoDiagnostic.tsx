@@ -97,6 +97,7 @@ const DriveawayAutoDiagnostic = () => {
                   </div>
                 </div>
                 <div className="rounded-xl p-[16px_12px] bg-green-light ">
+                  
                   <div className="flex gap-[10px] mb-[12px]">
                     <TickTrue className="w-[24px] h-[24px]" />
                     <span className="mb-0 text-[14px] font-normal leading-5 2xl:text-[18px] text-dark" >
