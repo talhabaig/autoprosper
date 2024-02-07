@@ -2972,11 +2972,54 @@ export const TickTrue: React.FC<propType> = ({
       fill={fill}
       className={className}
       viewBox="0 0 24 24"
-
     >
       <path
         d="M9.54961 18.0001L3.84961 12.3001L5.27461 10.8751L9.54961 15.1501L18.7246 5.9751L20.1496 7.4001L9.54961 18.0001Z"
-        fill="#001B44"
+        
+      />
+    </svg>
+  );
+};
+export const InventoryMessage: React.FC<propType> = ({
+  width,
+  height,
+  fill,
+  className,
+}) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill={fill}
+      className={className}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M4 20C3.45 20 2.97917 19.8042 2.5875 19.4125C2.19583 19.0208 2 18.55 2 18V6C2 5.45 2.19583 4.97917 2.5875 4.5875C2.97917 4.19583 3.45 4 4 4H20C20.55 4 21.0208 4.19583 21.4125 4.5875C21.8042 4.97917 22 5.45 22 6V18C22 18.55 21.8042 19.0208 21.4125 19.4125C21.0208 19.8042 20.55 20 20 20H4ZM12 13L20 8V6L12 11L4 6V8L12 13Z"
+        fill="white"
+      />
+    </svg>
+  );
+};
+export const ArrowUpper: React.FC<propType> = ({
+  width,
+  height,
+  fill,
+  className,
+}) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill={fill}
+      className={className}
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M7.4 15.3751L6 13.9751L12 7.9751L18 13.9751L16.6 15.3751L12 10.7751L7.4 15.3751Z"
+        fill="black"
       />
     </svg>
   );

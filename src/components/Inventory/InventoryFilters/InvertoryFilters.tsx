@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ArrowRightCurved } from "@/components/Icons/Icons";
-import { Search, SortBy } from "../../Icons/Icons";
+import { Search, SortBy,FilterSortBy } from "../../Icons/Icons";
 import {
   Option,
   ProductFilterState,
@@ -141,7 +141,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
               flex items-center justify-start md:justify-center gap-[6px] !shadow-none
                md:rounded-[100px]  md:min-h-[36px] xl:min-h-[56px] text-dark font-bold text-[14px] xl:text-[16px]"
               >
-                <SortBy className="w-[16px] h-[16px] fill-dark xl:w-[20px] xl:h-[20px]" />{" "}
+                <FilterSortBy className="w-[16px] h-[16px] fill-dark xl:w-[20px] xl:h-[20px]" />{" "}
                 Filter
               </TabsTrigger>
             </span>
