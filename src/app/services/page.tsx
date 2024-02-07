@@ -6,22 +6,26 @@ import MediaAndPartners from "@/components/Service/MediaAndPartners/MediaAndPart
 import ServiceBanner from "@/components/Service/ServiceBanner/page";
 import ServiceAccordion from "@/components/Service/ServiceShopAccordion/ServiceAccordion";
 import TreatYourSelfToValet from "@/components/Service/TreatYourSelfToValet/TreatYourSelfToWalet";
+import Footer from "@/components/SiteFooter/Footer";
 import FirstTimeBuyer from "@/components/home/FirstTimeBuyer/FirstTimeBuyer";
 import React from "react";
 
 const page = () => {
   return (
-    <main>
-      <ServiceBanner />
-      <AutoRepairOnDemand />
-      <ClientReviewSlider />
-      <MediaAndPartners />
-      <ServiceAccordion />
-      <FirstTimeBuyer />
-      <DriveawayAutoDiagnostic />
-      <FaqAccordion/>
-      <TreatYourSelfToValet />
-    </main>
+    <>
+      <main>
+        <ServiceBanner />
+        <AutoRepairOnDemand />
+        <ClientReviewSlider />
+        <MediaAndPartners />
+        <ServiceAccordion />
+        <FirstTimeBuyer />
+        <DriveawayAutoDiagnostic />
+        <FaqAccordion />
+        <TreatYourSelfToValet />
+      </main>
+      <Footer />
+    </>
   );
 };
 
