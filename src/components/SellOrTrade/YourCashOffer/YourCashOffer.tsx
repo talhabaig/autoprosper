@@ -12,14 +12,16 @@ const YourCashOffer: React.FC<YourCashOfferProps> = () => {
         <Image
           src="/home/red-toyota.png"
           alt="car image"
-          className="relative z-10 object-contain"
+          className="relative z-[1] object-contain"
           width={348}
           height={174}
         />
         <EllipseGradient className="absolute z-0" />
       </div>
 
-      <p className="text-center text-[#001B44] mb-3 text-[32px] 2xl:text-[56px] font-[400]">$375*</p>
+      <p className="text-center text-[#001B44] mb-3 text-[32px] 2xl:text-[56px] font-[400]">
+        $375*
+      </p>
       <p className="text-center text-[#001B44] mb-2 text-[14px] 2xl:text-[24px] font-[700]">
         2024 Nissan Kicks®
       </p>
@@ -40,7 +42,7 @@ const YourCashOffer: React.FC<YourCashOfferProps> = () => {
       <Button
         variant="transparent"
         label="Apply offers to trade-in"
-        className="w-full !text-[#001B44] border-[#001B44] text-[14px]"
+        className="w-full !text-[#001B44] border-[#001B44] hover:!text-white text-[14px]"
       />
       <p className="text-center text-[#5D6878] text-[12px] 2xl:text-[14px] font-normal mt-[12px]">
         Put your offer toward your next ride and start shopping.
