@@ -76,7 +76,6 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
     setSelectedItem(null);
   };
 
-
   const handleMouseLeave = () => {
     handleCloseContent();
   };
@@ -144,43 +143,44 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
       <div onMouseLeave={handleMouseLeave}>
         <div
           className={`w-full relative ${
-            selectedItem ? "bg-white" : "bg-transparent"
+            selectedItem
+              ? "bg-white md:border-b border-dark-6"
+              : "bg-transparent"
           }`}
         >
           <div className="hidden md:flex mx-auto justify-between items-center md:w-screen lg:py-[30px] md:py-[15px] container">
             <Link href="/">
               {variant === "dark" || selectedItem ? (
-                <Image
-                  src="/images/logo-dark.png"
-                  alt="logo"
-                  width="200"
-                  height="42"
-                />
+                <img src="/images/logo-dark.png" alt="logo" />
               ) : (
-                <Image
-                  src="/images/logo.png"
-                  alt="logo"
-                  width="200"
-                  height="42"
-                />
+                <img src="/images/logo.png" alt="logo" />
               )}
             </Link>
 
-            <div className="inline-flex lg:gap-[48px]">
+            <div className="inline-flex xl:gap-[48px]">
               {desktopNavigationData.map((navigation, index) => (
                 <div
                   key={index}
-                  className={`inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm  lg:text-base lg:leading-[24px] font-medium transition-colors cursor-pointer ${
+                  className={`inline-flex relative md:gap-[6px] lg:gap-[12px] h-10 w-max items-center justify-center px-4 py-2 text-sm  lg:text-base lg:leading-[24px] font-medium transition-colors cursor-pointer ${
                     variant === "light" && !selectedItem
                       ? "text-white"
                       : "text-dark-3"
                   }`}
-                  onMouseEnter={() => 
-                    handleSheetItemClick(index)
-                  }
+                  onMouseEnter={() => handleSheetItemClick(index)}
                   onClick={handleMouseLeave}
                 >
-                  {navigation.title}
+                  {selectedItem?.title === navigation.title && (
+                    <div className="bg-green rounded-full absolute -bottom-[30px] w-full h-[3px] pointer-events-none"></div>
+                  )}
+                  <span
+                    className={
+                      selectedItem?.title === navigation.title
+                        ? "text-dark"
+                        : ""
+                    }
+                  >
+                    {navigation.title}
+                  </span>
                   <DropIcon
                     className={`top-[1px] ml-1 h-[4px] w-[8px] transition duration-200 ${
                       selectedItem?.title === navigation.title
@@ -189,11 +189,6 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
                     }`}
                     aria-hidden="true"
                   />
-                  {selectedItem?.title === navigation.title && (
-                    <div
-                      className="bg-green rounded-full absolute bottom-0 w-[5%] h-[3px] pointer-events-none"
-                    ></div>
-                  )}
                 </div>
               ))}
             </div>
