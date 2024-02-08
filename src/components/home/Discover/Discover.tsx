@@ -13,6 +13,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import style from './discover.module.css';
 
 const dummy = [
   {
@@ -57,7 +58,7 @@ const Discover = () => {
   };
 
   return (
-    <Section>
+    <Section className="md:gap-[24px]">
       <div className="w-full md:max-w-[690px] flex flex-col items-center">
         <SectionHeader className="md:text-left">
           Discover your purchasing alternatives now.
@@ -82,8 +83,8 @@ const Discover = () => {
         />
       </div>
       <div className="flex md:max-w-[696px] w-full justify-center">
-        <GradientCard variant="hide-on-mobile" className="w-full">
-          <div className="flex flex-col gap-[32px] md:h-full w-full items-center justify-center bg-white rounded-md md:p-[32px]">
+        <GradientCard variant="hide-on-mobile" className={`w-full ${style.cardShadow}`}>
+          <div className="flex flex-col gap-[24px] md:gap-[32px] md:h-full w-full items-center justify-center bg-white rounded-md md:p-[32px]">
             <Carousel
               className="w-full flex flex-col md:hidden "
               opts={{
@@ -110,12 +111,14 @@ const Discover = () => {
                         <div className="absolute text-[7.68px] -top-2 -left-2 bg-yellow text-black font-bold py-[3px] px-[6px] rounded-full z-[51]">
                           {o.discount}% OFF
                         </div>
-                        <img
-                          src={o.image}
-                          alt="car image"
-                          className="relative z-10 object-contain h-[53px] w-[130px]"
-                        />
-                        <EllipseGradient className="absolute z-0 -top-[100%]" />
+                        <div className="relative">
+                          <img
+                            src={o.image}
+                            alt="car image"
+                            className="z-10 object-contain h-[53px] w-[130px]"
+                          />
+                          <EllipseGradient className="absolute -z-10 -top-[100%]" />
+                        </div>
                       </div>
                       <div
                         className={`absolute bg-green rounded-full top-2 right-2 p-[2.77px] ${
@@ -156,12 +159,14 @@ const Discover = () => {
                     <div className="absolute text-[7.68px] -top-2 -left-2 bg-yellow text-black font-bold py-[4px] px-[8px] rounded-full z-[51]">
                       {o.discount}% OFF
                     </div>
-                    <img
-                      src={o.image}
-                      alt="car image"
-                      className="relative z-10 object-contain h-[53px] w-[130px]"
-                    />
-                    <EllipseGradient className="absolute z-0 -top-[100%]" />
+                    <div className="relative">
+                      <img
+                        src={o.image}
+                        alt="car image"
+                        className="z-10 relative object-contain h-[53px] w-[130px]"
+                      />
+                      <EllipseGradient className="absolute z-[5] md:top-0 md:bottom-0 lg:-top-2 h-full w-full" />
+                    </div>
                   </div>
                   <div
                     className={`absolute bg-green rounded-full top-2 right-2 p-[2.77px] ${
@@ -186,7 +191,7 @@ const Discover = () => {
               ))}
             </div>
 
-            <div className="grid grid-cols-2 gap-5 w-full">
+            <div className="grid grid-cols-2 gap-[12px] md:gap-[24px] w-full">
               <Select
                 type="text"
                 label="Searching for"

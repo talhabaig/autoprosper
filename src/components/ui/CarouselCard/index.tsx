@@ -7,9 +7,11 @@ import { EllipseGradient } from "@/components/ui/ellipseGradient";
 const CarouselCard: React.FC<CarouselProps> = ({ data, active }) => {
   if (active) {
     return (
-      <GradientCard className="w-full rounded-xl">
+      <div className="md:mb-[73px]">
+        <GradientCard className="w-full rounded-xl">
         <CarouselCardContent data={data} />
       </GradientCard>
+      </div>
     );
   } else {
     return <CarouselCardContent data={data} />;

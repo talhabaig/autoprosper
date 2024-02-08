@@ -1,0 +1,9 @@
+.cardShadow {
+  box-shadow: 0px 36px 72px -18px #001b4440;
+}
+
+@media (max-width: 767px) {
+  .cardShadow {
+    box-shadow: none;
+  }
+}

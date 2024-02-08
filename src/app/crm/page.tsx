@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./crm.module.css";
 import SalesActivity from "@/components/Crm/SalesActivity/SalesActivity";
 import EmailAndSms from "@/components/Crm/EmailAndSms/EmailAndSms";
+import { DealerPlex } from "@/components/Crm/DealerPlex/DealerPlex";
+import { Appointment } from "@/components/Crm/Appointments/Appointments";
 
 const Page = () => {
   return (
@@ -10,7 +12,7 @@ const Page = () => {
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--1"]}`}
         >
-          <span className={styles.gallery__item_num}>Appointments Today 1</span>
+          <span className={styles.gallery__item_num}><Appointment/></span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--2"]}`}
@@ -25,7 +27,7 @@ const Page = () => {
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--4"]}`}
         >
-          <span className={styles.gallery__item_num}>DealerPlex 4</span>
+          <span className={styles.gallery__item_num}><DealerPlex/></span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--5"]}`}

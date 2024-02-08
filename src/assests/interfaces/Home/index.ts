@@ -179,3 +179,25 @@ export interface ProductCardDetails {
   totalMilage?: string;
   totalPrice?: string;
 }
+
+export interface AutoRepairOnDemand {
+  id?: number;
+  imageSrc?: string;
+  heading?: string;
+  pointsArray?: autoRepairOnDemandItem[];
+}
+export interface autoRepairOnDemandItem {
+  subHeading?: string;
+  paragraph?: string;
+  icon?: JSX.Element;
+}
+
+export interface ReviewData {
+  id: number;
+  imageSrc?: string;
+  heading?: string;
+  description?: string;
+  icon?: JSX.Element;
+  socialMediaPlatform?: JSX.Element;
+  name?: string;
+}

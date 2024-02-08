@@ -1,18 +1,15 @@
 import React from "react";
 import NavigationBar from "@/components/ui/Navigations/navigationBar";
-
 import Button from "../../Common/Button/Button";
 import { ArrowRight } from "../../Icons/Icons";
-
 import Link from "next/link";
-import ZipCode from "@/components/CustomizePage/ZipCode/ZipCode";
 import ZipCodeService from "./ZipCode/page";
 
 const ServiceBanner = () => {
   return (
     <>
       <section
-        className="relative min-h-[631px]  lg:min-h-screen bg-[url('/servicepage/servicePageMobile.png')]
+        className="relative min-h-[631px] lg:min-h-[720px]  xl:min-h-screen bg-[url('/servicepage/servicePageMobile.png')]
           sm:bg-[url('/servicepage/servicePageBanner.png')] bg-no-repeat bg-cover bg-center"
       >
         <NavigationBar />
@@ -48,7 +45,8 @@ const ServiceBanner = () => {
             </div>
           </div>
         </div>
-        <div className="container absolute bottom-[-100px] left-1/2 -translate-x-1/2">
+        <div className="container absolute bottom-[-100px] left-1/2 -translate-x-1/2
+          lg:bottom-[-80px]">
           <div className="">
             <ZipCodeService />
           </div>
