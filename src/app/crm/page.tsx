@@ -4,6 +4,9 @@ import SalesActivity from "@/components/Crm/SalesActivity/SalesActivity";
 import EmailAndSms from "@/components/Crm/EmailAndSms/EmailAndSms";
 import { DealerPlex } from "@/components/Crm/DealerPlex/DealerPlex";
 import { Appointment } from "@/components/Crm/Appointments/Appointments";
+import { AppointmentsAndSaleFunnel } from "@/components/Crm/AppointmentsAndSalesFunnel/AppointmentsAndSalesFunnel";
+import { QuickFilters } from "@/components/Crm/QuickFilters/QuickFilters";
+
 
 const Page = () => {
   return (
@@ -22,7 +25,7 @@ const Page = () => {
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--3"]}`}
         >
-          <span className={styles.gallery__item_num}>Appointments Graph 3</span>
+          <span className={styles.gallery__item_num}><AppointmentsAndSaleFunnel/></span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--4"]}`}
@@ -37,7 +40,7 @@ const Page = () => {
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--6"]}`}
         >
-          <span className={styles.gallery__item_num}>Quick Filters 6</span>
+          <span className={styles.gallery__item_num}><QuickFilters/></span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--7"]}`}
