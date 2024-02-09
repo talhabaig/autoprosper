@@ -1,9 +1,12 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { ArrowRight } from "../../Icons/Icons";
 import { FindOrMakeCard } from "../../../assests/interfaces/Home/index";
 import styles from "./GuideAndTips.module.css";
 import Button from "../../Common/Button/Button";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const cardData: FindOrMakeCard[] = [
   {
@@ -57,10 +60,19 @@ const cardData: FindOrMakeCard[] = [
 ];
 
 const GuideAndTips = () => {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
   return (
     <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-dark-7">
       <div className="container">
-        <div className="max-w-[360px] mx-auto text-center md:max-w-[510px] lg:max-w-[560px] 2xl:max-w-[700px]">
+        <div
+          data-aos="fade-up"
+          className="max-w-[360px] mx-auto text-center md:max-w-[510px] lg:max-w-[560px] 2xl:max-w-[700px]"
+        >
           <h2 className="heading2 mb-[0.5rem] lg:mb-[1.125rem]">
             Guide & Tips
           </h2>

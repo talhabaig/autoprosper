@@ -1,11 +1,21 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Button from "../../Common/Button/Button";
 import { ArrowRight } from "../../Icons/Icons";
 import styles from "./FirstTimeBuyer.module.css";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FirstTimeBuyer = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
   return (
     <section className="max-w-[1920px] mx-auto ">
       <div className="relative min-h-[631px] lg:min-h-[710px] xl:min-h-[800px] 3xl:min-h-[900px] 4xl:min-h-[952px] flex justify-center items-center">
@@ -26,9 +36,15 @@ const FirstTimeBuyer = () => {
           />
         </div>
         <div
-          className={`max-w-[310px] md:max-w-[328px] lg:max-w-[424px] xl:max-w-[505px] 2xl:max-w-[650px] absolute top-[58%]  mx-[0.938rem] flex flex-col text-center items-center justify-center`}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className={`max-w-[310px] md:max-w-[328px] lg:max-w-[424px] xl:max-w-[505px] 2xl:max-w-[650px] 
+          absolute top-[58%]  mx-[0.938rem] flex flex-col text-center items-center justify-center`}
         >
-          <h2 className="heading2 md:px-[5px] lg:px-0 xl:mb-[1.125rem] 2xl:max-w-[78%] 3xl:max-w-[98%] 3xl:px-8 text-white">
+          <h2
+            className="heading2 md:px-[5px] lg:px-0 xl:mb-[1.125rem] 2xl:max-w-[78%] 3xl:max-w-[98%] 
+          3xl:px-8 text-white"
+          >
             <span className={styles.textGradient}>First time </span>buyer (born
             1998-2005) program offer
           </h2>
