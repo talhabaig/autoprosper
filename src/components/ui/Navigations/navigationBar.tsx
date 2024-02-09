@@ -13,7 +13,7 @@ import Finance from "./NavigationItems/finance";
 import Learn from "./NavigationItems/learn";
 import Help from "./NavigationItems/help";
 import Link from "next/link";
-import { DropIcon } from "@/components/Icons/Icons";
+import { DropIcon, UserIconNav } from "@/components/Icons/Icons";
 import { DoubleEllipseGradient } from "../ellipseGradient";
 
 interface NavigationBarInterface {
@@ -103,11 +103,9 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             )}
           </Link>
           <div className="flex flex-row items-center gap-[18px]">
-            <UserIcon
-              width={24}
-              height={24}
-              stroke={variant === "dark" ? "#000" : "#fff"}
-            />
+            <div className="bg-custom rounded-full p-1">
+              <UserIconNav />
+            </div>
             <SheetTrigger asChild>
               <button
                 data-collapse-toggle="navbar-default"
