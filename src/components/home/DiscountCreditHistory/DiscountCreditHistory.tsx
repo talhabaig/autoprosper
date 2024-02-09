@@ -1,3 +1,5 @@
+"use client";
+import { useEffect } from "react";
 import React from "react";
 import Button from "../../Common/Button/Button";
 import { ArrowRight } from "../../Icons/Icons";
@@ -5,6 +7,8 @@ import Image from "next/image";
 import { DiscountAndCreditDataItem } from "../../../assests/interfaces/Home/index";
 import styles from "./DiscountCredit.module.css";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface DiscountAndCreditDataItemExtended extends DiscountAndCreditDataItem {
   route: string;
@@ -41,9 +45,16 @@ const discountAndCreditData: DiscountAndCreditDataItemExtended[] = [
 ];
 
 function DiscountAndCredit() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
   return (
     <>
-      <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]">
+      <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  overflow-x-hidden">
         <div className="container [&>*:nth-child(even)]:md:flex-row-reverse ">
           {discountAndCreditData.map((item) => (
             <div
@@ -51,7 +62,10 @@ function DiscountAndCredit() {
               className="md:flex md:justify-between last-of-type:md:pt-[3rem] last-of-type:pt-12 md:items-center pb-[3rem] 
                last-of-type:lg:pt-[4rem] lg:pb-[4rem] last-of-type:3xl:pt-[6rem] 3xl:pb-[6rem] last-of-type:pb-0"
             >
-              <div className="md:flex-[0_0_auto] md:w-[48%] 3xl:w-[49%] mb-[1.5rem] md:mb-0">
+              <div
+                data-aos="fade-left"
+                className="md:flex-[0_0_auto] md:w-[48%] 3xl:w-[49%] mb-[1.5rem] md:mb-0"
+              >
                 <Image
                   src={item.imageSrc ? item.imageSrc : ""}
                   width={690}
@@ -60,8 +74,9 @@ function DiscountAndCredit() {
                 />
               </div>
               <div
+                data-aos="fade-right"
                 className="text-center flex flex-col justify-center items-center md:flex-[0_0_auto] md:w-[48%]
-               3xl:w-[49%] 2xl:px-8 md:justify-start md:items-start md:text-start"
+                 3xl:w-[49%] 2xl:px-8 md:justify-start md:items-start md:text-start"
               >
                 <div className="pb-[0.75rem] md:pb-[1.125rem] xl:pb-[1.5rem]">
                   <span
@@ -80,7 +95,6 @@ function DiscountAndCredit() {
                   {item.paragraph}
                 </p>
                 <div>
-                  
                   <Link href={item.route}>
                     <Button
                       variant="primary"
