@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input, Select } from "@/components/ui/input";
 import Image from "next/image";
@@ -13,7 +14,10 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import style from './discover.module.css';
+import style from "./discover.module.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 const dummy = [
   {
@@ -57,9 +61,21 @@ const Discover = () => {
     setActiveIndices(updatedIndices);
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
+
   return (
-    <Section className="md:gap-[24px]">
-      <div className="w-full md:max-w-[690px] flex flex-col items-center">
+    <Section className="md:gap-[24px] overflow-hidden">
+      <div
+        data-aos="fade-left"
+        data-aos-duration="1000"
+        className="w-full md:max-w-[690px] flex flex-col items-center"
+      >
         <SectionHeader className="md:text-left">
           Discover your purchasing alternatives now.
         </SectionHeader>
@@ -82,8 +98,16 @@ const Discover = () => {
           className="mb-[24px] md:mb-0 md:hidden"
         />
       </div>
-      <div className="flex md:max-w-[696px] w-full justify-center">
-        <GradientCard variant="hide-on-mobile" className={`w-full ${style.cardShadow}`}>
+
+      <div
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        className="flex md:max-w-[696px] w-full justify-center"
+      >
+        <GradientCard
+          variant="hide-on-mobile"
+          className={`w-full ${style.cardShadow}`}
+        >
           <div className="flex flex-col gap-[24px] md:gap-[32px] md:h-full w-full items-center justify-center bg-white rounded-md md:p-[32px]">
             <Carousel
               className="w-full flex flex-col md:hidden "
