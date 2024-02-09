@@ -60,11 +60,11 @@ export const Appointment = () => {
                 </div>
                 <div className="flex flex-col gap-2">
                     <button
-                        className=" flex justify-center items-center  py-[0.313rem] px-[0.625rem] text-white bg-dark rounded-[100px]  font-bold text-[10px] not-italic uppercase  cursor-pointer tracking-[0.09px]">
+                        className=" flex justify-center items-center  py-[0.313rem] px-[0.625rem] text-white bg-dark rounded-[100px]  font-bold text-[10px] not-italic uppercase  cursor-pointer tracking-[0.9px]">
                         A.i warm up
                     </button>
                     <button
-                        className=" flex justify-center items-center py-[0.313rem] px-[0.625rem] text-dark-4 border border-dark-4 rounded-[100px] font-bold text-[10px] not-italic uppercase tracking-[0.09px] cursor-pointer">
+                        className=" flex justify-center items-center py-[0.313rem] px-[0.625rem] text-dark-4 border border-dark-4 rounded-[100px] font-bold text-[10px] not-italic uppercase tracking-[0.9px] cursor-pointer">
                         Mannual warm up
                     </button>
                 </div>
@@ -92,7 +92,6 @@ export const Appointment = () => {
                         <RightArrow className="cursor-pointer" />
                     </div>
                 </div>
-
             </div>
         </div>
     );
