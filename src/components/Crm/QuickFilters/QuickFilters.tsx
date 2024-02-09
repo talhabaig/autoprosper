@@ -1,5 +1,5 @@
 import {
-    DownArrow,
+    DownArrow2,
     Calender,
 } from "@/components/Icons/Icons";
 
@@ -10,7 +10,7 @@ export const QuickFilters = () => {
             <div className="h-[44px] w-full flex flex-col gap-5">
                 <div className="flex justify-between items-center">
                     <p className="text-dark font-bold text-lg not-italic mb-0">Quick Filters</p>
-                    <DownArrow className="cursor-pointer" />
+                    <DownArrow2 className="cursor-pointer" />
                 </div>
                 <div className="h-[1px] w-full border border-dark-5"></div>
             </div>

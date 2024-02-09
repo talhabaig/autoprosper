@@ -13,9 +13,9 @@
 }
 @media(min-width:500px){
   .dNone{
-    display: none;
+    display: none !important;
   }
   .dBlock{
-    display: block;
+    display: block !important;
   }
 }
