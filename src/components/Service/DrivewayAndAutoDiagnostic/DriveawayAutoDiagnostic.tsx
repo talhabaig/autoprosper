@@ -70,27 +70,28 @@ const DriveawayAutoDiagnostic = () => {
                 <div className=" bg-white rounded-br-[12px] rounded-bl-[12px] text-center">
                   <div className="rounded-tr-[12px] max-w-[699px] mb-[5px] rounded-tl-[12px] overflow-hidden bg-white">
                     <span
-                      className="inline-block p-[6px_12px] lg:p-[5px_10px] leading-[1.3] rounded-[100px] tracking-[1.26px] 
+                      className="inline-block p-[6px_12px] lg:p-[5px_10px] leading-normal rounded-[100px] tracking-[1.26px] 
                      font-bold text-dark-3 uppercase text-[14px] lg:text-[0.75rem]  bg-dark-7"
                     >
                       {item.contentLabel}
                     </span>
                   </div>
                   <div className="mb-[24px] ">
-                    <h3 className="heading3 text-[24px] xl:text-[28px] leading-[130%] mx-auto mb-[12px] lg:mb-[0.938rem] 3xl:mb-[1.125rem] max-w-[275px] md:max-w-[260px] lg:max-w-full">
+                    <h3 className="heading3 text-[24px] xl:text-[28px] 3xl:text-[32px] leading-[31px] 3xl:leading-[41px] mx-auto mb-[12px] max-w-[275px] md:max-w-[260px] lg:max-w-full">
                       {item.heading}
                     </h3>
-                    <p className="paragraph-large md:mb-0 leading-[150%] 3xl:mb-[2rem] max-w-[280px] xl:max-w-[370px] 2xl:max-w-full mx-auto">
+                    <p className="paragraph-large mb-0 leading-[150%] max-w-[280px] xl:max-w-[370px] 2xl:max-w-full mx-auto">
                       {item.description}
                     </p>
                   </div>
-                  <span className="text-[44px] block font-bold leading-[130%] text-dark mb-[24px]">
+                  <span className="text-[44px] block font-bold leading-[49px] text-dark mb-[24px]">
                     <span className="text-[24px] font-medium ">$</span>
                     {item.totalNumber}
                   </span>
                   <div className="mb-6 flex justify-center items-center">
                     <Link href={item.route}>
                       <Button
+                      className="!p-[14px_24px] 2xl:!p-[18px_32px]"
                         variant="primary"
                         label={item.buttonLabel}
                         children={item.buttonIcon}
@@ -100,9 +101,9 @@ const DriveawayAutoDiagnostic = () => {
                 </div>
                 <div className="rounded-xl p-[16px_12px] bg-green-light ">
                   {item.drivewayCustomerPoints?.map((point, index) => (
-                    <div className="flex gap-[10px] mb-[12px]">
+                    <div className="flex gap-[10px] mb-[12px] 3xl:mb-6 last-of-type:mb-0">
                       <TickTrue className="w-[24px] h-[24px] fill-dark flex-[0_0_auto]" />
-                      <span className="mb-0 text-[14px] font-normal leading-[130%] 2xl:text-[18px] text-dark">
+                      <span className="mb-0 text-[14px] font-normal leading-[150%] 2xl:text-[18px] text-dark">
                         {point}
                       </span>
                     </div>

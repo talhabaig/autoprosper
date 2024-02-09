@@ -75,7 +75,7 @@ const ClientReviewSlider = () => {
           className="max-w-[360px] mx-auto text-center px-[18px] sm:px-0 md:max-w-[380px] lg:max-w-[422px]
           xl:max-w-[480px] 2xl:max-w-[550px]"
         >
-          <h2 className="heading2 mb-[0.5rem] lg:mb-[1.125rem] ">
+          <h2 className="heading2 mb-[18px] lg:mb-[1.125rem] ">
             What our clients says.
           </h2>
           <p className="paragraph-large mb-[1.5rem] md:mb-[1.875rem] lg:mb-[2.5rem] 2xl:mb-[3rem]   ">
@@ -108,10 +108,10 @@ const ClientReviewSlider = () => {
                         </span>
                       ))}
                     </div>
-                    <h3 className="heading4 text-left font-bold mb-[12px]">
+                    <h3 className="heading4 text-[14px] 3xl:text-[24px] leading-[130%] text-left font-bold mb-[12px]">
                       “ {item.heading}
                     </h3>
-                    <p className="text-dark-3 text-[0.875rem] md:text-[16px] leading-[150%] mb-[24px]">
+                    <p className="text-dark-3 text-[12px] md:text-[16px] leading-[150%] mb-[24px]">
                       {item.description}
                     </p>
                     <div className="flex items-center gap-[8px]">

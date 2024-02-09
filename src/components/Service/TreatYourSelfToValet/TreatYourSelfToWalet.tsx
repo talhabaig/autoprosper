@@ -45,7 +45,7 @@ function TreatYourSelfToValet() {
                     {item.description}
                   </p>
                   <div
-                    className={`relative w-full md:w-[70%] block mb-[18px] 2xl:mb-[24px]`}
+                    className={`relative w-full md:w-[70%] block mb-[20px] 2xl:mb-[24px]`}
                   >
                     <label
                       className="inline-block text-dark font-bold text-[9px] absolute top-[8px] left-[18px]
@@ -63,13 +63,13 @@ function TreatYourSelfToValet() {
                       onChange={(e) => console.log("zipcode", e.target.value)}
                     />
                   </div>
-                  <div className="">
+                  <div>
                     <Link href="/sell-trade">
                       <Button
                         variant="primary"
                         label={item.buttonLabel}
                         children={item.buttonIcon}
-                        className="w-full rounded-xl md:rounded-full mb-3 xl:mb-6 md:max-w-[173px] !p-[14px_24px]"
+                        className="w-full rounded-xl md:rounded-full mb-3 xl:mb-6 md:max-w-[173px] !p-[14px_24px] 2xl:!p-[18px_32px]"
                       />
                     </Link>
                   </div>
