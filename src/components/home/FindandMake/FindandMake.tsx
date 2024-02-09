@@ -1,9 +1,12 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Button from "../../Common/Button/Button";
 import { ArrowRight } from "../../Icons/Icons";
 import { FindOrMakeCard } from "../../../assests/interfaces/Home/index";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface FindOrMakeCardWithRoute extends FindOrMakeCard {
   route: string;
@@ -41,13 +44,21 @@ const cardData: FindOrMakeCardWithRoute[] = [
 ];
 
 const FindandMake = () => {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
   return (
     <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-dark-7">
       <div className="container">
-        <div className="max-w-[360px] mx-auto text-center md:max-w-[480px] lg:max-w-[540px] 2xl:max-w-[700px]">
-          <h2 className="heading2 mb-2 lg:mb-[1.125rem]">
-            Find or make
-          </h2>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1200"
+          className="max-w-[360px] mx-auto text-center md:max-w-[480px] lg:max-w-[540px] 2xl:max-w-[700px]"
+        >
+          <h2 className="heading2 mb-2 lg:mb-[1.125rem]">Find or make</h2>
           <p className="paragraph-large mb-[1.5rem] md:mb-[1.875rem] lg:mb-[2.5rem] 2xl:mb-[3rem] ">
             Whether seeking a rare find or customizing your dream car, trust us
             for a personalized, tailored automotive experience.
@@ -61,10 +72,13 @@ const FindandMake = () => {
               shadow-[0px_36px_72px_-18px_rgba(10,24,53,0.25)] p-[1px] bg-btn-primary-gradient
               last-of-type:shadow-[0px_18px_36px_-18px_rgba(10,24,53,0.25)] last-of-type:bg-bg-none
               lg:last-of-type:shadow-[0px_36px_72px_-18px_rgba(10,24,53,0.25)] 
-              lg:last-of-type:bg-btn-primary-gradient last-of-type:mb-0 md:mb-0 " 
+              lg:last-of-type:bg-btn-primary-gradient last-of-type:mb-0 md:mb-0 "
             >
               <div className="h-full bg-white rounded-[12px]">
-                <div className="rounded-tr-[12px] max-w-[699px]  rounded-tl-[12px] px-[4px] pt-[4px] overflow-hidden bg-white">
+                <div               
+                  className="rounded-tr-[12px] max-w-[699px]  rounded-tl-[12px] px-[4px] pt-[4px] 
+                  overflow-hidden bg-white"
+                >
                   <Image
                     src={item.imageSrc ? item.imageSrc : ""}
                     width={682}

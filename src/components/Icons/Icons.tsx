@@ -3711,6 +3711,33 @@ export const Calender: React.FC<propType> = ({
   );
 };
 
+export const UserIconNav: React.FC<propType> = ({
+  width = "16",
+  height = "16",
+  fill = "#001B44",
+  className,
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 16 16"
+      fill="none"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8.00004 7.33333C9.4728 7.33333 10.6667 6.13943 10.6667 4.66667C10.6667 3.19391 9.4728 2 8.00004 2C6.52728 2 5.33337 3.19391 5.33337 4.66667C5.33337 6.13943 6.52728 7.33333 8.00004 7.33333Z"
+        fill="#001B44"
+      />
+      <path
+        d="M8 9.33331C4.69307 9.33331 2 11.2933 2 13.7083C2 13.8716 2.14521 14 2.33003 14H13.67C13.8548 14 14 13.8716 14 13.7083C14 11.2933 11.3069 9.33331 8 9.33331Z"
+        fill="#001B44"
+      />
+    </svg>
+  );
+};
+
 export const SelectArrow: React.FC<propType> = ({
   width = "8",
   height = "4",

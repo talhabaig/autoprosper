@@ -1,6 +1,9 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import { TopArrow, ThumbUp, Heart } from "../../Icons/Icons";
 import { AutoProsperAdvantages } from "../../../assests/interfaces/Home/index";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const cardData: AutoProsperAdvantages[] = [
   {
@@ -36,10 +39,19 @@ const cardData: AutoProsperAdvantages[] = [
 ];
 
 const AutoProsperAdvnatage = () => {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
   return (
     <section className="sectionWrapper py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-dark-7">
       <div className="container px-0 sm:px-4">
-        <div className="max-w-[360px] mx-auto text-center px-[18px] sm:px-0 md:max-w-[550px] lg:max-w-[600px] 2xl:max-w-[800px]">
+        <div
+          data-aos="fade-right"
+          className="max-w-[360px] mx-auto text-center px-[18px] sm:px-0 md:max-w-[550px] lg:max-w-[600px] 2xl:max-w-[800px]"
+        >
           <h2 className="heading2 mb-[0.5rem] lg:mb-[1.125rem] md:max-w-[70%] md:mx-auto lg:max-w-[84%] 3xl:max-w-full">
             What makes AutoProsper worth joining?
           </h2>
@@ -60,18 +72,14 @@ const AutoProsperAdvnatage = () => {
                border-t-[1px] border-solid border-primary-text
                md:border-l-[1px] md:border-t-[0] md:pb-[2rem] lg:pb-8 px-[1.125rem] md:px-0"
               >
-                <div
-                  className="mb-[1.125rem] lg:mb-[1.5rem] 3xl:mb-[2rem] "
-                >
+                <div className="mb-[1.125rem] lg:mb-[1.5rem] 3xl:mb-[2rem] ">
                   {item.icon}
                 </div>
 
                 <h3 className="heading3 mb-[0.5rem] text-left md:mb-[1.125rem]  lg:mb-[1.5rem] 3xl:mb-[2rem] lg:mr-[30%] 2xl:mr-[26%]">
                   {item.heading}
                 </h3>
-                <p className="paragraph-large mb-0 ">
-                  {item.description}
-                </p>
+                <p className="paragraph-large mb-0 ">{item.description}</p>
               </div>
             </div>
           ))}
