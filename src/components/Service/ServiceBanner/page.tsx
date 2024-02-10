@@ -18,8 +18,7 @@ const ServiceBanner = () => {
          sm:top-1/2  sm:-translate-y-1/2  left-1/2 -translate-x-1/2 "
         >
           <div
-            className={`max-w-[320px] mx-auto sm:mx-0 sm:max-w-[85%] lg:max-w-[50%] `}
-          >
+            className={`max-w-[320px] mx-auto sm:mx-0 sm:max-w-[85%] lg:max-w-[50%] `}>
             <h1 className="heading1 lg:mb-[18px]  text-white sm:text-left">
               Discover a simpler{" "}
               <span className="gradientTextContent"> car service </span>{" "}
@@ -27,7 +26,7 @@ const ServiceBanner = () => {
             </h1>
             <p
               className="paragraph-large text-center text-white mb-[1.125rem] 
-            sm:text-left xl:mb-[1.5rem] 2xl:mb-[2rem]"
+              sm:text-left xl:mb-[1.5rem] 2xl:mb-[2rem]"
             >
               The quality of a dealership service center, without leaving home.
             </p>

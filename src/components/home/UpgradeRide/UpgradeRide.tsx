@@ -1,9 +1,12 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Button from "../../Common/Button/Button";
 import { ArrowRight } from "../../Icons/Icons";
 import Image from "next/image";
 import { upGradeRide } from "../../../assests/interfaces/Home/index";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const upGradeRideDetails: upGradeRide[] = [
   {
@@ -21,6 +24,12 @@ const upGradeRideDetails: upGradeRide[] = [
 ];
 
 function UpgradeRide() {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
   return (
     <>
       <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-white">
@@ -30,7 +39,11 @@ function UpgradeRide() {
               key={item.id}
               className="md:flex md:justify-between md:items-center pb-[3.75rem] lg:pb-[5rem] 3xl:pb-[6.875rem] last-of-type:pb-0"
             >
-              <div className="md:flex-[0_0_auto] md:w-[48%] 3xl:w-[49%] mb-[1.5rem] md:mb-0">
+              <div
+                data-aos="fade-right"
+                data-aos-duration="1200"
+                className="md:flex-[0_0_auto] md:w-[48%] 3xl:w-[49%] mb-[1.5rem] md:mb-0"
+              >
                 <Image
                   src={item.imageSrc ? item.imageSrc : ""}
                   width={690}
@@ -38,7 +51,11 @@ function UpgradeRide() {
                   alt={item.contentLabel || ""}
                 />
               </div>
-              <div className="md:flex-[0_0_auto] md:w-[48%] 3xl:w-[49%] ">
+              <div
+                data-aos="fade-left"
+                data-aos-duration="1300"
+                className="md:flex-[0_0_auto] md:w-[48%] 3xl:w-[49%] "
+              >
                 <div
                   className="text-center  max-w-[632px] mx-auto flex flex-col justify-center 
                 items-center md:justify-start md:items-start md:text-start"

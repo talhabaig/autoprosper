@@ -1,11 +1,10 @@
 "use client";
-
+import React, { useState, useEffect } from "react";
 import { UserIcon } from "lucide-react";
 import BurgerIcon from "../../Icons/BurgerIcon";
 import { Button } from "../button";
 import { Sheet, SheetTrigger, SheetContent, SheetItem } from "../sheet";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import Shop from "./NavigationItems/shop";
 import { NavigationsType, NavigationContentType } from "./type";
 import SellTrade from "./NavigationItems/sellTrade";
@@ -14,7 +13,7 @@ import Finance from "./NavigationItems/finance";
 import Learn from "./NavigationItems/learn";
 import Help from "./NavigationItems/help";
 import Link from "next/link";
-import { DropIcon } from "@/components/Icons/Icons";
+import { DropIcon, UserIconNav } from "@/components/Icons/Icons";
 import { DoubleEllipseGradient } from "../ellipseGradient";
 
 interface NavigationBarInterface {
@@ -57,6 +56,10 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
   const [selectedItem, setSelectedItem] =
     useState<NavigationContentType | null>(null);
 
+  const handleCloseContent = () => {
+    setSelectedItem(null);
+  };
+
   const handleSheetItemClick = (index: number) => {
     const clickedItem = navigationData[index];
     if (
@@ -74,8 +77,8 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
     setSelectedItem(null);
   };
 
-  const handleCloseContent = () => {
-    setSelectedItem(null);
+  const handleMouseLeave = () => {
+    handleCloseContent();
   };
 
   return (
@@ -100,7 +103,9 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             )}
           </Link>
           <div className="flex flex-row items-center gap-[18px]">
-            <UserIcon width={24} height={24} stroke={variant === "dark" ? "#000" : "#fff"} />
+            <div className="bg-custom rounded-full p-1">
+              <UserIconNav />
+            </div>
             <SheetTrigger asChild>
               <button
                 data-collapse-toggle="navbar-default"
@@ -134,73 +139,77 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
           </SheetContent>
         </Sheet>
       </div>
-      <div
-        className={`w-full relative ${
-          selectedItem ? "bg-white" : "bg-transparent"
-        }`}
-      >
-        <div className="hidden md:flex mx-auto justify-between items-center md:w-screen lg:py-[30px] md:py-[15px] container">
-          <Link href="/">
-            {variant === "dark" || selectedItem ? (
-              <Image
-                src="/images/logo-dark.png"
-                alt="logo"
-                width="200"
-                height="42"
-              />
-            ) : (
-              <Image
-                src="/images/logo.png"
-                alt="logo"
-                width="200"
-                height="42"
-              />
-            )}
-          </Link>
-
-          <div className="inline-flex lg:gap-[48px]">
-            {desktopNavigationData.map((navigation, index) => (
-              <div
-                key={index}
-                className={`inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm  lg:text-base lg:leading-[24px] font-medium transition-colors ${
-                  variant === "light" && !selectedItem
-                    ? "text-white"
-                    : "text-dark-3"
-                }`}
-                onMouseEnter={() => handleSheetItemClick(index)}
-                onClick={() => handleSheetItemClick(index)}
-              >
-                {navigation.title}
-                <DropIcon
-                  className={`top-[1px] ml-1 h-[4px] w-[8px] transition duration-200 ${
-                    selectedItem?.title === navigation.title ? "rotate-180" : ""
-                  }`}
-                  aria-hidden="true"
-                />
-                {selectedItem?.title === navigation.title && (
-                  <div className="bg-green rounded-full absolute bottom-0 w-[5%] h-[3px]"></div>
-                )}
-              </div>
-            ))}
-          </div>
-          <Link href="/login">
-            <Button
-              variant="gradient"
-              className="text-dark md:h-[36px] md:w-[85px] font-bold"
-            >
-              SIGNUP
-            </Button>
-          </Link>
-        </div>
-      </div>
-      {selectedItem && (
+      <div onMouseLeave={handleMouseLeave}>
         <div
-          className="hidden md:block absolute top-15 left-0 right-0 bg-white z-10"
-          id="content-area"
+          className={`w-full relative ${
+            selectedItem
+              ? "bg-white md:border-b border-dark-6"
+              : "bg-transparent"
+          }`}
         >
-          {selectedItem.content}
+          <div className="hidden md:flex mx-auto justify-between items-center md:w-screen lg:py-[30px] md:py-[15px] container">
+            <Link href="/">
+              {variant === "dark" || selectedItem ? (
+                <img src="/images/logo-dark.png" alt="logo" />
+              ) : (
+                <img src="/images/logo.png" alt="logo" />
+              )}
+            </Link>
+
+            <div className="inline-flex xl:gap-[48px]">
+              {desktopNavigationData.map((navigation, index) => (
+                <div
+                  key={index}
+                  className={`inline-flex relative md:gap-[6px] lg:gap-[12px] h-10 w-max items-center justify-center px-4 py-2 text-sm  lg:text-base lg:leading-[24px] font-medium transition-colors cursor-pointer ${
+                    variant === "light" && !selectedItem
+                      ? "text-white"
+                      : "text-dark-3"
+                  }`}
+                  onMouseEnter={() => handleSheetItemClick(index)}
+                  onClick={handleMouseLeave}
+                >
+                  {selectedItem?.title === navigation.title && (
+                    <div className="bg-green rounded-full absolute -bottom-[30px] w-full h-[3px] pointer-events-none"></div>
+                  )}
+                  <span
+                    className={
+                      selectedItem?.title === navigation.title
+                        ? "text-dark"
+                        : ""
+                    }
+                  >
+                    {navigation.title}
+                  </span>
+                  <DropIcon
+                    className={`top-[1px] ml-1 h-[4px] w-[8px] transition duration-200 ${
+                      selectedItem?.title === navigation.title
+                        ? "rotate-180"
+                        : ""
+                    }`}
+                    aria-hidden="true"
+                  />
+                </div>
+              ))}
+            </div>
+            <Link href="/login">
+              <Button
+                variant="gradient"
+                className="text-dark md:h-[36px] md:w-[85px] font-bold"
+              >
+                SIGNUP
+              </Button>
+            </Link>
+          </div>
         </div>
-      )}
+        {selectedItem && (
+          <div
+            className="hidden md:block absolute top-15 left-0 right-0 bg-white z-10"
+            id="content-area"
+          >
+            {selectedItem.content}
+          </div>
+        )}
+      </div>
     </>
   );
 };

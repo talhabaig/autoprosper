@@ -46,6 +46,11 @@ const config: Config = {
       backgroundImage: {
         "hero": "url('/images/cover.png')",
         "hero-mobile": "url('/images/cover-mobile.png')",
+        "Rectangle-red":"url('/Crm/Rectangle-red.png')",
+        "Rectangle-yellow":"url('/Crm/Rectangle-yelllow.png')",
+        "Rectangle-green":"url('/Crm/Rectangle-green.png')",
+        "Rectangle-blue":"url('/Crm/Rectangle-blue.png')",
+        "Rectangle":"url('/Crm/Rectangle.png')",
         "rainbow-gradient": "linear-gradient(89.62deg, #FF3363 10%, #FFE664 76.98%, #00FFA2 91.85%), linear-gradient(0deg, #FFFFFF, #FFFFFF)",
         "custom": "linear-gradient(90deg, #00FFA2 0%, #FFE664 100%)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

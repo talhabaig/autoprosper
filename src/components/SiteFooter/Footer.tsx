@@ -6,9 +6,9 @@ const Learn = [
   {
     title: "Learn",
     items: [
-      { id: 1, label: "Guides & Tips", href: "/guides" },
+      { id: 1, label: "Guides & Tips", href: "/services" },
       { id: 2, label: "About AutoProsper", href: "/about" },
-      { id: 3, label: "Reviews", href: "/reviews" },
+      { id: 3, label: "Reviews", href: "/services" },
     ],
   },
 ];
@@ -105,12 +105,14 @@ const Footer = () => {
                   className="mb-[12px] lg:mb-[0.875rem] 2xl:mb-[1.125rem]"
                   key={item.id}
                 >
-                  <span
-                    className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer"
-                    id={item.href}
-                  >
-                    {item.label}
-                  </span>
+                  <Link href={item.href}>
+                    <span
+                      className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer"
+                      id={item.href}
+                    >
+                      {item.label}
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>
