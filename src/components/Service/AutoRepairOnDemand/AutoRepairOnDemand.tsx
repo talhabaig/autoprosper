@@ -61,7 +61,7 @@ const AutoRepairOnDemand: React.FC = () => {
                3xl:w-[49%] 2xl:px-8 md:justify-start md:items-start md:text-start"
               >
                 <h2
-                  className={`heading2 mb-[0.75rem] md:text-start lg:mb-[1.125rem] text-left `}
+                  className={`heading2 mb-[18px] md:text-start lg:mb-[1.125rem] text-left `}
                 >
                   {item.heading}
                 </h2>
@@ -83,7 +83,7 @@ const AutoRepairOnDemand: React.FC = () => {
                               {point.subHeading}
                             </h3>
                             <span
-                              className="block text-[13px] leading-[150%] 
+                              className="block text-[12px] leading-[150%] 
                                font-normal text-dark-2 text-left lg:text-[16px] xl:text-[18px] 2xl:text-[20px]"
                             >
                               {point.paragraph}

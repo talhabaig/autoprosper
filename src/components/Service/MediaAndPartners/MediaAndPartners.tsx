@@ -40,7 +40,7 @@ const MediaAndPartners = () => {
     <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-white">
       <div className="container">
         <div className="max-w-[360px] mx-auto text-center md:max-w-[380px] lg:max-w-[422px]   xl:max-w-[480px] 2xl:max-w-[550px]">
-          <h2 className="heading2 mb-[0.5rem] lg:mb-[1.125rem]">
+          <h2 className="heading2 mb-[18px] lg:mb-[1.125rem]">
             Press & Partners
           </h2>
           <p className="paragraph-large mb-[1.5rem] md:mb-[1.875rem] lg:mb-[2.5rem] 2xl:mb-[3rem]  ">

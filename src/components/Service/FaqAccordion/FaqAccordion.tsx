@@ -60,8 +60,8 @@ const FaqAccordion = () => {
     <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-dark-7">
       <div className="container">
         <div className="max-w-[360px] mx-auto text-center  lg:max-w-[400px]   xl:max-w-[416px] 2xl:max-w-[480px]">
-          <h2 className="heading2 mb-[0.5rem] lg:mb-[1.125rem]">FAQ</h2>
-          <p className="paragraph-large mb-[1.5rem] md:mb-[1.875rem] lg:mb-[2.5rem] 2xl:mb-[3rem]  ">
+          <h2 className="heading2 mb-[12px] lg:mb-[1.125rem]">FAQ</h2>
+          <p className="paragraph-large mb-[16px] md:mb-[1.875rem] lg:mb-[2.5rem] 2xl:mb-[3rem]  ">
             Have questions about getting your car serviced? We’ve got answers.
           </p>
         </div>
@@ -75,7 +75,7 @@ const FaqAccordion = () => {
             <AccordionItem
               key={item.id}
               className={`w-full border-b-[0] mb-[12px] rounded-[12px]
-               bg-white shadow-[0px_8px_36px_-18px_rgba(0,27,68,0.10)] xl:mb-[24px]`}
+               bg-white shadow-[0px_8px_36px_-18px_rgba(0,27,68,0.10)]`}
               value={item.id}
             >
               <AccordionTrigger

@@ -103,7 +103,7 @@ const ServiceAccordion = () => {
     <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-dark-7">
       <div className="container">
         <div className="max-w-[360px] mx-auto text-center  lg:max-w-[400px]   xl:max-w-[416px] 2xl:max-w-[480px]">
-          <h2 className="heading2 mb-[0.5rem] lg:mb-[1.125rem]">
+          <h2 className="heading2 mb-[12px] lg:mb-[1.125rem]">
             Service Shop
           </h2>
           <p className="paragraph-large mb-[1.5rem] md:mb-[1.875rem] lg:mb-[2.5rem] 2xl:mb-[3rem]  ">
@@ -152,7 +152,7 @@ const ServiceAccordion = () => {
               <AccordionContent className="px-[16px]">
                 <div className="pl-[46px] xl:pl-[74px] 2xl:pl-[84px]">
                   <span
-                    className="text-[13px] leading-[150%] text-dark-2 block mb-[16px]
+                    className="text-[12px] leading-[150%] text-dark-2 block mb-[16px]
                    md:text-[16px] xl:text-[16px]"
                   >
                     {item.description}
