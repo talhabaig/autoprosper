@@ -20,7 +20,7 @@ const Customize: React.FC<TrimProps> = ({ steps, currentStep }) => {
   return (
     <div className="flex flex-col md:flex-row lg:gap-36">
       <div className="flex flex-col-reverse md:flex-col w-full md:w-[336px] items-start">
-        <div className="flex flex-row md:flex-col  w-full justify-start gap-3 border-b border-dark-6 md:border-0 my-6">
+        <div className="flex flex-row md:flex-col px-[18px] md:px-0 w-full justify-start gap-3 border-b border-dark-6 md:border-0 my-6">
           <div className="relative flex items-center w-[156px] h-[74px] md:w-full md:h-[160px] justify-center">
             <EllipseGradient className="absolute top-0  left-0 w-full h-full z-0" />
             <img
