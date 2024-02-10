@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import RadioButton from "../../Common/CheckButton/RadioButton";
 import {
   Honda,
@@ -12,17 +12,22 @@ import {
   NissanBrand,
   MazdaBrand,
 } from "../../Icons/Icons";
+import { useFirstBuyer } from "@/components/Common/context/FirstTimeBuyerContext";
 
-interface PreferredCarBrandProps {
-  onChange: (values: string[]) => void;
-}
-
-const WhatEssentials: React.FC<PreferredCarBrandProps> = ({ onChange }) => {
+const PreferredCarBrand: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const { state, setState } = useFirstBuyer();
+
+  useEffect(() => {
+    setSelectedOptions(state?.Preferred_car_brand ?? []);
+  }, []);
 
   const handleOptionChange = (values: string[]) => {
+    setState((prevState: any) => ({
+      ...prevState,
+      Preferred_car_brand: values,
+    }));
     setSelectedOptions(values);
-    onChange(values); // Pass the selected values to the parent component
   };
 
   const helpOptions = [
@@ -92,8 +97,10 @@ const WhatEssentials: React.FC<PreferredCarBrandProps> = ({ onChange }) => {
     <>
       <div className="max-w-[940px] mx-auto">
         <h2 className="heading1">Preferred car brand?</h2>
-        <p className="text-dark-2 text-center mb-[24px] md:mb-[30px] lg:text-[1rem] xl:mb-[40px]
-         xl:text-[1.25rem] xl:leading-[1.5]">
+        <p
+          className="text-dark-2 text-center mb-[24px] md:mb-[30px] lg:text-[1rem] xl:mb-[40px]
+         xl:text-[1.25rem] xl:leading-[1.5]"
+        >
           Pick your top three preferred brands, and we'll unveil vehicles that
           match, streamlining your quest for the perfect ride. Simplify your
           search with tailored recommendations.
@@ -111,4 +118,4 @@ const WhatEssentials: React.FC<PreferredCarBrandProps> = ({ onChange }) => {
   );
 };
 
-export default WhatEssentials;
+export default PreferredCarBrand;
