@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { DoubleEllipseGradient } from "@/components/ui/ellipseGradient";
+import { CutEllipseGradient } from "@/components/ui/ellipseGradient";
 import { NavigationContentType } from "./Navigations/type";
 import Link from "next/link";
 import { Button } from "./button";
@@ -204,6 +204,7 @@ const SheetSectionItems: React.FC<SheetSectionItemsProps> = ({
           <SheetItem key={index} label={item.label} />
         ))}
       </div>
+      <CutEllipseGradient className="absolute md:-bottom-4 lg:-bottom-8 hidden md:block -z-10 md:-left-10 " />
     </div>
   );
 };
