@@ -14,28 +14,19 @@ import NavigationBar from "../ui/Navigations/navigationBar";
 import Button from "../Common/Button/Button";
 import SuggestionForYou from "./SuggestionForYou/SuggestionForYou";
 import TotalSeatRequirements from "./TotalSeatRequirements/TotalSeatRequirements";
-import { getCarSuggestions } from "./OpenAI";
-
+import { showToast } from "../../../toastifyConfig";
 const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
   const [step, setStep] = useState(1);
   const { state } = useFirstBuyer();
   const handleNext = async () => {
     if (step < 5) {
+      if (step === 2 && state?.Preferred_car_brand?.length === 0) {
+        showToast("warning", "At least one brand need to select");
+        return;
+      }
       setStep(step + 1);
     } else if (step === 5) {
-      // Log data in the FirstTimeBuyerAllSteps component
-      // // Log data in the parent component
-      // onDataLog({
-      //   essentialFeatures,
-      //   carBrand,
-      //   totalSeats,
-      //   vehiclePreference,
-      //   fuelConsuptionType,
-      // });
-
-      setStep(step + 1);
-
-      // You can also send the data to a server or perform other actions
+        setStep(step + 1);
     }
   };
 

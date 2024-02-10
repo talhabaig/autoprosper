@@ -6,36 +6,68 @@ export const getCarSuggestions = async (userPreferences) => {
     dangerouslyAllowBrowser: true,
   });
 
-  // Convert user preferences into a prompt
-  const prompt = `Based on the following preferences:\n${JSON.stringify(
-    userPreferences,
-    null,
-    2
-  )}\nPlease suggest cars that match these criteria. And send me a response in the following format: 
-  \`\`\`
-  [
-    {
-      "id": 1,
-      "imageSrc": "",
-      "CarModel": "",
-      "CarYear": "",
-      "totalamount": "",
-      "downpayment": "",
-      "monthlypayment": "",
-      "variant": ""
-    }
-  ]
-  \`\`\``;
+  const systemMessage = {
+    role: "system",
+    content: `Based on the following preferences, Please suggest cars that match these criteria and brand. If there is no criteria match then don't apologize and return the match brand cars. And send me a response in the following format: [
+      {
+        "id": 1,
+        "imageSrc": "",
+        "CarModel": "",
+        "CarYear": "",
+        "totalamount": "",
+        "downpayment": "",
+        "monthlypayment": "",
+        "variant": ""
+      }
+    ]`,
+  };
 
   try {
-    // Create a completion request
-    const chatCompletion = await openai.chat.completions.create({
+    // Step 1: Initial conversation setup
+    const userPrompt1 = ` \n${JSON.stringify(
+      userPreferences.What_Essentials,
+      null,
+      2
+    )}\n `;
+    const userPrompt2 = ` \n${JSON.stringify(
+      userPreferences.Preferred_car_brand,
+      null,
+      2
+    )}\n .`;
+    const userPrompt3 = ` \n${JSON.stringify(
+      userPreferences.Total_Seat_Requirements,
+      null,
+      2
+    )}\n `;
+    const userPrompt4 = ` \n${JSON.stringify(
+      userPreferences.Vehicle_Preference,
+      null,
+      2
+    )}\n `;
+    const userPrompt5 = ` \n${JSON.stringify(
+      userPreferences.Ride_Power_Consumption,
+      null,
+      2
+    )}\n `;
+    const userPrompt6 = ` \n${JSON.stringify(
+      userPreferences?.PurposeOfUse,
+      null,
+      2
+    )}\n `;
+    const finalStep = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: prompt }],
+      messages: [
+        systemMessage,
+        { role: "user", content: userPrompt1 },
+        { role: "user", content: userPrompt2 },
+        { role: "user", content: userPrompt3 },
+        { role: "user", content: userPrompt4 },
+        { role: "user", content: userPrompt5 },
+        { role: "user", content: userPrompt6 },
+      ],
     });
 
-    // Extract and parse the suggested cars from the response
-    const suggestedCars = JSON.parse(chatCompletion.choices[0].message.content);
+    const suggestedCars = JSON.parse(finalStep.choices[0].message.content);
     return suggestedCars;
   } catch (error) {
     if (error instanceof OpenAI.APIError) {
