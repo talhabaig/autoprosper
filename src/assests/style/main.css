@@ -242,3 +242,31 @@ input[type=number] {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
+
+
+  /*================== can be corrected later================== */
+.fundDeal::after{
+  content: '';
+  position: absolute;
+  width: 3px;
+  /* height: 200px; */
+  background-color: #001b44;
+  left: 14px;
+  top: 0px;
+  z-index: 1;
+
+}
+.fundDeal ul li a::before{
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: -32px;
+  z-index: 3;
+  top: 50%;
+  border-radius: 50px;
+  border: 4px solid;
+
+}
