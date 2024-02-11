@@ -141,7 +141,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
       </div>
       <div onMouseLeave={handleMouseLeave}>
         <div
-          className={`w-full relative ${
+          className={`w-full relative z-30 ${
             selectedItem
               ? "bg-white md:border-b border-dark-6"
               : "bg-transparent"
@@ -201,14 +201,22 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             </Link>
           </div>
         </div>
-        {selectedItem && (
-          <div
-            className="hidden md:block absolute top-15 left-0 right-0 bg-white z-10"
-            id="content-area"
-          >
-            {selectedItem.content}
-          </div>
-        )}
+        <div className={`relative ${selectedItem ? "overlay" : ""}`}>
+          {selectedItem && (
+            <div
+              className="hidden md:block absolute top-15 left-0 right-0 bg-white z-30"
+              id="content-area"
+            >
+              {selectedItem.content}
+            </div>
+          )}
+          {selectedItem && (
+            <div
+              onMouseEnter={handleMouseLeave}
+              className="fixed z-20 inset-0 bg-dark opacity-[0.4] h-screen"
+            ></div>
+          )}
+        </div>
       </div>
     </>
   );
