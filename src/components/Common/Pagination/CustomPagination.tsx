@@ -76,10 +76,10 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({
           <ArrowRightCurved className="w-[12px] h-[12px] lg:w-[16px] lg:h-[16px] fill-dark" />
         </button>
       </div>
-      <div className="[&>span]:font-bold">
+      {/* <div className="[&>span]:font-bold [&>span]:text-dark">
         Showing items <span>{startIndex}</span> to <span>{endIndex}</span> of{" "}
         <span>{totalItems}</span>
-      </div>
+      </div> */}
     </div>
   );
 };

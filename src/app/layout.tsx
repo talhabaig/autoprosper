@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 
+import { useRouter } from 'next/router';
 import "./globals.css";
 import "../assests/style/main.css";
 import { MessageSquare } from "lucide-react";
@@ -27,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={``}>
+      <body className={`pt-[62px] md:pt-0`}>
         <ToastContainer/>
         {/* Navbar */}
         {children}

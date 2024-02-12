@@ -46,7 +46,7 @@ const AutoProsperAdvnatage = () => {
     AOS.refresh();
   }, []);
   return (
-    <section className="sectionWrapper py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-dark-7">
+    <section className="sectionWrapper py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-dark-7 overflow-x-hidden">
       <div className="container px-0 sm:px-4">
         <div
           data-aos="fade-right"
