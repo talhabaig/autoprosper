@@ -5,6 +5,7 @@ import { QuickFilters } from "@/components/Crm/QuickFilters/QuickFilters";
 import EmailAndSms from "@/components/Crm/EmailAndSms/EmailAndSms";
 import SalesActivity from "@/components/Crm/SalesActivity/SalesActivity";
 import React from "react";
+import TasksList from "@/components/Crm/TasksList/TasksList";
 
 const page = () => {
   return (
@@ -26,6 +27,9 @@ const page = () => {
       </div>
       <div className="max-w-[324px] mx-auto px-[15px]">
         <QuickFilters />
+      </div>
+      <div>
+        <TasksList/>
       </div>
     </div>
   );
