@@ -1,4 +1,5 @@
-"use client";
+import React from "react";
+
 type propType = {
   width?: string;
   height?: string;
@@ -11,7 +12,8 @@ const EllipseGradient: React.FC<propType> = ({
   fill = "none",
   className,
 }) => {
-  const generateUniqueId = () => `id-${Math.random().toString(36).substr(2, 9)}`;
+  const generateUniqueId = () =>
+    `id-${Math.random().toString(36).substr(2, 9)}`;
 
   const gradientId = generateUniqueId();
 
@@ -52,7 +54,8 @@ const DoubleEllipseGradient: React.FC<propType> = ({
   fill = "none",
   className,
 }) => {
-  const generateUniqueId = () => `id-${Math.random().toString(36).substr(2, 9)}`;
+  const generateUniqueId = () =>
+    `id-${Math.random().toString(36).substr(2, 9)}`;
 
   const gradientId1 = generateUniqueId();
   const gradientId2 = generateUniqueId();
@@ -103,7 +106,6 @@ const DoubleEllipseGradient: React.FC<propType> = ({
     </svg>
   );
 };
-
 
 const SmallEllipseGradient: React.FC<propType> = ({
   width = "360",
@@ -158,4 +160,63 @@ const SmallEllipseGradient: React.FC<propType> = ({
   );
 };
 
-export { DoubleEllipseGradient, EllipseGradient, SmallEllipseGradient };
+const CutEllipseGradient: React.FC<propType> = ({
+  width = "360",
+  height = "288",
+  fill = "none",
+  className,
+}) => {
+  return (
+    <svg
+      width="364"
+      height="170"
+      viewBox="0 0 364 170"
+      fill="none"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_1_5)">
+        <path
+          d="M363.883 65.9299C355.14 98.5587 333.794 126.378 304.539 143.268C275.285 160.158 240.52 164.735 207.891 155.992C175.262 147.249 147.443 125.903 130.553 96.6484C113.663 67.3942 109.086 32.6288 117.829 2.2986e-05L167.04 13.186C161.794 32.7633 164.54 53.6225 174.674 71.175C184.808 88.7275 201.5 101.535 221.077 106.781C240.654 112.027 261.514 109.281 279.066 99.1467C296.619 89.0128 309.426 72.3212 314.672 52.7439L363.883 65.9299Z"
+          fill="url(#paint0_linear_1_5)"
+        />
+        <path
+          d="M260.171 285.434C269.952 248.928 264.831 210.032 245.935 177.302C227.038 144.572 195.913 120.689 159.408 110.908C122.902 101.126 84.0062 106.247 51.2762 125.143C18.5462 144.04 -5.33664 175.165 -15.1183 211.67L39.9395 226.423C45.8085 204.52 60.1382 185.845 79.7762 174.507C99.4142 163.169 122.752 160.096 144.655 165.965C166.559 171.834 185.233 186.164 196.571 205.802C207.909 225.44 210.982 248.778 205.113 270.681L260.171 285.434Z"
+          fill="url(#paint1_linear_1_5)"
+        />
+      </g>
+      <defs>
+        <linearGradient
+          id="paint0_linear_1_5"
+          x1="207.891"
+          y1="155.992"
+          x2="240.856"
+          y2="32.965"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#00FFA2" stop-opacity="0.26" />
+          <stop offset="0.475" stop-color="#FFE664" stop-opacity="0.18" />
+          <stop offset="1" stop-color="white" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_1_5"
+          x1="159.408"
+          y1="110.908"
+          x2="122.526"
+          y2="248.552"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#00FFA2" stop-opacity="0.26" />
+          <stop offset="0.475" stop-color="#FFE664" stop-opacity="0.18" />
+          <stop offset="1" stop-color="white" stop-opacity="0" />
+        </linearGradient>
+        <clipPath id="clip0_1_5">
+          <rect width="364" height="170" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+
+export { DoubleEllipseGradient, EllipseGradient, SmallEllipseGradient, CutEllipseGradient };

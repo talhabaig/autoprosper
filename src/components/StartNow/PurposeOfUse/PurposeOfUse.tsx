@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import RadioButton from "../../Common/CheckButton/RadioButton";
 import {
   Home,
@@ -8,17 +8,22 @@ import {
   DrivingKid,
   PerformanceHandeling,
 } from "../../Icons/Icons";
+import { useFirstBuyer } from "@/components/Common/context/FirstTimeBuyerContext";
 
-interface PurposeOfUse {
-  onChange: (values: string[]) => void;
-}
-
-const PurposeOfUse: React.FC<PurposeOfUse> = ({ onChange }) => {
+const PurposeOfUse: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
+  const { state, setState } = useFirstBuyer();
+  useEffect(() => {
+    setSelectedOptions(state?.PurposeOfUse ?? []);
+  }, []);
+
   const handleOptionChange = (values: string[]) => {
+    setState((prevState: any) => ({
+      ...prevState,
+      PurposeOfUse: values,
+    }));
     setSelectedOptions(values);
-    onChange(values); // Pass the selected values to the parent component
   };
 
   const helpOptions = [

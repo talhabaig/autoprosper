@@ -3,7 +3,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "../assests/style/main.css";
 import { MessageSquare } from "lucide-react";
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={``}>
+        <ToastContainer/>
         {/* Navbar */}
         {children}
         {/* footer */}

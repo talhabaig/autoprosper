@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import RadioButton from "../../Common/CheckButton/RadioButton";
 import {
   GasMileage,
@@ -8,18 +8,22 @@ import {
   InteriorStyle,
   PassengerSpace,
 } from "../../Icons/Icons";
+import { useFirstBuyer } from "@/components/Common/context/FirstTimeBuyerContext";
 
-interface WhatEssentialsProps {
-  onChange: (values: string[]) => void; // Change the type to string[]
-}
-
-const WhatEssentials: React.FC<WhatEssentialsProps> = ({ onChange }) => {
+const WhatEssentials: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
-
+  const { state, setState } = useFirstBuyer();
   const handleOptionChange = (values: string[]) => {
+    setState((prevState: any) => ({
+      ...prevState,
+      What_Essentials: values,
+    }));
     setSelectedOptions(values);
-    onChange(values); // Pass the selected values to the parent component
   };
+
+  useEffect(() => {
+    setSelectedOptions(state?.What_Essentials ?? []);
+  }, []);
 
   const helpOptions = [
     {

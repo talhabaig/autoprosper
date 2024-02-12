@@ -1,8 +1,7 @@
 "use client";
+import React from 'react';
 
-import LocationIcon from "@/components/Icons/LocationIcon";
 import { NissanIcon, ToyotaIcon, VwIcon } from "@/components/Icons/BrandIcons";
-import { Card } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -12,7 +11,6 @@ import {
   CarouselApi,
 } from "@/components/ui/carousel";
 import { Section, SectionDesc, SectionHeader } from "@/components/ui/section";
-import Image from "next/image";
 import { ReactElement, useEffect, useState } from "react";
 import { CarouselData } from "@/components/ui/CarouselCard/type";
 import CarouselCard from "@/components/ui/CarouselCard";
@@ -21,7 +19,7 @@ import "aos/dist/aos.css";
 
 const carouselData: Array<CarouselData> = [
   {
-    image: "/home/red-toyota.png",
+  image: "/home/red-toyota.png",
     brandIcon: <ToyotaIcon className="absolute left-0" />,
     brandName: "2024 Nissan Kicks®",
     description:
@@ -103,7 +101,7 @@ const UnveilIdealRide: React.FC = () => {
             {carouselData.map((data, index) => (
               <CarouselItem
                 key={"carousel" + index}
-                className="basis-full md:basis-1/2  4xl:max-w-[456px] 4xl:max-h-[462px]"
+                className="basis-full md:basis-1/2 4xl:max-w-[456px] 4xl:max-h-[502px]"
               >
                 <CarouselCard data={data} active={selected === index} />
               </CarouselItem>

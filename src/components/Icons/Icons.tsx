@@ -3737,3 +3737,25 @@ export const UserIconNav: React.FC<propType> = ({
     </svg>
   );
 };
+
+
+export const SelectArrow: React.FC<propType> = ({
+  width = "8",
+  height = "4",
+  fill = "none",
+  className,
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 8 4"
+      fill={fill}
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M4 4L0 0H8L4 4Z" fill="#001B44" />
+    </svg>
+  );
+};
+

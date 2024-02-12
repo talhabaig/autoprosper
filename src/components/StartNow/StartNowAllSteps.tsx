@@ -1,65 +1,36 @@
 // components/StepForm.js
 import { useState } from "react";
-import WhatEssential from "./WhatEssential/WhatEssential";
-import PrefferedCarBrands from "./PrefferedCarBrand/PrefferedCarBrand";
-import TotalSeatRequirments from "./TotalSeatRequirments/TotalSeatRequirments";
-import VehiclePreferences from "./VehiclePreference/VehiclePreference";
-import RidePowerConsuption from "./RidePowerConsuption/RidePowerConsuption";
 import { BackArrow, ArrowRight } from "../Icons/Icons";
 
 import { FirstTimeBuyer } from "../../assests/interfaces/Home/index";
 import NavigationBar from "../ui/Navigations/navigationBar";
 import Button from "../Common/Button/Button";
-import SuggestionForYou from "./SuggestionForYou/SuggestionForYou";
 import PurposeOfUse from "./PurposeOfUse/PurposeOfUse";
 import Link from "next/link";
+import WhatEssentials from "../FirstTimeBuyer/WhatEssential/WhatEssential";
+import PrefferedCarBrands from "../FirstTimeBuyer/PreferredCarBrands/PreferredCarBrand";
+import TotalSeatRequirements from "../FirstTimeBuyer/TotalSeatRequirements/TotalSeatRequirements";
+import {
+  FirstBuyerProvider,
+  useFirstBuyer,
+} from "../Common/context/FirstTimeBuyerContext";
+import VehiclePreferences from "../FirstTimeBuyer/VehiclePreference/VehiclePreference";
+import RidePowerConsumption from "../FirstTimeBuyer/RidePowerConsumption/RidePowerConsumption";
+import SuggestionForYou from "../FirstTimeBuyer/SuggestionForYou/SuggestionForYou";
+import { showToast } from "../../../toastifyConfig";
 
 const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
   const [step, setStep] = useState(1);
-  const [essentialFeatures, setessentialFeatures] = useState<string[]>([]);
-  const [carBrand, setCarBrand] = useState<string[]>([]);
-  const [totalSeats, setTotalSeats] = useState<string[]>([]);
-  const [vehiclePreference, setVehiclePreference] = useState<string[]>([]);
-  const [fuelConsuptionType, setfuelConsuptionType] = useState<string[]>([]);
-  const [carPurpose, setCarPurpose] = useState<string[]>([]);
-
-  const handleessentialFeaturesChange = (value: string[]) => {
-    setessentialFeatures(value);
-  };
-
-  const handlePrefferedCarBrand = (value: string[]) => {
-    setCarBrand(value);
-  };
-
-  const handleTotalSeatsChange = (value: string[]) => {
-    setTotalSeats(value);
-  };
-
-  const handleVehiclePreference = (value: string[]) => {
-    setVehiclePreference(value);
-  };
-
-  const handleRidePowerConsuption = (value: string[]) => {
-    setfuelConsuptionType(value);
-  };
-
-  const handleCarPurposeOfUse = (value: string[]) => {
-    setCarPurpose(value);
-  };
-
-  const handleNext = () => {
+  const { state } = useFirstBuyer();
+  const handleNext = async () => {
     if (step < 6) {
+      if (step === 3 && state?.Preferred_car_brand?.length === 0) {
+        showToast("warning", "At least one brand need to select");
+        return;
+      }
       setStep(step + 1);
     } else if (step === 6) {
-      // Log data in the FirstTimeBuyerAllSteps component
-      console.log({
-        essentialFeatures,
-        carBrand,
-        totalSeats,
-        vehiclePreference,
-        fuelConsuptionType,
-        carPurpose,
-      });
+      setStep(step + 1);
     }
   };
 
@@ -68,7 +39,6 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
       <NavigationBar variant="dark" />
       <section className={`mt-auto mainWrapperFirstTimeBuyer `}>
         <div className="container firstTimeBuyerContainerWrapper">
-          {/* <h1>Step {step}</h1> */}
           {step > 1 && step < 8 && (
             <div className=" py-[10px] mb-[28px]">
               <span className="inline-block" onClick={() => setStep(step - 1)}>
@@ -77,22 +47,12 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
             </div>
           )}
 
-          {step === 1 && (
-            <WhatEssential onChange={handleessentialFeaturesChange} />
-          )}
-          {step === 2 && <PurposeOfUse onChange={handleCarPurposeOfUse} />}
-          {step === 3 && (
-            <PrefferedCarBrands onChange={handlePrefferedCarBrand} />
-          )}
-          {step === 4 && (
-            <TotalSeatRequirments onChange={handleTotalSeatsChange} />
-          )}
-          {step === 5 && (
-            <VehiclePreferences onChange={handleVehiclePreference} />
-          )}
-          {step === 6 && (
-            <RidePowerConsuption onChange={handleRidePowerConsuption} />
-          )}
+          {step === 1 && <WhatEssentials />}
+          {step === 2 && <PurposeOfUse />}
+          {step === 3 && <PrefferedCarBrands />}
+          {step === 4 && <TotalSeatRequirements />}
+          {step === 5 && <VehiclePreferences />}
+          {step === 6 && <RidePowerConsumption />}
           {/* {step === 7 && <SuggestionForYou />} */}
         </div>
         <div className="border-t border-solid border-dark-6 mt-[30px lg:mt-0]">
@@ -137,4 +97,8 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
   );
 };
 
-export default FirstTimeBuyerAllSteps;
+export default () => (
+  <FirstBuyerProvider>
+    <FirstTimeBuyerAllSteps />
+  </FirstBuyerProvider>
+);

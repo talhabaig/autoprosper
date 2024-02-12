@@ -11,9 +11,11 @@ import ProsperingCustomers from "@/components/home/ProsperingCustomers/Prosperin
 import UnveilIdealRide from "@/components/home/UnveilIdealRide/UnveilIdealRide";
 import UpgradeRide from "@/components/home/UpgradeRide/UpgradeRide";
 
+
 export default function Home() {
   return (
     <>
+  
       <main>
         <Hero />
         <Discover />
