@@ -333,6 +333,7 @@ input[type="number"] {
   -webkit-text-fill-color: transparent;
 }
 
+<<<<<<< HEAD
 @media (min-width: 576px) {
   .slickSliderWrapper .slick-slide > div {
     height: 100%;
@@ -377,3 +378,32 @@ input[type="number"] {
     left: -65px;
   }
 }
+=======
+
+
+
+  /*================== can be corrected later================== */
+.fundDeal::after{
+  content: '';
+  position: absolute;
+  width: 3px;
+  /* height: 200px; */
+  background-color: #001b44;
+  left: 14px;
+  top: 0px;
+  z-index: 1;
+
+}
+.fundDeal ul li a::before{
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: -32px;
+  z-index: 3;
+  top: 50%;
+  border-radius: 50px;
+  border: 4px solid;
+
+}
+>>>>>>> 70a5772cf2b75574a733dfa3ad65044a97dd9da9
