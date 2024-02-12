@@ -4,7 +4,7 @@ import React from "react";
 
 const ZipCodeService = () => {
   return (
-    <div className="bg-btn-primary-gradient shadow-[0px_36px_72px_-18px_rgba(0,27,68,0.25)]
+    <div className=" bg-btn-primary-gradient shadow-[0px_36px_72px_-18px_rgba(0,27,68,0.25)]
       p-[2px] rounded-[12px] overflow-hidden">
       <div className="bg-white overflow-hidden rounded-[12px] p-[24px_16px] xl:p-[28px] 2xl:p-[32px]">
         <span className="heading4 font-bold block mb-[12px] lg:mb-[16px] xl:mb-[18px] 2xl:mb-[32px]">

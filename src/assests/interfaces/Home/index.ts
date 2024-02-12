@@ -61,7 +61,6 @@ export interface SuggestionForCustomer {
   variant?: string;
 }
 
-
 export interface FormData {
   firstName: string;
   middleName: string;
@@ -81,7 +80,6 @@ export interface GetPreQualifiedSecureFinancing {
   description?: string;
   icon?: React.ReactNode | any;
 }
-
 
 export interface productDetail {
   id?: number;
@@ -139,14 +137,12 @@ export interface LowerCarPaymentForm {
   carPaymentDetails?: string[];
 }
 
-
 export interface userNameAndEmailDetails {
   firstName?: string;
   lastName?: string;
   phoneNumber?: string;
   emailAddress?: string;
 }
-
 
 export interface userAddressDetails {
   streetAddress?: string;

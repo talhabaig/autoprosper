@@ -32,7 +32,7 @@ function UpgradeRide() {
   }, []);
   return (
     <>
-      <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-white">
+      <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-white overflow-x-hidden">
         <div className="container [&>*:nth-child(even)]:md:flex-row-reverse ">
           {upGradeRideDetails.map((item) => (
             <div

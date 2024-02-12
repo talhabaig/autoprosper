@@ -51,7 +51,7 @@ const FindandMake = () => {
     AOS.refresh();
   }, []);
   return (
-    <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-dark-7">
+    <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-dark-7 overflow-x-hidden">
       <div className="container">
         <div
           data-aos="fade-up"
