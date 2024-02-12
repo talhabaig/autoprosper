@@ -18,6 +18,7 @@ import VehiclePreference from "./Type/VehiclePreference/VehiclePreference";
 import SelectBrand from "./Type/SelectBrand/SelectBrand";
 import TypeSelectModel from "./Type/SelectModel/SelectModel";
 import { Button } from "../ui/button";
+import RightArrow from "../Icons/RightArrow";
 
 interface StepConfig {
   key: string;
@@ -32,7 +33,7 @@ interface StepConfig {
 const CustomizeByBrand: React.FC = () => {
   const [step, setStep] = useState(0);
   const [customizeStep, setCustomizeStep] = useState(0);
-  const [type, setType] = useState<'brand' | 'type'>('brand');
+  const [type, setType] = useState<"brand" | "type">("brand");
   const [data, setData] = useState({
     prefferedCarBrand: [],
     carBrand: [],
@@ -54,7 +55,8 @@ const CustomizeByBrand: React.FC = () => {
       text: "Drivetrain",
       content: <Drivetrain />,
       title: "Select drivetrain",
-      subTitle: "Pick the desired drivetrain option for your car to suit your preferences.",
+      subTitle:
+        "Pick the desired drivetrain option for your car to suit your preferences.",
       displaySkipButton: true,
       displayNextButton: true,
     },
@@ -62,7 +64,8 @@ const CustomizeByBrand: React.FC = () => {
       id: 3,
       text: "Exterior",
       title: "Exterior color",
-      subTitle: "Select the perfect exterior color for your car to match your style.",
+      subTitle:
+        "Select the perfect exterior color for your car to match your style.",
       content: <Exterior />,
       displaySkipButton: true,
       displayNextButton: true,
@@ -71,7 +74,8 @@ const CustomizeByBrand: React.FC = () => {
       id: 4,
       text: "Interior",
       title: "Interior color",
-      subTitle: "Select the perfect interior color for your car to match your style.",
+      subTitle:
+        "Select the perfect interior color for your car to match your style.",
       content: <Interior />,
       displaySkipButton: true,
       displayNextButton: true,
@@ -89,7 +93,8 @@ const CustomizeByBrand: React.FC = () => {
       id: 6,
       text: "Incentives",
       title: "Available incentives ",
-      subTitle: "Explore potential incentives available to you for added savings and benefits.",
+      subTitle:
+        "Explore potential incentives available to you for added savings and benefits.",
       content: <Incentives />,
       displaySkipButton: true,
       displayNextButton: true,
@@ -142,9 +147,9 @@ const CustomizeByBrand: React.FC = () => {
         if (customizeStep > 0) {
           setCustomizeStep((prevStep) => prevStep - 1);
         } else {
-          handleBack()
+          handleBack();
         }
-      }
+      },
     },
   ];
 
@@ -191,13 +196,13 @@ const CustomizeByBrand: React.FC = () => {
         if (customizeStep > 0) {
           setCustomizeStep((prevStep) => prevStep - 1);
         } else {
-          handleBack()
+          handleBack();
         }
-      }
+      },
     },
   ];
 
-  const stepsConfig = type === 'brand' ? brandStepsConfig : typeStepsConfig
+  const stepsConfig = type === "brand" ? brandStepsConfig : typeStepsConfig;
 
   const handleStepChange = (value: string[] | string) => {
     setData((prevData) => ({ ...prevData, [stepsConfig[step].key]: value }));
@@ -227,10 +232,9 @@ const CustomizeByBrand: React.FC = () => {
     }
   }, [step, data]);
 
-
   const currentStepConfig = stepsConfig[step];
   const currentCustomizeStepConfig = customizeSteps[customizeStep] || {};
-  const isComplete =  step == stepsConfig.length - 1
+  const isComplete = step == stepsConfig.length - 1;
   return (
     <>
       <NavigationBar variant="dark" />
@@ -238,39 +242,61 @@ const CustomizeByBrand: React.FC = () => {
         <section className={`mt-auto mainWrapperFirstTimeBuyer bg-white`}>
           <div className="container firstTimeBuyerContainerWrapper">
             {currentStepConfig.displayBackButton && (
-              <div className=" py-[10px] mb-[28px]">
-                <span className="inline-block" onClick={currentStepConfig.handlePrev ? currentStepConfig.handlePrev : handleBack}>
+              <div className=" py-[10px] mb-[28px] flex items-center gap-[6px]">
+                <span
+                  className="inline-block"
+                  onClick={
+                    currentStepConfig.handlePrev
+                      ? currentStepConfig.handlePrev
+                      : handleBack
+                  }
+                >
                   <BackArrow className="w-[24px] h-[24px] cursor-pointer" />
                 </span>
+                <div className="text-[13px] leading-[16.38px] text-dark font-bold cursor-pointer">
+                  Back
+                </div>
               </div>
             )}
 
             {React.createElement(currentStepConfig.component, {
               onChange: handleStepChange,
-              steps: currentStepConfig.key === 'customize' ? customizeSteps : undefined,
-              currentStep: currentStepConfig.key === 'customize' ? customizeStep : step,
-              setType: setType
+              steps:
+                currentStepConfig.key === "customize"
+                  ? customizeSteps
+                  : undefined,
+              currentStep:
+                currentStepConfig.key === "customize" ? customizeStep : step,
+              setType: setType,
             })}
           </div>
-          
+
           {(currentStepConfig.displayNextButton ||
             currentStepConfig.displaySkipButton) && (
             <div className="border-t border-solid border-dark-6 mt-[30px lg:mt-0]">
               <div className="container flex justify-center gap-[12px] lg:justify-end items-center py-[12px] lg:py-[30px]">
-              {(currentStepConfig.displaySkipButton || (currentCustomizeStepConfig.displaySkipButton && isComplete)) && (
+                {(currentStepConfig.displaySkipButton ||
+                  (currentCustomizeStepConfig.displaySkipButton &&
+                    isComplete)) && (
                   <Button
-                  variant="outline"
-                    className="lg:min-h-[56px] ml-2 font-bold !bg-dark-7 !text-dark !border-0 hover:bg-dark-6 !w-[156px]"
+                    variant="outline"
+                    className="min-h-[46px] lg:min-h-[56px] ml-2 font-bold !bg-dark-7 !text-dark !border-0 hover:bg-dark-6 !w-[161px]"
                     onClick={handleSkip}
                   >
                     Skip
                   </Button>
                 )}
-                {((currentStepConfig.displayNextButton && !isComplete) || (currentCustomizeStepConfig.displayNextButton && isComplete)) && (
+                {((currentStepConfig.displayNextButton && !isComplete) ||
+                  (currentCustomizeStepConfig.displayNextButton &&
+                    isComplete)) && (
                   <Button
                     variant="gradient"
-                    className="lg:min-h-[56px] w-[156px]"
-                    onClick={currentStepConfig.handleNext ? currentStepConfig.handleNext : handleNext}
+                    className="min-h-[46px] lg:min-h-[56px] w-[161px] gap-[8px]"
+                    onClick={
+                      currentStepConfig.handleNext
+                        ? currentStepConfig.handleNext
+                        : handleNext
+                    }
                   >
                     <>
                       <span className="lg:hidden">Next</span>
@@ -278,6 +304,14 @@ const CustomizeByBrand: React.FC = () => {
                       <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
                     </>
                   </Button>
+                )}
+                {(isComplete && !currentCustomizeStepConfig.displayNextButton && !currentCustomizeStepConfig.displaySkipButton) && (
+                  <Button variant="gradient" className="hidden md:block px-[22px] md:min-w-[456px] md:min-h-[56px] text-[16px]">
+                  See offers on local inventory
+                  <span className="ml-[6px] md:ml-[10px]">
+                    <RightArrow />
+                  </span>
+                </Button>
                 )}
               </div>
             </div>

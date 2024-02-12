@@ -63,7 +63,7 @@ const Exterior: React.FC = () => {
     <div className="flex flex-col gap-12">
       <div className="flex flex-col gap-6">
         <h4 className="text-dark text-lg font-bold">Standard Colors</h4>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[12px] justify-center lg:gap-[24px] pb-[30px] 2xl:pb-[50px]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[12px] justify-center lg:gap-[24px]">
           <RadioButtonImage
             options={options}
             selectedOptions={selectedOptions}
@@ -75,7 +75,7 @@ const Exterior: React.FC = () => {
       </div>
       <div className="flex flex-col gap-6">
         <h4 className="text-dark text-lg font-bold">Premium Colors</h4>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[12px] justify-center lg:gap-[24px] pb-[30px] 2xl:pb-[50px]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[12px] justify-center lg:gap-[24px]">
           <RadioButtonImage
             options={premiumOptions}
             selectedOptions={selectedOptions}
