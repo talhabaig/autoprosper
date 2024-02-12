@@ -70,7 +70,7 @@ const Discover = () => {
   }, []);
 
   return (
-    <Section className="md:gap-[24px] overflow-hidden">
+    <Section className="md:gap-[24px] overflow-x-hidden">
       <div
         data-aos="fade-left"
         data-aos-duration="1000"

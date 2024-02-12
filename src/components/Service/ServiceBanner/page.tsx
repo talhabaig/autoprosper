@@ -9,7 +9,7 @@ const ServiceBanner = () => {
   return (
     <>
       <section
-        className="relative min-h-[631px] lg:min-h-[720px]  xl:min-h-screen bg-[url('/servicepage/servicePageMobile.png')]
+        className="mt-[-61px] md:mt-0 pt-[61px] md:pt-0 relative min-h-[631px] lg:min-h-[720px]  xl:min-h-screen bg-[url('/servicepage/servicePageMobile.png')]
           sm:bg-[url('/servicepage/servicePageBanner.png')] bg-no-repeat bg-cover bg-center"
       >
         <NavigationBar />

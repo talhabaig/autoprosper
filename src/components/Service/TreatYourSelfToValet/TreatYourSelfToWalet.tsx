@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React from "react";
 import Button from "../../Common/Button/Button";
 import { ArrowRight, TickTrue } from "../../Icons/Icons";
@@ -49,15 +49,15 @@ function TreatYourSelfToValet() {
                   >
                     <label
                       className="inline-block text-dark font-bold text-[9px] absolute top-[8px] left-[18px]
-             lg:top-[13px] lg:text-[12px] lg:left-[22px] 2xl:left-[24px]"
+                      lg:top-[13px] lg:text-[12px] lg:left-[22px] 2xl:left-[24px]"
                     >
                       Location
                     </label>
                     <input
                       className="appearance-none border w-full pt-[24px] pb-[8px] px-[18px] text-[14px] text-gray-700 leading-tight 
-             focus:shadow-outline border-dark-5 focus:outline-none focus:bg-white focus:border-dark rounded-[12px]
-             hover:border-dark lg:pt-[30px] lg:pb-[14px] lg:px-[24px]  2xl:pt-[33px] 2xl:pb-[17px]
-             2xl:pl-[24px]"
+                      focus:shadow-outline border-dark-5 focus:outline-none focus:bg-white focus:border-dark rounded-[12px]
+                    hover:border-dark lg:pt-[30px] lg:pb-[14px] lg:px-[24px]  2xl:pt-[33px] 2xl:pb-[17px]
+                      2xl:pl-[24px]"
                       type="number"
                       placeholder="e.g 97210"
                       onChange={(e) => console.log("zipcode", e.target.value)}

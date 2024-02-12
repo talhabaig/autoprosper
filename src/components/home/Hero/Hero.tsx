@@ -17,7 +17,7 @@ export default function Hero() {
   }, []);
   return (
     <>
-      <div className="min-h-[643px] md:min-h-screen min-w-full bg-cover bg-hero-mobile md:bg-hero bg-center overflow-hidden">
+      <div className="mt-[-61px] md:mt-0 pt-[61px] md:pt-0 min-h-[643px] md:min-h-screen min-w-full bg-cover bg-hero-mobile md:bg-hero bg-center overflow-hidden">
         <NavigationBar />
 
         <div

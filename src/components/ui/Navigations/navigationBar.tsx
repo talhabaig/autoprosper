@@ -55,6 +55,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
 
   const [selectedItem, setSelectedItem] =
     useState<NavigationContentType | null>(null);
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   const handleCloseContent = () => {
     setSelectedItem(null);
@@ -81,12 +82,38 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
     handleCloseContent();
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <div className="md:hidden flex p-[15px] justify-between items-center h-full">
+      <div
+        className={`md:hidden flex p-[15px] justify-between items-center 
+        fixed top-0 left-0 w-full h-auto z-[10] ${scrolled ? "bg-white" : ""}`}
+      >
         <Sheet>
           <Link href="/">
             {variant === "dark" ? (
+              <Image
+                src="/images/logo-dark.png"
+                alt="logo"
+                width="152"
+                height="32"
+              />
+            ) : scrolled ? (
               <Image
                 src="/images/logo-dark.png"
                 alt="logo"
@@ -114,7 +141,9 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
                 aria-expanded="false"
               >
                 <span className="sr-only">Open div menu</span>
-                <BurgerIcon fill={variant === "light" ? "white" : "black"} />
+                <BurgerIcon
+                  fill={variant === "light" && !scrolled ? "white" : "black"}
+                />
               </button>
             </SheetTrigger>
           </div>

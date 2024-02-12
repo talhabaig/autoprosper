@@ -61,7 +61,6 @@ html {
   scrollbar-width: thin !important;
 }
 
-
 body {
   margin: 0;
   padding: 0;
@@ -97,7 +96,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -208,13 +207,104 @@ input[type=number] {
   color: #fff;
 }
 
-@media (min-width: 992px) {
-  .mainWrapperFirstTimeBuyer {
-    min-height: calc(100vh - 102px);
-  }
-  .firstTimeBuyerContainerWrapper {
-    min-height: calc(100vh - 230px);
-  }
+.slickSliderWrapper .slick-track {
+  display: flex !important;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.slickSliderWrapper .slick-slide {
+  height: inherit !important;
+}
+
+.slickSliderWrapper .slick-slide > div {
+  height: 100%;
+  width: 282px;
+}
+
+.slickSliderWrapper .slick-current .sliderItem {
+  background: linear-gradient(
+    90deg,
+    rgb(0, 255, 162) 0%,
+    rgb(255, 230, 100) 100%
+  );
+}
+
+.slickSliderWrapper .slick-dots {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem 0;
+  list-style-type: none;
+  bottom: 22px;
+}
+
+.slickSliderWrapper .slick-dots li {
+  margin: 0 0.25rem;
+  width: auto;
+  height: auto;
+  display: inline-block;
+}
+
+.slickSliderWrapper .slick-dots button {
+  display: block;
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 100%;
+  background-color: #b7bcc3;
+  text-indent: -9999px;
+}
+
+.slickSliderWrapper .slick-dots li.slick-active button {
+  background-color: #001b44;
+  width: 12px;
+  height: 12px;
+}
+.slickSliderWrapper .slick-track {
+  margin-bottom: 90px;
+}
+
+.slickSliderWrapper .slick-arrow {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 0px;
+  z-index: 99;
+  line-height: 0px;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  transform: translateY(-30%);
+  -webkit-transform: translateY(-30%);
+  -ms-transform: translateY(-30%);
+  /* border: 1px solid #fff; */
+  border-radius: 50%;
+  top: 40%;
+}
+.slickSliderWrapper .slick-arrow::before {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M13.4779 10.8333H3.33203V9.16658H13.4779L8.8112 4.49992L9.9987 3.33325L16.6654 9.99992L9.9987 16.6666L8.8112 15.4999L13.4779 10.8333Z' fill='%230A1835'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+}
+.slickSliderWrapper .slick-next {
+  background: linear-gradient(90deg, #00ffa2 0%, #ffe664 100%) !important;
+  right: -35px;
+}
+.slickSliderWrapper .slick-prev {
+  background-color: #fff !important;
+  left: -35px;
+}
+.slickSliderWrapper .slick-prev::before {
+  transform: rotate(180deg) translate(40%, 26%) !important;
 }
 
 .filterWrapper .css-13cymwt-control {
@@ -243,12 +333,9 @@ input[type=number] {
   -webkit-text-fill-color: transparent;
 }
 
-
-
-
-  /*================== can be corrected later================== */
-.fundDeal::after{
-  content: '';
+/*================== can be corrected later================== */
+.fundDeal::after {
+  content: "";
   position: absolute;
   width: 3px;
   /* height: 200px; */
@@ -256,10 +343,9 @@ input[type=number] {
   left: 14px;
   top: 0px;
   z-index: 1;
-
 }
-.fundDeal ul li a::before{
-  content: '';
+.fundDeal ul li a::before {
+  content: "";
   position: absolute;
   width: 15px;
   height: 15px;
@@ -268,5 +354,49 @@ input[type=number] {
   top: 50%;
   border-radius: 50px;
   border: 4px solid;
+}
 
+@media (min-width: 576px) {
+  .slickSliderWrapper .slick-slide > div {
+    height: 100%;
+    width: auto;
+  }
+}
+@media (min-width: 992px) {
+  .mainWrapperFirstTimeBuyer {
+    min-height: calc(100vh - 102px);
+  }
+  .firstTimeBuyerContainerWrapper {
+    min-height: calc(100vh - 230px);
+  }
+  .slickSliderWrapper .slick-track {
+    gap: 18px;
+  }
+}
+@media (min-width: 1400px) {
+  .slickSliderWrapper .slick-arrow {
+    width: 56px;
+    height: 56px;
+  }
+  .slickSliderWrapper .slick-next {
+    right: -55px;
+  }
+  .slickSliderWrapper .slick-prev {
+    left: -55px;
+  }
+  .slickSliderWrapper .slick-arrow::before {
+    width: 20px;
+    height: 20px;
+  }
+  .slickSliderWrapper .slick-prev::before {
+    transform: rotate(180deg) translate(40%, 43%) !important;
+  }
+}
+@media (min-width: 1600px) {
+  .slickSliderWrapper .slick-next {
+    right: -65px;
+  }
+  .slickSliderWrapper .slick-prev {
+    left: -65px;
+  }
 }

@@ -40,8 +40,6 @@ const cardData = [
       <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
     ),
     route: "customize",
-    // buttonVariant: "transparent",
-    // buttonIcon:    <ArrowRight  className="fill-gray w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />,
     drivewayCustomerPoints: [
       "Identify the cause of the warning indicator light",
       "Run system diagnostics to identify the needed repair",
