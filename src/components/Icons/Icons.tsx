@@ -3980,6 +3980,7 @@ export const Fire: React.FC<propType> = ({
     </svg>
   );
 };
+
 export const RefreshTask: React.FC<propType> = ({
   width,
   height,
@@ -4023,27 +4024,4 @@ export const AttachFile: React.FC<propType> = ({
   );
 };
 
-export const Polygon: React.FC<propType> = ({
-  width,
-  height,
-  fill,
-  className,
-}) => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
-      fill={fill}
-      className={className}
-      viewBox="0 0 220 44"
- 
-    >
-      <rect width="220" height="35" rx="17.5" fill="#00FFA2" />
-      <path
-        d="M111.366 42.5C110.981 43.1667 110.019 43.1667 109.634 42.5L98.8087 23.75C98.4238 23.0833 98.9049 22.25 99.6747 22.25L121.325 22.25C122.095 22.25 122.576 23.0833 122.191 23.75L111.366 42.5Z"
-        fill="#00FFA2"
-      />
-    </svg>
-  );
-};
+

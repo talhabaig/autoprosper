@@ -6,11 +6,11 @@ import { DealerPlex } from "@/components/Crm/DealerPlex/DealerPlex";
 import { Appointment } from "@/components/Crm/Appointments/Appointments";
 import { AppointmentsAndSaleFunnel } from "@/components/Crm/AppointmentsAndSalesFunnel/AppointmentsAndSalesFunnel";
 import { QuickFilters } from "@/components/Crm/QuickFilters/QuickFilters";
+
 import TasksList from "@/components/Crm/TasksList/TasksList";
 import TaskAndRefresh from "@/components/Crm/AddTaskAndRefresh/TaskRefresh";
 import TaskListFund from "@/components/Crm/FundWFAndASAP/TaskListFund";
 import AutomatedChat from "@/components/Crm/AutomatedChat/AutomatedChat";
-
 import { Searchbar } from "@/components/Crm/Searchbar/Searchbar";
 
 const Page = () => {

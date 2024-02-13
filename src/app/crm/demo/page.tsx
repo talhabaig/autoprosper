@@ -4,7 +4,7 @@ import { DealerPlex } from "@/components/Crm/DealerPlex/DealerPlex";
 import { QuickFilters } from "@/components/Crm/QuickFilters/QuickFilters";
 import EmailAndSms from "@/components/Crm/EmailAndSms/EmailAndSms";
 import SalesActivity from "@/components/Crm/SalesActivity/SalesActivity";
-import {Searchbar} from "@/components/Crm/Searchbar/Searchbar";
+import { Searchbar } from "@/components/Crm/Searchbar/Searchbar";
 
 import React from "react";
 import TasksList from "@/components/Crm/TasksList/TasksList";
@@ -18,33 +18,32 @@ const page = () => {
         <SalesActivity />
       </div>
       <div className="max-w-[1700px] mx-auto px-[15px]">
-        <EmailAndSms/>
+        <EmailAndSms />
       </div>
       <div className="max-w-[400px] mx-auto px-[15px]">
-        <DealerPlex/>
+        <DealerPlex />
       </div>
       <div className="max-w-[400px] mx-auto px-[15px]">
-        <Appointment/>        
+        <Appointment />
       </div>
       <div className="max-w-[1700px] mx-auto px-[15px]">
-        <AppointmentsAndSaleFunnel/>
+        <AppointmentsAndSaleFunnel />
       </div>
       <div className="max-w-[324px] mx-auto px-[15px]">
         <QuickFilters />
       </div>
       <div>
-        <TasksList/>
+        <TasksList />
       </div>
-<<<<<<< HEAD
+
       <div>
-        <TaskAndRefresh/>
+        <TaskAndRefresh />
       </div>
       <div>
-        <AutomatedChat/>
-=======
+        <AutomatedChat />
+      </div>
       <div className="max-w-[1700px] mx-auto px-[15px]">
-        <Searchbar/>
->>>>>>> 96cab682f20d5a9b98179d766bd3e2b55a6a28dc
+        <Searchbar />
       </div>
     </div>
   );
