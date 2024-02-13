@@ -6,8 +6,12 @@ import { DealerPlex } from "@/components/Crm/DealerPlex/DealerPlex";
 import { Appointment } from "@/components/Crm/Appointments/Appointments";
 import { AppointmentsAndSaleFunnel } from "@/components/Crm/AppointmentsAndSalesFunnel/AppointmentsAndSalesFunnel";
 import { QuickFilters } from "@/components/Crm/QuickFilters/QuickFilters";
-import {Searchbar} from "@/components/Crm/Searchbar/Searchbar";
 
+import TasksList from "@/components/Crm/TasksList/TasksList";
+import TaskAndRefresh from "@/components/Crm/AddTaskAndRefresh/TaskRefresh";
+import TaskListFund from "@/components/Crm/FundWFAndASAP/TaskListFund";
+import AutomatedChat from "@/components/Crm/AutomatedChat/AutomatedChat";
+import { Searchbar } from "@/components/Crm/Searchbar/Searchbar";
 
 const Page = () => {
   return (
@@ -16,7 +20,9 @@ const Page = () => {
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--1"]}`}
         >
-          <span className={styles.gallery__item_num}><Appointment/></span>
+          <span className={styles.gallery__item_num}>
+            <Appointment />
+          </span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--2"]}`}
@@ -26,12 +32,16 @@ const Page = () => {
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--3"]}`}
         >
-          <span className={styles.gallery__item_num}><AppointmentsAndSaleFunnel/></span>
+          <span className={styles.gallery__item_num}>
+            <AppointmentsAndSaleFunnel />
+          </span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--4"]}`}
         >
-          <span className={styles.gallery__item_num}><DealerPlex/></span>
+          <span className={styles.gallery__item_num}>
+            <DealerPlex />
+          </span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--5"]}`}
@@ -41,34 +51,40 @@ const Page = () => {
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--6"]}`}
         >
-          <span className={styles.gallery__item_num}><QuickFilters/></span>
+          <span className={styles.gallery__item_num}>
+            <QuickFilters />
+          </span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--7"]}`}
         >
           <span className={styles.gallery__item_num}>
-           <Searchbar/>
+            <Searchbar />
           </span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--8"]}`}
         >
-          <span className={styles.gallery__item_num}>task list 8</span>
+          {/* <span className={styles.gallery__item_num}> </span> */}
+          <TasksList />
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--9"]}`}
         >
-          <span className={styles.gallery__item_num}>Chat bar at bottom 9</span>
+          {/* <span className={styles.gallery__item_num}>Chat bar at bottom 9</span> */}
+          <AutomatedChat />
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--10"]}`}
         >
-          <span className={styles.gallery__item_num}>task list 10</span>
+          {/* <span className={styles.gallery__item_num}> </span> */}
+          <TaskListFund />
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--11"]}`}
         >
-          <span className={styles.gallery__item_num}>taskList 11</span>
+          {/* <span className={styles.gallery__item_num}> </span> */}
+          <TaskAndRefresh />
         </div>
       </section>
     </div>

@@ -110,7 +110,7 @@ const ClientReviewSlider = () => {
         </div>
         <Slider {...settings}>
           {cardData.map((item, index) => (
-            <div key={index} className="p-[1px] h-full bg-white rounded-[12px] sliderItem shadow-[0px_36px_72px_-18px_rgba(0,0,0,0.15)]">
+            <div key={index} className="p-[1px] h-full bg-white rounded-[12px] sliderItem shadow-[0px_36px_72px_-18px_rgba(0,27,68,0.25)]">
               <div
                 className="flex flex-col justify-center items-start text-left 
                    rounded-[12px] p-[16px] md:p-[18px] lg:p-[20px] xl:p-[22px] 2xl:p-[24px] bg-white"
