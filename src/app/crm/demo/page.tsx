@@ -6,6 +6,8 @@ import EmailAndSms from "@/components/Crm/EmailAndSms/EmailAndSms";
 import SalesActivity from "@/components/Crm/SalesActivity/SalesActivity";
 import React from "react";
 import TasksList from "@/components/Crm/TasksList/TasksList";
+import TaskAndRefresh from "@/components/Crm/AddTaskAndRefresh/TaskRefresh";
+import AutomatedChat from "@/components/Crm/AutomatedChat/AutomatedChat";
 
 const page = () => {
   return (
@@ -30,6 +32,12 @@ const page = () => {
       </div>
       <div>
         <TasksList/>
+      </div>
+      <div>
+        <TaskAndRefresh/>
+      </div>
+      <div>
+        <AutomatedChat/>
       </div>
     </div>
   );

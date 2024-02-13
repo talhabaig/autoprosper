@@ -333,27 +333,29 @@ input[type="number"] {
   -webkit-text-fill-color: transparent;
 }
 
-/*================== can be corrected later================== */
-.fundDeal::after {
+/*================== task list css after and before================== */
+
+.fundDeal li::before {
   content: "";
   position: absolute;
-  width: 3px;
-  /* height: 200px; */
-  background-color: #001b44;
-  left: 14px;
-  top: 0px;
-  z-index: 1;
-}
-.fundDeal ul li a::before {
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  left: -32px;
-  z-index: 3;
-  top: 50%;
+  width: 16px;
+  height: 16px;
+  left: 25px;
   border-radius: 50px;
-  border: 4px solid;
+  border: 3px solid #e5e8ed;
+}
+.fundDeal li:first-of-type:before {
+  border: 3px solid #001b44;
+}
+.triangle{
+  position: absolute;
+  top: 30px;
+  left: 47%;
+  width: 0px;
+	height: 0px;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 20px solid #00FFA2;
 }
 
 @media (min-width: 576px) {
@@ -371,6 +373,9 @@ input[type="number"] {
   }
   .slickSliderWrapper .slick-track {
     gap: 18px;
+  }
+  .fundDeal li::before {
+    left: 10px;
   }
 }
 @media (min-width: 1400px) {

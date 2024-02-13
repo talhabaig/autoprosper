@@ -6,6 +6,10 @@ import { DealerPlex } from "@/components/Crm/DealerPlex/DealerPlex";
 import { Appointment } from "@/components/Crm/Appointments/Appointments";
 import { AppointmentsAndSaleFunnel } from "@/components/Crm/AppointmentsAndSalesFunnel/AppointmentsAndSalesFunnel";
 import { QuickFilters } from "@/components/Crm/QuickFilters/QuickFilters";
+import TasksList from "@/components/Crm/TasksList/TasksList";
+import TaskAndRefresh from "@/components/Crm/AddTaskAndRefresh/TaskRefresh";
+import TaskListFund from "@/components/Crm/FundWFAndASAP/TaskListFund";
+import AutomatedChat from "@/components/Crm/AutomatedChat/AutomatedChat";
 
 
 const Page = () => {
@@ -52,22 +56,26 @@ const Page = () => {
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--8"]}`}
         >
-          <span className={styles.gallery__item_num}>task list 8</span>
+          {/* <span className={styles.gallery__item_num}> </span> */}
+          <TasksList/>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--9"]}`}
         >
-          <span className={styles.gallery__item_num}>Chat bar at bottom 9</span>
+          {/* <span className={styles.gallery__item_num}>Chat bar at bottom 9</span> */}
+          <AutomatedChat/>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--10"]}`}
         >
-          <span className={styles.gallery__item_num}>task list 10</span>
+          {/* <span className={styles.gallery__item_num}> </span> */}
+          <TaskListFund/>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--11"]}`}
         >
-          <span className={styles.gallery__item_num}>taskList 11</span>
+          {/* <span className={styles.gallery__item_num}> </span> */}
+          <TaskAndRefresh/>
         </div>
       </section>
     </div>
