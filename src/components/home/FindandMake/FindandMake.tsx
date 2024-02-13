@@ -38,8 +38,6 @@ const cardData: FindOrMakeCardWithRoute[] = [
       <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
     ),
     route: "customize",
-    // buttonVariant: "transparent",
-    // buttonIcon:    <ArrowRight  className="fill-gray w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />,
   },
 ];
 
@@ -75,7 +73,7 @@ const FindandMake = () => {
               lg:last-of-type:bg-btn-primary-gradient last-of-type:mb-0 md:mb-0 "
             >
               <div className="h-full bg-white rounded-[12px]">
-                <div               
+                <div
                   className="rounded-tr-[12px] max-w-[699px]  rounded-tl-[12px] px-[4px] pt-[4px] 
                   overflow-hidden bg-white"
                 >
@@ -94,13 +92,15 @@ const FindandMake = () => {
                   <p className="paragraph-large mb-[1.125rem] lg:mb-[1.563rem] 3xl:mb-[2rem]">
                     {item.description}
                   </p>
-                  <Link href={item.route}>
-                    <Button
-                      variant={item.buttonVariant}
-                      label={item.buttonLabel}
-                      children={item.buttonIcon}
-                    />
-                  </Link>
+                  <div>
+                    <Link className="inline-block" href={item.route}>
+                      <Button
+                        variant={item.buttonVariant}
+                        label={item.buttonLabel}
+                        children={item.buttonIcon}
+                      />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

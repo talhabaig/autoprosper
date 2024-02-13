@@ -93,10 +93,10 @@ const SuggestionForYou = () => {
             {[...Array(4)].map((x, i) => (
               <div
                 className="flex-grow max-w-[324px] mx-auto md:mx-0 w-full md:max-w-[47%] lg:max-w-[31%] 
-        2xl:max-w-[23%]  flex-[0_0_auto] rounded-[12px]  
-       first-of-type:shadow-[0px_36px_72px_-18px_rgba(10,24,53,0.25)] p-[1px] mb-[1.875rem] 2xl:mb-[3.5rem]
-       first-of-type:bg-btn-primary-gradient shadow-[0px_18px_36px_-18px_rgba(10,24,53,0.25)] bg-bg-none
-       [&>span]:font-bold"
+                  2xl:max-w-[23%]  flex-[0_0_auto] rounded-[12px]  
+                first-of-type:shadow-[0px_36px_72px_-18px_rgba(10,24,53,0.25)] p-[1px] mb-[1.875rem] 2xl:mb-[3.5rem]
+                first-of-type:bg-btn-primary-gradient shadow-[0px_18px_36px_-18px_rgba(10,24,53,0.25)] bg-bg-none
+                [&>span]:font-bold"
               >
                 <div className="card translate-3d-none-after card translate-3d-none-after relative flex w-full flex-col overflow-hidden  rounded-md bg-white   p-2">
                   <div
@@ -124,7 +124,7 @@ const SuggestionForYou = () => {
         </>
       ) : (
         <div
-          className={`flex flex-wrap md:justify-between md:items-stretch gap-[0.625rem]
+          className={`flex flex-wrap  md:items-stretch gap-[0.625rem]
           lg:gap-[1.125rem] 3xl:gap-6  `}
         >
           {cardData.map((item: any, index) => (
@@ -142,9 +142,6 @@ const SuggestionForYou = () => {
                   className="rounded-tr-[12px]  max-w-[80%] mx-auto  flex justify-center items-center rounded-tl-[12px] 
                 px-[4px] pt-[24px] pb-[14px] overflow-hidden bg-white"
                 >
-                  {/*  before:content-[''] before:absolute 
-                   before:h-full before:top-[-50px] before:left-0 before:w-full  before:inline-block
-                   before:bg-[url('/suggestionForYou/bg-car-cloud-shape.png')] before:bg-no-repeat before:bg-[100%_auto] */}
                   <div className="relative max-w-[254px]">
                     <Image
                       src={"/suggestionForYou/bg-car-cloud-shape.png"}

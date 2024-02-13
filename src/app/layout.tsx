@@ -1,17 +1,19 @@
 import type { Metadata, Viewport } from "next";
 
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import "./globals.css";
 import "../assests/style/main.css";
 import { MessageSquare } from "lucide-react";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
   title: "Autoprosper",
   description:
     "With a fleet of reliable vehicles and skilled mechanics spanning the nation, autoprosper has dominated the automotive industry for over two decades with its unparalleled service and commitment to excellence in car maintenance and repair.",
+  icons: {
+    icon: "/images/favicon.png",
+  },
 };
 
 export const viewport: Viewport = {
@@ -29,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`pt-[62px] md:pt-0`}>
-        <ToastContainer/>
+        <ToastContainer />
         {/* Navbar */}
         {children}
         {/* footer */}

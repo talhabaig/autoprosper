@@ -53,7 +53,6 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
           {step === 4 && <TotalSeatRequirements />}
           {step === 5 && <VehiclePreferences />}
           {step === 6 && <RidePowerConsumption />}
-          {/* {step === 7 && <SuggestionForYou />} */}
         </div>
         <div className="border-t border-solid border-dark-6 mt-[30px lg:mt-0]">
           <div className="container flex justify-center lg:justify-end items-center py-[12px] lg:py-[30px]">
