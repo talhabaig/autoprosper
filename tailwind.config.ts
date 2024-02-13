@@ -41,18 +41,18 @@ const config: Config = {
         "light-gray-3": "#545D72",
         "light-gray-4": "#F6F9FC",
         "dark-gray": "#97A5C1",
-        
       },
       backgroundImage: {
-        "hero": "url('/images/cover.png')",
+        hero: "url('/images/cover.png')",
         "hero-mobile": "url('/images/cover-mobile.png')",
-        "Rectangle-red":"url('/Crm/Rectangle-red.png')",
-        "Rectangle-yellow":"url('/Crm/Rectangle-yelllow.png')",
-        "Rectangle-green":"url('/Crm/Rectangle-green.png')",
-        "Rectangle-blue":"url('/Crm/Rectangle-blue.png')",
-        "Rectangle":"url('/Crm/Rectangle.png')",
-        "rainbow-gradient": "linear-gradient(89.62deg, #FF3363 10%, #FFE664 76.98%, #00FFA2 91.85%), linear-gradient(0deg, #FFFFFF, #FFFFFF)",
-        "custom": "linear-gradient(90deg, #00FFA2 0%, #FFE664 100%)",
+        "Rectangle-red": "url('/Crm/Rectangle-red.png')",
+        "Rectangle-yellow": "url('/Crm/Rectangle-yelllow.png')",
+        "Rectangle-green": "url('/Crm/Rectangle-green.png')",
+        "Rectangle-blue": "url('/Crm/Rectangle-blue.png')",
+        Rectangle: "url('/Crm/Rectangle.png')",
+        "rainbow-gradient":
+          "linear-gradient(89.62deg, #FF3363 10%, #FFE664 76.98%, #00FFA2 91.85%), linear-gradient(0deg, #FFFFFF, #FFFFFF)",
+        custom: "linear-gradient(90deg, #00FFA2 0%, #FFE664 100%)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -63,7 +63,8 @@ const config: Config = {
         "btn-primary-gradient-hover":
           "linear-gradient(90deg, rgb(0, 255, 162) 40%, rgb(255, 230, 100) 80%)",
         "bg-none": "none",
-        "banner-gradient": "linear-gradient(90deg, #0A1835 10.21%, rgba(10, 24, 53, 0.00) 100%)",
+        "banner-gradient":
+          "linear-gradient(90deg, #0A1835 10.21%, rgba(10, 24, 53, 0.00) 100%)",
       },
     },
     container: {

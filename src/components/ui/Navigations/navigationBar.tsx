@@ -84,18 +84,22 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      if (typeof window !== 'undefined') {
+        if (window.scrollY > 20) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (typeof window !== 'undefined') {
+      window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, []);
 
   return (
