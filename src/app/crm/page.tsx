@@ -11,6 +11,7 @@ import TaskAndRefresh from "@/components/Crm/AddTaskAndRefresh/TaskRefresh";
 import TaskListFund from "@/components/Crm/FundWFAndASAP/TaskListFund";
 import AutomatedChat from "@/components/Crm/AutomatedChat/AutomatedChat";
 
+import { Searchbar } from "@/components/Crm/Searchbar/Searchbar";
 
 const Page = () => {
   return (
@@ -19,7 +20,9 @@ const Page = () => {
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--1"]}`}
         >
-          <span className={styles.gallery__item_num}><Appointment/></span>
+          <span className={styles.gallery__item_num}>
+            <Appointment />
+          </span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--2"]}`}
@@ -29,12 +32,16 @@ const Page = () => {
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--3"]}`}
         >
-          <span className={styles.gallery__item_num}><AppointmentsAndSaleFunnel/></span>
+          <span className={styles.gallery__item_num}>
+            <AppointmentsAndSaleFunnel />
+          </span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--4"]}`}
         >
-          <span className={styles.gallery__item_num}><DealerPlex/></span>
+          <span className={styles.gallery__item_num}>
+            <DealerPlex />
+          </span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--5"]}`}
@@ -44,38 +51,40 @@ const Page = () => {
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--6"]}`}
         >
-          <span className={styles.gallery__item_num}><QuickFilters/></span>
+          <span className={styles.gallery__item_num}>
+            <QuickFilters />
+          </span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--7"]}`}
         >
           <span className={styles.gallery__item_num}>
-            search bar with lists 7
+            <Searchbar />
           </span>
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--8"]}`}
         >
           {/* <span className={styles.gallery__item_num}> </span> */}
-          <TasksList/>
+          <TasksList />
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--9"]}`}
         >
           {/* <span className={styles.gallery__item_num}>Chat bar at bottom 9</span> */}
-          <AutomatedChat/>
+          <AutomatedChat />
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--10"]}`}
         >
           {/* <span className={styles.gallery__item_num}> </span> */}
-          <TaskListFund/>
+          <TaskListFund />
         </div>
         <div
           className={`${styles.gallery__item} ${styles["gallery__item--11"]}`}
         >
           {/* <span className={styles.gallery__item_num}> </span> */}
-          <TaskAndRefresh/>
+          <TaskAndRefresh />
         </div>
       </section>
     </div>

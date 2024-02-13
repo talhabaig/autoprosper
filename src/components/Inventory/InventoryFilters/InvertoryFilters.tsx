@@ -68,7 +68,7 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
   };
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 786) {
+      if (typeof window !== "undefined" && window.innerWidth > 786) {
         setSelectedTab("sortBy");
       }
     };
@@ -77,17 +77,19 @@ const InventoryFilters: React.FC<ProductFiltersProps> = ({
     handleResize();
 
     // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize);
 
-    // Cleanup function to remove event listener
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+      // Cleanup function to remove event listener
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []); // Empty dependency array ensures that this effect runs only once on mount
 
   return (
     <>
-      {window.innerWidth < 768 ? (
+     {typeof window !== 'undefined' && window.innerWidth < 768 ? (
         selectedTab === "sortBy" ? (
           <div className="flex items-center justify-between pb-[14px] md:hidden">
             <span className="inline-block text-dark text-[13px] font-bold">
