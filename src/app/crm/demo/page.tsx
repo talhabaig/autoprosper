@@ -4,6 +4,8 @@ import { DealerPlex } from "@/components/Crm/DealerPlex/DealerPlex";
 import { QuickFilters } from "@/components/Crm/QuickFilters/QuickFilters";
 import EmailAndSms from "@/components/Crm/EmailAndSms/EmailAndSms";
 import SalesActivity from "@/components/Crm/SalesActivity/SalesActivity";
+import {Searchbar} from "@/components/Crm/Searchbar/Searchbar";
+
 import React from "react";
 import TasksList from "@/components/Crm/TasksList/TasksList";
 
@@ -30,6 +32,9 @@ const page = () => {
       </div>
       <div>
         <TasksList/>
+      </div>
+      <div className="max-w-[1700px] mx-auto px-[15px]">
+        <Searchbar/>
       </div>
     </div>
   );

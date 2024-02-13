@@ -6,6 +6,7 @@ import { DealerPlex } from "@/components/Crm/DealerPlex/DealerPlex";
 import { Appointment } from "@/components/Crm/Appointments/Appointments";
 import { AppointmentsAndSaleFunnel } from "@/components/Crm/AppointmentsAndSalesFunnel/AppointmentsAndSalesFunnel";
 import { QuickFilters } from "@/components/Crm/QuickFilters/QuickFilters";
+import {Searchbar} from "@/components/Crm/Searchbar/Searchbar";
 
 
 const Page = () => {
@@ -46,7 +47,7 @@ const Page = () => {
           className={`${styles.gallery__item} ${styles["gallery__item--7"]}`}
         >
           <span className={styles.gallery__item_num}>
-            search bar with lists 7
+           <Searchbar/>
           </span>
         </div>
         <div
