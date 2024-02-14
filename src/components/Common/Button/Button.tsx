@@ -26,7 +26,7 @@ const Button: React.FC<propType> = ({
   let classList = ``;
   if (!variant || variant === "primary") {
     classList =
-      "text-[0.875rem] xl:text-[1rem]  px-[14px] px-[18px] xl:px-[32px]  xl:tarcaking-[1.44px] min-w-[140px]  lg:min-w-[170px] min-h-[46px]  xl:min-h-[56px]  bg-btn-primary-gradient font-[700] rounded-[100px] text-dark hover:bg-btn-primary-gradient-hover";
+      "text-[0.875rem] xl:text-[1rem]  px-[14px] px-[18px] xl:px-[32px]  xl:tarcaking-[1.44px] min-w-[140px]  lg:min-w-[170px] min-h-[46px]  xl:min-h-[56px]  bg-btn-primary-gradient font-[700] rounded-[100px] text-dark  hover:bg-btn-primary-gradient-hover";
   } else if (variant === "small") {
     classList =
       "min-w-[156px] gap-[6px] px-[14px] text-[0.875rem] min-h-[46px] xl:text-[1rem]  bg-btn-primary-gradient font-[700] rounded-[100px] text-dark hover:bg-btn-primary-gradient-hover";

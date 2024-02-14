@@ -2,8 +2,7 @@ import OpenAI from "openai";
 
 export const getCarSuggestions = async (userPreferences) => {
   const openai = new OpenAI({
-    // apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
-    apiKey: "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",
+    apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
     dangerouslyAllowBrowser: true,
   });
 

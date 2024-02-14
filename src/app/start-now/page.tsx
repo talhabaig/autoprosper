@@ -1,9 +1,8 @@
-"use client";
-import FindOrMakeAllSteps from "@/components/FindOrMakeSteps/FindOrMakeAllSteps";
+import FirstTimeBuyerSteps from "@/components/FirstTimeBuyer/FirstTimeBuyerAllSteps";
 import React from "react";
 
 const FindOrMakePage = () => {
-  return <FindOrMakeAllSteps />;
+  return <FirstTimeBuyerSteps />;
 };
 
 export default FindOrMakePage;
