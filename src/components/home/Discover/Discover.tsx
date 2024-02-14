@@ -18,7 +18,6 @@ import style from "./discover.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
 const dummy = [
   {
     image: "/home/white-vw.png",
@@ -48,6 +47,8 @@ const dummy = [
 
 const Discover = () => {
   const [activeIndices, setActiveIndices] = useState<number[]>([]);
+  const [surpriseCount, setSurpriseCount] = useState<number>(1);
+  const MAX_SURPRISE_COUNT = 3;
 
   const handleItemClick = (index: number) => {
     const updatedIndices = [...activeIndices];
@@ -60,6 +61,14 @@ const Discover = () => {
 
     setActiveIndices(updatedIndices);
   };
+
+  const handleSurpriseMe = () => {
+    const isReachedMaximum = surpriseCount === MAX_SURPRISE_COUNT;
+    if (!isReachedMaximum) {
+      setSurpriseCount((prev) => prev + 1);
+      handleItemClick(surpriseCount)
+    }
+  }
 
   useEffect(() => {
     AOS.init({
@@ -245,9 +254,14 @@ const Discover = () => {
               />
             </div>
             <SwitchWithLabel label="Include trade-in" className="self-start" />
-            <Button variant="gradient" size="md" className="w-full ">
-              See Matches
-            </Button>
+            <div className="flex flex-col md:gap-[12px] w-full">
+              <Button variant="gradient" size="md" className="w-full " onClick={handleSurpriseMe}>
+                Surpise Me {surpriseCount}/{MAX_SURPRISE_COUNT}
+              </Button>
+              <Button variant="gradient" size="md" className="w-full ">
+                See Matches
+              </Button>
+            </div>
           </div>
         </GradientCard>
       </div>
