@@ -2,13 +2,17 @@ import OpenAI from "openai";
 
 export const getCarSuggestions = async (userPreferences) => {
   const openai = new OpenAI({
-    apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+    // apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+    apiKey: "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",
     dangerouslyAllowBrowser: true,
   });
 
   const systemMessage = {
     role: "system",
-    content: `Based on the following preferences, Please suggest cars that match these criteria and brand. If there is no criteria match then don't apologize and return the match brand cars. And send me a response in the following format: [
+    content: `Based on the following preferences, Please suggest cars that match these criteria and brand.
+     If there is no criteria match then don't apologize and return the match brand cars.
+      And send me a response in the following format: 
+      [
       {
         "id": 1,
         "imageSrc": "",

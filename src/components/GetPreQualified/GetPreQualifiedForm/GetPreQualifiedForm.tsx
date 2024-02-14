@@ -13,7 +13,10 @@ const options = [
   { value: "option3", label: "Option 3" },
 ];
 
-const GetPreQuallifiedForm = () => {
+const GetPreQuallifiedForm: React.FC<{
+  onClick?: () => void;
+  currentStep?: number;
+}> = ({ onClick, currentStep }) => {
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     middleName: "",
@@ -165,18 +168,38 @@ const GetPreQuallifiedForm = () => {
             </div>
           </div>
           <div className="px-[15px]">
-            <Link href="/suggestion-for-you">
+            {currentStep === 7 ? (
               <Button
                 variant="primary"
                 label="Get Pre-Qualified"
-                className="w-full md:w-[initial]  "
+                className="w-full md:w-[initial]"
                 onClick={() => {
                   if (agreed === true) {
                     console.log(agreed && " checked!", "Form Data:", formData);
                   }
+                  if (onClick) {
+                    onClick();
+                  }
                 }}
               />
-            </Link>
+            ) : (
+              <Link className="inline-block" href="/suggestion-for-you">
+                <Button
+                  variant="primary"
+                  label="Get Pre-Qualified"
+                  className="w-full md:w-[initial]"
+                  onClick={() => {
+                    if (agreed === true) {
+                      console.log(
+                        agreed && " checked!",
+                        "Form Data:",
+                        formData
+                      );
+                    }
+                  }}
+                />
+              </Link>
+            )}
           </div>
         </div>
       </section>

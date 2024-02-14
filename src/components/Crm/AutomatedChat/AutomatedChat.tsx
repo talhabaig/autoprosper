@@ -1,4 +1,4 @@
-import { AttachFile, Polygon } from "@/components/Icons/Icons";
+import { AttachFile } from "@/components/Icons/Icons";
 import React from "react";
 const AutomatedChatlist = [
     {
