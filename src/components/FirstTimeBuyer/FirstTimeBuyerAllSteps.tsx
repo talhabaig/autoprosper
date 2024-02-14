@@ -20,6 +20,7 @@ import TotalSeatRequirements from "./TotalSeatRequirements/TotalSeatRequirements
 import { showToast } from "../../../toastifyConfig";
 import { usePathname, useSearchParams } from "next/navigation";
 import GetPreQualified from "../GetPreQualified/GetPreQualifiedAllSteps/GetPreQualified";
+import Footer from "../SiteFooter/Footer";
 const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
   const pathname = usePathname();
   const [step, setStep] = useState(1);
@@ -45,16 +46,16 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
           {step < 7 && (
             <section className={`mt-auto mainWrapperFirstTimeBuyer `}>
               <div className="container firstTimeBuyerContainerWrapper">
-                {step > 1 && step < 6 && (
-                  <div className=" py-[10px] mb-[28px]">
+                <div className="pt-[10px] pb-[16px]">
+                  {step > 1 && step < 7 && (
                     <span
                       className="inline-block"
                       onClick={() => setStep(step - 1)}
                     >
                       <BackArrow className="w-[24px] h-[24px] cursor-pointer" />{" "}
                     </span>
-                  </div>
-                )}
+                  )}
+                </div>
 
                 {step === 1 && <WhatEssential />}
                 {step === 2 && <PurposeOfUse />}
@@ -65,48 +66,30 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
               </div>
               <div className="border-t border-solid border-dark-6 mt-[30px lg:mt-0]">
                 <div className="container flex justify-center lg:justify-end items-center py-[12px] lg:py-[30px]">
-                  {step === 6 ? (
-                    // <Link href="get-pre-qualified">
-                    <Button
-                      variant="small"
-                      className="lg:min-h-[56px]"
-                      onClick={() => {
-                        handleNext();
-                      }}
-                      children={
-                        <>
-                          <span className="lg:hidden">Next</span>
-                          <span className="hidden lg:inline-block">
-                            Continue
-                          </span>
-                          <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
-                        </>
-                      }
-                    />
-                  ) : (
-                    // </Link>
-                    <Button
-                      variant="small"
-                      className="lg:min-h-[56px]"
-                      onClick={() => {
-                        handleNext();
-                      }}
-                      children={
-                        <>
-                          <span className="lg:hidden">Next</span>
-                          <span className="hidden lg:inline-block">
-                            Continue
-                          </span>
-                          <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
-                        </>
-                      }
-                    />
-                  )}
+                  <Button
+                    variant="small"
+                    className="lg:min-h-[56px]"
+                    onClick={() => {
+                      handleNext();
+                    }}
+                    children={
+                      <>
+                        <span className="lg:hidden">Next</span>
+                        <span className="hidden lg:inline-block">Continue</span>
+                        <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
+                      </>
+                    }
+                  />
                 </div>
               </div>
             </section>
           )}
-          {step === 7 && <GetPreQualified onClickProp={handleNext} currentStep={step} />}
+          {step === 7 && (
+            <>
+              <GetPreQualified onClickProp={handleNext} currentStep={step} />
+              <Footer />
+            </>
+          )}
           {step === 8 && <SuggestionForYou />}
         </>
       ) : (
@@ -114,16 +97,16 @@ const FirstTimeBuyerAllSteps: React.FC<FirstTimeBuyer> = () => {
           {step < 6 && (
             <section className={`mt-auto mainWrapperFirstTimeBuyer `}>
               <div className="container firstTimeBuyerContainerWrapper">
-                {step > 1 && step < 6 && (
-                  <div className=" py-[10px] mb-[28px]">
+                <div className="pt-[10px] pb-[16px]">
+                  {step > 1 && step < 6 && (
                     <span
                       className="inline-block"
                       onClick={() => setStep(step - 1)}
                     >
                       <BackArrow className="w-[24px] h-[24px] cursor-pointer" />{" "}
                     </span>
-                  </div>
-                )}
+                  )}
+                </div>
 
                 {step === 1 && <WhatEssential />}
                 {step === 2 && <PreferredCarBrands />}

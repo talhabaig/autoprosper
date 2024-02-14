@@ -10,7 +10,6 @@ import {
 import GetPreQuallifiedForm from "../GetPreQualifiedForm/GetPreQualifiedForm";
 import GetPreQuallifiedAccordion from "../GetPreQualifiedAccordion/GetPreQuallifiedAccordion";
 import Button from "@/components/Common/Button/Button";
-import { useFirstBuyer } from "@/components/Common/context/FirstTimeBuyerContext";
 
 type propType = {
   onClickProp?: () => void;

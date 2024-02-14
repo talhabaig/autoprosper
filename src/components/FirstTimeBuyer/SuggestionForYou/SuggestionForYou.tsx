@@ -90,7 +90,7 @@ const SuggestionForYou = () => {
             <>
               <div
                 className={`flex flex-wrap md:justify-between md:items-stretch gap-[0.625rem]
-           lg:gap-[1.125rem] 3xl:gap-6  `}
+               lg:gap-[1.125rem] 3xl:gap-6  `}
               >
                 {[...Array(4)].map((x, i) => (
                   <div
@@ -127,7 +127,7 @@ const SuggestionForYou = () => {
           ) : (
             <div
               className={`flex flex-wrap  md:items-stretch gap-[0.625rem]
-          lg:gap-[1.125rem] 3xl:gap-6  `}
+               lg:gap-[1.125rem] 3xl:gap-6  `}
             >
               {cardData.map((item: any, index) => (
                 <div
@@ -142,7 +142,7 @@ const SuggestionForYou = () => {
                   <div className="h-full bg-white rounded-[12px]">
                     <div
                       className="rounded-tr-[12px]  max-w-[80%] mx-auto  flex justify-center items-center rounded-tl-[12px] 
-                px-[4px] pt-[24px] pb-[14px] overflow-hidden bg-white"
+                       px-[4px] pt-[24px] pb-[14px] overflow-hidden bg-white"
                     >
                       <div className="relative max-w-[254px]">
                         <Image
@@ -163,7 +163,7 @@ const SuggestionForYou = () => {
                     </div>
                     <div
                       className="py-[0.9375rem] xl:py-[1.5rem] px-[0.938rem]   xl:px-[1.5rem]
-                 3xl:px-[1.875rem] bg-white rounded-br-[12px] rounded-bl-[12px] flex flex-col justify-between"
+                       3xl:px-[1.875rem] bg-white rounded-br-[12px] rounded-bl-[12px] flex flex-col justify-between"
                     >
                       <h3 className="heading4 truncate text-[18px]">
                         {item?.CarModel + item?.CarYear}
@@ -171,7 +171,7 @@ const SuggestionForYou = () => {
                       <div className="flex items-center gap-[8px] mb-4 md:mb-[20px] lg:mb-6 ">
                         <span
                           className="inline-flex items-center justify-center p-[5px_10px] uppercase
-                   bg-dark-7 tracking-[1.08px] text-dark-3 rounded-[100px] text-[12px] font-bold "
+                           bg-dark-7 tracking-[1.08px] text-dark-3 rounded-[100px] text-[12px] font-bold "
                         >
                           {" "}
                           {item?.variant}
@@ -192,7 +192,7 @@ const SuggestionForYou = () => {
                         </div>
                         <div
                           className="text-dark w-[49.5%] font-semibold pl-[12px] 
-                    border-l border-solid border-dark flex justify-end"
+                           border-l border-solid border-dark flex justify-end"
                         >
                           {item?.monthlypayment}/mo
                         </div>

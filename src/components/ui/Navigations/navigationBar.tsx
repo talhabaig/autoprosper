@@ -84,7 +84,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      if (typeof window !== 'undefined') {
+      if (typeof window !== "undefined" && window.innerWidth < 768) {
         if (window.scrollY > 20) {
           setScrolled(true);
         } else {
@@ -93,7 +93,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
       }
     };
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleScroll);
 
       return () => {
@@ -104,74 +104,67 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
 
   return (
     <>
-      <div
-        className={`md:hidden flex p-[15px] justify-between items-center 
-        fixed top-0 left-0 w-full h-auto z-[10] ${scrolled ? "bg-white" : ""}`}
-      >
-        <Sheet>
-          <Link href="/">
-            {variant === "dark" ? (
+      
+        <div
+          className={`md:hidden flex p-[15px] justify-between items-center 
+          fixed top-0 left-0 w-full h-auto z-[10] ${
+            scrolled ? "bg-white" : ""
+          }`}
+        >
+          <Sheet>
+            <Link href="/">
               <Image
-                src="/images/logo-dark.png"
+                src={
+                  variant === "dark" || scrolled
+                    ? "/images/logo-dark.png"
+                    : "/images/logo.png"
+                }
                 alt="logo"
                 width="152"
                 height="32"
               />
-            ) : scrolled ? (
-              <Image
-                src="/images/logo-dark.png"
-                alt="logo"
-                width="152"
-                height="32"
-              />
-            ) : (
-              <Image
-                src="/images/logo.png"
-                alt="logo"
-                width="152"
-                height="32"
-              />
-            )}
-          </Link>
-          <div className="flex flex-row items-center gap-[18px]">
-            <div className="bg-custom rounded-full p-1">
-              <UserIconNav />
-            </div>
-            <SheetTrigger asChild>
-              <button
-                data-collapse-toggle="navbar-default"
-                type="button"
-                aria-controls="navbar-default"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Open div menu</span>
-                <BurgerIcon
-                  fill={variant === "light" && !scrolled ? "white" : "black"}
-                />
-              </button>
-            </SheetTrigger>
-          </div>
-          <SheetContent
-            className="w-full min-h-full px-0 pt-[84px] transition-all overflow-y-scroll overflow-x-hidden"
-            selectedItem={selectedItem}
-            onBack={handleBackButton}
-          >
-            <DoubleEllipseGradient className="md:hidden absolute bottom-0 -z-10 md:right-0" />
-            {!selectedItem && (
-              <div className="divide-y h-full first:border-t-2 z-10 divide-gray-100 border-y-[1px] border-border-color">
-                {navigationData.map((nav, index) => (
-                  <SheetItem
-                    key={index}
-                    label={nav.title}
-                    onClick={() => handleSheetItemClick(index)}
-                  />
-                ))}
+            </Link>
+            <div className="flex flex-row items-center gap-[18px]">
+              <div className="bg-custom rounded-full p-1">
+                <UserIconNav />
               </div>
-            )}
-            {selectedItem?.content}
-          </SheetContent>
-        </Sheet>
-      </div>
+              <SheetTrigger asChild>
+                <button
+                  data-collapse-toggle="navbar-default"
+                  type="button"
+                  aria-controls="navbar-default"
+                  aria-expanded="false"
+                >
+                  <span className="sr-only">Open div menu</span>
+                  <BurgerIcon
+                    fill={variant === "light" && !scrolled ? "white" : "black"}
+                  />
+                </button>
+              </SheetTrigger>
+            </div>
+            <SheetContent
+              className="w-full min-h-full px-0 pt-[84px] transition-all overflow-y-scroll overflow-x-hidden"
+              selectedItem={selectedItem}
+              onBack={handleBackButton}
+            >
+              <DoubleEllipseGradient className="md:hidden absolute bottom-0 -z-10 md:right-0" />
+              {!selectedItem && (
+                <div className="divide-y h-full first:border-t-2 z-10 divide-gray-100 border-y-[1px] border-border-color">
+                  {navigationData.map((nav, index) => (
+                    <SheetItem
+                      key={index}
+                      label={nav.title}
+                      onClick={() => handleSheetItemClick(index)}
+                    />
+                  ))}
+                </div>
+              )}
+              {selectedItem?.content}
+            </SheetContent>
+          </Sheet>
+        </div>
+     
+
       <div onMouseLeave={handleMouseLeave}>
         <div
           className={`w-full relative z-30 ${
@@ -205,20 +198,24 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
                     <div className="bg-green rounded-full absolute -bottom-[30px] w-full h-[3px] pointer-events-none"></div>
                   )}
                   <span
-                    className={
-                      selectedItem?.title === navigation.title
-                        ? "text-dark"
-                        : ""
-                    }
+                    className={`
+                      ${
+                        selectedItem?.title === navigation.title
+                          ? "text-dark font-semibold"
+                          : ""
+                      }${selectedItem && "text-[#5D6878]"}
+                      ${variant === "dark" && "!text-dark font-semibold" }`}
                   >
                     {navigation.title}
                   </span>
                   <DropIcon
-                    className={`top-[1px] ml-1 h-[4px] w-[8px] transition duration-200 ${
+                    className={`top-[1px] ml-1 h-[4px] w-[8px] transition duration-200  fill-white
+                     ${
                       selectedItem?.title === navigation.title
-                        ? "rotate-180"
+                        ? "rotate-180 !fill-dark"
                         : ""
-                    }`}
+                    } ${selectedItem && "fill-[#5D6878]"}
+                    ${variant === "dark" && "!fill-dark" }`}
                     aria-hidden="true"
                   />
                 </div>
@@ -229,7 +226,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
                 variant="gradient"
                 className="text-dark md:h-[36px] md:w-[85px] font-bold"
               >
-                SIGNUP
+                Signup
               </Button>
             </Link>
           </div>
