@@ -23,7 +23,7 @@ export default function Hero() {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="mt-[60px] md:mt-[120px] container md:max-w-[711px] h-full md:h-screen 
+          className="mt-[60px] md:mt-[120px] container md:p-0 md:max-w-[711px] h-full md:h-screen 
          text-center mx-auto my-auto flex flex-col items-center gap-[20px] md:gap-[32px]"
         >
           <div className="flex flex-col gap-[18px]">
@@ -42,7 +42,7 @@ export default function Hero() {
           </div>
           <Button
             variant="gradient"
-            className="py-[18px] px-6 md:px-[18px] md:py-9 w-[153px] h-[46px] md:w-[211px] font-bold text-sm"
+            className="py-[18px] px-6 md:px-[32px] md:py-[22px] w-[153px] h-[46px] md:!h-[56px] md:!w-[184px] font-bold text-sm md:text-[16px] md:leading-[20.16px] text-dark"
           >
             Get Started{" "}
             <span className="ml-[6px] md:ml-[10px]">
