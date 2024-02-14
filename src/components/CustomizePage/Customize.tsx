@@ -305,14 +305,17 @@ const CustomizeByBrand: React.FC = () => {
                     </>
                   </Button>
                 )}
-                {(isComplete && !currentCustomizeStepConfig.displayNextButton && !currentCustomizeStepConfig.displaySkipButton) && (
-                  <Button variant="gradient" className="hidden md:block px-[22px] md:min-w-[456px] md:min-h-[56px] text-[16px]">
-                  See offers on local inventory
-                  <span className="ml-[6px] md:ml-[10px]">
-                    <RightArrow />
-                  </span>
-                </Button>
-                )}
+                {isComplete &&
+                  !currentCustomizeStepConfig.displayNextButton &&
+                  !currentCustomizeStepConfig.displaySkipButton && (
+                    <Button
+                      variant="gradient"
+                      className="hidden md:flex gap-[8px] items-center px-[22px] md:min-w-[456px] md:min-h-[56px] text-[16px]"
+                    >
+                      <span>See offers on local inventory</span>
+                      <RightArrow />
+                    </Button>
+                  )}
               </div>
             </div>
           )}
