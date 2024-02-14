@@ -23,7 +23,7 @@ export default function Hero() {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="mt-[60px] md:mt-[120px] container md:max-w-[711px] h-full md:h-screen 
+          className="mt-[60px] md:mt-[120px] container md:p-0 md:max-w-[711px] h-full md:h-screen 
          text-center mx-auto my-auto flex flex-col items-center gap-[20px] md:gap-[32px]"
         >
           <div className="flex flex-col gap-[18px]">
