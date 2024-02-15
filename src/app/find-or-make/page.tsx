@@ -1,5 +1,5 @@
 
-import StartNowAllSteps from "@/components/StartNow/StartNowAllSteps";
+
 import FirstTimeBuyerSteps from "@/components/FirstTimeBuyer/FirstTimeBuyerAllSteps";
 
 

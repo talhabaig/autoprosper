@@ -2,6 +2,23 @@ import RadioButtonImage from "@/components/Common/CheckButton/RadioButtonImage";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
+interface TypeBadgeProps {
+  type: string;
+}
+
+const TypeBadge: React.FC<TypeBadgeProps> = ({ type }) => {
+  const badgeClass =
+    type === "Finance" ? "bg-status-info" : "bg-status-success";
+
+  return (
+    <div
+      className={`rounded-full px-2 py-[4px] w-fit md:py-[5px] h-[21px] md:h-[25px] text-center text-white text-[10px] md:text-xs font-bold ${badgeClass}`}
+    >
+      <span className="my-auto">{type}</span>
+    </div>
+  );
+};
+
 const Incentives: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
@@ -31,19 +48,19 @@ const Incentives: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center lg:gap-[24px] max-w-[940px] divide-y">
+    <div className="flex flex-col justify-center lg:gap-[24px] w-full divide-y">
       {incentives.map((incentive, index) => (
         <div
           key={index}
-          className={`flex flex-col w-full gap-[16px] py-4 ${
+          className={`flex flex-col md:flex-row md:justify-between w-full gap-[16px] md:gap-[14px] xl:gap-0 py-4 ${
             index === 0 ? "border-t" : ""
           } ${index === incentives.length - 1 ? "border-b" : ""}`}
         >
-          <div className="bg-status-info rounded-full px-[8px] py-[4px] w-fit h-[21px] text-center text-white text-[10px] md:text-[12px] font-bold">
-            <span>{incentive.type}</span>
+          <div className="w-[206px] xl:mr-[134px]">
+            <TypeBadge type={incentive.type} />
           </div>
-          <div className="flex flex-row justify-between">
-            <div className="flex flex-col gap-3 justify-center">
+          <div className="flex flex-row justify-between  md:w-full">
+            <div className="flex flex-col gap-[10px] md:gap-3 justify-center w-full max-w-[50%] 2xl:w-[456px] md:max-w-none md:w-auto">
               <div className="font-medium text-sm md:text-lg text-dark">
                 {incentive.title}
               </div>
@@ -51,8 +68,8 @@ const Incentives: React.FC = () => {
                 {incentive.expires}
               </div>
             </div>
-            <div className="flex gap-[10px]">
-              <div className="text-dark font-normal text-sm md:text-lg">
+            <div className="flex w-full gap-[10px] 2xl:gap-[96px] 2xl:ml-auto justify-end">
+              <div className="text-dark text-nowrap md:text-left font-normal text-sm md:text-lg">
                 {incentive.value}
               </div>
               <ChevronDown />

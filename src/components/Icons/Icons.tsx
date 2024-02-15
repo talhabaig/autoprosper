@@ -2521,7 +2521,7 @@ export const DropIcon: React.FC<propType> = ({
       className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M4 4L0 0H8L4 4Z" fill="#5D6878" />
+      <path d="M4 4L0 0H8L4 4Z" fill="" />
     </svg>
   );
 };

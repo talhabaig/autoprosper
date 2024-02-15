@@ -8,7 +8,10 @@ export const getCarSuggestions = async (userPreferences) => {
 
   const systemMessage = {
     role: "system",
-    content: `Based on the following preferences, Please suggest cars that match these criteria and brand. If there is no criteria match then don't apologize and return the match brand cars. And send me a response in the following format: [
+    content: `Based on the following preferences, Please suggest cars that match these criteria and brand.
+     If there is no criteria match then don't apologize and return the match brand cars.
+      And send me a response in the following format: 
+      [
       {
         "id": 1,
         "imageSrc": "",
