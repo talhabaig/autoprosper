@@ -7,6 +7,7 @@ import {
   BasicMailIcon,
   BasicPhoneIcon,
   CloseIcon,
+  CrownIcon,
   FireIcon,
   Plusicon,
   SelectArrow,
@@ -139,7 +140,7 @@ const Page = () => {
           className={`${styles.gallery__item} ${styles["gallery__item--3"]}`}
         >
           <span className={styles.gallery__item_num}>
-            <div className="flex border border-dark-4 rounded-xl py-[17px] pl-[18px] pr-[17px]">
+            <div className="flex border border-dark-4 rounded-xl py-[17px] pl-[18px] pr-[17px] bg-white">
               <select className="w-full">
                 <option key={"opt"} value={"Dealer finance"}>
                   Dealer finance
@@ -256,37 +257,170 @@ const Page = () => {
                 </div>
               </div>
               <div className="px-[16px] pb-[24px]">
-              <div className="flex flex-col bg-green-light rounded-2xl px-[16px] py-[24px]">
-                <textarea
-                  placeholder="Leave a comment"
-                  className="bg-transparent appearance-none outline-none text-dark-4 text-sm"
-                />
-                <div className="flex gap-[14px]">
-                  <div className="flex w-full justify-end items-center cursor-pointer gap-[5px]">
-                    <AttachIcon width="14" height="14" />
-                    <div className="text-dark text-[10px] leading-[15px]">Attachment</div>
+                <div className="flex flex-col bg-green-light rounded-2xl px-[16px] py-[24px]">
+                  <textarea
+                    placeholder="Leave a comment"
+                    className="bg-transparent appearance-none outline-none text-dark-4 text-sm"
+                  />
+                  <div className="flex gap-[14px]">
+                    <div className="flex w-full justify-end items-center cursor-pointer gap-[5px]">
+                      <AttachIcon width="14" height="14" />
+                      <div className="text-dark text-[10px] leading-[15px]">
+                        Attachment
+                      </div>
+                    </div>
+                    <Button
+                      variant="gradient"
+                      size="md"
+                      className="h-[36px] w-[146px] !text-[13px] !px-[20px]"
+                    >
+                      Comment
+                    </Button>
                   </div>
-                  <Button
-                    variant="gradient"
-                    size="md"
-                    className="h-[36px] w-[146px] !text-[13px] !px-[20px]"
-                  >
-                    Comment
-                  </Button>
                 </div>
-              </div>
               </div>
             </div>
           </span>
         </div>
-        {/* <div
+        <div
           className={`${styles.gallery__item} ${styles["gallery__item--7"]}`}
         >
           <span className={styles.gallery__item_num}>
-            search bar with lists 7
+            <div className="flex flex-col gap-[12px] rounded-2xl p-[10px] bg-white ">
+              <div className="rounded-xl bg-yellow flex flex-col gap-[10px] py-[16px] px-[12px] items-center">
+                <CrownIcon />
+                <div className="text-dark text-sm font-bold">
+                  You have 4 offers
+                </div>
+              </div>
+              <div className="rounded-xl bg-green-light flex flex-col gap-[24px] py-[16px] px-[12px]">
+                <div className="flex flex-col gap-[10px]">
+                  <div className="flex flex-col gap-[5px[">
+                    <div className="text-dark font-bold text-sm text-center">
+                      2017 Nissan Maxima
+                    </div>
+                    <div className="text-dark-3 text-[10px] leading-[15px] text-center">
+                      (Pre-Approved)
+                    </div>
+                  </div>
+                  <div className="text-[10px] leading-[15px] text-dark-4 text-center">
+                    <span className="text-dark font-bold text-lg">$210</span>/mo
+                  </div>
+                </div>
+                <div className="flex flex-col gap-[8px] border-t-[1px] border-dark-6 pt-[16px]">
+                  <div className="flex justify-between">
+                    <div className="text-dark-3 text-[10px] leading-[15px]">
+                      APR
+                    </div>
+                    <div className="text-dark font-bold text-xs ">18.0%</div>
+                  </div>
+                  <div className="flex justify-between">
+                    <div className="text-dark-3 text-[10px] leading-[15px]">
+                      Loan Amount
+                    </div>
+                    <div className="text-dark font-bold text-xs">$16,065</div>
+                  </div>
+                </div>
+              </div>
+              <div className="rounded-xl bg-green-light flex flex-col gap-[24px] py-[16px] px-[12px]">
+                <div className="flex flex-col gap-[10px]">
+                  <div className="flex flex-col gap-[5px[">
+                    <div className="text-dark font-bold text-sm text-center">
+                      2017 Nissan Maxima
+                    </div>
+                    <div className="text-dark-3 text-[10px] leading-[15px] text-center">
+                      (Pre-Approved)
+                    </div>
+                  </div>
+                  <div className="text-[10px] leading-[15px] text-dark-4 text-center">
+                    <span className="text-dark font-bold text-lg">$210</span>/mo
+                  </div>
+                </div>
+                <div className="flex flex-col gap-[8px] border-t-[1px] border-dark-6 pt-[16px]">
+                  <div className="flex justify-between">
+                    <div className="text-dark-3 text-[10px] leading-[15px]">
+                      APR
+                    </div>
+                    <div className="text-dark font-bold text-xs ">18.0%</div>
+                  </div>
+                  <div className="flex justify-between">
+                    <div className="text-dark-3 text-[10px] leading-[15px]">
+                      Loan Amount
+                    </div>
+                    <div className="text-dark font-bold text-xs">$16,065</div>
+                  </div>
+                </div>
+              </div>
+              <div className="rounded-xl bg-green-light flex flex-col gap-[24px] py-[16px] px-[12px]">
+                <div className="flex flex-col gap-[10px]">
+                  <div className="flex flex-col gap-[5px[">
+                    <div className="text-dark font-bold text-sm text-center">
+                      2017 Nissan Maxima
+                    </div>
+                    <div className="text-dark-3 text-[10px] leading-[15px] text-center">
+                      (Pre-Approved)
+                    </div>
+                  </div>
+                  <div className="text-[10px] leading-[15px] text-dark-4 text-center">
+                    <span className="text-dark font-bold text-lg">$210</span>/mo
+                  </div>
+                </div>
+                <div className="flex flex-col gap-[8px] border-t-[1px] border-dark-6 pt-[16px]">
+                  <div className="flex justify-between">
+                    <div className="text-dark-3 text-[10px] leading-[15px]">
+                      APR
+                    </div>
+                    <div className="text-dark font-bold text-xs ">18.0%</div>
+                  </div>
+                  <div className="flex justify-between">
+                    <div className="text-dark-3 text-[10px] leading-[15px]">
+                      Loan Amount
+                    </div>
+                    <div className="text-dark font-bold text-xs">$16,065</div>
+                  </div>
+                </div>
+              </div>
+              <div className="rounded-xl bg-green-light flex flex-col gap-[24px] py-[16px] px-[12px]">
+                <div className="flex flex-col gap-[10px]">
+                  <div className="flex flex-col gap-[5px[">
+                    <div className="text-dark font-bold text-sm text-center">
+                      2017 Nissan Maxima
+                    </div>
+                    <div className="text-dark-3 text-[10px] leading-[15px] text-center">
+                      (Pre-Approved)
+                    </div>
+                  </div>
+                  <div className="text-[10px] leading-[15px] text-dark-4 text-center">
+                    <span className="text-dark font-bold text-lg">$210</span>/mo
+                  </div>
+                </div>
+                <div className="flex flex-col gap-[8px] border-t-[1px] border-dark-6 pt-[16px]">
+                  <div className="flex justify-between">
+                    <div className="text-dark-3 text-[10px] leading-[15px]">
+                      APR
+                    </div>
+                    <div className="text-dark font-bold text-xs ">18.0%</div>
+                  </div>
+                  <div className="flex justify-between">
+                    <div className="text-dark-3 text-[10px] leading-[15px]">
+                      Loan Amount
+                    </div>
+                    <div className="text-dark font-bold text-xs">$16,065</div>
+                  </div>
+                </div>
+              </div>
+
+              <Button
+                variant="gradient"
+                size="md"
+                className="!h-[36px] w-full !text-[13px]"
+              >
+                Add New Vehicle
+              </Button>
+            </div>
           </span>
         </div>
-        <div
+        {/*<div
           className={`${styles.gallery__item} ${styles["gallery__item--8"]}`}
         >
           <span className={styles.gallery__item_num}>task list 8</span>

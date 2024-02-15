@@ -173,8 +173,8 @@
   /* on mobile number 10 */
   .gallery__item--7 {
     background: #e2f3ff;
-    grid-column: 3/6;
-    grid-row: 5 / 14;
+    grid-column: 5/6;
+    grid-row: 2 / 11;
   }
   /* on mobile number 7 */
   .gallery__item--8 {
