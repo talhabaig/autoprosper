@@ -32,7 +32,7 @@ export default function Hero() {
         >
           <div
             className="flex flex-col gap-[18px] max-w-[330px] md:max-w-[415px] lg:max-w-[600px] 
-           xl:max-w-[700px] 2xl:max-w-[760px]"
+             xl:max-w-[700px] 2xl:max-w-[760px]"
           >
             <h1
               className="text-[32px] leading-[130%] lg:text-[44px] xl:text-[50px] 2xl:text-[56px]

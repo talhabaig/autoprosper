@@ -22,7 +22,7 @@ const ServiceBanner = () => {
           >
             <h1 className="heading1 mb-[18px]  text-white sm:text-left">
               Discover a simpler{" "}
-              <span className="gradientTextContent"> car service </span>{" "}
+              <span className="gradientTextContent2"> car service </span>{" "}
               experience.
             </h1>
             <p

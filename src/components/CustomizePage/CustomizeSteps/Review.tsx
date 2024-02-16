@@ -116,7 +116,7 @@ const Review: React.FC = () => {
             option={option}
             className="!min-w-[100%]"
             editAble={true}
-            isSelected={selectedOptions.includes(option.label)}
+            isSelected={selectedOptions.includes(option.label.toString())}
             onClick={() => console.log(option)}
           />
         ))}

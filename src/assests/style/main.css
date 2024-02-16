@@ -332,6 +332,12 @@ input[type="number"] {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.gradientTextContent2 {
+  background: linear-gradient(90deg, #00ffa2 20%, #ff3363 36.01%, #ffe464 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /*================== task list css after and before================== */
 

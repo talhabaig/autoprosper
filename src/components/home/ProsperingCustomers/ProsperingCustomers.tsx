@@ -1,5 +1,4 @@
 "use client";
-import { NissanIcon, ToyotaIcon, VwIcon } from "@/components/Icons/BrandIcons";
 import {
   Carousel,
   CarouselContent,
@@ -33,22 +32,24 @@ const ProsperingCustomers: React.FC = () => {
     AOS.refresh();
   }, []);
   return (
-    <Section className="bg-dark !flex-col md:!px-0 overflow-x-hidden">
+    <section className="bg-dark py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  overflow-x-hidden">
       <div
-        data-aos="fade-left"
-        className="w-full md:max-w-[690px] px-[15px] md:px-0 flex flex-col items-center mx-auto text-center"
+        data-aos="fade-right"
+        className="w-full max-w-[380px] md:max-w-[480px] 2xl:max-w-[680px] md:px-0 flex flex-col items-center mx-auto text-center "
       >
-        <SectionHeader className="text-primary-light">
+        <h2
+          className={` heading2 mb-[0.75rem]  xl:mb-[1.125rem]  mx-auto px-[100px] 2xl:px-[40px] lg:px-0 !text-white `}
+        >
           Delivery to prospering customers
-        </SectionHeader>
-        <SectionDesc className="text-dark-6">
+        </h2>
+        <p className="paragraph-large mb-[1.25rem] md:mb-[1.5rem] xl:mb-[2rem] 3xl:mb-[2.6rem] 4xl:mb-[3rem] !text-white">
           Chronicles of the moment the keys are handed over in your driveway,
           the daily drive or feeling your vacation vibes.{" "}
           <span className="bg-rainbow-gradient bg-clip-text text-transparent">
             Use #DeliveredByDriveway
           </span>{" "}
           for a chance to be featured in our happy drivers gallery.
-        </SectionDesc>
+        </p>
       </div>
 
       <div className="w-full">
@@ -75,7 +76,7 @@ const ProsperingCustomers: React.FC = () => {
           </CarouselContent>
         </Carousel>
       </div>
-    </Section>
+    </section>
   );
 };
 

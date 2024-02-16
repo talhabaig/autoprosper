@@ -103,16 +103,14 @@ const ServiceAccordion = () => {
     <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-dark-7">
       <div className="container">
         <div className="max-w-[360px] mx-auto text-center  lg:max-w-[400px]   xl:max-w-[416px] 2xl:max-w-[480px]">
-          <h2 className="heading2 mb-[12px] lg:mb-[1.125rem]">
-            Service Shop
-          </h2>
+          <h2 className="heading2 mb-[12px] lg:mb-[1.125rem]">Service Shop</h2>
           <p className="paragraph-large mb-[1.5rem] md:mb-[1.875rem] lg:mb-[2.5rem] 2xl:mb-[3rem]  ">
             Choose from our menu of services, for auto maintenance as easy as
             ordering lunch.
           </p>
         </div>
         {/* <Plus className="flex-[0_0_auto] w-[16px] h-[16px] md:w-[20px] md:h-[20px] lg:w-[24px] lg:h-[24px]" /> */}
-         
+
         <Accordion
           type="single"
           collapsible
@@ -146,7 +144,7 @@ const ServiceAccordion = () => {
                     </span>
                   </div>
                 </div>
-                
+
                 <DownArrow className="flex-[0_0_auto] w-[20px] h-[20px] xl:w-[24px] xl:h-[24px]  " />
               </AccordionTrigger>
               <AccordionContent className="px-[16px]">
