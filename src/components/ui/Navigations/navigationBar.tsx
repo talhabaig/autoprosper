@@ -214,8 +214,8 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
                       selectedItem?.title === navigation.title
                         ? "rotate-180 !fill-dark"
                         : ""
-                    } ${selectedItem && "fill-[#5D6878]"}
-                    ${variant === "dark" && "!fill-dark" }`}
+                    } ${selectedItem && "!fill-[#5D6878]"}
+                       ${variant === "dark" && "!fill-dark" }`}
                     aria-hidden="true"
                   />
                 </div>
