@@ -162,7 +162,7 @@
   .gallery__item--5 {
     background: #e2fff5;
     grid-column: 1;
-    grid-row: 4/14;
+    grid-row: 4/8;
   }
   /* on mobile 5 */
   .gallery__item--6 {
@@ -180,25 +180,56 @@
   .gallery__item--8 {
     background: #17bd8d;
     grid-column: 6;
-    grid-row: 3 / span 5;
+    grid-row: 3 / span 8;
   }
   /* on mobile number 6 */
   .gallery__item--9 {
     background: #d7fff3;
-    grid-column: 2;
-    grid-row: 7/14;
+    grid-column: 1;
+    grid-row: 8/11;
   }
   /* on mobile number 8 */
   .gallery__item--10 {
     background: #fff0da;
-    grid-column: 6;
-    grid-row: 8 / span 4;
+    grid-column: 5/ span 2;
+    grid-row: 11 / span 2;
   }
 
   /* on mobile number 9  */
   .gallery__item--11 {
     background: #f0f1f3;
-    grid-column: 6;
-    grid-row: 12/14;
+    grid-column: 5 / span 2;
+    grid-row: 13/14;
+  }
+
+  .gallery__item--12 {
+    background: #f0f1f3;
+    grid-column: 1;
+    grid-row: 11/15;
+  }
+
+
+  .gallery__item--13 {
+    background: #f0f1f3;
+    grid-column: 4 / span 3;
+    grid-row: 14/15;
+  }
+
+  .gallery__item--14 {
+    background: #f0f1f3;
+    grid-column: 4 / span 3;
+    grid-row: 15/17;
+  }
+
+  .gallery__item--15 {
+    background: #f0f1f3;
+    grid-column: 3;
+    grid-row: 14/17;
+  }
+
+  .gallery__item--16 {
+    background: #f0f1f3;
+    grid-column: 1 / span 2;
+    grid-row: 15/17;
   }
 }

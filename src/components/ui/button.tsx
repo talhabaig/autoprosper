@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-default text-primary-foreground hover:bg-primary/90",
+        default: "bg-dark text-white rounded-full text-[13px] font-bold leading-[16.38px]",
         gradient:
           "bg-custom text-dark font-bold hover:bg-btn-primary-gradient-hover rounded-full",
         destructive:
@@ -24,7 +24,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-10 px-4 py-2",
+        default: "h-[36px] px-4 py-2",
         md: "py-[18px] h-[46px] md:h-[56px] text-[14px] md:text-[16px]",
         sm: "h-9 md:h-[46px] md:leading-[20.16px] rounded-full px-[26px] py-[13px] text-[16px]",
         lg: "h-11 rounded-full px-8",
