@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import {
   Accordion,
   AccordionContent,
@@ -17,19 +19,8 @@ const accordionData = [
   {
     id: "item-1",
     title: "Where is my vehicle being serviced?",
-    subHeading: "What's included?",
-    totalPrice: "99",
     description:
       "A Driveway valet takes your vehicle to one of the many authorized service centers in our network, based on location, availability, and your car's make and model. Certified technicians perform all maintenance and service—our mechanics are some of the best in the industry.Your Driveway service advisor keeps you informed every step of the way.",
-    featurePoinsts: [
-      "Premium synthetic oil",
-      "New oil filter",
-      "Inspect engine and cabin air filters",
-      "Top up common vehicle fluids",
-      "Check and adjust tire pressure",
-      "Lube suspension joints",
-      "Multi-point inspection",
-    ],
     icon: (
       <QuestionGradient className="w-[28px] h-[28px] md:w-[36px] md:h-[36px] 2xl:w-[48px] 2xl:h-[48px]" />
     ),
@@ -37,27 +28,26 @@ const accordionData = [
   {
     id: "item-2",
     title: "Where is my vehicle being serviced?",
-    subHeading: "What's included?",
-    totalPrice: "99",
     description:
       "A Driveway valet takes your vehicle to one of the many authorized service centers in our network, based on location, availability, and your car's make and model. Certified technicians perform all maintenance and service—our mechanics are some of the best in the industry.Your Driveway service advisor keeps you informed every step of the way.",
-    featurePoinsts: [
-      "Premium synthetic oil",
-      "New oil filter",
-      "Inspect engine and cabin air filters",
-      "Top up common vehicle fluids",
-      "Check and adjust tire pressure",
-      "Lube suspension joints",
-      "Multi-point inspection",
-    ],
     icon: (
       <QuestionGradient className="w-[28px] h-[28px] md:w-[36px] md:h-[36px] 2xl:w-[48px] 2xl:h-[48px]" />
     ),
   },
 ];
 const FaqAccordion = () => {
+  const pathname = usePathname();
+  useEffect(() => {
+    const faqSection = document.getElementById("faqservices");
+    if (faqSection && pathname.includes("faqservices")) {
+      faqSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
   return (
-    <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-dark-7">
+    <section
+      className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-dark-7"
+      id="faqservices"
+    >
       <div className="container">
         <div className="max-w-[360px] mx-auto text-center  lg:max-w-[400px]   xl:max-w-[416px] 2xl:max-w-[480px]">
           <h2 className="heading2 mb-[12px] lg:mb-[1.125rem]">FAQ</h2>

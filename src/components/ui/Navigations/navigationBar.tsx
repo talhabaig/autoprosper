@@ -107,7 +107,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
       <div
         className={`md:hidden flex p-[15px] justify-between items-center 
           fixed top-0 left-0 w-full h-auto z-[10] ${
-            scrolled ? "bg-white" : ""
+            scrolled ? "bg-white shadow-[0_7px_15px_rgb(0_0_0_/_5%)]" : ""
           }`}
       >
         <Sheet>

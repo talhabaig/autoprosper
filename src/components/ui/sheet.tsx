@@ -161,18 +161,28 @@ const SheetDescription = React.forwardRef<
 SheetDescription.displayName = SheetPrimitive.Description.displayName;
 
 interface SheetItemProps extends React.HTMLAttributes<HTMLDivElement> {
-  label: string;
+  label?: string;
+  link?: string;
 }
 
-const SheetItem: React.FC<SheetItemProps> = ({ label, ...props }) => {
+const SheetItem: React.FC<SheetItemProps> = ({ link, label, ...props }) => {
   return (
     <div
       className="flex justify-between px-[18px] z-10 py-[19px] border-x-0 border-border-color"
       {...props}
     >
-      <div className="text-sm leading-[17.64px] font-bold text-dark-3">
-        {label}
-      </div>
+      
+      {link ? (
+        <Link className="group" href={`${link}`}>
+          <span className="text-sm leading-[150%] font-bold text-dark-3 block group-hover:text-dark">
+            {label}
+          </span>
+        </Link>
+      ) : (
+        <span className="text-sm leading-[150%] font-bold text-dark-3 block group-hover:text-dark">
+          {label}
+        </span>
+      )}
       <ChevronRight className="md:hidden" />
     </div>
   );
@@ -199,9 +209,13 @@ const SheetSectionItems: React.FC<SheetSectionItemsProps> = ({
           {title}
         </div>
       )}
-      <div className={`divide-y ${title && 'first:border-t-2' } divide-gray-100 border-y-[1px] border-border-color text-dark-3`}>
+      <div
+        className={`divide-y ${
+          title && "first:border-t-2"
+        } divide-gray-100 border-y-[1px] border-border-color text-dark-3`}
+      >
         {items.map((item, index) => (
-          <SheetItem key={index} label={item.label} />
+          <SheetItem key={index} label={item.label} link={item.link} />
         ))}
       </div>
       <CutEllipseGradient className="absolute md:-bottom-4 lg:-bottom-8 hidden md:block -z-10 md:-left-10 " />
@@ -218,6 +232,7 @@ interface SheetSectionDetailsProps {
     button: {
       text: string;
       icon: JSX.Element;
+      href?: string;
     };
   };
 }
@@ -235,12 +250,15 @@ const SheetSectionDetails: React.FC<SheetSectionDetailsProps> = ({
         <div className="flex-col mt-[10px] mb-[20px]">
           {content.list.map((list) => list.element)}
         </div>
-        <Button
-          className="rounded-full border-gray text-gray md:w-fit lg:w-[192px] lg:px-6 "
-          variant="outline"
-        >
-          {content.button.text} <span>{content.button.icon}</span>
-        </Button>
+        <Link href={`${content?.button?.href ? content?.button?.href : "/"}`}>
+          <Button
+            className="rounded-full border-gray text-gray md:w-fit lg:w-[192px] lg:px-6 hover:bg-dark
+          hover:text-white hover:[&>svg]:!fill-white"
+            variant="outline"
+          >
+            {content.button.text} <span>{content.button.icon} </span>
+          </Button>
+        </Link>
       </div>
     </>
   );

@@ -1,5 +1,6 @@
-import React from "react";
-
+"use client";
+import React, { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { GetPreQualifiedSecureFinancing } from "../../../assests/interfaces/Home/index";
 import {
   DocumentRounded,
@@ -48,7 +49,14 @@ const cardData: GetPreQualifiedSecureFinancing[] = [
   },
 ];
 
-const GetPreQualified: React.FC<propType> = ({ onClickProp ,currentStep }) => {
+const GetPreQualified: React.FC<propType> = ({ onClickProp, currentStep }) => {
+  const pathname = usePathname();
+  useEffect(() => {
+    const faqSection = document.getElementById("faqfinence");
+    if (faqSection && pathname.includes("faqfinence")) {
+      faqSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
   return (
     <>
       <section className="bg-dark-7">
@@ -72,9 +80,8 @@ const GetPreQualified: React.FC<propType> = ({ onClickProp ,currentStep }) => {
           </div>
         </div>
       </section>
-    
-    
-      <GetPreQuallifiedForm onClick={onClickProp}  currentStep={currentStep}/>
+
+      <GetPreQuallifiedForm onClick={onClickProp} currentStep={currentStep} />
 
       <section className="bg-dark-7 py-[3rem]   2xl:py-[4rem] 3xl:py-[6rem]">
         <div className="container">
@@ -110,7 +117,10 @@ const GetPreQualified: React.FC<propType> = ({ onClickProp ,currentStep }) => {
         </div>
       </section>
 
-      <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]">
+      <section
+        id="faqfinence"
+        className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]"
+      >
         <div className="container">
           <div className="max-w-[360px] mx-auto text-center md:max-w-[480px] lg:max-w-[540px] 2xl:max-w-[700px]">
             <h2 className="heading2 mb-[0.625rem] lg:mb-[1.125rem]">
