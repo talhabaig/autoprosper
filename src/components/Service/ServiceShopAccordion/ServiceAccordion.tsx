@@ -14,6 +14,7 @@ import {
   TickTrue,
 } from "@/components/Icons/Icons";
 import { hkdf } from "crypto";
+import RightArrow from "@/components/Icons/RightArrow";
 
 const accordionData = [
   {
@@ -21,6 +22,8 @@ const accordionData = [
     title: "Synthetic Oil Change",
     subHeading: "What's included?",
     totalPrice: "99",
+    buttonlabel: "Book Now",
+    buttonIcon: <RightArrow className="w-[20px] h-[20px]" />,
     description:
       "Choose longer-lasting premium synthetic oil for better engine performance and protection.",
     featurePoinsts: [
@@ -41,6 +44,8 @@ const accordionData = [
     title: "Brake Inspection",
     subHeading: "What's included?",
     totalPrice: "99",
+    buttonlabel: "Book Now",
+    buttonIcon: <RightArrow className="w-[20px] h-[20px]" />,
     description:
       "Choose longer-lasting premium synthetic oil for better engine performance and protection.",
     featurePoinsts: [
@@ -62,6 +67,8 @@ const accordionData = [
     title: "Tire rotation & inspection ",
     subHeading: "What's included?",
     totalPrice: "99",
+    buttonlabel: "Book Now",
+    buttonIcon: <RightArrow className="w-[20px] h-[20px]" />,
     description:
       "Choose longer-lasting premium synthetic oil for better engine performance and protection.",
     featurePoinsts: [
@@ -82,6 +89,8 @@ const accordionData = [
     title: "Express auto detailing",
     subHeading: "What's included?",
     totalPrice: "99",
+    buttonlabel: "Book Now",
+    buttonIcon: <RightArrow className="w-[20px] h-[20px]" />,
     description:
       "Choose longer-lasting premium synthetic oil for better engine performance and protection.",
     featurePoinsts: [
@@ -176,6 +185,12 @@ const ServiceAccordion = () => {
                       </li>
                     ))}
                   </ul>
+                  <div className="hidden md:flex md:justify-end mt-4 ">
+                    <button className="flex justify-center items-center font-bold gap-[6px] text-[16px] p-[18px_32px] rounded-[100px] bg-btn-primary-gradient text-dark hover:bg-btn-primary-gradient-hover">
+                      {item.buttonlabel}
+                      {item.buttonIcon}
+                    </button>
+                  </div>
                 </div>
               </AccordionContent>
             </AccordionItem>
