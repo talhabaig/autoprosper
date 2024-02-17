@@ -136,10 +136,12 @@ const Discover = () => {
                           {o.discount}% OFF
                         </div>
                         <div className="relative">
-                          <img
+                          <Image
                             src={o.image}
                             alt="car image"
                             className="z-10 object-contain h-[53px] w-[130px]"
+                            width={370}
+                            height={187}
                           />
                           <EllipseGradient className="absolute -z-10 -top-[100%]" />
                         </div>
@@ -184,10 +186,12 @@ const Discover = () => {
                       {o.discount}% OFF
                     </div>
                     <div className="relative">
-                      <img
+                      <Image
                         src={o.image}
                         alt="car image"
                         className="z-10 relative object-contain h-[53px] w-[130px]"
+                        width={370}
+                        height={187}
                       />
                       <EllipseGradient className="absolute z-[5] md:top-0 md:bottom-0 lg:-top-2 h-full w-full" />
                     </div>

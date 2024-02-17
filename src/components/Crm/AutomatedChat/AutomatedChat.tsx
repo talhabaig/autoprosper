@@ -1,5 +1,7 @@
 import { AttachFile } from "@/components/Icons/Icons";
+import Image from "next/image";
 import React from "react";
+
 const AutomatedChatlist = [
   {
     id: 1,
@@ -33,7 +35,13 @@ const AutomatedChat = () => {
           <div className="triangle"></div>
         </div>
         <div className="lg:mb-[110px]">
-          <img src=" ../crm/robot.png" className="mx-auto" />
+          <Image
+            src="/Crm/robot.png"
+            width={95}
+            height={160}
+            alt="Chating Ai Robot"
+            className="mx-auto"
+          />
         </div>
         {AutomatedChatlist.map((item, index) => (
           <div

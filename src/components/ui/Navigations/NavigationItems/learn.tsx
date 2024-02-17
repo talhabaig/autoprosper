@@ -104,7 +104,7 @@ const Learn = () => {
     <NavigationItemsWrapper>
       <div className="flex flex-col md:flex-row md:divide-x-[1px] md:divide-dark-6">
         <SheetSectionItems
-          title="Car Question Answered"
+          title="CAR QUESTION ANSWERED"
           items={navigationData}
         />
         <div className="px-[18px] md:pl-[36px] lg:pl-[72px]  mt-[30px] gap-[24px] flex flex-col md:flex-row md:justify-between">

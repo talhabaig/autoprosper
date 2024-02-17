@@ -62,10 +62,13 @@ const ProsperingCustomers: React.FC = () => {
                 key={"carousel" + index}
                 className="basis-1/4 lg:basis-[15%]"
               >
-                <img
+                <Image
                   src={customer}
                   className="w-[210px] h-auto rounded-xl"
+                  width={240}
+                  height={330}
                   alt="prospering customers"
+
                 />
               </CarouselItem>
             ))}
