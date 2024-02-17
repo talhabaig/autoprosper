@@ -26,7 +26,7 @@ const Customize: React.FC<TrimProps> = ({ steps, currentStep }) => {
             <img
               src="/home/blue-nissan.png"
               alt="car image"
-              className="z-10 w-[104px] md:w-[224px] md:h-[93px]"
+              className="z-0 w-[104px] md:w-[224px] md:h-[93px]"
             />
           </div>
           <div className="flex flex-col md:gap-[8px] justify-center md:justify-start">

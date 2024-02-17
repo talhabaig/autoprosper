@@ -2,12 +2,18 @@ import React from "react";
 import Image from "next/image";
 import { EllipseGradient } from "../../ui/ellipseGradient";
 import Button from "../../Common/Button/Button";
+import { BackArrow } from "@/components/Icons/Icons";
 
 interface YourCashOfferProps {}
 
 const YourCashOffer: React.FC<YourCashOfferProps> = () => {
   return (
-    <div className="container md:max-w-[456px]">
+    <div className="container md:max-w-[456px] md:pt-12">
+        <span
+                  className="cursor-pointer my-[12px] flex items-center"
+                >
+                  <BackArrow className="w-[24px] h-[24px] md:hidden "/>
+                </span>
       <div className="flex min-h-[187px] relative justify-center">
         <Image
           src="/home/red-toyota.png"
@@ -16,7 +22,7 @@ const YourCashOffer: React.FC<YourCashOfferProps> = () => {
           width={348}
           height={174}
         />
-        <EllipseGradient className="absolute z-0" />
+        <EllipseGradient className="absolute top-[-32px] md:top-[-42px] z-0" />
       </div>
 
       <p className="text-center text-[#001B44] mb-3 text-[32px] 2xl:text-[56px] font-[400]">

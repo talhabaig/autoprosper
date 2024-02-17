@@ -320,10 +320,11 @@ const InventoryLayout = () => {
             </span>
           </button>
         </div>
-        <div className="fixed z-[51] bottom-[24px] right-[28px] hidden md:block">
+        <div className="fixed z-[51] bottom-[24px] right-[30%] md:right-[28px]">
           <Link href="#">
-            <button className=" hover:scale-110 transition-all bg-btn-primary-gradient p-[20px] rounded-full cursor-pointer">
-              <ArrowUpper className="w-[24px] h-[24px]" />
+            <button className=" hover:scale-110 transition-all bg-btn-primary-gradient gap-[5px] flex items-center !p-[7px_16px] md:!p-[20px] rounded-full cursor-pointer">
+              <ArrowUpper className="w-[16px] h-[16px]  md:w-[24px] md:h-[24px] " />
+           <span className="text-[14px] font-medium text-dark md:hidden">back to top</span> 
             </button>
           </Link>
         </div>
