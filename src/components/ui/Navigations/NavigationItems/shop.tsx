@@ -20,11 +20,11 @@ const Shop = () => {
   const navigationData = [
     {
       label: "Shop used car",
-      link: "#",
+      link: "/find-or-make",
     },
     {
       label: "Shop new car",
-      link: "#",
+      link: "/customize",
     },
   ];
 

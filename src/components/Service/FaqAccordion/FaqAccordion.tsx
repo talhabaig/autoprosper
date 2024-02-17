@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import {
   Accordion,
   AccordionContent,
@@ -56,8 +58,18 @@ const accordionData = [
   },
 ];
 const FaqAccordion = () => {
+  const pathname = usePathname();
+  useEffect(() => {
+    const faqSection = document.getElementById("faqservices");
+    if (faqSection && pathname.includes('faqservices')) {
+      faqSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
   return (
-    <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-dark-7">
+    <section
+      className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-dark-7"
+      id="faqservices"
+    >
       <div className="container">
         <div className="max-w-[360px] mx-auto text-center  lg:max-w-[400px]   xl:max-w-[416px] 2xl:max-w-[480px]">
           <h2 className="heading2 mb-[12px] lg:mb-[1.125rem]">FAQ</h2>
