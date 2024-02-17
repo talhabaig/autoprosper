@@ -25,29 +25,37 @@ const CarouselCardContent: React.FC<CarouselProps> = ({ data }) => {
     <Card className="bg-white rounded-xl h-full border-0 p-[16px_18px_18px] lg:p-6 ">
       <div className="flex flex-col  gap-[18px] md:gap-[24px] h-full ">
         <div className="flex h-[128px] lg:h-[170px] 3xl:h-[240px] overflow-hidden relative justify-center">
-          <img
+          <Image
             src={data.image}
-            alt="car image"
+            width={377}
+            height={190}
             className="relative max-w-[228px] max-h-[78px] 
             lg:max-w-[280px] lg:max-h-[120px] self-end z-10 object-contain
             3xl:max-w-[370px] 3xl:max-h-[180px] h-full w-full"
+            alt="Car model parked in a scenic location"
           />
           <EllipseGradient
             className={`absolute max-w-[175px] top-[-32px]  z-0 md:max-w-[184px] lg:top-[-20px]
             lg:max-w-[260px] 3xl:max-w-[334px] 3xl:top-0`}
           />
-          <span className="inline-block absolute top-0 left-0 [&>svg]:w-[26px] [&>svg]:h-[26px]
-          lg:[&>svg]:w-[36px] lg:[&>svg]:h-[36px] 3xl:[&>svg]:w-[46px] 3xl:[&>svg]:h-[46px]">
+          <span
+            className="inline-block absolute top-0 left-0 [&>svg]:w-[26px] [&>svg]:h-[26px]
+          lg:[&>svg]:w-[36px] lg:[&>svg]:h-[36px] 3xl:[&>svg]:w-[46px] 3xl:[&>svg]:h-[46px]"
+          >
             {data.brandIcon}
           </span>
         </div>
         <div className="flex flex-col gap-[8px] md:gap-[10px] lg:gap-[12px]">
-          <h1 className="text-left font-normal text-dark text-[18px] leading-[130%] 
-          lg:text-[24px] lg:leading-[34px]">
+          <h1
+            className="text-left font-normal text-dark text-[18px] leading-[130%] 
+          lg:text-[24px] lg:leading-[34px]"
+          >
             {data.brandName}
           </h1>
-          <p className="text-left !mb-[4px] font-normal text-[13px] leading-[150%]
-           lg:text-[16px] lg:leading-[24px] text-dark-2">
+          <p
+            className="text-left !mb-[4px] font-normal text-[13px] leading-[150%]
+           lg:text-[16px] lg:leading-[24px] text-dark-2"
+          >
             {data.description}
           </p>
           <div className="flex gap-[6px] md:gap-[8px] items-center">

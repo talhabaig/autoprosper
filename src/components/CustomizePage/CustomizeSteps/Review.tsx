@@ -3,7 +3,9 @@ import RightArrow from "@/components/Icons/RightArrow";
 import { Button } from "@/components/ui/button";
 import CardData from "@/components/ui/cardData";
 import { EllipseGradient } from "@/components/ui/ellipseGradient";
+import Image from "next/image";
 import { useState } from "react";
+
 
 const Review: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
@@ -55,10 +57,12 @@ const Review: React.FC = () => {
       <div className="flex flex-col lg:flex-row w-full items-start justify-start lg:gap-[24px]">
         <div className="relative flex items-center w-full h-[160px] md:h-[217px] my-auto justify-center">
           <EllipseGradient className="absolute -top-3 lg:-top-10 left-0 w-full h-full z-0" />
-          <img
+          <Image
             src="/home/blue-nissan.png"
             alt="car image"
             className="z-10 w-[267px] h-[111px] md:w-[372px] md:h-[155px]"
+            height={110}
+            width={270}
           />
         </div>
         <div className="flex flex-col w-full">

@@ -6,6 +6,7 @@ import { ArrowRight } from "@/components/Icons/Icons";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Image from "next/image";
 
 export default function Hero() {
   useEffect(() => {
@@ -17,12 +18,29 @@ export default function Hero() {
   }, []);
   return (
     <>
-      <div
+      <header
         className="mt-[-61px] md:mt-0 pt-[61px] md:pt-0 min-h-[643px] md:min-h-[710px]
-        lg:min-h-[760px] xl:min-h-screen min-w-full bg-cover bg-hero-mobile sm:bg-hero bg-center 
-        overflow-hidden"
+        lg:min-h-[760px] xl:min-h-screen min-w-full bg-cover 
+        overflow-hidden relative"
       >
         <NavigationBar />
+        
+        <div className="absolute top-0 left-0 w-full h-full">
+          <Image
+            src="/images/cover-mobile.png"
+            width={360}
+            height={632}
+            alt="New Car Models - Explore the Latest Deals and Offers on Brand New Cars"
+            className={`w-full h-full object-cover reletive sm:!hidden`}
+          />
+          <Image
+            src="/images/cover.png"
+            width={1728}
+            height={952}
+            alt="New Car Models - Explore the Latest Deals and Offers on Brand New Cars"
+            className={`w-full h-full object-cover reletive hidden sm:!block`}
+          />
+        </div>
 
         <div
           data-aos="fade-up"
@@ -61,7 +79,7 @@ export default function Hero() {
             }
           />
         </div>
-      </div>
+      </header>
     </>
   );
 }
