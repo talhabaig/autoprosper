@@ -58,7 +58,7 @@ const Review: React.FC = () => {
           <img
             src="/home/blue-nissan.png"
             alt="car image"
-            className="z-10 w-[267px] h-[111px] md:w-[372px] md:h-[155px]"
+            className="z-0 w-[267px] h-[111px] md:w-[372px] md:h-[155px]"
           />
         </div>
         <div className="flex flex-col w-full">

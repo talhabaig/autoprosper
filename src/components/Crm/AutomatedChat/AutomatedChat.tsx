@@ -52,7 +52,7 @@ const AutomatedChat = () => {
           <input
             type="text"
             placeholder="Type"
-            className="w-full p-[17px_16px] text-[12px] block rounded-xl border border-[#8E97A6]"
+            className="w-full p-[17px_38px_17px_16px] text-[12px] block rounded-xl border border-[#8E97A6]"
           />
           <div className="absolute right-[16px] top-[16px]">
             <AttachFile className="w-[18px] h-[18px] cursor-pointer" />
