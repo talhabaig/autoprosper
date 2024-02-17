@@ -6,7 +6,6 @@ import { EllipseGradient } from "@/components/ui/ellipseGradient";
 import Image from "next/image";
 import { useState } from "react";
 
-
 const Review: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
@@ -60,9 +59,9 @@ const Review: React.FC = () => {
           <Image
             src="/home/blue-nissan.png"
             alt="car image"
-            className="z-10 w-[267px] h-[111px] md:w-[372px] md:h-[155px]"
             height={110}
             width={270}
+            className="z-0 w-[267px] h-[111px] md:w-[372px] md:h-[155px]"
           />
         </div>
         <div className="flex flex-col w-full">
@@ -90,7 +89,9 @@ const Review: React.FC = () => {
                 <div className="text-dark-3 text-[10px] font-bold tracking-[0.9px]">
                   MSRP as Build
                 </div>
-                <div className="text-dark text-sm md:text-base font-normal">$40,045</div>
+                <div className="text-dark text-sm md:text-base font-normal">
+                  $40,045
+                </div>
               </div>
               <div className="flex flex-col gap-2">
                 <div className="text-dark-3 text-[10px] font-bold tracking-[0.9px]">
