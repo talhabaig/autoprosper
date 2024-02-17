@@ -9,12 +9,11 @@ interface YourCashOfferProps {}
 const YourCashOffer: React.FC<YourCashOfferProps> = () => {
   return (
     <div className="container md:max-w-[456px] md:pt-12">
-        <a
-                  href=""
+        <span
                   className="cursor-pointer my-[12px] flex items-center"
                 >
                   <BackArrow className="w-[24px] h-[24px] md:hidden "/>
-                </a>
+                </span>
       <div className="flex min-h-[187px] relative justify-center">
         <Image
           src="/home/red-toyota.png"
