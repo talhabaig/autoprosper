@@ -122,10 +122,10 @@ const ClientReviewSlider = () => {
                     </span>
                   ))}
                 </div>
-                <h3 className="heading4 text-[14px] 3xl:text-[24px] leading-[130%] text-left font-bold mb-[12px]">
+                <h3 className="heading4 text-[14px] xl:text-[18px] 3xl:text-[24px] leading-[130%] text-left font-bold mb-[12px]">
                   “ {item.heading}
                 </h3>
-                <p className="text-dark-3 text-[12px] md:text-[16px] leading-[150%] mb-[24px]">
+                <p className="text-dark-3 text-[12px] xl:text-[14px] 2xl:text-[16px] leading-[150%] mb-[24px]">
                   {item.description}
                 </p>
                 <div className="flex items-center gap-[8px]">
