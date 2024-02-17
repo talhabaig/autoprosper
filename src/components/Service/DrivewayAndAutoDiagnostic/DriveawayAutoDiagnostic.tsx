@@ -99,7 +99,7 @@ const DriveawayAutoDiagnostic = () => {
                 </div>
                 <div className="rounded-xl p-[16px_12px] bg-green-light ">
                   {item.drivewayCustomerPoints?.map((point, index) => (
-                    <div className="flex gap-[10px] mb-[12px] 3xl:mb-6 last-of-type:mb-0">
+                    <div key={index} className="flex gap-[10px] mb-[12px] 3xl:mb-6 last-of-type:mb-0">
                       <TickTrue className="w-[24px] h-[24px] fill-dark flex-[0_0_auto]" />
                       <span className="mb-0 text-[14px] font-normal leading-[150%] 2xl:text-[18px] text-dark">
                         {point}

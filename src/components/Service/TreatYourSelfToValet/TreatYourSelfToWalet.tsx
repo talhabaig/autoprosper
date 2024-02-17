@@ -75,7 +75,7 @@ function TreatYourSelfToValet() {
                   </div>
                   <div className="mb-6 md:mb-0">
                     {item.treatYourSelfPoints.map((point, index) => (
-                      <div className="flex gap-[8px] mb-2 xl:mb-3 ">
+                      <div key={index} className="flex gap-[8px] mb-2 xl:mb-3 ">
                         {item.tickIcon}
                         <span className="mb-0  text-[14px] font-normal leading-5 2xl:text-[16px] text-dark">
                           {point}

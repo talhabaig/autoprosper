@@ -304,7 +304,7 @@ input[type="number"] {
   left: -35px;
 }
 .slickSliderWrapper .slick-prev::before {
-  transform: rotate(180deg) translate(40%, 26%) !important;
+  transform: rotate(180deg) translate(50%, 35%) !important;
 }
 
 .filterWrapper .css-13cymwt-control {
@@ -453,6 +453,26 @@ input[type="number"] {
   .fundDeal li::before {
     left: 10px;
   }
+  .slickSliderWrapper .slick-prev {
+    left: -30px;
+  }
+  .slickSliderWrapper .slick-next {
+    right: -35px;
+  }
+  .slickSliderWrapper .slick-arrow {
+    top: 38%;
+  }
+  .slickSliderWrapper .slick-arrow:hover {
+    opacity: 0.7;
+  }
+}
+@media (min-width: 1200px) {
+  .slickSliderWrapper .slick-prev {
+    left: -35px;
+  }
+  .slickSliderWrapper .slick-next {
+    right: -40px;
+  }
 }
 @media (min-width: 1400px) {
   .slickSliderWrapper .slick-arrow {
@@ -475,9 +495,11 @@ input[type="number"] {
 }
 @media (min-width: 1600px) {
   .slickSliderWrapper .slick-next {
-    right: -65px;
+    right: -70px;
   }
   .slickSliderWrapper .slick-prev {
-    left: -65px;
+    left: -70px;
   }
+ 
+ 
 }

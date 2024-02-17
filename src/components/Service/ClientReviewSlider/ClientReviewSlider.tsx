@@ -76,7 +76,7 @@ const ClientReviewSlider = () => {
         settings: {
           slidesToShow: 1,
           variableWidth: true,
-          arrows: false
+          arrows: false,
         },
       },
     ],
@@ -110,7 +110,12 @@ const ClientReviewSlider = () => {
         </div>
         <Slider {...settings}>
           {cardData.map((item, index) => (
-            <div key={index} className="p-[1px] h-full bg-white rounded-[12px] sliderItem shadow-[0px_36px_72px_-18px_rgba(0,27,68,0.25)]">
+            <div
+              key={index}
+              className="p-[1px] h-full bg-white rounded-[12px] sliderItem
+              shadow-[0px_15px_15px_rgb(0_0_0_/_5%)]"
+            >
+                {/* shadow-[0px_36px_72px_-18px_rgba(0,27,68,0.25)] */}
               <div
                 className="flex flex-col justify-center items-start text-left 
                    rounded-[12px] p-[16px] md:p-[18px] lg:p-[20px] xl:p-[22px] 2xl:p-[24px] bg-white"
@@ -138,59 +143,6 @@ const ClientReviewSlider = () => {
             </div>
           ))}
         </Slider>
-        {/* <Carousel
-          setApi={setApi}
-          className="w-full shadow-[0px_36px_72px_-18px_rgba(0,27,68,0.25)]"
-        >
-          <CarouselContent className="-ml-1 gap-[10px]  md:gap-[1.25rem] xl:gap-[24px] bg-dark-7">
-            {cardData.map((item, index) => (
-              <CarouselItem
-                key={"carousel" + index}
-                className={`ml-[5px] p-[1px] md:p-[1px] basis-[282px] md:basis-[47.8%] xl:basis-[31.7%] md:items-stretch 
-                 rounded-[12px]  shadow-[0px_36px_72px_-18px_rgba(0,27,68,0.25)] ${
-                   selected === index && "bg-btn-primary-gradient"
-                 } `}
-              >
-                <div className="p-1 h-full bg-white rounded-[12px]">
-                  <div
-                    className="flex flex-col justify-center items-start text-left 
-                   rounded-[12px] p-[16px] md:p-[18px] lg:p-[20px] xl:p-[22px] 2xl:p-[24px] bg-white"
-                  >
-                    <div className="mb-[12px]">
-                      {Array.from({ length: 5 }).map((_, index) => (
-                        <span className="inline-block" key={index}>
-                          {item.icon}
-                        </span>
-                      ))}
-                    </div>
-                    <h3 className="heading4 text-[14px] 3xl:text-[24px] leading-[130%] text-left font-bold mb-[12px]">
-                      “ {item.heading}
-                    </h3>
-                    <p className="text-dark-3 text-[12px] md:text-[16px] leading-[150%] mb-[24px]">
-                      {item.description}
-                    </p>
-                    <div className="flex items-center gap-[8px]">
-                      <span>{item.socialMediaPlatform}</span>
-                      <span className="inline-block text-dark text-[14px] font-bold leading-[21px]">
-                        {item.name}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-
-          <CarouselPrevious
-            className="bg-white w-[46px] h-[46px]  absolute bottom-[-68px] md:bottom-[-88px] left-[30%]
-            md:left-[40%] top-[unset] lg:top-1/2 lg:left-[-30px] 2xl:left-[-40px]"
-          />
-          <CarouselNext
-            variant="gradient"
-            className="w-[46px] h-[46px]   absolute bottom-[-68px] md:bottom-[-88px] left-[unset] 
-            right-[30%]  md:right-[40%] top-[unset] lg:top-1/2 lg:right-[-40px] 2xl:right-[-50px]"
-          />
-        </Carousel> */}
       </div>
     </section>
   );
