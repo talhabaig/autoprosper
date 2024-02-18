@@ -18,6 +18,16 @@ export interface SelectProps
   }>;
 }
 
+interface Option {
+  value: string;
+  label: string;
+}
+interface SelectComponentProps {
+  options: Option[];
+  selectedOption: string;
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, currency, ...props }, ref) => {
     const randomId = Math.floor(Math.random() * (100 - 0) + 0) + props.label;
@@ -96,4 +106,18 @@ const TextBox = React.forwardRef<HTMLInputElement, InputProps>(
 );
 TextBox.displayName = "TextBox";
 
-export { Input, Select, TextBox };
+const SelectBox: React.FC<SelectComponentProps> = ({ options, selectedOption, onChange }) => {
+  return (
+    <div className="flex border border-dark-4 rounded-xl py-[17px] pl-[18px] pr-[17px] bg-white">
+      <select className="w-full" value={selectedOption} onChange={onChange}>
+        {options.map((option, index) => (
+          <option key={index} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
+
+export { Input, Select, TextBox, SelectBox };
