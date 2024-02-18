@@ -437,7 +437,7 @@ const Page = () => {
             <div className="flex flex-col gap-[12px]">
               <div className="flex flex-col bg-white rounded-2xl gap-[24px]">
                 <div className="px-[10px] pt-[10px]">
-                  <div className="relative max-w-[310px] flex flex-col justify-center items-center ">
+                  <div className="relative max-w-[310px] flex flex-col justify-center items-center mx-auto">
                     <Image
                       src={"/producDetail/bg-cloud-product-detail.png"}
                       width={446}
@@ -447,7 +447,7 @@ const Page = () => {
                     />
 
                     <div
-                      className={`mt-[-60px]  max-w-[310px] sm:mt-[-80px] max-h-[127px mx-auto]`}
+                      className={`mt-[-60px]  max-w-[310px] sm:mt-[-80px] max-h-[127px]`}
                     >
                       <Image
                         src={"/producDetail/product-detail.png"}
@@ -483,7 +483,7 @@ const Page = () => {
               </div>
               <div className="flex flex-col bg-white rounded-2xl gap-[24px]">
                 <div className="px-[10px] pt-[10px]">
-                  <div className="relative max-w-[310px] flex flex-col justify-center items-center ">
+                  <div className="relative max-w-[310px] flex flex-col justify-center items-center mx-auto">
                     <Image
                       src={"/producDetail/bg-cloud-product-detail.png"}
                       width={446}
@@ -493,7 +493,7 @@ const Page = () => {
                     />
 
                     <div
-                      className={`mt-[-60px]  max-w-[310px] sm:mt-[-80px] max-h-[127px mx-auto]`}
+                      className={`mt-[-60px]  max-w-[310px] sm:mt-[-80px] max-h-[127px]`}
                     >
                       <Image
                         src={"/producDetail/product-detail.png"}
@@ -529,7 +529,7 @@ const Page = () => {
               </div>
               <div className="flex flex-col bg-white rounded-2xl gap-[24px]">
                 <div className="px-[10px] pt-[10px]">
-                  <div className="relative max-w-[310px] flex flex-col justify-center items-center ">
+                  <div className="relative max-w-[310px] flex flex-col justify-center items-center mx-auto">
                     <Image
                       src={"/producDetail/bg-cloud-product-detail.png"}
                       width={446}
@@ -539,7 +539,7 @@ const Page = () => {
                     />
 
                     <div
-                      className={`mt-[-60px]  max-w-[310px] sm:mt-[-80px] max-h-[127px mx-auto]`}
+                      className={`mt-[-60px]  max-w-[310px] sm:mt-[-80px] max-h-[127px]`}
                     >
                       <Image
                         src={"/producDetail/product-detail.png"}
@@ -619,11 +619,11 @@ const Page = () => {
         >
           <span className={styles.gallery__item_num}>
             <div className="bg-white rounded-2xl flex flex-col gap-[8px] px-[16px] py-[24px]">
-              <div className="text-lg text-dark-3">
+              <div className="text-sm md:text-lg text-dark-3">
                 <span className="font-bold text-dark">VIN:</span>{" "}
                 2G1105S3XK9135707
               </div>
-              <div className="text-lg text-dark-3">
+              <div className="text-sm md:text-lg text-dark-3">
                 <span className="font-bold text-dark">Vehicle:</span> 2019
                 CHEVROLET IMPAPA(57,857 miles)
               </div>
@@ -634,15 +634,15 @@ const Page = () => {
           className={`${styles.gallery__item} ${styles["gallery__item--11"]}`}
         >
           <span className={styles.gallery__item_num}>
-            <div className="bg-white rounded-2xl flex px-[16px] py-[24px] gap-[26px]">
+            <div className="bg-white rounded-2xl flex flex-col md:flex-row px-[16px] py-[24px] gap-[12px] md:gap-[26px]">
               <div className="text-dark-3 text-sm font-semibold">
                 Related dates:
               </div>
-              <div className="flex gap-[25px]">
-                <div className="text-sm font-bold text-primary">
+              <div className="flex flex-col md:flex-row gap-[8px] md:gap-[25px]">
+                <div className="text-xs md:text-sm font-bold text-primary">
                   2021 Chevrolet Malibu
                 </div>
-                <div className="text-sm font-bold text-primary">
+                <div className="text-xs md:text-sm font-bold text-primary">
                   2017 Nissan Maxima
                 </div>
               </div>
@@ -661,12 +661,12 @@ const Page = () => {
         >
           <span className={styles.gallery__item_num}>
             <div className="bg-white py-[23px] px-[16px] rounded-2xl">
-              <div className="flex gap-[16px] items-center">
-                <div className="text-dark text-lg font-bold ">
+              <div className="flex flex-col md:flex-row gap-[12px] md:gap-[16px] items-center">
+                <div className="text-dark text-sm md:text-lg font-bold ">
                   Total loan amount (owed to Bank)
                 </div>
-                <div className="flex gap-[48px] items-center">
-                  <div className="bg-dark-7 px-[10px] py-[5px] rounded-full text-dark-3 font-bold text-xs tracking-[0.09em]">
+                <div className="flex flex-col md:flex-row gap-[16px] md:gap-[48px] items-start md:items-center">
+                  <div className="bg-dark-7 px-[8px] md:px-[10px] py-[4px] md:py-[5px] rounded-full text-dark-3 font-bold text-[10px] leading-[12.6px] md:text-xs tracking-[0.09em]">
                     Monthly payment (1st due 01 mar2024)
                   </div>
                   <div className="bg-dark px-[20px] py-[13px] text-white text-[13px] font-bold rounded-full">
@@ -681,9 +681,9 @@ const Page = () => {
           className={`${styles.gallery__item} ${styles["gallery__item--14"]}`}
         >
           <span className={styles.gallery__item_num}>
-            <div className="grid grid-cols-2 grid-rows-2 gap-[24px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-[24px]">
               <div className="bg-white rounded-2xl px-[10px] pt-[11px] pb-[45px] flex flex-col">
-                <div className="flex flex-col gap-[10] bg-dark-7 py-[18px] rounded-2xl">
+                <div className="flex flex-col gap-[10px] bg-dark-7 py-[18px] rounded-2xl">
                   <div className="font-bold text-dark-3 text-lg text-center">
                     Purchase Price
                   </div>
@@ -691,14 +691,14 @@ const Page = () => {
                     $22,050
                   </div>
                 </div>
-                <div className="flex justify-between pt-[24px] px-[37px]">
+                <div className="flex justify-between md:pt-[24px] px-[6px] pt-[16px] md:px-[37px]">
                   <div className="flex flex-col items-center gap-[16px]">
                     <Switch checked />
                     <div className="flex flex-col gap-[12px]">
-                      <div className="text-dark-3 text-sm text-center">
+                      <div className="text-dark-3 max-w-[79px] md:max-w-none text-xs md:text-sm text-center">
                         Extended warranty
                       </div>
-                      <div className="text-dark text-lg font-bold text-center">
+                      <div className="text-dark text-sm md:text-lg font-bold text-center">
                         $2,450
                       </div>
                     </div>
@@ -707,10 +707,10 @@ const Page = () => {
                   <div className="flex flex-col items-center gap-[16px]">
                     <Switch />
                     <div className="flex flex-col gap-[12px]">
-                      <div className="text-dark-3 text-sm text-center">
+                      <div className="text-dark-3 max-w-[79px] md:max-w-none text-xs md:text-sm text-center">
                         GAP Insurance
                       </div>
-                      <div className="text-dark text-lg font-bold text-center">
+                      <div className="text-dark text-sm md:text-lg font-bold text-center">
                         $750
                       </div>
                     </div>
@@ -718,7 +718,7 @@ const Page = () => {
                 </div>
               </div>
               <div className="bg-white rounded-2xl px-[10px] pt-[11px] pb-[45px] flex flex-col">
-                <div className="flex flex-col gap-[10] bg-dark-7 py-[18px] rounded-2xl">
+                <div className="flex flex-col gap-[10px] bg-dark-7 py-[18px] rounded-2xl">
                   <div className="font-bold text-dark-3 text-lg text-center">
                     Trade in value
                   </div>
@@ -730,7 +730,7 @@ const Page = () => {
                   <div className="flex flex-col items-center gap-[16px]">
                     <Switch checked />
                     <div className="flex flex-col gap-[12px]">
-                      <div className="text-dark-3 text-sm text-center">
+                      <div className="text-dark-3 text-xs md:text-sm text-center">
                         Admin
                       </div>
                       <div className="flex gap-[12px]">
@@ -742,7 +742,7 @@ const Page = () => {
                 </div>
               </div>
               <div className="bg-white rounded-2xl px-[10px] pt-[11px] pb-[45px] flex flex-col">
-                <div className="flex flex-col gap-[10] bg-dark-7 py-[18px] rounded-2xl">
+                <div className="flex flex-col gap-[10px] bg-dark-7 py-[18px] rounded-2xl">
                   <div className="font-bold text-dark-3 text-lg text-center">
                     Down payment
                   </div>
@@ -761,7 +761,7 @@ const Page = () => {
                 </div>
               </div>
               <div className="bg-white rounded-2xl px-[10px] pt-[11px] pb-[45px] flex flex-col">
-                <div className="flex flex-col gap-[10] bg-dark-7 py-[18px] rounded-2xl">
+                <div className="flex flex-col gap-[10px] bg-dark-7 py-[18px] rounded-2xl">
                   <div className="font-bold text-dark-3 text-lg text-center">
                     Monthly Payment
                   </div>
@@ -833,130 +833,172 @@ const Page = () => {
           className={`${styles.gallery__item} ${styles["gallery__item--16"]}`}
         >
           <span className={styles.gallery__item_num}>
-            <div className="bg-white rounded-2xl px-[26px] pt-[48px]">
-              <ol className="relative text-gray-500  border-s border-gray-200 border-dashed divide-y-[1px] divide-dark-5">
+            <div className="bg-white rounded-2xl pl-[26px] pr-[16px] pt-[48px]">
+              <ol className="relative text-gray-500  border-s border-gray-200 border-dashed md:divide-y-[1px] md:divide-dark-5">
                 <li className="mb-[20px] ms-6 flex items-center">
-                  <span className="absolute flex items-center justify-center w-[22px] h-[22px] -mt-[10px] ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
+                  <span className="absolute flex items-center justify-center w-[22px] h-[22px] -mt-[20px] md:-mt-[5px] top-0 ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
                     <CheckIcon />
                   </span>
-                  <div className="flex gap-[12px] -mt-[30px] items-center">
-                    <div className="w-[40px] h-[40px] bg-dark-7 py-[11.67px] rounded-full">
-                      <DocumentIcon className="mx-auto" />
-                    </div>
-                    <div className="text-dark text-sm">Approved Document</div>
-                    <div className="flex flex-col gap-[24px]">
-                      <div className="flex gap-[29px] justify-between">
-                        <div className="font-bold text-sm text-dark">
-                          Proof of income Upload
-                        </div>
-                        <div className="flex gap-[17px] items-center">
-                          <div className="h-[24px] w-[24px] bg-primary-light p-[5px] rounded-full">
-                            <MessageIcon className="mx-auto stroke-primary" />
-                          </div>
-                          <div className="text-[13px] font-bold underline leading-[16.38px] text-dark-3">
-                            Upload
-                          </div>
-                        </div>
+                  <div className="flex flex-col -mt-[30px] md:flex-row gap-[11px] md:items-center">
+                    <div className="flex gap-[12px] items-center">
+                      <div className="w-[40px] h-[40px] bg-dark-7 py-[11.67px] rounded-full">
+                        <DocumentIcon className="mx-auto" />
                       </div>
-                      <div className="flex gap-[29px] justify-between">
-                        <div className="font-bold text-sm text-dark">
-                          Phone Bill
-                        </div>
-                        <div className="flex gap-[17px] items-center">
-                          <div className="h-[24px] w-[24px] bg-primary-light p-[5px] rounded-full">
-                            <MessageIcon className="mx-auto stroke-primary" />
+                      <div className="text-dark text-sm">Approved Document</div>
+                    </div>
+                    <div className="flex items-center gap-[2px]">
+                      <div className="hidden md:flex flex-row items-center">
+                        <div className="w-[12px] border-t-[1px] border-dark-5"></div>
+                        <div className="h-[47px] border-t-[1px] border-b-[1px] border-l-[1px] w-5 border-dark-5"></div>
+                      </div>
+                      <div className="flex flex-col pl-[52px] md:pl-0 gap-[12px] md:gap-[24px]">
+                        <div className="flex flex-col md:flex-row gap-[6px] md:gap-[29px] justify-between">
+                          <div className="font-bold text-sm text-dark">
+                            Proof of income
                           </div>
-                          <div className="text-[13px] font-bold underline leading-[16.38px] text-dark-3">
-                            Upload
+                          <div className="flex gap-[17px] items-center">
+                            <div className="h-[24px] w-[24px] bg-primary-light p-[5px] rounded-full">
+                              <MessageIcon className="mx-auto stroke-primary" />
+                            </div>
+                            <div className="text-[13px] font-bold underline leading-[16.38px] text-dark-3">
+                              Upload
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex flex-col md:flex-row gap-[6px] md:gap-[29px] justify-between">
+                          <div className="font-bold text-sm text-dark">
+                            Phone Bill
+                          </div>
+                          <div className="flex gap-[17px] items-center">
+                            <div className="h-[24px] w-[24px] bg-primary-light p-[5px] rounded-full">
+                              <MessageIcon className="mx-auto stroke-primary" />
+                            </div>
+                            <div className="text-[13px] font-bold underline leading-[16.38px] text-dark-3">
+                              Upload
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </li>
-                <li className="pt-[34px] pb-[42px] ms-6">
-                  <span className="absolute flex items-center justify-center w-[22px] h-[22px] ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
+                <li className="pt-[34px] pb-[42px] ms-6 relative">
+                  <span className="absolute flex items-center justify-center w-[22px] h-[22px] -left-10 top-10 ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
                     <CheckIcon />
                   </span>
-                  <div className="flex gap-[12px] items-center">
-                    <div className="w-[40px] h-[40px] bg-dark-7 py-[11.67px] rounded-full">
-                      <PaymentIcon className="mx-auto" />
+                  <div className="flex flex-col md:flex-row gap-[12px] md:items-center">
+                    <div className="flex items-center gap-[12px]">
+                      <div className="w-[40px] h-[40px] bg-dark-7 py-[11.67px] rounded-full">
+                        <PaymentIcon className="mx-auto" />
+                      </div>
+                      <div className="text-dark text-sm">Income</div>
                     </div>
-                    <div className="text-dark text-sm">Income</div>
-                    <div className="ml-[90px] font-bold text-[13px] leading-[16.38px] text-primary">
+                    <div className="ml-[55px] md:ml-[90px] font-bold text-[13px] leading-[16.38px] text-primary">
                       Verified
                     </div>
                   </div>
                 </li>
                 <li className="pt-[34px] mb-10 ms-6">
-                  <span className="absolute flex items-center justify-center w-[22px] h-[22px] ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
+                  <span className="absolute flex items-center justify-center mt-[10px] w-[22px] h-[22px] ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
                     <CheckIcon />
                   </span>
-                  <div className="flex gap-[12px] items-center">
-                    <div className="w-[40px] h-[40px] bg-dark-7 py-[11.67px] rounded-full">
-                      <PaymentIcon className="mx-auto" />
+                  <div className="flex flex-col md:flex-row gap-[12px] md:items-center">
+                    <div className="flex items-center gap-[12px]">
+                      <div className="w-[40px] h-[40px] bg-dark-7 py-[11.67px] rounded-full">
+                        <PaymentIcon className="mx-auto" />
+                      </div>
+                      <div className="text-dark text-sm">GPS</div>
                     </div>
-                    <div className="text-dark text-sm">GPS</div>
                     <Button
                       variant="gradient"
-                      className="ml-[95px] !h-[36px] text-[13px] px-[20px] py-[13px]"
+                      className="ml-[55px] w-[96px] md:ml-[95px] !h-[36px] text-[13px] px-[20px] py-[13px]"
                       size="md"
                     >
                       Connect
                     </Button>
                   </div>
                 </li>
-                <li className="mb-[20px] pt-[21px] ms-6">
-                  <span className="absolute flex items-center justify-center w-[22px] h-[22px] ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
+                <li className="mb-[20px] pt-[21px] ms-6 flex items-center relative">
+                  <span className="absolute flex items-center justify-center w-[22px] h-[22px] top-8 md:top-[45px] -left-10 ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
                     <CheckIcon />
                   </span>
-                  <div className="flex gap-[12px] items-center">
-                    <div className="w-[40px] h-[40px] bg-dark-7 py-[11.67px] rounded-full">
-                      <DocumentIcon className="mx-auto" />
-                    </div>
-                    <div className="text-dark text-sm">Approved Document</div>
-                    <div className="flex flex-col gap-[24px]">
-                      <div className="flex gap-[29px] justify-between">
-                        <div className="font-bold text-sm text-dark">
-                          Proof of income Upload
-                        </div>
-                        <div className="flex gap-[17px] items-center">
-                          <div className="h-[24px] w-[24px] bg-primary-light p-[5px] rounded-full">
-                            <MessageIcon className="mx-auto stroke-primary" />
-                          </div>
-                          <div className="text-[13px] font-bold underline leading-[16.38px] text-dark-3">
-                            Upload
-                          </div>
-                        </div>
+                  <div className="flex flex-col md:flex-row gap-[11px] md:items-center">
+                    <div className="flex gap-[12px] items-center">
+                      <div className="w-[40px] h-[40px] bg-dark-7 py-[11.67px] rounded-full">
+                        <DocumentIcon className="mx-auto" />
                       </div>
-                      <div className="flex gap-[29px] justify-between">
-                        <div className="font-bold text-sm text-dark">
-                          Phone Bill
-                        </div>
-                        <div className="flex gap-[17px] items-center">
-                          <div className="h-[24px] w-[24px] bg-primary-light p-[5px] rounded-full">
-                            <MessageIcon className="mx-auto stroke-primary" />
+                      <div className="text-dark text-sm">Approved Document</div>
+                    </div>
+                    <div className="flex items-center gap-[2px]">
+                      <div className="hidden md:flex flex-row items-center">
+                        <div className="w-[12px] border-t-[1px] border-dark-5"></div>
+                        <div className="h-[47px] border-t-[1px] border-b-[1px] border-l-[1px] w-5 border-dark-5"></div>
+                      </div>
+                      <div className="flex flex-col pl-[52px] md:pl-0 gap-[12px] md:gap-[24px]">
+                        <div className="flex flex-col md:flex-row gap-[6px] md:gap-[29px] justify-between">
+                          <div className="font-bold text-sm text-dark">
+                            Proof of income
                           </div>
-                          <div className="text-[13px] font-bold underline leading-[16.38px] text-dark-3">
-                            Upload
+                          <div className="flex gap-[17px] items-center">
+                            <div className="h-[24px] w-[24px] bg-primary-light p-[5px] rounded-full">
+                              <MessageIcon className="mx-auto stroke-primary" />
+                            </div>
+                            <div className="text-[13px] font-bold underline leading-[16.38px] text-dark-3">
+                              Upload
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex flex-col md:flex-row gap-[6px] md:gap-[29px] justify-between">
+                          <div className="font-bold text-sm text-dark">
+                            Phone Bill
+                          </div>
+                          <div className="flex gap-[17px] items-center">
+                            <div className="h-[24px] w-[24px] bg-primary-light p-[5px] rounded-full">
+                              <MessageIcon className="mx-auto stroke-primary" />
+                            </div>
+                            <div className="text-[13px] font-bold underline leading-[16.38px] text-dark-3">
+                              Upload
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </li>
-                <li className="pt-[34px] pb-[42px] mb-10 ms-6">
-                  <span className="absolute flex items-center justify-center w-[22px] h-[22px] ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
+                <li className="pt-[34px] mb-10 ms-6">
+                  <span className="absolute flex items-center justify-center mt-[10px] w-[22px] h-[22px] ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
                     <CheckIcon />
                   </span>
-                  <div className="flex gap-[12px] items-center">
-                    <div className="w-[40px] h-[40px] bg-dark-7 py-[11.67px] rounded-full">
-                      <PaymentIcon className="mx-auto" />
+                  <div className="flex flex-col md:flex-row gap-[12px] md:items-center">
+                    <div className="flex items-center gap-[12px]">
+                      <div className="w-[40px] h-[40px] bg-dark-7 py-[11.67px] rounded-full">
+                        <PaymentIcon className="mx-auto" />
+                      </div>
+                      <div className="text-dark text-sm">GPS</div>
                     </div>
-                    <div className="text-dark text-sm">GPS</div>
                     <Button
                       variant="gradient"
-                      className="ml-[95px] !h-[36px] text-[13px] px-[20px] py-[13px]"
+                      className="ml-[55px] w-[96px] md:ml-[95px] !h-[36px] text-[13px] px-[20px] py-[13px]"
+                      size="md"
+                    >
+                      Connect
+                    </Button>
+                  </div>
+                </li>
+                <li className="pt-[34px] mb-10 ms-6">
+                  <span className="absolute flex items-center justify-center mt-[10px] w-[22px] h-[22px] ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
+                    <CheckIcon />
+                  </span>
+                  <div className="flex flex-col md:flex-row gap-[12px] md:items-center">
+                    <div className="flex items-center gap-[12px]">
+                      <div className="w-[40px] h-[40px] bg-dark-7 py-[11.67px] rounded-full">
+                        <PaymentIcon className="mx-auto" />
+                      </div>
+                      <div className="text-dark text-sm">GPS</div>
+                    </div>
+                    <Button
+                      variant="gradient"
+                      className="ml-[55px] w-[96px] md:ml-[95px] !h-[36px] text-[13px] px-[20px] py-[13px]"
                       size="md"
                     >
                       Connect

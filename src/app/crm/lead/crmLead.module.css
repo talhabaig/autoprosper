@@ -7,10 +7,10 @@
   order: 1;
 }
 .gallery__item--2 {
-  order: 4;
+  order: 5;
 }
 .gallery__item--3 {
-  order: 3;
+  order: 6;
 }
 .gallery__item--4 {
   order: 11;
@@ -19,22 +19,37 @@
   order: 2;
 }
 .gallery__item--6 {
-  order: 6;
+  order: 11;
 }
 .gallery__item--7 {
-  order: 11;
+  order: 7;
 }
 .gallery__item--8 {
   order: 8;
 }
 .gallery__item--9 {
-  order: 7;
+  order: 3;
 }
 .gallery__item--10 {
   order: 9;
 }
 .gallery__item--11 {
   order: 10;
+}
+.gallery__item--12 {
+  order: 4;
+}
+.gallery__item--13 {
+  order: 12;
+}
+.gallery__item--14 {
+  order: 13;
+}
+.gallery__item--15 {
+  order: 14;
+}
+.gallery__item--16 {
+  order: 15;
 }
 
 @media (min-width: 992px) {
@@ -132,7 +147,6 @@
   }
 
   .gallery__item {
-    border: 1px solid black;
     position: relative;
     overflow: auto;
   }
