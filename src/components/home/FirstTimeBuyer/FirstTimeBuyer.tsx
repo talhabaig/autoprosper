@@ -17,7 +17,7 @@ const FirstTimeBuyer = () => {
     AOS.refresh();
   }, []);
   return (
-    <section className="max-w-[1920px] mx-auto overflow-x-hidden">
+    <section className="max-w-[1920px] mx-auto overflow-hidden">
       <div className="relative min-h-[631px] lg:min-h-[710px] xl:min-h-[800px] 3xl:min-h-[900px] 4xl:min-h-[952px]
        flex justify-center items-center">
         <div className="absolute top-0 left-0 w-full h-full">

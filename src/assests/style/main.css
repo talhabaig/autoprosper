@@ -428,6 +428,7 @@ input[type="number"] {
   content: "";
 }
 
+
 @keyframes animationWorkflow {
   100% {
     transform: translateX(100%);
