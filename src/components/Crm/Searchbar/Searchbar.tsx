@@ -80,8 +80,8 @@ export const Searchbar = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="bg-white  h-[332px] lg:h-[268px] w-full  border rounded-2xl border-dark-5 flex items-center justify-center flex-col gap-4  p-[24px_16px]">
-        <div className="relative w-full">
+      <div className="bg-white w-full  border rounded-2xl border-dark-5 flex items-center justify-center flex-col  p-[24px_16px]">
+        <div className="relative w-full mb-3">
           <div className="absolute h-full flex items-center ps-3">
             <SearchIcon />
           </div>
@@ -92,7 +92,7 @@ export const Searchbar = () => {
             style={placeholderStyles}
           />
         </div>
-        <div className="flex flex-col-reverse lg:flex-row lg:justify-between gap-[15px] lg:gap-0 w-full">
+        <div className="flex flex-col-reverse lg:flex-row lg:justify-between gap-[15px] lg:gap-0 mb-4  w-full">
           <div className="flex gap-1 lg:gap-2 flex-wrap">
             <div className="flex items-center justify-center p-[9px_18px] rounded-[96px] bg-dark text-white font-bold text-sm not-italic">
               Active
@@ -111,7 +111,7 @@ export const Searchbar = () => {
             Showing 921 results that match the following:
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full mb-[16px]">
           <p className="text-dark mb-0 font-bold text-lg not-italic leading-[23.4px] text-left">
             Prospects that need follow-up
           </p>
