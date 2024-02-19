@@ -49,13 +49,16 @@ const SuggestionForYou = () => {
   const { state, setState } = useFirstBuyer();
   const [cardData, setCardData] = useState([]);
   const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    fetchData(state);
-  }, []);
+
   const fetchData = async (state: any) => {
     try {
       setLoading(true);
       const res = await getCarSuggestions(state);
+      if (res.length === 0) {
+        console.log("No data found");
+        setLoading(false);
+        return;
+      }
       const modifiedRes = res.map((x: any) => ({
         ...x,
         imageSrc: "/suggestionForYou/white-nissan.png",
@@ -72,6 +75,19 @@ const SuggestionForYou = () => {
       // throw error;
     }
   };
+  useEffect(() => {
+    fetchData(state);
+  }, []);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (loading) {
+        console.log("No data received. Loading state set to false.");
+        setLoading(false);
+      }
+    }, 60000);
+
+    return () => clearTimeout(timeoutId);
+  }, [loading]);
   return (
     <>
       <section className="bg-dark-7 min-h-screen">
@@ -124,6 +140,8 @@ const SuggestionForYou = () => {
                 ))}
               </div>
             </>
+          ) : cardData.length === 0 ? (
+            <div className="text-center text-dark text-[18px] font-bold py-[16px]">No data found</div>
           ) : (
             <div
               className={`flex flex-wrap  md:items-stretch gap-[0.625rem]
