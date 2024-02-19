@@ -64,6 +64,7 @@ const socialMedia = [
         label: (
           <Facebook className="fill-gray hover:fill-white w-[1.25rem] h-[1.25rem] lg:w-[1.5rem] lg:h-[1.5rem]" />
         ),
+        name: "Fcaebook",
       },
       {
         id: 2,
@@ -71,6 +72,7 @@ const socialMedia = [
         label: (
           <Instagram className="fill-gray hover:fill-white w-[1.25rem] h-[1.25rem] lg:w-[1.5rem] lg:h-[1.5rem]" />
         ),
+        name: "Instagram",
       },
       {
         id: 3,
@@ -78,6 +80,7 @@ const socialMedia = [
         label: (
           <TwitterX className="fill-gray hover:fill-white w-[1.25rem] h-[1.25rem] lg:w-[1.5rem] lg:h-[1.5rem]" />
         ),
+        name: "Twitter",
       },
       {
         id: 4,
@@ -85,6 +88,7 @@ const socialMedia = [
         label: (
           <Youtube className="fill-gray hover:fill-white w-[1.25rem] h-[1.25rem] lg:w-[1.5rem] lg:h-[1.5rem]" />
         ),
+        name: "Youtube",
       },
     ],
   },
@@ -191,7 +195,7 @@ const Footer = () => {
                       target="_blank"
                       href={item.href}
                       rel="noopener noreferrer"
-                      aria-label="Social Media Icon Link"
+                      aria-label={`${item.name} Link`}
                     >
                       <span className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer">
                         {item.label}
@@ -216,6 +220,7 @@ const Footer = () => {
                     target="_blank"
                     href={item.href}
                     rel="noopener noreferrer"
+                    aria-label={`${item.name} Link`}
                   >
                     <span className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer">
                       {item.label}

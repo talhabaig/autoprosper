@@ -55,12 +55,12 @@ const Select: React.FC<SelectProps> = ({ options, ...props }) => {
   return (
     <div className="flex flex-col h-[52px] md:h-[72px] items-start gap-[5px] md:gap-[9px] rounded-xl px-[18px] md:pl-[12px] py-[8px] md:py-[12px] bg-gray-50 border-[1px] border-dark-4">
       <label
-        htmlFor={randomId.toString()}
+        htmlFor={props.label}
         className="cursor-text text-left text-dark-4 text-[9px] md:text-[10px] md:leading-[12.6px]"
       >
         {props.label}
       </label>
-      <div className="flex items-center justify-between w-full">
+      <div  id={props.label} className="flex items-center justify-between w-full">
         <select className="cursor-pointer appearance-none w-full text-[14px] md:text-lg md:leading-[22.68px] text-dark-1 focus:outline-none bg-gray-50 focus:ring-0">
           {options?.map((opt) => (
             <option key={"opt" + randomId.toString()} value={opt.value}>
