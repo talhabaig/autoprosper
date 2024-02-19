@@ -26,7 +26,7 @@ const AutomatedChatlist = [
 ];
 const AutomatedChat = () => {
   return (
-    <div className="bg-white rounded-xl p-[15px]">
+    <div className="bg-white rounded-xl lg:p-[15px]">
       <div className="lg:pt-[104px]">
         <div className="relative text-center p-[9px_42px_9px_48px] bg-green rounded-full">
           <span className="text-[12px] text-dark font-bold leading-[130%]">
