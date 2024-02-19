@@ -248,7 +248,7 @@ const Discover = () => {
                 label="Monthly payment"
               />
             </div>
-            <SwitchWithLabel label="Include trade-in" className="self-start" />
+            <SwitchWithLabel label="Include trade-in"  className="self-start" />
             <Button variant="gradient" size="md" className="w-full ">
               See Matches
             </Button>

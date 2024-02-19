@@ -96,9 +96,9 @@ const Footer = () => {
       <div className="container">
         <div className="flex flex-wrap justify-between">
           <div className="md:flex-grow w-[48%] lg:w-[18%]">
-            <h5 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
+            <h4 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
               {Learn[0].title}
-            </h5>
+            </h4>
             <ul className="mb-[2.5rem] lg:mb-0">
               {Learn[0].items.map((item) => (
                 <li
@@ -118,9 +118,9 @@ const Footer = () => {
             </ul>
           </div>
           <div className="md:flex-grow w-[48%] lg:w-[18%]">
-            <h5 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
+            <h4 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
               {Help[0].title}
-            </h5>
+            </h4>
             <ul className="mb-[2rem] lg:mb-0">
               {Help[0].items.map((item) => (
                 <li
@@ -138,9 +138,9 @@ const Footer = () => {
             </ul>
           </div>
           <div className="md:flex-grow w-[48%] lg:w-[18%]">
-            <h5 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
+            <h4 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
               {Shop[0].title}
-            </h5>
+            </h4>
             <ul className="mb-[2.5rem] lg:mb-0">
               {Shop[0].items.map((item) => (
                 <li
@@ -160,9 +160,9 @@ const Footer = () => {
             </ul>
           </div>
           <div className="md:flex-grow w-[48%] lg:w-[18%]">
-            <h5 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
+            <h4 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
               {Finance[0].title}
-            </h5>
+            </h4>
             <ul className="mb-[3.75rem]">
               {Finance[0].items.map((item) => (
                 <li
@@ -178,9 +178,9 @@ const Footer = () => {
               ))}
             </ul>
             <div className="lg:hidden">
-              <h5 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
+              <h4 className="text-[0.875rem] md:text-[1.25rem] xl:text-[1.5rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
                 {socialMedia[0].title}
-              </h5>
+              </h4>
               <ul className="mb-[2.5rem] lg:mb-0 flex items-center gap-[20px]">
                 {socialMedia[0].items.map((item) => (
                   <li
@@ -191,6 +191,7 @@ const Footer = () => {
                       target="_blank"
                       href={item.href}
                       rel="noopener noreferrer"
+                      aria-label="Social Media Icon Link"
                     >
                       <span className="text-dark-gray text-[12px] xl:text-[0.875rem] underline font-semibold hover:text-light-gray-4 cursor-pointer">
                         {item.label}
@@ -202,9 +203,9 @@ const Footer = () => {
             </div>
           </div>
           <div className="hidden lg:block md:flex-grow w-[48%] lg:w-[18%]">
-            <h5 className="text-[1rem] xl:text-[1.25rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
+            <h4 className="text-[1rem] xl:text-[1.25rem] mb-[1.25rem] 2xl:mb-[1.875rem] text-white font-bold">
               {socialMedia[0].title}
-            </h5>
+            </h4>
             <ul className="mb-[2.5rem] lg:mb-0 flex items-center gap-[24px]">
               {socialMedia[0].items.map((item) => (
                 <li

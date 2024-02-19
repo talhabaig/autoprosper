@@ -6,8 +6,8 @@ import YourCashOffer from "@/components/SellOrTrade/YourCashOffer/YourCashOffer"
 const page = () => {
   return (
     <>
-      <NavigationBar  variant ='dark'/>
-       <YourCashOffer />
+      <NavigationBar variant="dark" />
+      <YourCashOffer />
     </>
   );
 };
