@@ -30,8 +30,8 @@ const Chat = () => {
   ];
 
   return (
-    <div className="bg-white rounded-2xl flex flex-col gap-[45px]">
-      <div className="flex flex-col px-[24px] pt-[30px] gap-[12px] md:gap-[16px]">
+    <div className="bg-white rounded-2xl flex flex-col gap-[45px] md:h-[666px]">
+      <div className="flex flex-col px-[24px] pt-[30px] gap-[12px] md:gap-[16px] max-h-[401px]">
         {comments.map((comment, index) => (
           <div
             key={index}
@@ -52,9 +52,10 @@ const Chat = () => {
       </div>
       <div className="px-[16px] pb-[24px]">
         <div className="flex flex-col bg-green-light rounded-2xl px-[16px] py-[24px]">
-          <textarea
+          <input
+          type="text"
             placeholder="Leave a comment"
-            className="bg-transparent appearance-none outline-none text-dark-4 text-sm"
+            className="bg-transparent appearance-none outline-none text-dark-4 text-sm mb-[35px]"
           />
           <div className="flex gap-[14px]">
             <div className="flex w-full justify-end items-center cursor-pointer gap-[5px]">

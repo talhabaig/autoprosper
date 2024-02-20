@@ -6,7 +6,7 @@ import { Select } from '@/components/ui/input';
 
 const SaleDetails = () => {
   return (
-    <div className="bg-white rounded-2xl py-[24px] px-[16px] flex flex-col gap-[42px]">
+    <div className="bg-white rounded-2xl py-[24px] px-[16px] flex flex-col gap-[42px] max-h-[357px]">
       <div className="flex flex-col gap-[24px]">
         <div className="flex flex-col gap-[4px]">
           <div className="flex gap-[10px] items-center">
@@ -34,13 +34,14 @@ const SaleDetails = () => {
       <div className="flex flex-col w-full gap-[12px]">
         <Select
           className="w-full"
+          variant="small"
           label="Lead conversion phase"
           options={[{ label: "Warm-Engaged", value: "1" }]}
         />
         <Button
           variant="gradient"
           size="md"
-          className="w-full h-[36px] md:h-[46px]"
+          className="w-full !h-[36px] font-bold !py-[13px] !text-[13px]"
         >
           <CheckIcon className="mr-[6px]" /> Mark as sold
         </Button>

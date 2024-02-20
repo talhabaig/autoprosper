@@ -16,7 +16,7 @@ const UserProfile = () => {
     email: "kdodson11@yahoo.com",
   };
   return (
-    <div className="flex flex-col bg-white rounded-2xl p-[24px_16px] gap-[12px]">
+    <div className="flex flex-col bg-white rounded-2xl p-[24px_16px] gap-[12px] max-h-[249px]">
       <div className="flex gap-[2px]">
         {[...Array(userData.fireIcons)].map((_, index) => (
           <FireIcon key={index} />
@@ -31,7 +31,7 @@ const UserProfile = () => {
             Prospect ID: {userData.prospectId}
           </p>
         </div>
-        <div className="flex flex-col gap-[11px]">
+        <div className="flex flex-col gap-[10px]">
           <div className="flex flex-row gap-[16px]">
             <BasicLocationIcon />
             <p className="text-dark-2 text-xs font-normal leading-[18px] m-0">

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Timeline = () => {
   return (
-    <div className="bg-white rounded-2xl pl-[26px] pr-[16px] pt-[48px]">
+    <div className="bg-white rounded-2xl pl-[26px] pr-[16px] pt-[48px] md:w-[526px]">
       <ol className="relative text-gray-500  border-s border-gray-200 border-dashed md:divide-y-[1px] md:divide-dark-5">
         <li className="mb-[20px] ms-6 flex items-center">
           <span className="absolute flex items-center justify-center w-[22px] h-[22px] -mt-[20px] md:-mt-[5px] top-0 ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">

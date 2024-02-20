@@ -28,7 +28,7 @@ const SalesBot = () => {
     buttonText: "Send",
   };
   return (
-    <div className="bg-white w-full h-full md:py-[24px] md:px-[16px]">
+    <div className="bg-white w-full h-full md:h-[603px] md:py-[24px] md:px-[16px]">
       <div className="flex flex-col items-center w-full">
         <div className="font-bold text-xs bg-green py-[9px] mt-[20px] px-[42px] text-dark rounded-full">
           {salesData.title}

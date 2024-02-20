@@ -25,7 +25,7 @@ const PreApprovalSummary = () => {
     },
   };
   return (
-    <div className="bg-white rounded-2xl flex flex-col divide-y-[1px] divide-dark-6">
+    <div className="bg-white rounded-2xl flex flex-col divide-y-[1px] divide-dark-6 md:w-[252px]">
       <div className="text-dark font-bold text-lg py-[58px] text-center">
         {data.preApproved.title}
       </div>
