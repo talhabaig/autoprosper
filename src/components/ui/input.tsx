@@ -63,7 +63,7 @@ Input.displayName = "Input";
 
 const Select: React.FC<SelectProps> = ({ options, variant = 'default', ...props }) => {
   const randomId = Math.floor(Math.random() * (100 - 0) + 0) + props.label;
-  const containerClass = variant === 'small' ? 'h-[32px] md:h-[52px] px-[18px] py-[8px] gap-[5px]' : 'h-[52px] md:h-[72px] px-[18px] md:pl-[12px] py-[8px] md:py-[12px] gap-[5px] md:gap-[9px]';
+  const containerClass = variant === 'small' ? 'h-[52px] px-[18px] py-[8px] gap-[5px]' : 'h-[52px] md:h-[72px] px-[18px] md:pl-[12px] py-[8px] md:py-[12px] gap-[5px] md:gap-[9px]';
   const labelClass = variant === 'small' ? 'text-[8px] md:text-[9px] md:leading-[10.8px]' : 'text-[9px] md:text-[10px] md:leading-[12.6px]';
   const selectClass = variant === 'small' ? 'text-[12px] md:text-[14px] md:leading-[18.72px]' : 'text-[14px] md:text-lg md:leading-[22.68px]';
 

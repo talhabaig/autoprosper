@@ -32,19 +32,19 @@ const UserProfile = () => {
           </p>
         </div>
         <div className="flex flex-col gap-[10px]">
-          <div className="flex flex-row gap-[16px]">
+          <div className="flex flex-row gap-[10px] md:gap-[16px]">
             <BasicLocationIcon />
             <p className="text-dark-2 text-xs font-normal leading-[18px] m-0">
               {userData.address}
             </p>
           </div>
-          <div className="flex flex-row gap-[16px]">
+          <div className="flex flex-row gap-[10px] md:gap-[16px]">
             <BasicPhoneIcon />
             <p className="text-dark-2 text-xs font-normal leading-[18px] m-0">
               {userData.phone}
             </p>
           </div>
-          <div className="flex flex-row gap-[16px]">
+          <div className="flex flex-row gap-[10px] md:gap-[16px]">
             <BasicMailIcon />
             <p className="text-dark-2 text-xs font-normal leading-[18px] m-0">
               {userData.email}

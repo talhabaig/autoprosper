@@ -25,23 +25,23 @@ const Page = () => {
   };
   return (
     <div
-      className="flex flex-col gap-[12px] p-[48px]"
+      className="flex flex-col gap-[16px] md:gap-[12px] py-[30px] px-[18px] md:p-[48px]"
       style={{ backgroundColor: "#F0F4F3" }}
     >
-      <div className="flex flex-col md:flex-row gap-[12px]">
-        <div className="flex flex-col w-[252px] gap-[12px]">
+      <div className="flex flex-col md:flex-row gap-[16px] md:gap-[12px]">
+        <div className="flex flex-col md:w-[252px] gap-[16px] md:gap-[12px]">
           <UserProfile />
           <SaleDetails />
           <Task />
           <SalesActivity />
         </div>
-        <div className="flex flex-col w-[804px] gap-[12px]">
+        <div className="flex flex-col md:w-[804px] gap-[16px] md:gap-[12px]">
           <SalesBot />
           <Chat />
         </div>
-        <div className="flex flex-col gap-[12px]">
-          <div className="flex flex-col md:flex-row gap-[12px]">
-            <div className="flex flex-col w-[252px] gap-[12px]">
+        <div className="flex flex-col gap-[16px] md:gap-[12px]">
+          <div className="flex flex-col md:flex-row gap-[16px] md:gap-[12px]">
+            <div className="flex flex-col md:w-[252px] gap-[16px] md:gap-[12px]">
               <SelectBox
                 options={[{ label: "Dealer finance", value: "Dealer finance" }]}
                 onChange={handleChange}
@@ -49,7 +49,7 @@ const Page = () => {
               />
               <Offers />
             </div>
-            <div className="flex flex-col w-[252px] gap-[12px]">
+            <div className="flex flex-col md:w-[252px] gap-[16px] md:gap-[12px]">
               <div className="bg-white rounded-2xl px-[16px] pt-[12px] pb-[23px] flex flex-col gap-[16px]">
                 <div className="flex justify-end gap-[12px]">
                   <TrippleDots className="cursor-pointer" />
@@ -78,10 +78,10 @@ const Page = () => {
           <RelatedDatesSection />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row gap-[12px] justify-normal">
+      <div className="flex flex-col md:flex-row gap-[16px] md:gap-[12px] justify-normal">
         <Timeline />
         <PreApprovalSummary />
-        <div className="flex flex-col gap-[12px]">
+        <div className="flex flex-col gap-[16px] md:gap-[12px]">
           <TotalLoanInformation />
           <FinancialSummaryGrid />
         </div>

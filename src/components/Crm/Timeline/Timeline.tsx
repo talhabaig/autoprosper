@@ -51,8 +51,8 @@ const Timeline = () => {
             </div>
           </div>
         </li>
-        <li className="pt-[34px] pb-[42px] ms-6 relative">
-          <span className="absolute flex items-center justify-center w-[22px] h-[22px] -left-10 top-10 ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
+        <li className="pt-[34px] pb-[42px] ms-6">
+          <span className="absolute flex items-center justify-center mt-[10px] w-[22px] h-[22px] ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
             <CheckIcon />
           </span>
           <div className="flex flex-col md:flex-row gap-[12px] md:items-center">
@@ -87,8 +87,8 @@ const Timeline = () => {
             </Button>
           </div>
         </li>
-        <li className="mb-[20px] pt-[21px] ms-6 flex items-center relative">
-          <span className="absolute flex items-center justify-center w-[22px] h-[22px] top-8 md:top-[45px] -left-10 ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
+        <li className="mb-[20px] pt-[21px] ms-6 flex items-center">
+          <span className="absolute flex items-center justify-center mt-[10px] w-[22px] h-[22px] ml-[6px] bg-green rounded-full -start-4 ring-4 ring-white">
             <CheckIcon />
           </span>
           <div className="flex flex-col md:flex-row gap-[11px] md:items-center">

@@ -31,7 +31,7 @@ const Chat = () => {
 
   return (
     <div className="bg-white rounded-2xl flex flex-col gap-[45px] md:h-[666px]">
-      <div className="flex flex-col px-[24px] pt-[30px] gap-[12px] md:gap-[16px] max-h-[401px]">
+      <div className="flex flex-col px-[12px] md:px-[24px] pt-[30px] gap-[12px] md:gap-[16px] max-h-[401px]">
         {comments.map((comment, index) => (
           <div
             key={index}
@@ -43,7 +43,7 @@ const Chat = () => {
               alt="avatar"
             />
             <div
-              className={`${comment.align === 'right' ? 'rounded-bl-[16px]' : 'rounded-br-[16px]'} rounded-t-[16px] h-[74px] md:h-[100px] max-w-[262px] md:max-w-[508px] ${comment.backgroundColor} px-[12px] py-[10px] md:px-[30px] md:py-[25px] ${comment.textColor} text-[12px] md:text-[16px] leading-[18px] md:leading-[24px]`}
+              className={`${comment.align === 'right' ? 'rounded-bl-[16px]' : 'rounded-br-[16px]'} rounded-t-[16px] min-h-[74px] md:h-[100px] max-w-[262px] md:max-w-[508px] ${comment.backgroundColor} px-[12px] py-[10px] md:px-[30px] md:py-[25px] ${comment.textColor} text-[12px] md:text-[16px] leading-[18px] md:leading-[24px]`}
             >
               {comment.text}
             </div>
@@ -57,7 +57,7 @@ const Chat = () => {
             placeholder="Leave a comment"
             className="bg-transparent appearance-none outline-none text-dark-4 text-sm mb-[35px]"
           />
-          <div className="flex gap-[14px]">
+          <div className="flex gap-[14px] bg-white md:bg-green-light">
             <div className="flex w-full justify-end items-center cursor-pointer gap-[5px]">
               <AttachIcon width="14" height="14" />
               <div className="text-dark text-[10px] leading-[15px]">
