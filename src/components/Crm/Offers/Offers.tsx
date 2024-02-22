@@ -37,16 +37,16 @@ const Offers = () => {
     <div className="flex flex-col gap-[12px] rounded-2xl p-[10px] bg-white ">
       <div className="rounded-xl bg-yellow flex flex-col gap-[10px] py-[16px] px-[12px] items-center">
         <CrownIcon />
-        <div className="text-dark text-sm font-bold">You have {offers.length} offers</div>
+        <div className="text-dark text-sm font-bold leading-[18.2px]">You have {offers.length} offers</div>
       </div>
       {offers.map((offer, index) => (
         <div
           key={index}
-          className="rounded-xl bg-green-light flex flex-col gap-[24px] py-[16px] px-[12px]"
+          className="rounded-xl bg-green-light flex flex-col gap-[24px] py-[24px] px-[12px]"
         >
           <div className="flex flex-col gap-[10px]">
             <div className="flex flex-col gap-[5px]">
-              <div className="text-dark font-bold text-sm text-center">
+              <div className="text-dark font-bold text-sm text-center leading-[18.2px]">
                 {offer.title}
               </div>
               <div className="text-dark-3 text-[10px] leading-[15px] text-center">
@@ -54,22 +54,22 @@ const Offers = () => {
               </div>
             </div>
             <div className="text-[10px] leading-[15px] text-dark-4 text-center">
-              <span className="text-dark font-bold text-lg">
+              <span className="text-dark font-bold text-lg leading-[23.4px]">
                 {offer.monthlyPayment}
               </span>
               /mo
             </div>
           </div>
-          <div className="flex flex-col gap-[8px] border-t-[1px] border-dark-6 pt-[16px]">
+          <div className="flex flex-col gap-[8px] border-t-[1px] border-dark-6 pt-[12px]">
             <div className="flex justify-between">
               <div className="text-dark-3 text-[10px] leading-[15px]">APR</div>
-              <div className="text-dark font-bold text-xs ">{offer.apr}</div>
+              <div className="text-dark font-bold text-xs leading-[15.6px]">{offer.apr}</div>
             </div>
             <div className="flex justify-between">
               <div className="text-dark-3 text-[10px] leading-[15px]">
                 Loan Amount
               </div>
-              <div className="text-dark font-bold text-xs">
+              <div className="text-dark font-bold text-xs leading-[15.6px]">
                 {offer.loanAmount}
               </div>
             </div>
@@ -79,7 +79,7 @@ const Offers = () => {
       <Button
         variant="gradient"
         size="md"
-        className="!h-[36px] w-full !text-[13px]"
+        className="!h-[36px] w-full !text-[13px] mt-[12px] mb-[14px]"
       >
         Add New Vehicle
       </Button>

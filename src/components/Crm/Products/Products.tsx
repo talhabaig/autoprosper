@@ -31,9 +31,9 @@ const Products = () => {
       {data.map((item, index) => (
         <div
           key={index}
-          className="flex flex-col bg-white rounded-2xl gap-[24px]"
+          className="flex flex-col bg-white rounded-2xl gap-[36px]"
         >
-          <div className="px-[10px] pt-[10px]">
+          <div className="px-[10px] pt-[24px]">
             <div className="relative max-w-[310px] flex flex-col justify-center items-center mx-auto">
               <Image
                 src={"/producDetail/bg-cloud-product-detail.png"}
@@ -57,7 +57,7 @@ const Products = () => {
           </div>
           <div className="flex flex-col gap-[16px] px-[16px] pb-[24px]">
             <div className="flex flex-col gap-[12px]">
-              <div className="text-dark text-sm">{item.title}</div>
+              <div className="text-dark text-sm leading-[18.2px]">{item.title}</div>
               <div className="flex flex-row gap-[8px] items-center">
                 <div className="bg-dark-7 rounded-full text-dark-3 text-[10px] font-bold leading-[12.6px] px-[8px] py-[4px]">
                   {item.model}
@@ -68,11 +68,11 @@ const Products = () => {
               </div>
             </div>
             <div className="flex justify-between">
-              <div className="flex gap-[8px] text-dark font-semibold text-sm">
+              <div className="flex gap-[8px] text-dark font-semibold text-sm leading-[21px]">
                 <ArrowDown width="20" height="20" /> {item.discount}
               </div>
               <div className="w-[1px] bg-dark"></div>
-              <div className="text-dark font-semibold text-sm">
+              <div className="text-dark font-semibold text-sm leading-[21px]">
                 {item.monthly_payment}
               </div>
             </div>

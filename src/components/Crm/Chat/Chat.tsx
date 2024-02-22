@@ -55,7 +55,7 @@ const Chat = () => {
           <input
           type="text"
             placeholder="Leave a comment"
-            className="bg-transparent appearance-none outline-none text-dark-4 text-sm mb-[35px]"
+            className="bg-transparent appearance-none outline-none text-dark-4 text-sm mb-[75px]"
           />
           <div className="flex gap-[14px] bg-white md:bg-green-light">
             <div className="flex w-full justify-end items-center cursor-pointer gap-[5px]">

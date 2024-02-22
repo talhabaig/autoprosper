@@ -113,7 +113,7 @@ TextBox.displayName = "TextBox";
 
 const SelectBox: React.FC<SelectComponentProps> = ({ options, selectedOption, onChange }) => {
   return (
-    <div className="flex border border-dark-4 rounded-xl py-[17px] pl-[18px] pr-[17px] bg-white">
+    <div className="flex border border-dark-4 rounded-xl py-[17px] pl-[18px] pr-[17px] bg-white h-[52px]">
       <select className="w-full" value={selectedOption} onChange={onChange}>
         {options.map((option, index) => (
           <option key={index} value={option.value}>

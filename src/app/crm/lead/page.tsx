@@ -33,7 +33,7 @@ const Page = () => {
           <UserProfile />
           <SaleDetails />
           <Task />
-          <SalesActivity />
+          <SalesActivity className="md:h-[411px]"/>
         </div>
         <div className="flex flex-col md:w-[804px] gap-[16px] md:gap-[12px]">
           <SalesBot />
@@ -41,7 +41,7 @@ const Page = () => {
         </div>
         <div className="flex flex-col gap-[16px] md:gap-[12px]">
           <div className="flex flex-col md:flex-row gap-[16px] md:gap-[12px]">
-            <div className="flex flex-col md:w-[252px] gap-[16px] md:gap-[12px]">
+            <div className="flex flex-col md:w-[252px] gap-[16px]">
               <SelectBox
                 options={[{ label: "Dealer finance", value: "Dealer finance" }]}
                 onChange={handleChange}
