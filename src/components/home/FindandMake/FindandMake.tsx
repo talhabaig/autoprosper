@@ -15,7 +15,7 @@ interface FindOrMakeCardWithRoute extends FindOrMakeCard {
 const cardData: FindOrMakeCardWithRoute[] = [
   {
     id: 1,
-    imageSrc: "/home/discover-ideal.png",
+    imageSrc: "/home/find-or-make-discover-ideal-01.jpg",
     heading: "Discover ideal match",
     description:
       "Undecided on your ideal vehicle? Take a quick quiz to discover the perfect match tailored just for you! Let's begin!",
@@ -28,7 +28,7 @@ const cardData: FindOrMakeCardWithRoute[] = [
   },
   {
     id: 2,
-    imageSrc: "/home/special-order.png",
+    imageSrc: "/home/find-or-make-special-order-02.jpg",
     heading: "Special order and customize",
     description:
       "Design your dream car, and watch as we bring it to life. Your perfect vehicle is just a few steps away!",
