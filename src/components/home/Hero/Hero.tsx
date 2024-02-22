@@ -54,13 +54,13 @@ export default function Hero() {
           >
             <h1
               className="text-[32px] leading-[130%] lg:text-[44px] xl:text-[50px] 2xl:text-[56px]
-             text-white  font-normal"
+             text-white  font-normal md:mx-[30px] lg:mx-[40px] xl:mx-[60px] "
             >
-              Strive for Your{" "}
+              Drive Your{" "}
               <span className="bg-rainbow-gradient bg-clip-text text-transparent">
                 Dreams,
               </span>{" "}
-              Tailored to Your Resources.
+             Within Your Means.
             </h1>
             <p
               className="text-white  text-[14px] leading-[150%] md:text-[16px] lg:text-[20px] 
