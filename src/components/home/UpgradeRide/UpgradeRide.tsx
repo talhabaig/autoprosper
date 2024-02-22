@@ -11,7 +11,7 @@ import "aos/dist/aos.css";
 const upGradeRideDetails: upGradeRide[] = [
   {
     id: 1,
-    imageSrc: "/home/upgrade-ride.png",
+    imageSrc: "/home/upgrade-your-ride-new.jpg",
     contentLabel: "Seamless Ride Upgrades",
     heading: "Upgrade your ride, effortlessly!",
     description:
