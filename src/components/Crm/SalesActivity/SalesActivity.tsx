@@ -47,10 +47,10 @@ const SalesActivityList = [
   },
 ];
 
-const SalesActivity = () => {
+const SalesActivity: React.FC<{ className: string }> = ({ className }) => {
   return (
     <section>
-      <div className="rounded-xl border bg-white p-[24px_16px]">
+      <div className={`rounded-xl border bg-white p-[24px_16px] ${className}`}>
         <h1 className="text-lg font-bold text-[#001B44] mb-3">
           Sales Activity
         </h1>

@@ -41,6 +41,8 @@ const config: Config = {
         "light-gray-3": "#545D72",
         "light-gray-4": "#F6F9FC",
         "dark-gray": "#97A5C1",
+        "greenish-blue": "#E9F4F0",
+        "refreshing-cyan" : "#C3FFEA",
         "light-green": "#E9F4F0",
       },
       backgroundImage: {
