@@ -28,7 +28,7 @@ const Page = () => {
       className="flex flex-col gap-[16px] md:gap-[12px] py-[30px] px-[18px] md:p-[48px]"
       style={{ backgroundColor: "#F0F4F3" }}
     >
-      <div className="flex flex-col md:flex-row gap-[16px] md:gap-[12px]">
+      <div className="flex flex-col md:flex-row gap-[16px] md:gap-[12px] flex-wrap">
         <div className="flex flex-col md:w-[252px] gap-[16px] md:gap-[12px]">
           <UserProfile />
           <SaleDetails />
@@ -78,7 +78,7 @@ const Page = () => {
           <RelatedDatesSection />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row gap-[16px] md:gap-[12px] justify-normal">
+      <div className="flex flex-col md:flex-row gap-[16px] md:gap-[12px] justify-normal flex-wrap">
         <Timeline />
         <PreApprovalSummary />
         <div className="flex flex-col gap-[16px] md:gap-[12px]">
