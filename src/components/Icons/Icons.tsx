@@ -4100,3 +4100,109 @@ export const PaymentIcon: React.FC<propType> = ({
     </svg>
   );
 };
+
+export const RocketIcon: React.FC<propType> = ({
+  width = "20",
+  height = "20",
+  fill = "none",
+  className,
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 20 20"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <mask
+        id="mask0_2518_26821"
+        style={{ maskType: "luminance" }}
+        maskUnits="userSpaceOnUse"
+        x="0"
+        y="0"
+        width="20"
+        height="20"
+      >
+        <path
+          d="M19.5 19.5V0.500002H0.5V19.5H19.5Z"
+          fill="white"
+          stroke="white"
+        />
+      </mask>
+      <g mask="url(#mask0_2518_26821)">
+        <path
+          d="M11.8182 15.3488C11.9554 16.2753 11.6676 17.2525 10.9544 17.9657L9.63477 19.2853C11.16 19.9221 12.9843 19.6205 14.2254 18.3794C15.5072 17.0976 15.7876 15.1937 15.0666 13.6397"
+          stroke="#001B44"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M4.66663 8.18418C3.73554 8.04148 2.75144 8.32848 2.03433 9.04563L0.714678 10.3652C0.0778815 8.84004 0.379483 7.01574 1.62062 5.77457C2.89937 4.49582 4.79737 4.21375 6.34933 4.92836"
+          stroke="#001B44"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M8.79918 15.854C11.5171 15.7142 14.1945 14.6068 16.2704 12.5308C19.4045 9.39678 20.332 4.89186 19.0532 0.94623C15.1076 -0.33252 10.6027 0.594981 7.46863 3.72904C5.3927 5.80498 4.28527 8.4824 4.14551 11.2003"
+          stroke="#001B44"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M15.5211 10.5276C17.1913 8.8573 17.1913 6.14921 15.5211 4.47894C13.8508 2.80866 11.1427 2.80866 9.47243 4.47894C7.80216 6.14921 7.80216 8.8573 9.47243 10.5276C11.1427 12.1978 13.8508 12.1978 15.5211 10.5276Z"
+          stroke="#001B44"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M14.674 6.67981C14.674 6.67981 14.6441 5.93926 13.8714 5.52438C13.162 5.1434 12.2806 5.75399 12.3605 6.41508C12.4064 6.79469 12.5893 7.252 12.8682 7.8359C13.4925 9.14278 11.7738 10.1475 10.7851 9.17192C10.3993 8.79118 10.2444 8.58762 10.1279 8.03067"
+          stroke="#001B44"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M14.6621 5.29492L10.2881 9.66895"
+          stroke="#001B44"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M7.1823 14.2367L8.92891 15.9833L7.39703 17.5151L5.58203 15.7002"
+          stroke="#001B44"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M4.30023 14.4175L2.48535 12.6026L4.01723 11.0707L5.8657 12.9192"
+          stroke="#001B44"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M2.81223 12.93L0.390625 17.3047L1.53086 17.1611L0.390625 19.6094L2.83891 18.4691C2.76844 19.0288 2.69531 19.6094 2.69531 19.6094L7.07004 17.1878"
+          stroke="#001B44"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M7.93961 12.0604C7.60398 11.7248 7.05988 11.7248 6.72426 12.0604L3.98219 14.8025C3.64656 15.1381 3.64656 15.6822 3.98219 16.0178C4.31781 16.3534 4.86191 16.3534 5.19754 16.0178L7.93961 13.2757C8.27523 12.9401 8.27523 12.396 7.93961 12.0604Z"
+          stroke="#001B44"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+    </svg>
+  );
+};
