@@ -8,11 +8,11 @@ const Finance = () => {
   const navigationData = [
     {
       label: "Get Pre-Qualified",
-      link: "#",
+      link: "/get-pre-qualified",
     },
     {
       label: "Estimate Your Payment",
-      link: "#",
+      link: "/estimate-your-payment",
     },
   ];
 
@@ -47,6 +47,7 @@ const Finance = () => {
       ],
       button: {
         text: "View all FAqs",
+        href: "/get-pre-qualified#faqfinence",
         icon: (
           <ArrowRight className="ml-[5px] fill-dark-4 w-[10.67px] h-[10.67px] md:w-[12px] md:h-[12px]" />
         ),
@@ -60,10 +61,10 @@ const Finance = () => {
           element: (
             <div className="flex-col gap-[5px]">
               <Link href="#">
-                <h1 className="text-dark font-normal text-sm md:text-[18px] md:leading-[23.4px]">
+                <h3 className="text-dark font-normal text-[14px] leading-[150%] md:text-[18px] mb-[8px]">
                   2024 Nissan Kicks®
-                </h1>
-                <p className="p-0 m-0 font-normal text-[10px] md:text-sm text-dark-3 leading-[15px] md:leading-[21px]">
+                </h3>
+                <p className="p-0 m-0 font-normal text-[12px] md:text-[14px] text-dark-3 leading-[150%] ">
                   Calculate your affordable car budget. Explore vehicles within
                   your financial range based on your affordability assessment.
                 </p>
@@ -75,10 +76,10 @@ const Finance = () => {
           element: (
             <div className="flex-col gap-[5px] mt-[15px]">
               <Link href="#">
-                <h1 className="text-dark font-normal text-sm md:text-[18px] md:leading-[23.4px]">
+                <h3 className="text-dark font-normal text-[14px] leading-[150%] md:text-[18px] mb-[8px]">
                   2024 Nissan Kicks®
-                </h1>
-                <p className="p-0 m-0 font-normal text-[10px] md:text-sm text-dark-3 leading-[15px] md:leading-[21px]">
+                </h3>
+                <p className="p-0 m-0 font-normal text-[12px] md:text-[14px] text-dark-3 leading-[150%] ">
                   Calculate your affordable car budget. Explore vehicles within
                   your financial range based on your affordability assessment.
                 </p>
@@ -100,7 +101,7 @@ const Finance = () => {
     <NavigationItemsWrapper>
       <div className="flex flex-col md:flex-row md:divide-x-[1px] md:divide-dark-6">
         <SheetSectionItems
-          title="Finance with AutoProsper"
+          title="FINANCE WITH AUTOPROSPER"
           items={navigationData}
         />
         <div className="px-[18px] md:pl-[36px] lg:pl-[72px]  mt-[30px] gap-[24px] flex flex-col md:flex-row md:justify-between">

@@ -30,7 +30,7 @@ const discountAndCreditData: DiscountAndCreditDataItemExtended[] = [
   },
   {
     id: 2,
-    imageSrc: "/home/no-credit-history.png",
+    imageSrc: "/home/get-approved-with-no-credit-history.jpg",
     contentLabel: "Get Approved",
     heading: "Get approved with no credit history.",
     paragraph:

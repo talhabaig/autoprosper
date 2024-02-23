@@ -55,6 +55,7 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
 
   const [selectedItem, setSelectedItem] =
     useState<NavigationContentType | null>(null);
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   const handleCloseContent = () => {
     setSelectedItem(null);
@@ -81,26 +82,46 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
     handleCloseContent();
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (typeof window !== "undefined" && window.innerWidth < 768) {
+        if (window.scrollY > 20) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, []);
+
   return (
     <>
-      <div className="md:hidden flex p-[15px] justify-between items-center h-full">
+      <div
+        className={`md:hidden flex p-[15px] justify-between items-center 
+          fixed top-0 left-0 w-full h-auto z-[10] ${
+            scrolled ? "bg-white shadow-[0_7px_15px_rgb(0_0_0_/_5%)]" : ""
+          }`}
+      >
         <Sheet>
           <Link href="/">
-            {variant === "dark" ? (
-              <Image
-                src="/images/logo-dark.png"
-                alt="logo"
-                width="152"
-                height="32"
-              />
-            ) : (
-              <Image
-                src="/images/logo.png"
-                alt="logo"
-                width="152"
-                height="32"
-              />
-            )}
+            <Image
+              src={
+                variant === "dark" || scrolled
+                  ? "/images/logo-dark.png"
+                  : "/images/logo.png"
+              }
+              alt="logo"
+              width="152"
+              height="32"
+            />
           </Link>
           <div className="flex flex-row items-center gap-[18px]">
             <div className="bg-custom rounded-full p-1">
@@ -114,7 +135,9 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
                 aria-expanded="false"
               >
                 <span className="sr-only">Open div menu</span>
-                <BurgerIcon fill={variant === "light" ? "white" : "black"} />
+                <BurgerIcon
+                  fill={variant === "light" && !scrolled ? "white" : "black"}
+                />
               </button>
             </SheetTrigger>
           </div>
@@ -139,9 +162,10 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
           </SheetContent>
         </Sheet>
       </div>
+
       <div onMouseLeave={handleMouseLeave}>
         <div
-          className={`w-full relative ${
+          className={`w-full relative z-30 ${
             selectedItem
               ? "bg-white md:border-b border-dark-6"
               : "bg-transparent"
@@ -150,9 +174,19 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
           <div className="hidden md:flex mx-auto justify-between items-center md:w-screen lg:py-[30px] md:py-[15px] container">
             <Link href="/">
               {variant === "dark" || selectedItem ? (
-                <img src="/images/logo-dark.png" alt="logo" />
+                <Image
+                  src="/images/logo-dark.png"
+                  width={200}
+                  height={42}
+                  alt="autoprosper logo"
+                />
               ) : (
-                <img src="/images/logo.png" alt="logo" />
+                <Image
+                  src="/images/logo.png"
+                  width={200}
+                  height={42}
+                  alt="autoprosper logo"
+                />
               )}
             </Link>
 
@@ -172,20 +206,24 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
                     <div className="bg-green rounded-full absolute -bottom-[30px] w-full h-[3px] pointer-events-none"></div>
                   )}
                   <span
-                    className={
-                      selectedItem?.title === navigation.title
-                        ? "text-dark"
-                        : ""
-                    }
+                    className={`
+                      ${
+                        selectedItem?.title === navigation.title
+                          ? "text-dark font-semibold"
+                          : ""
+                      }${selectedItem && "text-[#5D6878]"}
+                      ${variant === "dark" && "!text-dark font-semibold"}`}
                   >
                     {navigation.title}
                   </span>
                   <DropIcon
-                    className={`top-[1px] ml-1 h-[4px] w-[8px] transition duration-200 ${
-                      selectedItem?.title === navigation.title
-                        ? "rotate-180"
-                        : ""
-                    }`}
+                    className={`top-[1px] ml-1 h-[4px] w-[8px] transition duration-200  fill-white
+                     ${
+                       selectedItem?.title === navigation.title
+                         ? "rotate-180 !fill-dark"
+                         : ""
+                     } ${selectedItem && "!fill-[#5D6878]"}
+                       ${variant === "dark" && "!fill-dark"}`}
                     aria-hidden="true"
                   />
                 </div>
@@ -194,21 +232,29 @@ const NavigationBar: React.FC<NavigationBarInterface> = ({
             <Link href="/login">
               <Button
                 variant="gradient"
-                className="text-dark md:h-[36px] md:w-[85px] font-bold"
+                className="text-dark md:h-[28px] md:w-[80px] lg:h-[35px] lg:w-[85px] font-bold leading-[1.4]"
               >
-                SIGNUP
+                Signup
               </Button>
             </Link>
           </div>
         </div>
-        {selectedItem && (
-          <div
-            className="hidden md:block absolute top-15 left-0 right-0 bg-white z-10"
-            id="content-area"
-          >
-            {selectedItem.content}
-          </div>
-        )}
+        <div className={`relative ${selectedItem ? "overlay" : ""}`}>
+          {selectedItem && (
+            <div
+              className="hidden md:block absolute top-15 left-0 right-0 bg-white z-30"
+              id="content-area"
+            >
+              {selectedItem.content}
+            </div>
+          )}
+          {selectedItem && (
+            <div
+              onMouseEnter={handleMouseLeave}
+              className="fixed z-20 inset-0 bg-dark opacity-[0.4] h-screen"
+            ></div>
+          )}
+        </div>
       </div>
     </>
   );

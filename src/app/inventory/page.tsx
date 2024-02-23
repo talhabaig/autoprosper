@@ -17,7 +17,9 @@ import {
   InventoryMessage,
   ArrowUpper,
 } from "@/components/Icons/Icons";
+
 import CustomPagination from "@/components/Common/Pagination/CustomPagination";
+import Link from "next/link";
 
 const carDetailsCard: ProductCardDetails[] = [
   {
@@ -114,10 +116,11 @@ const InventoryLayout = () => {
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
+
   return (
     <>
       <NavigationBar variant="dark" />
-      <section>
+      <section className="md:pt-[16px]">
         <div className="container">
           <div className="hidden lg:block  mb-[1.125rem] xl:mb-[1.5rem] ">
             <div
@@ -150,9 +153,9 @@ const InventoryLayout = () => {
               1277 of 1277 used vehicles for sale near you
             </span>
           </div>
-          <div className="flex justify-between  flex-col-reverse  md:flex-row">
-            <div className="md:w-[66%] lg:w-[70%] 2xl:w-[72%] 3xl:w-[75%] mb-[16px]">
-              {currentCards.map((details, index) => (
+          <div className="pt-[140px] md:pt-0 flex justify-between  flex-col-reverse  md:flex-row">
+            <div className="md:w-[63%] lg:w-[70%] 2xl:w-[72%] 3xl:w-[75%] mb-[16px]">
+              {currentCards.map((items, index) => (
                 <div
                   key={index}
                   className="p-[10px] rounded-[16px] border border-solid border-dark-5 
@@ -177,7 +180,7 @@ const InventoryLayout = () => {
                       >
                         <Image
                           src={
-                            details.productImage ??
+                            items.productImage ??
                             "/producDetail/product-detail.png"
                           }
                           width={690}
@@ -213,7 +216,7 @@ const InventoryLayout = () => {
                     <div className="lg:flex lg:justify-between">
                       <div className="lg:w-[74%] 2xl:w-[64%]">
                         <h2 className="heading4 mb-[10px] font-bold">
-                          {details.productName}
+                          {items.productName}
                         </h2>
                         <div className="mb-[10px]">
                           <span className="text-[12px] text-dark xl:text-[14px] 2xl:text-[16px] leading-[150%]">
@@ -227,7 +230,7 @@ const InventoryLayout = () => {
                               lg:text-[14px] xl:text-[16px] 2xl:text-[18px] lg:p-[6px_12px] 2xl:p-[8px_16px] xl:gap-[6px] 2xl:gap-[8px]"
                           >
                             <MilesCovered className="w-[12px] h-[12px] lg:w-[14px] lg:h-[14px] 2xl:w-[20px] 2xl:h-[20px]  fill-black" />{" "}
-                            {details.totalMilage} Miles
+                            {items.totalMilage} Miles
                           </li>
                           <li
                             className="flex items-center gap-[4px] fill-dark-2 p-[4px_10px]
@@ -248,7 +251,7 @@ const InventoryLayout = () => {
                             Price
                           </span>
                           <span className="block text-dark text-[18px] xl:text-[22px] 2xl:text-[26px] 3xl:text-[32px] font-bold leading-[130%]">
-                            $ {details.totalPrice}
+                            $ {items.totalPrice}
                           </span>
                         </div>
                       </div>
@@ -297,8 +300,10 @@ const InventoryLayout = () => {
               </div>
             </div>
             <div
-              className="md:w-[33%] lg:w-[28%] 2xl:w-[26.2%] 3xl:w-[24%] md:h-[max-content] md:sticky md:top-[40px]
-                md:border-[1px] border-solid border-dark-5 rounded-[16px] p-[14px_14px] 2xl:p-[30px_16px]"
+              className="md:w-[36%] lg:w-[28%] 2xl:w-[26.2%] 3xl:w-[24%] md:h-[max-content] fixed top-[61px]
+               w-full left-0 bg-white shadow-[0px_10px_20px_0px_rgba(0,0,0,0.05)]
+                md:sticky md:top-[14px] md:left-[unset]
+                md:border-[1px] border-solid border-dark-5 md:rounded-[16px] p-[14px_14px] 2xl:p-[30px_16px]"
             >
               <InventoryFilters
                 onOptionSelect={handleOptionSelect}
@@ -307,7 +312,7 @@ const InventoryLayout = () => {
             </div>
           </div>
         </div>
-        <div className="fixed bottom-[100px] right-[18px] md:bottom-[100px] md:right-[30px] ">
+        <div className="fixed z-[51] bottom-[18px] right-[18px] md:bottom-[100px] md:right-[30px] ">
           <button className="bg-dark hover:scale-110 transition-all p-[20px] rounded-[16px] md:flex items-center md:gap-1">
             <InventoryMessage className="w-[24px] h-[24px]" />
             <span className="text-[#FFF] text-[14px] hidden md:block font-bold leading-normal">
@@ -315,10 +320,13 @@ const InventoryLayout = () => {
             </span>
           </button>
         </div>
-        <div className="fixed bottom-[20px] right-[100px]">
-          <button className=" hover:scale-110 transition-all bg-btn-primary-gradient p-[20px] rounded-full cursor-pointer">
-            <ArrowUpper className="w-[24px] h-[24px]" />
-          </button>
+        <div className="fixed z-[51] bottom-[24px] right-[30%] md:right-[28px]">
+          <Link href="#">
+            <button className=" hover:scale-110 transition-all bg-btn-primary-gradient gap-[5px] flex items-center !p-[7px_16px] md:!p-[20px] rounded-full cursor-pointer">
+              <ArrowUpper className="w-[16px] h-[16px]  md:w-[24px] md:h-[24px] " />
+           <span className="text-[14px] font-medium text-dark md:hidden">back to top</span> 
+            </button>
+          </Link>
         </div>
       </section>
     </>

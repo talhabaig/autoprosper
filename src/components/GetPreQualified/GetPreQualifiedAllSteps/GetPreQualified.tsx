@@ -1,5 +1,6 @@
-import React from "react";
-
+"use client";
+import React, { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { GetPreQualifiedSecureFinancing } from "../../../assests/interfaces/Home/index";
 import {
   DocumentRounded,
@@ -11,6 +12,10 @@ import GetPreQuallifiedForm from "../GetPreQualifiedForm/GetPreQualifiedForm";
 import GetPreQuallifiedAccordion from "../GetPreQualifiedAccordion/GetPreQuallifiedAccordion";
 import Button from "@/components/Common/Button/Button";
 
+type propType = {
+  onClickProp?: () => void;
+  currentStep?: number;
+};
 const cardData: GetPreQualifiedSecureFinancing[] = [
   {
     id: 1,
@@ -44,7 +49,14 @@ const cardData: GetPreQualifiedSecureFinancing[] = [
   },
 ];
 
-const GetPreQualified = () => {
+const GetPreQualified: React.FC<propType> = ({ onClickProp, currentStep }) => {
+  const pathname = usePathname();
+  useEffect(() => {
+    const faqSection = document.getElementById("faqfinence");
+    if (faqSection && pathname.includes("faqfinence")) {
+      faqSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
   return (
     <>
       <section className="bg-dark-7">
@@ -69,7 +81,7 @@ const GetPreQualified = () => {
         </div>
       </section>
 
-      <GetPreQuallifiedForm />
+      <GetPreQuallifiedForm onClick={onClickProp} currentStep={currentStep} />
 
       <section className="bg-dark-7 py-[3rem]   2xl:py-[4rem] 3xl:py-[6rem]">
         <div className="container">
@@ -92,7 +104,9 @@ const GetPreQualified = () => {
                     {item.icon}
                   </div>
 
-                  <h3 className="heading4 text-center lg:text-left ">{item.heading}</h3>
+                  <h3 className="heading4 text-center lg:text-left ">
+                    {item.heading}
+                  </h3>
                   <p className="text-dark-3 text-[0.875rem] md:text-[16px] leading-[150%]">
                     {item.description}
                   </p>
@@ -103,18 +117,21 @@ const GetPreQualified = () => {
         </div>
       </section>
 
-      <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]">
-      <div className="container">
-        <div className="max-w-[360px] mx-auto text-center md:max-w-[480px] lg:max-w-[540px] 2xl:max-w-[700px]">
-          <h2 className="heading2 mb-[0.625rem] lg:mb-[1.125rem]">
-            Finance FAQs
-          </h2>
-          <p className="paragraph-large mb-8 md:mb-[2.2rem] lg:mb-[2.5rem] 2xl:mb-[3rem] 4xl:mb-[4rem]">
-            Interested in delving deeper into the realm of financing? There's a
-            wealth of information waiting to be explored and understood!
-          </p>
-        </div>
-        
+      <section
+        id="faqfinence"
+        className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]"
+      >
+        <div className="container">
+          <div className="max-w-[360px] mx-auto text-center md:max-w-[480px] lg:max-w-[540px] 2xl:max-w-[700px]">
+            <h2 className="heading2 mb-[0.625rem] lg:mb-[1.125rem]">
+              Finance FAQs
+            </h2>
+            <p className="paragraph-large mb-8 md:mb-[2.2rem] lg:mb-[2.5rem] 2xl:mb-[3rem] 4xl:mb-[4rem]">
+              Interested in delving deeper into the realm of financing? There's
+              a wealth of information waiting to be explored and understood!
+            </p>
+          </div>
+
           <div className="mb-8 md:mb-[2.2rem] lg:mb-[2.5rem] 2xl:mb-[3rem] 4xl:mb-[4rem]">
             <GetPreQuallifiedAccordion />
           </div>

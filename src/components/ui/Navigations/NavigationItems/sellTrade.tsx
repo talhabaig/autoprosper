@@ -8,11 +8,11 @@ const SellTrade = () => {
   const navigationData = [
     {
       label: "Sell or Trade Your Car",
-      link: "#",
+      link: "/sell-trade",
     },
     {
       label: "How Sell/Trade Works",
-      link: "#",
+      link: "/sell-trade",
     },
   ];
 
@@ -47,6 +47,7 @@ const SellTrade = () => {
       ],
       button: {
         text: "View all FAqs",
+        href: "/services#faqservices",
         icon: (
           <ArrowRight className="ml-[5px] fill-dark-4 w-[10.67px] h-[10.67px] md:w-[12px] md:h-[12px]" />
         ),
@@ -58,31 +59,27 @@ const SellTrade = () => {
       list: [
         {
           element: (
-            <div className="flex-col gap-[5px]">
-              <Link href="#">
-                <h1 className="text-dark font-normal text-sm md:text-[18px] md:leading-[23.4px]">
-                  2024 Nissan Kicks®
-                </h1>
-                <p className="p-0 m-0 font-normal text-[10px] md:text-sm text-dark-3 leading-[15px] md:leading-[21px]">
-                  Calculate your affordable car budget. Explore vehicles within
-                  your financial range based on your affordability assessment.
-                </p>
-              </Link>
+            <div className="">
+              <h3 className="text-dark font-normal text-[14px] leading-[150%] md:text-[18px] mb-[8px]">
+                2024 Nissan Kicks®
+              </h3>
+              <p className="p-0 m-0 font-normal text-[12px] md:text-[14px] text-dark-3 leading-[150%] ">
+                Calculate your affordable car budget. Explore vehicles within
+                your financial range based on your affordability assessment.
+              </p>
             </div>
           ),
         },
         {
           element: (
-            <div className="flex-col gap-[5px] mt-[15px]">
-              <Link href="#">
-                <h1 className="text-dark font-normal text-sm md:text-[18px] md:leading-[23.4px]">
-                  2024 Nissan Kicks®
-                </h1>
-                <p className="p-0 m-0 font-normal text-[10px] md:text-sm text-dark-3 leading-[15px] md:leading-[21px]">
-                  Calculate your affordable car budget. Explore vehicles within
-                  your financial range based on your affordability assessment.
-                </p>
-              </Link>
+            <div className=" mt-[15px]">
+              <h3 className="text-dark font-normal text-[14px] leading-[150%] md:text-[18px] mb-[8px]">
+                2024 Nissan Kicks®
+              </h3>
+              <p className="p-0 m-0 font-normal text-[12px] md:text-[14px] text-dark-3 leading-[150%] ">
+                Calculate your affordable car budget. Explore vehicles within
+                your financial range based on your affordability assessment.
+              </p>
             </div>
           ),
         },

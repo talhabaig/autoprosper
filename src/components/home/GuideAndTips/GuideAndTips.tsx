@@ -67,7 +67,7 @@ const GuideAndTips = () => {
     AOS.refresh();
   }, []);
   return (
-    <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-dark-7">
+    <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-dark-7 overflow-x-hidden">
       <div className="container">
         <div
           data-aos="fade-up"
@@ -118,14 +118,16 @@ const GuideAndTips = () => {
                       {item.description}
                     </p>
                   </div>
-                  <span
-                    className={`${
-                      index === 0 ? " text-primary-text" : ""
-                    } text-[0.625rem] font-extrabold text-dark-4 block tracking-[0.9px] 
-                    xl:text-[0.875rem] xl:tracking-[1.08px] underline cursor-pointer hover:text-primary-text`}
-                  >
-                    {item.buttonLabel}
-                  </span>
+                  <div>
+                    <span
+                      className={`${
+                        index === 0 ? " text-primary-text" : ""
+                      } text-[0.625rem] font-extrabold text-dark-4 block tracking-[0.9px] 
+                       xl:text-[0.875rem] xl:tracking-[1.08px] underline cursor-pointer hover:text-primary-text`}
+                    >
+                      {item.buttonLabel}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

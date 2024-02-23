@@ -1,5 +1,4 @@
 "use client";
-import { NissanIcon, ToyotaIcon, VwIcon } from "@/components/Icons/BrandIcons";
 import {
   Carousel,
   CarouselContent,
@@ -33,22 +32,20 @@ const ProsperingCustomers: React.FC = () => {
     AOS.refresh();
   }, []);
   return (
-    <Section className="bg-dark !flex-col md:!px-0 overflow-x-hidden">
-      <div
-        data-aos="fade-left"
-        className="w-full md:max-w-[690px] px-[15px] md:px-0 flex flex-col items-center mx-auto text-center"
-      >
-        <SectionHeader className="text-primary-light">
-          Delivery to prospering customers
-        </SectionHeader>
-        <SectionDesc className="text-dark-6">
+    <section className="bg-dark py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  overflow-x-hidden">
+      <div data-aos="fade-right" className="container text-center">
+        <h2
+          className={`heading2 max-w-[288px] lg:max-w-[360px] xl:max-w-[420px] 2xl:max-w-[500px] mb-[15px] mx-auto 2xl:mb-[18px] !text-white `}
+          > Delivery to prospering customers
+        </h2>
+        <p className="paragraph-large mb-[1.5rem] max-w-[480px] lg:max-w-[560px] xl:text-[18px] xl:max-w-[630px] 2xl:text-[20px] 2xl:max-w-[700px] 2xl:mb-12 mx-auto !text-white">
           Chronicles of the moment the keys are handed over in your driveway,
           the daily drive or feeling your vacation vibes.{" "}
           <span className="bg-rainbow-gradient bg-clip-text text-transparent">
             Use #DeliveredByDriveway
           </span>{" "}
           for a chance to be featured in our happy drivers gallery.
-        </SectionDesc>
+        </p>
       </div>
 
       <div className="w-full">
@@ -65,17 +62,20 @@ const ProsperingCustomers: React.FC = () => {
                 key={"carousel" + index}
                 className="basis-1/4 lg:basis-[15%]"
               >
-                <img
+                <Image
                   src={customer}
                   className="w-[210px] h-auto rounded-xl"
+                  width={240}
+                  height={330}
                   alt="prospering customers"
+
                 />
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
       </div>
-    </Section>
+    </section>
   );
 };
 

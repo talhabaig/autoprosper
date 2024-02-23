@@ -7,7 +7,7 @@ const CHECKED_BACKGROUND_COLOR = "bg-green";
 
 interface Option {
   id: number;
-  label: string;
+  label: string | React.ReactElement;
   sub?: string | React.ReactElement;
   image?: string | React.ReactElement;
 }
@@ -21,7 +21,7 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const renderImage = (image: Option["image"], label: Option["label"]) => {
   if (typeof image === "string") {
-    return <img src={image.toString()} className="" alt={label} />;
+    return <img src={image.toString()} className="" alt={'car image'} />;
   }
 
   if (image && typeof image !== "string") {

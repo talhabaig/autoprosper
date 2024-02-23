@@ -62,31 +62,27 @@ const Learn = () => {
       list: [
         {
           element: (
-            <div className="flex-col gap-[5px]">
-              <Link href="#">
-                <h1 className="text-dark font-normal text-sm md:text-[18px] md:leading-[23.4px]">
-                  2024 Nissan Kicks®
-                </h1>
-                <p className="p-0 m-0 font-normal text-[10px] md:text-sm text-dark-3 leading-[15px] md:leading-[21px]">
-                  Calculate your affordable car budget. Explore vehicles within
-                  your financial range based on your affordability assessment.
-                </p>
-              </Link>
+            <div className="">
+              <h3 className="text-dark font-normal text-[14px] leading-[150%] md:text-[18px] mb-[8px]">
+                2024 Nissan Kicks®
+              </h3>
+              <p className="p-0 m-0 font-normal text-[12px] md:text-[14px] text-dark-3 leading-[150%] ">
+                Calculate your affordable car budget. Explore vehicles within
+                your financial range based on your affordability assessment.
+              </p>
             </div>
           ),
         },
         {
           element: (
-            <div className="flex-col gap-[5px] mt-[15px]">
-              <Link href="#">
-                <h1 className="text-dark font-normal text-sm md:text-[18px] md:leading-[23.4px]">
-                  2024 Nissan Kicks®
-                </h1>
-                <p className="p-0 m-0 font-normal text-[10px] md:text-sm text-dark-3 leading-[15px] md:leading-[21px]">
-                  Calculate your affordable car budget. Explore vehicles within
-                  your financial range based on your affordability assessment.
-                </p>
-              </Link>
+            <div className=" mt-[15px]">
+              <h3 className="text-dark font-normal text-[14px] leading-[150%] md:text-[18px] mb-[8px]">
+                2024 Nissan Kicks®
+              </h3>
+              <p className="p-0 m-0 font-normal text-[12px] md:text-[14px] text-dark-3 leading-[150%] ">
+                Calculate your affordable car budget. Explore vehicles within
+                your financial range based on your affordability assessment.
+              </p>
             </div>
           ),
         },
@@ -104,7 +100,7 @@ const Learn = () => {
     <NavigationItemsWrapper>
       <div className="flex flex-col md:flex-row md:divide-x-[1px] md:divide-dark-6">
         <SheetSectionItems
-          title="Car Question Answered"
+          title="CAR QUESTION ANSWERED"
           items={navigationData}
         />
         <div className="px-[18px] md:pl-[36px] lg:pl-[72px]  mt-[30px] gap-[24px] flex flex-col md:flex-row md:justify-between">

@@ -3,6 +3,7 @@ import RightArrow from "@/components/Icons/RightArrow";
 import { Button } from "@/components/ui/button";
 import CardData from "@/components/ui/cardData";
 import { EllipseGradient } from "@/components/ui/ellipseGradient";
+import Image from "next/image";
 import { useState } from "react";
 
 const Review: React.FC = () => {
@@ -14,12 +15,12 @@ const Review: React.FC = () => {
   const options = [
     {
       id: 1,
-      label: "Style",
+      label: <div className="text-dark">Style</div>,
       sub: "228i Gran Coupe FWD",
     },
     {
       id: 2,
-      label: "Exterior",
+      label: <div className="text-dark">Exterior</div>,
       sub: (
         <div className="flex flex-col gap-2">
           <div className="text-[10px] text-dark-3 font-normal">
@@ -32,7 +33,7 @@ const Review: React.FC = () => {
     },
     {
       id: 3,
-      label: "Interior",
+      label: <div className="text-dark">Interior</div>,
       sub: (
         <div className="flex flex-col gap-2">
           <div className="text-[10px] text-dark-3 font-normal">
@@ -45,7 +46,7 @@ const Review: React.FC = () => {
     },
     {
       id: 4,
-      label: "Package",
+      label: <div className="text-dark">Package</div>,
       sub: "Not interested in popular option packages at this time",
     },
   ];
@@ -53,16 +54,18 @@ const Review: React.FC = () => {
   return (
     <>
       <div className="flex flex-col lg:flex-row w-full items-start justify-start lg:gap-[24px]">
-        <div className="relative flex items-center w-full lg:w-fit h-[160px] md:h-[217px] my-auto justify-center md:justify-start">
-          <EllipseGradient className="absolute top-0 left-0 w-full h-full z-0" />
-          <img
-            src="/customize/2series.png"
+        <div className="relative flex items-center w-full h-[160px] md:h-[217px] my-auto justify-center">
+          <EllipseGradient className="absolute -top-3 lg:-top-10 left-0 w-full h-full z-0" />
+          <Image
+            src="/home/blue-nissan.png"
             alt="car image"
-            className="z-10 w-[267px] h-[111px] md:w-[372px] md:h-[155px]"
+            height={110}
+            width={270}
+            className="z-0 w-[267px] h-[111px] md:w-[372px] md:h-[155px]"
           />
         </div>
         <div className="flex flex-col w-full">
-          <div className="flex gap-[12px] mb-[16px]">
+          <div className="flex gap-[12px] mb-[16px] items-center">
             <div className="flex gap-2 bg-dark-7 h-fit text-dark text-[13px] px-[20px] py-[13px] rounded-full">
               <PinLocation width="10" height="13" />
               75042
@@ -86,18 +89,20 @@ const Review: React.FC = () => {
                 <div className="text-dark-3 text-[10px] font-bold tracking-[0.9px]">
                   MSRP as Build
                 </div>
-                <div className="text-dark text-sm md:text-base font-normal">$40,045</div>
+                <div className="text-dark text-sm md:text-base font-normal">
+                  $40,045
+                </div>
               </div>
               <div className="flex flex-col gap-2">
                 <div className="text-dark-3 text-[10px] font-bold tracking-[0.9px]">
                   Price You’ll Pay
                 </div>
-                <div className="text-dark text-sm md:text-base font-normal">
+                <div className="text-dark text-sm md:text-base font-normal underline">
                   See Personalized Offer
                 </div>
               </div>
             </div>
-            <Button variant="gradient">
+            <Button variant="gradient" className="min-h-[36px] md:hidden">
               See offers on local inventory
               <span className="ml-[6px] md:ml-[10px]">
                 <RightArrow />
@@ -116,7 +121,7 @@ const Review: React.FC = () => {
             option={option}
             className="!min-w-[100%]"
             editAble={true}
-            isSelected={selectedOptions.includes(option.label)}
+            isSelected={selectedOptions.includes(option.label.toString())}
             onClick={() => console.log(option)}
           />
         ))}

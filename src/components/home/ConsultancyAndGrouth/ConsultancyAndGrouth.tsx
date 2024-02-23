@@ -21,7 +21,7 @@ const cardData: ConsultancyAndGrowth[] = [
 
 const ConsultancyAndGrouth = () => {
   return (
-    <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-btn-primary-gradient">
+    <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem]  bg-btn-primary-gradient overflow-x-hidden">
       <div className="container">
         <div
           className="md:flex md:flex-wrap md:justify-between md:items-stretch md:gap-[0.625rem] 

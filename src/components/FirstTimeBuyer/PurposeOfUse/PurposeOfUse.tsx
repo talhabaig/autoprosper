@@ -12,8 +12,8 @@ import { useFirstBuyer } from "@/components/Common/context/FirstTimeBuyerContext
 
 const PurposeOfUse: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
-
   const { state, setState } = useFirstBuyer();
+
   useEffect(() => {
     setSelectedOptions(state?.PurposeOfUse ?? []);
   }, []);
@@ -25,6 +25,7 @@ const PurposeOfUse: React.FC = () => {
     }));
     setSelectedOptions(values);
   };
+
 
   const helpOptions = [
     {

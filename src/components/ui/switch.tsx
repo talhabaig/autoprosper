@@ -41,7 +41,7 @@ const SwitchWithLabel: React.FC<SwitchWithLabelProps> = ({
 }) => {
   return (
     <div className={cn("flex items-center space-x-[12px]", className)} {...props}>
-      <Switch id={label} />
+      <Switch aria-label="Toggler Icon" id={label} />
       <Label className="ml-0 text-dark-2 text-[14px] md:text-[17px] font-normal" htmlFor={label}>
         {label}
       </Label>

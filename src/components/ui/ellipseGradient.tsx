@@ -1,4 +1,5 @@
-"use client";
+import React from "react";
+
 type propType = {
   width?: string;
   height?: string;
@@ -165,54 +166,52 @@ const CutEllipseGradient: React.FC<propType> = ({
   fill = "none",
   className,
 }) => {
-  const uniqueId = `unique_${Math.random().toString(36).substr(2, 9)}`; // Generate a unique ID
-  
   return (
     <svg
-      width="400"
-      height="200"
-      viewBox="0 0 400 200"
+      width="364"
+      height="170"
+      viewBox="0 0 364 170"
       fill="none"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clipPath={`url(#${uniqueId}_clip0)`}>
+      <g clip-path="url(#clip0_1_5)">
         <path
-          d="M399.5 100C391.103 138.26 369.905 171.995 337.5 194.5C305.095 217.005 263.905 226.995 223.5 224.5C183.095 222.005 145.897 207.259 118.5 182C91.1028 156.741 75.8946 122.005 74.5 86.5L150.5 100C145.928 125.741 150.573 152.787 163 175C175.427 197.213 194.427 212.213 215.5 216C236.573 219.787 258.927 211.741 275.5 194.5C292.073 177.259 300.302 152.787 298.5 127.5L399.5 100Z"
-          fill={`url(#${uniqueId}_paint0_linear)`}
+          d="M363.883 65.9299C355.14 98.5587 333.794 126.378 304.539 143.268C275.285 160.158 240.52 164.735 207.891 155.992C175.262 147.249 147.443 125.903 130.553 96.6484C113.663 67.3942 109.086 32.6288 117.829 2.2986e-05L167.04 13.186C161.794 32.7633 164.54 53.6225 174.674 71.175C184.808 88.7275 201.5 101.535 221.077 106.781C240.654 112.027 261.514 109.281 279.066 99.1467C296.619 89.0128 309.426 72.3212 314.672 52.7439L363.883 65.9299Z"
+          fill="url(#paint0_linear_1_5)"
         />
         <path
-          d="M298 399.5C312.878 336.919 304.085 273.327 282 223C259.915 172.673 225.585 134.415 186.5 114C147.415 93.5848 105.623 93.6198 69.5 112.5C33.3772 131.381 -0.697596 166.652 0.500061 205.5L75.5 221.5C80.1901 197.889 95.8746 177.969 116.5 164.5C137.125 151.031 161.424 145.931 183.5 150.5C205.576 155.069 224.307 169.238 235 190.5C245.693 211.762 247.026 239.019 238.5 264.5L298 399.5Z"
-          fill={`url(#${uniqueId}_paint1_linear)`}
+          d="M260.171 285.434C269.952 248.928 264.831 210.032 245.935 177.302C227.038 144.572 195.913 120.689 159.408 110.908C122.902 101.126 84.0062 106.247 51.2762 125.143C18.5462 144.04 -5.33664 175.165 -15.1183 211.67L39.9395 226.423C45.8085 204.52 60.1382 185.845 79.7762 174.507C99.4142 163.169 122.752 160.096 144.655 165.965C166.559 171.834 185.233 186.164 196.571 205.802C207.909 225.44 210.982 248.778 205.113 270.681L260.171 285.434Z"
+          fill="url(#paint1_linear_1_5)"
         />
       </g>
       <defs>
         <linearGradient
-          id={`${uniqueId}_paint0_linear`}
-          x1="223.5"
-          y1="224.5"
-          x2="180.5"
-          y2="85.5"
+          id="paint0_linear_1_5"
+          x1="207.891"
+          y1="155.992"
+          x2="240.856"
+          y2="32.965"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FF00A2" stopOpacity="0.26" />
-          <stop offset="0.475" stopColor="#FF6664" stopOpacity="0.18" />
-          <stop offset="1" stopColor="white" stopOpacity="0" />
+          <stop stop-color="#00FFA2" stop-opacity="0.26" />
+          <stop offset="0.475" stop-color="#FFE664" stop-opacity="0.18" />
+          <stop offset="1" stop-color="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
-          id={`${uniqueId}_paint1_linear`}
-          x1="186.5"
-          y1="114"
-          x2="25.5"
-          y2="250.5"
+          id="paint1_linear_1_5"
+          x1="159.408"
+          y1="110.908"
+          x2="122.526"
+          y2="248.552"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FF00A2" stopOpacity="0.26" />
-          <stop offset="0.475" stopColor="#FF6664" stopOpacity="0.18" />
-          <stop offset="1" stopColor="white" stopOpacity="0" />
+          <stop stop-color="#00FFA2" stop-opacity="0.26" />
+          <stop offset="0.475" stop-color="#FFE664" stop-opacity="0.18" />
+          <stop offset="1" stop-color="white" stop-opacity="0" />
         </linearGradient>
-        <clipPath id={`${uniqueId}_clip0`}>
-          <rect width="400" height="200" fill="white" />
+        <clipPath id="clip0_1_5">
+          <rect width="364" height="170" fill="white" />
         </clipPath>
       </defs>
     </svg>

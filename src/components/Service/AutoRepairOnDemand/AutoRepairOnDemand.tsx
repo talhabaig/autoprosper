@@ -67,7 +67,7 @@ const AutoRepairOnDemand: React.FC = () => {
                 </h2>
                 <div className="[&>*:nth-child(2)]:bg-btn-primary-gradient 
                  [&>*:nth-child(2)]:shadow-[0px_10px_36px_-18px_rgba(0,27,68,0.25)]
-                 [&>*:nth-child(2)]:xl:shadow-[0px_36px_72px_-18px_rgba(0,27,68,0.25)]">
+                 [&>*:nth-child(2)]:xl:shadow-[0px_16px_15px_rgb(0_0_0_/_5%)]">
                   {item.pointsArray &&
                     item.pointsArray.map((point, index) => (
                       <div className=" 

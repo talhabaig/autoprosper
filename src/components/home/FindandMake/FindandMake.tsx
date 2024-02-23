@@ -15,7 +15,7 @@ interface FindOrMakeCardWithRoute extends FindOrMakeCard {
 const cardData: FindOrMakeCardWithRoute[] = [
   {
     id: 1,
-    imageSrc: "/home/discover-ideal.png",
+    imageSrc: "/home/find-or-make-discover-ideal-01.jpg",
     heading: "Discover ideal match",
     description:
       "Undecided on your ideal vehicle? Take a quick quiz to discover the perfect match tailored just for you! Let's begin!",
@@ -28,7 +28,7 @@ const cardData: FindOrMakeCardWithRoute[] = [
   },
   {
     id: 2,
-    imageSrc: "/home/special-order.png",
+    imageSrc: "/home/find-or-make-special-order-02.jpg",
     heading: "Special order and customize",
     description:
       "Design your dream car, and watch as we bring it to life. Your perfect vehicle is just a few steps away!",
@@ -38,8 +38,6 @@ const cardData: FindOrMakeCardWithRoute[] = [
       <ArrowRight className="fill-primary-text w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />
     ),
     route: "customize",
-    // buttonVariant: "transparent",
-    // buttonIcon:    <ArrowRight  className="fill-gray w-[1.125rem] h-[1.125rem] lg:w-[1.25rem] lg:h-[1.25rem]" />,
   },
 ];
 
@@ -51,7 +49,7 @@ const FindandMake = () => {
     AOS.refresh();
   }, []);
   return (
-    <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-dark-7">
+    <section className="py-[3rem]  2xl:py-[4rem] 3xl:py-[6rem] bg-dark-7 overflow-x-hidden">
       <div className="container">
         <div
           data-aos="fade-up"
@@ -75,7 +73,7 @@ const FindandMake = () => {
               lg:last-of-type:bg-btn-primary-gradient last-of-type:mb-0 md:mb-0 "
             >
               <div className="h-full bg-white rounded-[12px]">
-                <div               
+                <div
                   className="rounded-tr-[12px] max-w-[699px]  rounded-tl-[12px] px-[4px] pt-[4px] 
                   overflow-hidden bg-white"
                 >
@@ -94,13 +92,15 @@ const FindandMake = () => {
                   <p className="paragraph-large mb-[1.125rem] lg:mb-[1.563rem] 3xl:mb-[2rem]">
                     {item.description}
                   </p>
-                  <Link href={item.route}>
-                    <Button
-                      variant={item.buttonVariant}
-                      label={item.buttonLabel}
-                      children={item.buttonIcon}
-                    />
-                  </Link>
+                  <div>
+                    <Link className="inline-block" href={item.route}>
+                      <Button
+                        variant={item.buttonVariant}
+                        label={item.buttonLabel}
+                        children={item.buttonIcon}
+                      />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
